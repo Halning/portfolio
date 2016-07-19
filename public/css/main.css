@@ -310,11 +310,13 @@ p {
 }
 
 /* main index */
-/* stary reading */
+/* start reading */
 
 .start_reading {
     padding-top: 1.5em;
 }
+
+
 @media only screen and (min-width: 500px) {
     .start_reading {
         padding-top: 2.5em;
