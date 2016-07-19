@@ -1,0 +1,472 @@
+@import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+@import url(https://fonts.googleapis.com/css?family=Merriweather);
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Merriweather', serif;
+}
+
+body {
+    background-color: rgba(239,238,238,1);
+    font-size: 100%;
+    line-height: 1.75em;
+    color: #393939;
+    font-weight: 500;
+    text-align: center;
+    overflow: hidden !important;
+    -webkit-overflow-scrolling: touch;
+}
+
+p {
+    margin-bottom: 1.00em;
+    margin-top: 0;
+    line-height: 1.428572em;
+    text-align: left;
+    font-size: 1.4em;
+}
+
+@media screen and (min-width: 600px) {
+    body {
+        font-size: 150%;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    p {
+        width: 580px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+/* Header */
+.header {
+    padding: 15px 30px;
+    position: absolute;
+    width: 100%;
+    display: inline-block;
+    right: 0;
+    left: 0;
+    z-index: 50;
+    overflow-x: hidden;
+    top: -85px; 
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.header.transparent {
+    background: none !important;
+    border: none;
+    box-shadow: none !important;
+}
+
+.header.in {
+    top: 0px;
+    -ms-transition: all 0.6s ease;
+    -webkit-transition: all 0.6s ease;
+    -moz-transition: all 0.6s ease;
+    -o-transition: all 0.6s ease;
+    transition: all 0.6s ease;
+}
+
+.header.out {
+    top: -85px;
+    -ms-transition: all 0.6s ease;
+    -webkit-transition: all 0.6s ease;
+    -moz-transition: all 0.6s ease;
+    -o-transition: all 0.6s ease;
+    transition: all 0.6s ease;
+}
+
+.header.black {
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+    background: rgba(239,238,238,0.9);
+}
+
+.header.white li a {
+    color: #fff;
+}
+
+.header .nav {
+    display: inline-block;
+}
+
+.header ul.nav-pills {
+    list-style: none;
+    float: none;
+}
+
+.header .nav-pills li a {
+    margin-right: 1.5em;
+    text-align: center;
+    font-size: 1.3em;
+    border-radius: 0em;
+    padding: 0;
+}
+
+.header.white li.active a,
+.header.white li a:hover,
+.header.white li.active a:hover {
+    background-color: inherit;
+    color: #fff;
+    -ms-transition: color 1s ease;
+    -webkit-transition: color 1s ease;
+    -moz-transition: color 1s ease;
+    -o-transition: color 1s ease;
+    transition: color 1s ease;
+}
+
+.header.black li.active a,
+.header.black li a:hover,
+.header.black li.active a:hover {
+    background-color: inherit;
+    color: #000;
+    -ms-transition: color 1s ease;
+    -webkit-transition: color 1s ease;
+    -moz-transition: color 1s ease;
+    -o-transition: color 1s ease;
+    transition: color 1s ease;
+}
+
+.header .nav-pills li a:hover::after, .header .nav-pills li a:focus::after {
+    opacity: 1;
+    width: 100%;
+    text-decoration: none;
+}
+
+.header .nav-pills li a::after {
+    margin-top: 25px;
+    position: absolute;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    content: '';
+    opacity: 0;
+    -webkit-transition: width 0.3s, opacity 0.2s, -webkit-transform 0.3s;
+    -moz-transition: width 0.3s, opacity 0.2s, -moz-transform 0.3s;
+    -o-transition: width 0.3s, opacity 0.2s, -o-transform 0.3s;
+    transition: width 0.3s, opacity 0.2s,-webkit-transform 0.3s,-moz-transform 0.3s,-o-transform 0.3s,transform 0.3s;
+}
+
+.header.white li a::after {
+    background: #fff;
+}
+
+.header.black li a::after {
+    background: #000;
+}
+
+
+
+
+@media only screen and (min-width: 960px) {
+    .header {
+        background: none;
+        border: none;
+        box-shadow: none;
+    }
+    .header.black li a {
+        color: #393939;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .header.in {
+        top: 0px;
+    }
+
+    .header.out {
+        top: -104px;
+    }
+
+    .header ul.nav-pills {
+        float: right;
+    }
+
+    .header .nav-pills li a {
+        font-size: 1em;
+        margin-left: 2.5em;
+        transition: font-size 3s ease;
+    }
+}
+
+
+/* main index */
+/* Jumbotrom */
+.main {
+    margin: 0px;
+    width: 100%;
+    height: auto;
+    overflow: auto;
+    display: block;
+    position: relative;
+}
+
+.home.main .jumbotrom .container {
+    text-align: center;
+    top: 50%;
+    -webkit-transform: translateY(-60%);
+    -moz-transform: translateY(-60%);
+    -ms-transform: translateY(-60%);
+    -o-transform: translateY(-60%);
+    transform: translateY(-60%);
+    position: relative;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.home.main .jumbotrom h1 span {
+    font-family: 'Indie Flower', cursive;
+}
+
+.home.main .jumbotrom.init_1 h1 {
+    opacity: 1;
+    -ms-transition: opacity 0.5s ease;
+    -webkit-transition: opacity 0.5s ease;
+    -moz-transition: opacity 0.5s ease;
+    -o-transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
+    -ms-transition-delay: 1s;
+    -webkit-transition-delay: 1s;
+    -moz-transition-delay: 1s;
+    -o-transition-delay: 1s;
+    transition-delay: 1s;
+}
+
+.home.main .jumbotrom h1 {
+    opacity: 0;
+    font-size: 3em;
+    padding: 0;
+    margin: 0;
+    color: #fff;
+}
+
+.home.main .jumbotrom.init_2 h2 {
+    opacity: 1;
+    -ms-transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+    -webkit-transform: translate(0px, 0px);
+    -moz-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+    margin-bottom: 0.5em;
+}
+
+.home.main .jumbotrom h2 {
+    -webkit-transform: translate(0, 20px);
+    -moz-transform: translate(0, 20px);
+    -ms-transform: translate(0, 20px);
+    -o-transform: translate(0, 20px);
+    transform: translate(0, 20px);
+    font-size: 1.5em;
+    color: #fff;
+    text-align: center;
+    opacity: 0;
+}
+
+.home.main .jumbotrom.init_2 a {
+    opacity: 1;
+    -webkit-transform: translate(0px, 0px);
+    -moz-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+}
+
+.home.main .jumbotrom a {
+    font-size: 0.857142857142em;
+    font-style: italic;
+    font-weight: 500;
+    color: #fff;
+    opacity: 0;
+    -webkit-transform: translate(0, 60px);
+    -moz-transform: translate(0, 60px);
+    -ms-transform: translate(0, 60px);
+    -o-transform: translate(0, 60px);
+    transform: translate(0, 60px);
+    -ms-transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.home.main .jumbotrom.full-image {
+    background-image: url(../img/city3-min.jpg);
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    position: relative;
+    top: 0;
+}
+
+/* main index */
+/* stary reading */
+
+.start_reading {
+    padding-top: 1.5em;
+}
+@media only screen and (min-width: 500px) {
+    .start_reading {
+        padding-top: 2.5em;
+    }
+}
+
+/* main-2 skils */
+.skils, .projects {
+    padding: 8em 0 0 0; 
+}
+
+.skils .col-md-3 {
+    height: 165px;
+    margin-bottom: 4em;
+}
+
+.skils h2 {
+    -webkit-transform: translate(0, 20px);
+    -moz-transform: translate(0, 20px);
+    -ms-transform: translate(0, 20px);
+    -o-transform: translate(0, 20px);
+    transform: translate(0, 20px);
+    font-family: 'Indie Flower', cursive;
+    padding: 30px;
+    border-bottom: 1px solid #000;
+    border-top: 1px solid #000;
+    opacity: 0;
+    font-size: 3em;
+    padding: 0;
+    margin: 0 0 1.5em 0;
+}
+
+.main.skils.init_2 h2 {
+    opacity: 1;
+    -ms-transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+    -webkit-transform: translate(0px, 0px);
+    -moz-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+}
+
+.skils .row:nth-child(2) .col-md-3:nth-child(1) img {
+    margin: 2.5px 0;
+}
+
+.skils .row:nth-child(2) .col-md-3:nth-child(2) img {
+    margin: 30px 0;
+}
+
+.skils .row:nth-child(2) .col-md-3:nth-child(3) img {
+    margin: 7.5px 0;
+}
+
+.skils .row:nth-child(5) .col-md-3:nth-child(1) img {
+    margin: 22.5px 0;
+}
+
+.skils .row:nth-child(5) .col-md-3:nth-child(4) img {
+    margin: 3.5px 0;
+}
+
+.skils .row:nth-child(8) .col-md-3:nth-child(2) img {
+    margin: 12.5px 0;
+}
+
+.skils .row:nth-child(8) .col-md-3:nth-child(3) img {
+    margin: 22px 0;
+}
+
+/*main-2 projects*/
+.projects .row {
+    margin-top: 30px;
+}
+
+.projects a {
+    display: block;
+}
+
+.projects .descr {
+    position: absolute;
+    line-height: 1.4;
+    top: 0;
+    padding: 20px;
+    opacity: 0;
+    -webkit-transition: -webkit-transform 0.15s ease-in-out,opacity 0.15s ease-in-out;
+    transition: transform 0.15s ease-in-out,opacity 0.15s ease-in-out;
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
+    color: #204056;
+}
+
+.projects a:hover  {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+    background-color: rgba(255,255,255,0.8);
+}
+
+.projects a:hover img {
+    opacity: .2;
+}
+
+.projects a:hover div {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+}
+
+@media only screen and (min-width: 600px) {
+    .skils, .projects {
+        padding: 5em 0 0 0; 
+    }
+}
+
+/* Footer */
+.footer {
+    padding-top: 2.5em;
+    background: rgba(239,238,238,1);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.projects .footer {
+    margin-top: 3em;
+}
+
+.footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+.footer ul li {
+    display: inline-block;
+    margin: 0 40px 0 0;
+}
+
+.footer ul li a {
+    color: #000;
+}
+
+.footer p {
+    text-align: right;
+}

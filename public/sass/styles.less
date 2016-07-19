@@ -1,0 +1,126 @@
+@import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+@import url(https://fonts.googleapis.com/css?family=Merriweather);
+
+@mainTextColor: #fff;
+@mainFont: 'Merriweather', serif;
+
+/* mixins */
+.nav-active {
+	background-color:rgba(216,25,47,1);
+	box-shadow:0 2px 4px rgba(0,0,0,.5); 
+	color: @mainTextColor;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	font-family: @mainFont;
+}
+
+body {
+	background-color: rgba(239,238,238,1);
+}
+
+/* Footer */
+.footer {
+	background-color: #333333;
+	color: @mainTextColor;
+	padding: 40px 0;
+
+	ul {
+		list-style: none;
+		margin: 0;
+	    padding: 0;
+	    float: left;
+
+	    li {
+			display: inline-block;
+			margin: 0 40px 0 0;
+
+			a {
+				color: @mainTextColor;
+			}
+		}
+	}
+}
+
+
+/* Main */
+.main {
+	padding: 40px 0 70px;
+
+	h2 {
+		text-align: center;
+		margin-bottom: 30px;
+	}
+
+	p {
+		line-height: 30px;
+	    font-size: 16px;
+	    margin: 0;
+	}
+
+	img {
+		margin: 0 24px 7px 0;
+	}
+}
+
+
+
+/* Jumbotrom */
+.jumbotrom {
+	height: 300px;
+	background: url(../img/city3.jpg) no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+	h2 {
+		margin: 85px 20px;
+		color: @mainTextColor;
+		text-align: center;
+	}
+}
+
+/* Header */
+.header {
+	background-color: rgba(239,238,238,.8);
+	padding: 15px 30px;
+	font-family: @mainFont;
+
+	h1 {
+		float: left;
+		margin: 0;
+		font-family: 'Indie Flower', cursive;
+	}
+
+	.nav {
+		display: inline-block;
+
+		li {
+			margin-right: 15px;
+
+			a {
+				color: #d8192f;
+				border: 1px solid red;
+				margin-left: 10px;
+				text-align: center;
+				width: 105px;
+			}
+		}
+	}	
+}
+
+
+
+.nav-pills li.active a,
+.nav-pills li a:hover,
+.nav-pills li.active a:hover {
+	.nav-active;
+}
+
+@media (min-width: 1200px)
+.container {
+    width: 940px;
+}
