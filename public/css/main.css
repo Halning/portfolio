@@ -363,8 +363,29 @@ p {
     transform: translate(0px, 0px);
 }
 
+.main.skils .row .col-md-3 img {
+    -webkit-transform: translate(30px, 0);
+    -moz-transform: translate(30px, 0);
+    -ms-transform: translate(30px, 0);
+    -o-transform: translate(30px, 0);
+    transform: translate(30px, 0);
+}
+
 .skils .row:nth-child(2) .col-md-3:nth-child(1) img {
     margin: 2.5px 0;
+}
+
+.main.skils.init_2 .row .col-md-3 img {
+    -ms-transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+    -webkit-transform: translate(0px, 0px);
+    -moz-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
 }
 
 .skils .row:nth-child(2) .col-md-3:nth-child(2) img {
