@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-6">
                 <a href="http://makewear.com.ua">
-                    <img class="img-responsive img-thumbnail" src="../img/mw1.png" alt="MakeWear">
+                    <img class="img-responsive img-thumbnail" src="img/mw1.png" alt="MakeWear">
                     <div class="descr" title="Интернет магазин одежды для оптовых и розничных покупателях">
                         Интернет магазин одежды для оптовых и розничных покупателей
                         <br>
