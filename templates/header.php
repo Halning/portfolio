@@ -26,7 +26,7 @@
 
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <link type="text/css" rel="stylesheet" href="../public/css/main.css"/>
+    <link type="text/css" rel="stylesheet" href="css/main.css"/>
 </head>
 
 
