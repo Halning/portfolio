@@ -1,0 +1,38 @@
+@import "../helpers/var.less";
+@import "../helpers/mixins.less";
+/*main-2 projects*/
+.projects {
+  .row {
+    margin-top: 30px;
+  }
+  a {
+    display: block;
+    &:hover {
+      opacity: 1;
+      background-color: rgba(255,255,255,0.8);
+      .transform-elem(scale(1));
+      img {
+        opacity: .2;
+      }
+      div {
+        opacity: 1;
+        .transform-elem(scale(1));
+      }
+    }
+  }
+  .descr {
+    position: absolute;
+    top: 0;
+    padding: 20px;
+    opacity: 0;
+    color: #204056;
+    text-align: left;
+    line-height: 2;
+    -webkit-transition: -webkit-transform 0.15s ease-in-out,opacity 0.15s ease-in-out;
+    transition: transform 0.15s ease-in-out,opacity 0.15s ease-in-out;
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+   .transform-elem(scale(0.95));
+  }
+}

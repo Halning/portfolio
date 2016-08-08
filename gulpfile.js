@@ -1,70 +1,50 @@
 var gulp = require('gulp');
+var less = require('gulp-less');
 var plumber = require('gulp-plumber'); // какой-то обработчик ошибок
 var postcss = require('gulp-postcss'); // несколько действий в трубе
 var concat = require('gulp-concat'); // обьединение и записб файлов в один
-var uglify = require('gulp-uglify'); // сжатие js
-var autoprefixer = require('autoprefixer');
-var sourcemaps = require('gulp-sourcemaps');
-var csso = require('gulp-csso');
-var inlineCss = require('gulp-inline-css');
+var LessAutoprefix = require('less-plugin-autoprefix');
+var autoprefix = new LessAutoprefix({browsers: ['last 2 versions']}); // automatic add prefixes
+var sourcemaps = require('gulp-sourcemaps'); // create source map file
+var csso = require('gulp-csso'); //минимизатор
 var path = {
     build: {//Тут мы укажем куда складывать готовые после сборки файлы
-        js: 'templates/shop/build',
-        css: 'templates/shop/build'
+        js: '',
+        css: 'public/dist/css'
     },
     src: {//Пути откуда брать исходники
         js_plugins: [],
         js_custom: [],
-        css: []
+        css: ['public/dist/css/main.css'],
+        less: ['public/css/less/main.less']
     },
     build_file: {
-        js_plugins: 'app.min.plug.js',
-        js_custom: 'app.min.custom.js',
+        js_plugins: '',
+        js_custom: '',
         css: 'app.min.css'
     },
     watch: {//Тут мы укажем, за изменением каких файлов мы хотим наблюдать
-        js: 'templates/shop/js/*.js',
-        css: 'templates/shop/css/*.css'
+        js: '',
+        css: 'public/css/*.less'
     }
 };
 
-gulp.task('jsp', function () {
-    return gulp.src(path.src.js_plugins)
-        .pipe(uglify())
-        .pipe(concat(path.build_file.js_plugins))
-        .pipe(gulp.dest(path.build.js));
-});
-
-gulp.task('jsc', function () {
-    return gulp.src(path.src.js_custom)
-        .pipe(uglify())
-        .pipe(concat(path.build_file.js_custom))
-        .pipe(gulp.dest(path.build.js));
-});
-
-gulp.task('css', function () {
-    return gulp.src(path.src.css)
+gulp.task('less', function () {
+    return gulp.src(path.src.less)
         .pipe(sourcemaps.init())
-        .pipe(postcss([autoprefixer()]))
+        .pipe(less({
+            plugins: [autoprefix]
+        }))
+        .pipe(gulp.dest(path.build.css))
         .pipe(concat(path.build_file.css))
         .pipe(csso())
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(path.build.css));
 });
 
-gulp.task('email', function () {
-    return gulp.src('templates/shop/mail.html')
-        .pipe(plumber())
-        .pipe(inlineCss({
-            preserveMediaQueries: true
-        }))
-        .pipe(gulp.dest('dist/'));
-});
 
 gulp.task('watcher', function () {
-    gulp.watch(path.src.css, ['css']);
-    gulp.watch(path.src.js_custom, ['jsc']);
-    gulp.watch('templates/shop/mail.html', ['email']);
+    gulp.watch(path.src.less, ['less']);
 });
 
 gulp.task('default', ['watcher']);

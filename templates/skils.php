@@ -1,8 +1,8 @@
 
-<div class="skils main">
+<div class="skills main">
     <div class="container">
 
-        <h2>Front-end skils</h2>
+        <h2>Front-end skills</h2>
         <div class="row">
             <div class="col-md-3 text-center">
                 <img src="img/html.png" width="100">
@@ -41,7 +41,7 @@
             </div>
         </div>
 
-        <h2>Back-end skils</h2>
+        <h2>Back-end skills</h2>
         <div class="row">
             <div class="col-md-3 text-center">
                 <img src="img/php.png" width="100">
@@ -98,7 +98,7 @@
                     <a href="#">О себе</a>
                 </li>
                 <li>
-                    <a href="skils.html">Навыки</a>
+                    <a href="skills.html">Навыки</a>
                 </li>
                 <li>
                     <a href="projects.html">Проэкты</a>

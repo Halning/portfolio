@@ -26,7 +26,7 @@
 
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <link type="text/css" rel="stylesheet" href="css/main.css"/>
+    <link type="text/css" rel="stylesheet" href="dist/css/app.min.css"/>
 </head>
 
 
@@ -37,7 +37,7 @@
             <a href="index.php" class="pjax">Home</a>
         </li>
         <li>
-            <a href="skils.php" class="pjax">Skils</a>
+            <a href="skils.php" class="pjax">Skills</a>
         </li>
         <li>
             <a href="projects.php" class="pjax">Work</a>

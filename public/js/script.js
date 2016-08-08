@@ -181,7 +181,7 @@ function myresizes() {
         fancyTitleIntro();
         setReadMore();
     } 
-    if ($(".skils").length > 0) {
+    if ($(".skills").length > 0) {
         window.setTimeout(function ()
         {
             $myelement.addClass("init_2");

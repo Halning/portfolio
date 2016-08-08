@@ -1,0 +1,79 @@
+@import "../helpers/var.less";
+@import "../helpers/mixins.less";
+/* main index */
+/* Jumbotrom */
+.home.main {
+  .jumbotrom {
+    background: url(@main-url) center center;
+    background-size: cover;
+    text-align: center;
+    position: relative;
+    top: 0;
+
+    .container {
+      text-align: center;
+      top: 50%;
+      position: relative;
+      margin: 0 auto;
+      .transform-elem(translateY(-60%));
+    }
+
+    a {
+      font-size: 0.857142857142em;
+      font-style: italic;
+      font-weight: 500;
+      color: #fff;
+      opacity: 0;
+      text-decoration: none;
+      cursor: pointer;
+      .transform-elem(translate(0, 60px));
+      .transitions-elem(all, 1s, ease);
+    }
+
+    h1 {
+      opacity: 0;
+      font-size: 3em;
+      padding: 0;
+      margin: 0;
+      color: #fff;
+      span {
+        font-family: @font-Indie;
+      }
+    }
+
+    h2 {
+      font-size: 1.5em;
+      color: #fff;
+      text-align: center;
+      opacity: 0;
+      .transform-elem(translate(0, 20px));
+    }
+  }
+
+  .jumbotrom.init_1 h1 {
+    opacity: 1;
+    .transitions-elem(opacity, 0.5s, ease, 1s);
+  }
+
+  .jumbotrom.init_2 {
+    h2 {
+      opacity: 1;
+      margin-bottom: 0.5em;
+      .transitions-elem(all, 1s, ease);
+      .transform-elem(translate(0px, 0px));
+    }
+
+    a {
+      opacity: 1;
+      .transform-elem(translate(0px, 0px));
+    }
+  }
+
+  /* start reading */
+  .start_reading {
+    padding-top: 1.5em;
+    @media only screen and (min-width: 500px) {
+      padding-top: 2.5em;
+    }
+  }
+}
