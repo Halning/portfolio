@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 var less = require('gulp-less');
 var plumber = require('gulp-plumber'); // какой-то обработчик ошибок
-var postcss = require('gulp-postcss'); // несколько действий в трубе
 var concat = require('gulp-concat'); // обьединение и записб файлов в один
 var LessAutoprefix = require('less-plugin-autoprefix');
 var autoprefix = new LessAutoprefix({browsers: ['last 2 versions']}); // automatic add prefixes

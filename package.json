@@ -1,23 +1,24 @@
 {
-  "name": "www",
+  "name": "Main usage",
   "version": "2.0.0",
-  "description": "makewear",
+  "description": "Andreii packege",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Halning/portfolio"
+  },
   "dependencies": {
-    "gulp-uglifycss": "~1.0.6"
   },
   "devDependencies": {
-    "autoprefixer": "^6.3.3",
     "less-plugin-autoprefix": "^1.5.1",
     "gulp": "^3.9.1",
     "gulp-less":"^3.1.0",
     "gulp-concat": "^2.6.0",
     "gulp-csso": "^2.0.0",
     "gulp-plumber": "^1.1.0",
-    "gulp-postcss": "^6.1.0",
     "gulp-sourcemaps": "^1.6.0"
   },
   "author": "",

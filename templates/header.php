@@ -11,10 +11,10 @@
     <link rel="shortcut icon" href="img/zerg.png" type="image/png">
 
     <meta name="description"
-          content="Hello, my name is Jeremy and I am a web and graphic designer. I am into clean, modern and usable design. My experience consists of both Photoshop design and coding. I generally code all my designs using component management systems such as drupal or wordpress, static html/css, and flash action script coding. I enjoy spending a lot of time creating original designs in Photoshop and exploring new programming techniques. The result is numerous icons, wallpapers, and wordpress themes, among other products. I'm also addicted to photography and I spend most of my free time taking pictures and exploring this form of art.">
+          content="Здравствуйте меня зовут Андрей. Я Full Stack программист. Я люблю кодить.">
     <meta name="author" content="Andrei Khomenko">
     <meta name="keywords"
-          content="jeremy, sallee, graphisme, graphic, photoshop, logo, art, logotype, creation, inspiration, web, internet, layout, salleedesign, projet, project, work, travaux, web, facebook, twitter, création, creation, webdesign, wodpress, cms, webdesigner, print, identity, branding, professional">
+          content="andrei, khomenko, angular, php, jquery, javascript, cms, gulp, bootstrap, front-end, web, internet, layout, salleedesign, projet, project, work,  professional">
 
 
     <!-- Mobile viewport optimized: j.mp/bplateviewport -->
