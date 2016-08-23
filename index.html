@@ -1,59 +1,69 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head>
-    <title>My Site</title>
-    <meta charset="utf-8">
-    <link rel="shortcut icon" href="img/zerg.png" type="image/png">
+    <head>
+        <title>My Site</title>
+        <meta charset="utf-8">
+        <link rel="shortcut icon" href="public/img/zerg.png" type="image/png">
 
-    <meta name="description"
-          content="Здравствуйте меня зовут Андрей. Я Full Stack программист. Я люблю кодить.">
-    <meta name="author" content="Andrei Khomenko">
-    <meta name="keywords"
-          content="andrei, khomenko, angular, php, jquery, javascript, cms, gulp, bootstrap, front-end, web, internet, layout, salleedesign, projet, project, work,  professional">
-
-    <!-- Mobile viewport optimized: j.mp/bplateviewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!--include bootstrap css-framework-->
-    <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap-theme.css">
-
-    <!-- Include the core AngularJS library -->
-    <script src="../node_modules/angular/angular.min.js"></script>
-
-    <!-- Include the AngularJS routing library -->
-    <script src="../node_modules/angular-route/angular-route.min.js"
-
-    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-    <!--<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>-->
-    <link type="text/css" rel="stylesheet" href="dist/css/app.min.css"/>
-</head>
+        <meta name="description"
+              content="Здравствуйте меня зовут Андрей. Я Full Stack программист. Я люблю кодить.">
+        <meta name="author" content="Andrei Khomenko">
+        <meta name="keywords"
+              content="andrei, khomenko, angular, php, jquery, javascript, cms, gulp, bootstrap, front-end, web, internet, layout, salleedesign, projet, project, work,  professional">
 
 
-<body>
-<div class="header transparent clearfix in white">
-    <ul class="nav nav-pills">
-        <li class="active">
-            <a href="index.php" class="pjax">Home</a>
-        </li>
-        <li>
-            <a href="skils.php" class="pjax">Skills</a>
-        </li>
-        <li>
-            <a href="projects.php" class="pjax">Work</a>
-        </li>
-        <li>
-            <a href="contact.php" class="pjax">Контакты</a>
-        </li>
-    </ul>
-</div>
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<div id="pjax-container">
-</div>
+        <!-- Include the core AngularJS library -->
+        <script src="/node_modules/angular/angular.min.js"></script>
 
-<!-- js scripts
-<script type="text/javascript" defer async src="js/jquery.pjax.js"></script>-->
-<script type="text/javascript" defer async src="js/script.js"></script>
-</body>
+        <!-- Include the AngularJS routing library -->
+        <script src="/node_modules/angular-route/angular-route.min.js"></script>
+
+
+        <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+        <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link type="text/css" rel="stylesheet" href="public/dist/css/app.min.css"/>
+    </head>
+
+
+    <body ng-app="GalleryApp">
+        <div class="header transparent clearfix in white">
+            <ul class="nav nav-pills">
+                <li class="active">
+                    <a href="#/" class="pjax">Home</a>
+                </li>
+                <li>
+                    <a href="#skils/" class="pjax">Skills</a>
+                </li>
+                <li>
+                    <a href="public/projects.php" class="pjax">Work</a>
+                </li>
+                <li>
+                    <a href="contact.php" class="pjax">Контакты</a>
+                </li>
+            </ul>
+        </div>
+
+        <div ng-view></div>
+
+        <!-- Modules -->
+        <script src="public/js/app.js"></script>
+
+        <!-- Controllers-->
+        <script src="public/js/controllers/MainController.js"></script>
+        <!--<script src="js/controllers/PhotoController.js"></script>
+
+        <!-- Services
+        <script src="js/services/photos.js"></script>-->
+
+        <!-- Directives -->
+        <!--<script src="public/js/directives/jquryScript.js"></script>
+
+
+        <!-- js scripts -->
+
+    </body>
 </html>

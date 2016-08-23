@@ -11,12 +11,15 @@
     "url": "https://github.com/Halning/portfolio"
   },
   "dependencies": {
-
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.0"
   },
   "devDependencies": {
     "less-plugin-autoprefix": "^1.5.1",
     "gulp": "^3.9.1",
-    "gulp-less":"^3.1.0",
+    "gulp-less": "^3.1.0",
     "gulp-concat": "^2.6.0",
     "gulp-csso": "^2.0.0",
     "gulp-plumber": "^1.1.0",

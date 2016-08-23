@@ -1,7 +1,7 @@
 <?php
 
     // configuration
-    require("../includes/config.php");
+    //require("../includes/config.php");
 
     // render portfolio
-    render("main.php", ["title" => "I am Andreii"]);
+    //render("main.php", ["title" => "I am Andreii"]);
