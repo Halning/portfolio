@@ -1,9 +1,10 @@
-<div class="main home">
+<div class="main home" ng-controller="MainController">
+    {{ sayHello() }}
     <div class="jumbotrom full-image">
         <div class="container">
             <h1>I am <span>Andrei</span></h1>
             <h2>Full stack developer</h2>
-            <a class='read-more'>read more</a>
+            <read-more></read-more>
         </div>
     </div>
 
@@ -19,17 +20,17 @@
             <h4>Декабрь 2014 – Август 2015</h4>
             <p>
                 По совету друга и наставника (опытного программиста) начал учить Web-програмирование на
-                <a href="https://www.codecademy.com/" target="_blank">CodeCademy</a>,
+                <a href="{{ links.codeAcademy }}" target="_blank">CodeCademy</a>,
                 а так же на других ресурсах доступных в интернете.
                 Получив первые знание сразу начал реализовывать их на практике в собственном проекте
-                <a href="https://github.com/Halning/brovary" target="_blank">https://github.com/Halning/brovary</a>.
+                <a href="{{ links.gitHub }}" target="_blank">https://github.com/Halning/brovary</a>.
                 К сожалению проект не был до конца реализован так как наступил Этап 2.
             </p>
 
             <h2>Этап 2&nbsp;&nbsp;<span>&nbsp;&nbsp;Первая работа</span></h2>
             <h4>Август 2015 – Июнь 2016</h4>
             <p>
-                Компания <a href="http://makewear.club/" target="_blank">MakeWear</a>.
+                Компания <a href="{{ links.makeWear }}" target="_blank">MakeWear</a>.
                 Был взят в компанию для разработки парсера(скраппера) товаров из более 30 сайтов.
                 Скраппер реализовывался на PHP в ООП с использованием шаблонов проектирования.
             <p>
@@ -41,7 +42,7 @@
             </p>
             <p>
                 В последние месяцы выполнял много задач по разработки Акции компании от верстки до серверной части.
-                А также в свободное время проходил курс CS50 - <a href="https://cs50.harvard.edu/" target="_blank">https://cs50.harvard.edu/</a>.
+                А также в свободное время проходил курс CS50 - <a href="{{ links.cs50 }}" target="_blank">https://cs50.harvard.edu/</a>.
                 В компании работал в
                 scrum-команде.
                 Есть небольшой опыт в DevOps и Azure.
@@ -71,26 +72,7 @@
         </div>
     </div>
 
+<my-footer></my-footer>
 
-    <div class="footer">
-        <div class="container">
-            <ul>
-                <li>
-                    <a href="#">О себе</a>
-                </li>
-                <li>
-                    <a href="pages/skils.html">Навыки</a>
-                </li>
-                <li>
-                    <a href="pages/projects.html">Проэкты</a>
-                </li>
-                <li>
-                    <a href="pages/contact.html">Контакты</a>
-                </li>
-            </ul>
-            <p class="pull-right">KYIV 2016</p>
-        </div>
-    </div>
-    <script type="text/javascript" defer src="../public/js/script.js"></script>
 </div>
 

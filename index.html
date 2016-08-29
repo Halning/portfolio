@@ -30,22 +30,9 @@
 
 
     <body ng-app="GalleryApp">
-        <div class="header transparent clearfix in white">
-            <ul class="nav nav-pills">
-                <li class="active">
-                    <a href="#/" class="pjax">Home</a>
-                </li>
-                <li>
-                    <a href="#skils/" class="pjax">Skills</a>
-                </li>
-                <li>
-                    <a href="public/projects.php" class="pjax">Work</a>
-                </li>
-                <li>
-                    <a href="contact.php" class="pjax">Контакты</a>
-                </li>
-            </ul>
-        </div>
+
+        <!-- navigation -->
+        <navigation></navigation>
 
         <div ng-view></div>
 
@@ -54,16 +41,16 @@
 
         <!-- Controllers-->
         <script src="public/js/controllers/MainController.js"></script>
-        <!--<script src="js/controllers/PhotoController.js"></script>
+        <script src="public/js/controllers/SkillsController.js"></script>
+        <script src="public/js/controllers/ProjectController.js"></script>
 
         <!-- Services
         <script src="js/services/photos.js"></script>-->
 
         <!-- Directives -->
-        <!--<script src="public/js/directives/jquryScript.js"></script>
-
-
-        <!-- js scripts -->
+        <script src="public/js/directives/readMore.js"></script>
+        <script src="public/js/directives/nav.js"></script>
+        <script src="public/js/directives/footer.js"></script>
 
     </body>
 </html>

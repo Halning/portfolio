@@ -1,0 +1,19 @@
+<div class="projects main" ng-controller="ProjectController">
+    <div class="hidden" ng-controller="MainController">
+        {{ sayHello() }}
+    </div>
+    <div class="container">
+        <div class="row" ng-repeat="value in projects">
+            <div class="col-md-6" ng-repeat="project in value">
+                <a href="{{ project.href }}">
+                    <img class="img-responsive img-thumbnail" ng-src="{{ project.src }}" alt="MakeWear">
+                    <div class="descr" title="Интернет магазин одежды для оптовых и розничных покупателях">
+                        {{ project.desc }}
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <my-footer></my-footer>
+</div>

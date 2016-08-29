@@ -13,6 +13,12 @@ app.config(function ($routeProvider) {
             //controller: 'PhotoController',
             templateUrl: 'templates/skils.html'
         })
+        .when('/projects', {
+            templateUrl: 'templates/projects.html'
+        })
+        .when('/contact', {
+            templateUrl: 'templates/contact.html'
+        })
         .otherwise({
             redirectTo: '/'
         });
