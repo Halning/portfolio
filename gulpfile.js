@@ -15,7 +15,7 @@ var path = {
         js_plugins: [],
         js_custom: [],
         css: ['public/dist/css/main.css'],
-        less: ['public/css/less/main.less']
+        less: ['public/css/less/*.less']
     },
     build_file: {
         js_plugins: '',
@@ -24,7 +24,7 @@ var path = {
     },
     watch: {//Тут мы укажем, за изменением каких файлов мы хотим наблюдать
         js: '',
-        css: 'public/css/*.less'
+        less: 'public/css/less/**/*'
     }
 };
 
@@ -43,7 +43,7 @@ gulp.task('less', function () {
 
 
 gulp.task('watcher', function () {
-    gulp.watch(path.src.less, ['less']);
+    gulp.watch(path.watch.less, ['less']);
 });
 
 gulp.task('default', ['watcher']);

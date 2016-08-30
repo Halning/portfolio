@@ -3,13 +3,13 @@
 /* animation view */
 .animate-skills.ng-enter {
   .keyframes(fade-in-skill, 0, 1, skewY(-15deg), skewY(0deg));
-  .animation-elem(1s, fade-in-skill, ease);
+  .animation-elem(0.5s, fade-in-skill, ease);
   z-index: 100;
 }
 
 .animate-skills.ng-leave {
   .keyframes(fade-out-skill, 1, 0, scale(1, 1), scale(0.1, 0.1));
-  .animation-elem(1s, fade-out-skill, ease);
+  .animation-elem(0.5s, fade-out-skill, ease);
   z-index:99;
 }
 /* main-2 skills */
@@ -59,11 +59,11 @@
 .skills.init_2 {
   h2 {
     opacity: 1;
-    .transitions-elem(all, 1s, ease);
+    .transitions-elem(all, 0.5s, ease);
     .transform-elem(translate(0px, 0px));
   }
   .row .col-md-3 img {
-    .transitions-elem(all, 1s, ease);
+    .transitions-elem(all, 0.5s, ease);
     .transform-elem(translate(0px, 0px));
   }
 }

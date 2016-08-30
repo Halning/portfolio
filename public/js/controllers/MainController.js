@@ -40,7 +40,13 @@ app.controller('MainController', ['$scope', function ($scope) {
             if ($(".skills").length > 0) {
                 window.setTimeout(function () {
                     $myelement.addClass("init_2");
-                }, 500);
+                }, 150);
+            }
+
+            if ($(".projects").length > 0) {
+                window.setTimeout(function () {
+                    $myelement.addClass("init_2");
+                }, 150);
             }
         }
 
