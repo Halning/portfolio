@@ -1,6 +1,19 @@
 @import "../helpers/var.less";
 @import "../helpers/mixins.less";
 /* main index */
+/* animation view */
+.animate-home.ng-enter {
+  .keyframes(fade-in-home, 0, 1, scale(0.1, 0.1), scale(1, 1));
+  .animation-elem(1s, fade-in-home, ease);
+  z-index: 100;
+}
+
+.animate-home.ng-leave {
+  .keyframes(fade-out-home, 1, 0, scale(1, 1), scale(0.1, 0.1));
+  .animation-elem(1s, fade-out-home, ease);
+  z-index:99;
+}
+
 /* Jumbotrom */
 .home.main {
   .jumbotrom {

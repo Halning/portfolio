@@ -19,3 +19,47 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+/* animation views replace */
+.animation-elem(@duration, @function, @timing: easy){
+  -webkit-animation: @duration @function;
+  -moz-animation: @duration @function;
+  -o-animation: @duration @function;
+  animation: @duration @function;
+  animation-timing-function: @timing;
+}
+
+.keyframes(@name, @opacityFrom, @opacityTo, @functionTransformFrom, @functionTransformTo) {
+  @keyframes @name {
+    from {
+      opacity: @opacityFrom;
+      transform: @functionTransformFrom;
+    }
+    to {
+      opacity: @opacityTo;
+      transform: @functionTransformTo;
+    }
+  }
+
+  @-moz-keyframes @name {
+    from {
+      opacity: @opacityFrom;
+      transform: @functionTransformFrom;
+    }
+    to {
+      opacity: @opacityTo;
+      transform: @functionTransformTo;
+    }
+  }
+
+  @-webkit-keyframes @name {
+    from {
+      opacity: @opacityFrom;
+      transform: @functionTransformFrom;
+    }
+    to {
+      opacity: @opacityTo;
+      transform: @functionTransformTo;
+    }
+  }
+}

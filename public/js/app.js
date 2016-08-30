@@ -1,22 +1,24 @@
 /**
  * Created by halning on 23.08.16.
  */
-var app = angular.module('GalleryApp', ['ngRoute']);
+var app = angular.module('GalleryApp', ['ngRoute', 'ngAnimate']);
 
 app.config(function ($routeProvider) {
     $routeProvider
         .when('/', {
-            controller: 'MainController',
+            controller: 'HomeController',
             templateUrl: 'templates/main.html'
         })
-        .when('/skils', {
-            //controller: 'PhotoController',
-            templateUrl: 'templates/skils.html'
+        .when('/skills', {
+            controller: 'SkillsController',
+            templateUrl: 'templates/skills.html'
         })
         .when('/projects', {
+            controller: 'ProjectController',
             templateUrl: 'templates/projects.html'
         })
         .when('/contact', {
+            //controller: 'MainController',
             templateUrl: 'templates/contact.html'
         })
         .otherwise({

@@ -2,13 +2,7 @@
  * Created by halning on 23.08.16.
  */
 "use strict";
-app.controller('MainController', ['$scope', function($scope) {
-    $scope.links = {
-        codeAcademy: 'https://www.codecademy.com/',
-        gitHub: 'https://github.com/Halning/brovary',
-        makeWear: 'http://makewear.club/',
-        cs50: 'https://cs50.harvard.edu/'
-    };
+app.controller('MainController', ['$scope', function ($scope) {
     $scope.sayHello = function () {
         var windowWidth = $(window).width();
         var windowHeight = $(window).height();
@@ -44,8 +38,7 @@ app.controller('MainController', ['$scope', function($scope) {
             }
 
             if ($(".skills").length > 0) {
-                window.setTimeout(function ()
-                {
+                window.setTimeout(function () {
                     $myelement.addClass("init_2");
                 }, 500);
             }
@@ -67,8 +60,7 @@ app.controller('MainController', ['$scope', function($scope) {
          */
         function fancyTitleIntro() {
             $myelement.find(".jumbotrom").addClass("init_1");
-            window.setTimeout(function ()
-            {
+            window.setTimeout(function () {
                 $myelement.find(".jumbotrom").addClass("init_2");
             }, 500);
         }
@@ -76,7 +68,7 @@ app.controller('MainController', ['$scope', function($scope) {
         /**
          * change header depend what background interactive
          */
-        function myScroll( ) {
+        function myScroll() {
             var st = $myelement.scrollTop();
 
             //up and down scroll for the header
@@ -107,7 +99,8 @@ app.controller('MainController', ['$scope', function($scope) {
             }
             $lastScrollTop = st;
 
-            if ($myelement.find(".jumbotrom").length > 0) {
+            if (!~window.location.href.indexOf('skills') && !~window.location.href.indexOf('projects') && !~window.location.href.indexOf('contact')) {
+                console.log(window.location.href);
                 if (windowWidth > 1200) {
                     var revertColor = windowHeight - 40;
                 } else {

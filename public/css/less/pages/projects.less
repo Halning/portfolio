@@ -1,5 +1,17 @@
 @import "../helpers/var.less";
 @import "../helpers/mixins.less";
+/* animation view */
+.animate-projects.ng-enter {
+  .keyframes(fade-in-projects, 0, 1, translateY(1000px), translateY(0px));
+  .animation-elem(1s, fade-in-projects, ease-out);
+  z-index: 100;
+}
+
+.animate-projects.ng-leave {
+  .keyframes(fade-out-projects, 1, 0, translateY(0px), translateY(1000px));
+  .animation-elem(1s, fade-out-projects, ease-out);
+  z-index:99;
+}
 /*main-2 projects*/
 .projects {
   .row {

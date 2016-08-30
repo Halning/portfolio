@@ -6,6 +6,7 @@
   margin-left: auto;
   margin-right: auto;
 }
+/* animation views replace */
 /* Header */
 .header {
   padding: 15px 30px;
@@ -116,6 +117,37 @@
   transition: color 1s ease 0s;
 }
 /* main index */
+/* animation view */
+.animate-home.ng-enter {
+  animation: 1s fade-in-home;
+  animation-timing-function: ease;
+  z-index: 100;
+}
+@keyframes fade-in-home {
+  from {
+    opacity: 0;
+    transform: scale(0.1, 0.1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+.animate-home.ng-leave {
+  animation: 1s fade-out-home;
+  animation-timing-function: ease;
+  z-index: 99;
+}
+@keyframes fade-out-home {
+  from {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.1, 0.1);
+  }
+}
 /* Jumbotrom */
 .home.main {
   /* start reading */
@@ -258,6 +290,37 @@
     height: 45px;
   }
 }
+/* animation view */
+.animate-skills.ng-enter {
+  animation: 1s fade-in-skill;
+  animation-timing-function: ease;
+  z-index: 100;
+}
+@keyframes fade-in-skill {
+  from {
+    opacity: 0;
+    transform: skewY(-15deg);
+  }
+  to {
+    opacity: 1;
+    transform: skewY(0deg);
+  }
+}
+.animate-skills.ng-leave {
+  animation: 1s fade-out-skill;
+  animation-timing-function: ease;
+  z-index: 99;
+}
+@keyframes fade-out-skill {
+  from {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.1, 0.1);
+  }
+}
 /* main-2 skills */
 .skills .col-md-3 {
   height: 165px;
@@ -306,6 +369,37 @@
 .skills.init_2 .row .col-md-3 img {
   transition: all 1s ease 0s;
   transform: translate(0px, 0px);
+}
+/* animation view */
+.animate-projects.ng-enter {
+  animation: 1s fade-in-projects;
+  animation-timing-function: ease-out;
+  z-index: 100;
+}
+@keyframes fade-in-projects {
+  from {
+    opacity: 0;
+    transform: translateY(1000px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+.animate-projects.ng-leave {
+  animation: 1s fade-out-projects;
+  animation-timing-function: ease-out;
+  z-index: 99;
+}
+@keyframes fade-out-projects {
+  from {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(1000px);
+  }
 }
 /*main-2 projects*/
 .projects .row {
@@ -388,6 +482,20 @@ body {
   overflow: auto;
   display: block;
   position: relative;
+}
+.view-container {
+  position: relative;
+}
+.animate-home.ng-enter,
+.animate-home.ng-leave,
+.animate-skills.ng-enter,
+.animate-skills.ng-leave,
+.animate-projects.ng-enter,
+.animate-projects.ng-leave {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  right: 0;
 }
 .skills,
 .projects {

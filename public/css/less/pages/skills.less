@@ -1,6 +1,17 @@
 @import "../helpers/var.less";
 @import "../helpers/mixins.less";
+/* animation view */
+.animate-skills.ng-enter {
+  .keyframes(fade-in-skill, 0, 1, skewY(-15deg), skewY(0deg));
+  .animation-elem(1s, fade-in-skill, ease);
+  z-index: 100;
+}
 
+.animate-skills.ng-leave {
+  .keyframes(fade-out-skill, 1, 0, scale(1, 1), scale(0.1, 0.1));
+  .animation-elem(1s, fade-out-skill, ease);
+  z-index:99;
+}
 /* main-2 skills */
 .skills {
   .col-md-3 {
