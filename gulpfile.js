@@ -6,6 +6,11 @@ var LessAutoprefix = require('less-plugin-autoprefix');
 var autoprefix = new LessAutoprefix({browsers: ['last 2 versions']}); // automatic add prefixes
 var sourcemaps = require('gulp-sourcemaps'); // create source map file
 var csso = require('gulp-csso'); //минимизатор
+var spritesmith = require('gulp.spritesmith'); // создание спрайтов
+var imagemin = require('gulp-imagemin'); // минимизация изображений
+var buffer = require('vinyl-buffer'); // для минимизации картинок
+var del = require('del'); // удаление папок и файлов
+
 var path = {
     build: {//Тут мы укажем куда складывать готовые после сборки файлы
         js: '',
@@ -41,6 +46,39 @@ gulp.task('less', function () {
         .pipe(gulp.dest(path.build.css));
 });
 
+// Удаление старых файлов
+gulp.task('sprite-clean', function () {
+    del(['public/img/sprite-*.png']);
+});
+
+// Создание спрайтов
+gulp.task('sprite-create', ['sprite-clean'], function () {
+    var fileName = 'sprite-' + Math.random().toString().replace(/[^0-9]/g, '') + '.png';
+
+    var spriteData = gulp.src('public/img/sprite/*.png')
+        .pipe(spritesmith({
+            imgName: fileName,
+            cssName: 'sprite.less',
+            cssFormat: 'less',
+            cssVarMap: function (sprite) {
+                sprite.name = 'icon-' + sprite.name;
+            },
+            imgPath: '../../img/' + fileName
+        }));
+
+    spriteData.img
+ .pipe(buffer())
+        .pipe(imagemin({
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}]
+        }))
+        .pipe(gulp.dest('public/img/'));
+
+    spriteData.css
+        .pipe(gulp.dest('public/css/less/helpers/'));
+
+    return spriteData;
+});
 
 gulp.task('watcher', function () {
     gulp.watch(path.watch.less, ['less']);

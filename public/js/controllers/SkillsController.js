@@ -7,38 +7,38 @@ app.controller('SkillsController', ['$scope', function($scope) {
         $scope.first = [
             {
                 name: 'HTML & CSS',
-                src: '../public/img/html.png'
+                icon: 'html'
             },
             {
                 name: 'SASS & LESS',
-                src: '../public/img/sass-less.png'
+                icon: 'less'
             },
             {
                 name: 'Bootstrap 3',
-                src: '../public/img/bootstrap.png'
+                icon: 'boot'
             },
             {
                 name: 'JS',
-                src: '../public/img/js.png'
+                icon: 'js'
             }
 
         ],
         $scope.second = [
             {
                 name: 'jQuery',
-                src: '../public/img/jquery.gif'
+                icon: 'jquery'
             },
             {
                 name: 'AngularJS',
-                src: '../public/img/ang.png'
+                icon: 'ang'
             },
             {
                 name: 'Gulp',
-                src: '../public/img/gulp.png'
+                icon: 'gulp'
             },
             {
                 name: 'jQuery-UI',
-                src: '../public/img/jq-ui.png'
+                icon: 'jq-ui'
             }
         ],
     ]
@@ -47,19 +47,19 @@ app.controller('SkillsController', ['$scope', function($scope) {
         $scope.first = [
             {
                 name: 'PHP + OOP',
-                src: '../public/img/php.png'
+                icon: 'php'
             },
             {
                 name: 'SQL',
-                src: '../public/img/sql.png'
+                icon: 'sql'
             },
             {
                 name: 'MVC',
-                src: '../public/img/mvc.png'
+                icon: 'mvc'
             },
             {
                 name: 'Composer',
-                src: '../public/img/composer.png'
+                icon: 'composer'
             }
         ]
     ]
@@ -68,19 +68,19 @@ app.controller('SkillsController', ['$scope', function($scope) {
         $scope.first = [
             {
                 name: 'Git',
-                src: '../public/img/git.png'
+                icon: 'git'
             },
             {
                 name: 'Azure',
-                src: '../public/img/azure.png'
+                icon: 'azure'
             },
             {
                 name: 'Cisco',
-                src: '../public/img/cisco.png'
+                icon: 'cisco'
             },
             {
                 name: 'English pre-intermediate',
-                src: '../public/img/eng.png'
+                icon: 'english'
             }
         ]
     ]

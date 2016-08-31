@@ -7,6 +7,7 @@
   margin-right: auto;
 }
 /* animation views replace */
+/* for skills icon */
 /* Header */
 .header {
   padding: 15px 30px;
@@ -117,7 +118,7 @@
 /* main index */
 /* animation view */
 .animate-home.ng-enter {
-  animation: 0.5s fade-in-home;
+  animation: 0.7s fade-in-home;
   animation-timing-function: ease;
   z-index: 100;
 }
@@ -132,7 +133,7 @@
   }
 }
 .animate-home.ng-leave {
-  animation: 0.5s fade-out-home;
+  animation: 0.7s fade-out-home;
   animation-timing-function: ease;
   z-index: 99;
 }
@@ -291,9 +292,56 @@
     height: 45px;
   }
 }
+/*
+LESS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: @icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+@icon-home: x y offset_x offset_y width height total_width total_height image_path name;
+
+At the bottom of this section, we provide information about the spritesheet itself
+@spritesheet: width height image @spritesheet-sprites;
+*/
+/*
+The provided classes are intended to be used with the array-like variables
+
+.icon-home {
+  .sprite-width(@icon-home);
+}
+.icon-email {
+  .sprite(@icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+/*
+The `.sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of LESS
+
+This must be run when you have at least 2 sprites.
+  If run with a single sprite, then there will be reference errors.
+
+.sprites(@spritesheet-sprites);
+*/
 /* animation view */
 .animate-skills.ng-enter {
-  animation: 0.5s fade-in-skill;
+  animation: 0.7s fade-in-skill;
   animation-timing-function: ease;
   z-index: 100;
 }
@@ -308,7 +356,7 @@
   }
 }
 .animate-skills.ng-leave {
-  animation: 0.5s fade-out-skill;
+  animation: 0.7s fade-out-skill;
   animation-timing-function: ease;
   z-index: 99;
 }
@@ -327,17 +375,121 @@
   height: 165px;
   margin-bottom: 4em;
 }
-.skills .col-md-3 img {
+.skills .col-md-3 div {
+  margin: 0 auto;
   transform: translate(30px, 0);
 }
-.skills .row:nth-child(2) .col-md-3:nth-child(1) img {
-  margin: 2.5px 0;
+.skills .col-md-3 .icon-html {
+  background-image: url(../../img/sprite-0737389073939994.png);
+  background-position: -196px 0px;
+  width: 100px;
+  height: 109px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
-.skills .row:nth-child(2) .col-md-3:nth-child(2) img {
-  margin: 30px 0;
+.skills .col-md-3 .icon-less {
+  background-image: url(../../img/sprite-0737389073939994.png);
+  background-position: -396px -268px;
+  width: 100px;
+  height: 45px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
-.skills .row:nth-child(2) .col-md-3:nth-child(3) img {
-  margin: 7.5px 0;
+.skills .col-md-3 .icon-boot {
+  background-image: url(../../img/sprite-0737389073939994.png);
+  background-position: -200px -218px;
+  width: 100px;
+  height: 100px;
+  margin-top: 7.5px;
+  margin-bottom: 7.5px;
+}
+.skills .col-md-3 .icon-js {
+  background-image: url(../../img/sprite-0737389073939994.png);
+  background-position: 0px 0px;
+  width: 100px;
+  height: 115px;
+}
+.skills .col-md-3 .icon-jquery {
+  background-image: url(../../img/sprite-0737389073939994.png);
+  background-position: -100px -115px;
+  width: 100px;
+  height: 100px;
+}
+.skills .col-md-3 .icon-ang {
+  background-image: url(../../img/sprite-0737389073939994.png);
+  background-position: 0px -115px;
+  width: 100px;
+  height: 103px;
+}
+.skills .col-md-3 .icon-gulp {
+  background-image: url(../../img/sprite-0737389073939994.png);
+  background-position: -396px 0px;
+  width: 100px;
+  height: 100px;
+}
+.skills .col-md-3 .icon-jq-ui {
+  background-image: url(../../img/sprite-0737389073939994.png);
+  background-position: -100px -218px;
+  width: 100px;
+  height: 100px;
+}
+.skills .col-md-3 .icon-php {
+  background-image: url(../../img/sprite-0737389073939994.png);
+  background-position: -100px -318px;
+  width: 100px;
+  height: 52px;
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+.skills .col-md-3 .icon-sql {
+  background-image: url(../../img/sprite-0737389073939994.png);
+  background-position: -296px 0px;
+  width: 100px;
+  height: 100px;
+  margin-top: 7.5px;
+  margin-bottom: 7.5px;
+}
+.skills .col-md-3 .icon-mvc {
+  background-image: url(../../img/sprite-0737389073939994.png);
+  background-position: -396px -100px;
+  width: 100px;
+  height: 93px;
+  margin-top: 11.5px;
+  margin-bottom: 11.5px;
+}
+.skills .col-md-3 .icon-composer {
+  background-image: url(../../img/sprite-0737389073939994.png);
+  background-position: -100px 0px;
+  width: 96px;
+  height: 115px;
+}
+.skills .col-md-3 .icon-git {
+  background-image: url(../../img/sprite-0737389073939994.png);
+  background-position: 0px -218px;
+  width: 100px;
+  height: 100px;
+}
+.skills .col-md-3 .icon-azure {
+  background-image: url(../../img/sprite-0737389073939994.png);
+  background-position: -396px -193px;
+  width: 100px;
+  height: 75px;
+  margin-top: 22.5px;
+  margin-bottom: 22.5px;
+}
+.skills .col-md-3 .icon-cisco {
+  background-image: url(../../img/sprite-0737389073939994.png);
+  background-position: 0px -318px;
+  width: 100px;
+  height: 56px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+.skills .col-md-3 .icon-english {
+  background-image: url(../../img/sprite-0737389073939994.png);
+  background-position: -296px -100px;
+  width: 100px;
+  height: 100px;
 }
 .skills .row:nth-child(5) .col-md-3:nth-child(1) img {
   margin: 22.5px 0;
@@ -367,7 +519,7 @@
   transition: all 0.5s ease 0s;
   transform: translate(0px, 0px);
 }
-.skills.init_2 .row .col-md-3 img {
+.skills.init_2 .row .col-md-3 > div {
   transition: all 0.5s ease 0s;
   transform: translate(0px, 0px);
 }

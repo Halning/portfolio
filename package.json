@@ -15,16 +15,21 @@
     "angular-animate": "^1.5.8",
     "angular-route": "^1.5.8",
     "bootstrap": "^3.3.7",
-    "jquery": "^3.1.0"
+    "del": "^2.2.2",
+    "gulp.spritesmith": "^6.2.1",
+    "jquery": "^3.1.0",
+    "vinyl-buffer": "^1.0.0"
   },
   "devDependencies": {
-    "less-plugin-autoprefix": "^1.5.1",
     "gulp": "^3.9.1",
-    "gulp-less": "^3.1.0",
     "gulp-concat": "^2.6.0",
     "gulp-csso": "^2.0.0",
+    "gulp-imagemin": "^3.0.3",
+    "gulp-less": "^3.1.0",
     "gulp-plumber": "^1.1.0",
-    "gulp-sourcemaps": "^1.6.0"
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-spritesmith": "0.0.2",
+    "less-plugin-autoprefix": "^1.5.1"
   },
   "author": "",
   "license": "BSD-2-Clause"

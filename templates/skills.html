@@ -7,7 +7,7 @@
         <h2>Front-end skills</h2>
         <div class="row" ng-repeat="value in frontEnd">
             <div class="col-md-3 col-sm-3 col-xs-6 text-center" ng-repeat="skil in value">
-                <img ng-src="{{ skil.src }}" width="100">
+                <div class="icon-{{ skil.icon }}"></div>
                 <h3>{{ skil.name }}</h3>
             </div>
         </div>
@@ -16,16 +16,16 @@
         <h2>Back-end skills</h2>
         <div class="row" ng-repeat="value in backEnd">
             <div class="col-md-3 col-sm-3 col-xs-6 text-center" ng-repeat="skil in value">
-                <img ng-src="{{ skil.src }}" width="100">
+                <div class="icon-{{ skil.icon }}"></div>
                 <h3>{{ skil.name }}</h3>
             </div>
         </div>
 
 
-        <h2>Другие навики</h2>
+        <h2>Other skills</h2>
         <div class="row" ng-repeat="value in other">
             <div class="col-md-3 col-sm-3 col-xs-6 text-center" ng-repeat="skil in value">
-                <img src="{{ skil.src }}" width="100">
+                <div class="icon-{{ skil.icon }}"></div>
                 <h3>{{ skil.name }}</h3>
             </div>
         </div>

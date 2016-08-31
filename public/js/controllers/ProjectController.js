@@ -8,9 +8,9 @@ app.controller('ProjectController', ['$scope', function($scope) {
             {
                 href: 'http://makewear.club',
                 src: '../public/img/mw1.png',
-                desc: 'Интернет магазин одежды для оптовых и розничных покупателей\<br\>' +
+                desc: 'Интернет магазин одежды для оптовых и розничных покупателей.' +
                 'Время работы над проектом 9 месяцев. Выполнял разнообразные задачи от верстки до разработки парсера на PHP.'+
-                'Приобрел опыт в верстке, jQury, Bootstrap, PHP, MySQL, Gulp, Git и др.'
+                'Приобрел опыт в верстке, jQuery, Bootstrap, PHP, MySQL, Gulp, Git и др.'
             },
             {
                 href: '#',
