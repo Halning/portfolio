@@ -20,7 +20,7 @@ var path = {
         js_plugins: [],
         js_custom: [],
         css: ['public/dist/css/main.css'],
-        less: ['public/css/less/*.less']
+        less: 'public/css/less/*.less'
     },
     build_file: {
         js_plugins: '',

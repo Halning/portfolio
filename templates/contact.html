@@ -3,7 +3,11 @@
         {{ sayHello() }}
 
     <div class="container">
-
+        <div ng-controller="CounterController">
+            {{counter}}
+            <button ng-click="toggleCounter(toggle)">{{ buttonText }}</button>
+            <button ng-click="getSplit()">{{ textArr[2] }}</button>
+        </div>
     </div>
 
     <my-footer></my-footer>
