@@ -634,6 +634,12 @@ This must be run when you have at least 2 sprites.
 .timer.main .row #result h2 {
   font-family: 'Indie Flower', cursive;
 }
+.timer.main .row #result p {
+  text-align: left;
+  padding: 3px;
+  background-color: #fff;
+  margin: 5px 0;
+}
 .timer.main .footer {
   display: none;
 }

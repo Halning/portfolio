@@ -29,13 +29,7 @@ app.controller('TimerController', function ($scope, $timeout) {
         var newP = angular.element("<p>");
         var borderColor = (buttonTextObjIndex === 'Stop') ? $scope.borderColor.red : $scope.borderColor.blue;
 
-        newP.css({
-            textAlign: "left",
-            padding: "3px",
-            border: "1px solid" + borderColor,
-            backgroundColor: "#fff",
-            margin: "5px 0"
-        });
+        newP.css({border: "1px solid" + borderColor});
 
         $result.append(newP);
         newP.text(buttonTextObjIndex + ' - ' + $scope.counter + ' ms');
