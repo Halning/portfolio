@@ -1,0 +1,40 @@
+@import "../helpers/var.less";
+@import "../helpers/mixins.less";
+/* main timer */
+/* animation view */
+
+
+/* timer main */
+.timer.main {
+  background: url(@watch-url) center center;
+  background-size: cover;
+  h1 {
+    font-family: @font-Indie;
+    font-weight: 800;
+    margin-top: 10%;
+  }
+  .row {
+    #current-timer__value {
+      font-family: @font-Indie;
+      font-size: 25px;
+    }
+
+    button {
+      outline: none;
+      border: none;
+    }
+
+    #result {
+      border: 2px solid #000;
+      margin: 20px 0 150px 0;
+      padding: 5px;
+      h2 {
+        font-family: @font-Indie;
+      }
+    }
+  }
+
+  .footer {
+    display: none;
+  }
+}

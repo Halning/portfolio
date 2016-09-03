@@ -1,0 +1,275 @@
+/*
+LESS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: @icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+@icon-home: x y offset_x offset_y width height total_width total_height image_path name;
+
+At the bottom of this section, we provide information about the spritesheet itself
+@spritesheet: width height image @spritesheet-sprites;
+*/
+@icon-ang-name: 'icon-ang';
+@icon-ang-x: 0px;
+@icon-ang-y: 115px;
+@icon-ang-offset-x: 0px;
+@icon-ang-offset-y: -115px;
+@icon-ang-width: 100px;
+@icon-ang-height: 103px;
+@icon-ang-total-width: 496px;
+@icon-ang-total-height: 374px;
+@icon-ang-image: '../../img/sprite-08055009215604514.png';
+@icon-ang: 0px 115px 0px -115px 100px 103px 496px 374px '../../img/sprite-08055009215604514.png' 'icon-ang';
+@icon-azure-name: 'icon-azure';
+@icon-azure-x: 396px;
+@icon-azure-y: 193px;
+@icon-azure-offset-x: -396px;
+@icon-azure-offset-y: -193px;
+@icon-azure-width: 100px;
+@icon-azure-height: 75px;
+@icon-azure-total-width: 496px;
+@icon-azure-total-height: 374px;
+@icon-azure-image: '../../img/sprite-08055009215604514.png';
+@icon-azure: 396px 193px -396px -193px 100px 75px 496px 374px '../../img/sprite-08055009215604514.png' 'icon-azure';
+@icon-bg-21px-name: 'icon-bg_21px';
+@icon-bg-21px-x: 200px;
+@icon-bg-21px-y: 115px;
+@icon-bg-21px-offset-x: -200px;
+@icon-bg-21px-offset-y: -115px;
+@icon-bg-21px-width: 2px;
+@icon-bg-21px-height: 21px;
+@icon-bg-21px-total-width: 496px;
+@icon-bg-21px-total-height: 374px;
+@icon-bg-21px-image: '../../img/sprite-08055009215604514.png';
+@icon-bg-21px: 200px 115px -200px -115px 2px 21px 496px 374px '../../img/sprite-08055009215604514.png' 'icon-bg_21px';
+@icon-bootstrap-name: 'icon-bootstrap';
+@icon-bootstrap-x: 200px;
+@icon-bootstrap-y: 218px;
+@icon-bootstrap-offset-x: -200px;
+@icon-bootstrap-offset-y: -218px;
+@icon-bootstrap-width: 100px;
+@icon-bootstrap-height: 100px;
+@icon-bootstrap-total-width: 496px;
+@icon-bootstrap-total-height: 374px;
+@icon-bootstrap-image: '../../img/sprite-08055009215604514.png';
+@icon-bootstrap: 200px 218px -200px -218px 100px 100px 496px 374px '../../img/sprite-08055009215604514.png' 'icon-bootstrap';
+@icon-cisco-name: 'icon-cisco';
+@icon-cisco-x: 0px;
+@icon-cisco-y: 318px;
+@icon-cisco-offset-x: 0px;
+@icon-cisco-offset-y: -318px;
+@icon-cisco-width: 100px;
+@icon-cisco-height: 56px;
+@icon-cisco-total-width: 496px;
+@icon-cisco-total-height: 374px;
+@icon-cisco-image: '../../img/sprite-08055009215604514.png';
+@icon-cisco: 0px 318px 0px -318px 100px 56px 496px 374px '../../img/sprite-08055009215604514.png' 'icon-cisco';
+@icon-composer-name: 'icon-composer';
+@icon-composer-x: 100px;
+@icon-composer-y: 0px;
+@icon-composer-offset-x: -100px;
+@icon-composer-offset-y: 0px;
+@icon-composer-width: 96px;
+@icon-composer-height: 115px;
+@icon-composer-total-width: 496px;
+@icon-composer-total-height: 374px;
+@icon-composer-image: '../../img/sprite-08055009215604514.png';
+@icon-composer: 100px 0px -100px 0px 96px 115px 496px 374px '../../img/sprite-08055009215604514.png' 'icon-composer';
+@icon-eng-name: 'icon-eng';
+@icon-eng-x: 296px;
+@icon-eng-y: 100px;
+@icon-eng-offset-x: -296px;
+@icon-eng-offset-y: -100px;
+@icon-eng-width: 100px;
+@icon-eng-height: 100px;
+@icon-eng-total-width: 496px;
+@icon-eng-total-height: 374px;
+@icon-eng-image: '../../img/sprite-08055009215604514.png';
+@icon-eng: 296px 100px -296px -100px 100px 100px 496px 374px '../../img/sprite-08055009215604514.png' 'icon-eng';
+@icon-git-name: 'icon-git';
+@icon-git-x: 0px;
+@icon-git-y: 218px;
+@icon-git-offset-x: 0px;
+@icon-git-offset-y: -218px;
+@icon-git-width: 100px;
+@icon-git-height: 100px;
+@icon-git-total-width: 496px;
+@icon-git-total-height: 374px;
+@icon-git-image: '../../img/sprite-08055009215604514.png';
+@icon-git: 0px 218px 0px -218px 100px 100px 496px 374px '../../img/sprite-08055009215604514.png' 'icon-git';
+@icon-gulp-name: 'icon-gulp';
+@icon-gulp-x: 396px;
+@icon-gulp-y: 0px;
+@icon-gulp-offset-x: -396px;
+@icon-gulp-offset-y: 0px;
+@icon-gulp-width: 100px;
+@icon-gulp-height: 100px;
+@icon-gulp-total-width: 496px;
+@icon-gulp-total-height: 374px;
+@icon-gulp-image: '../../img/sprite-08055009215604514.png';
+@icon-gulp: 396px 0px -396px 0px 100px 100px 496px 374px '../../img/sprite-08055009215604514.png' 'icon-gulp';
+@icon-html-name: 'icon-html';
+@icon-html-x: 196px;
+@icon-html-y: 0px;
+@icon-html-offset-x: -196px;
+@icon-html-offset-y: 0px;
+@icon-html-width: 100px;
+@icon-html-height: 109px;
+@icon-html-total-width: 496px;
+@icon-html-total-height: 374px;
+@icon-html-image: '../../img/sprite-08055009215604514.png';
+@icon-html: 196px 0px -196px 0px 100px 109px 496px 374px '../../img/sprite-08055009215604514.png' 'icon-html';
+@icon-jq-ui-name: 'icon-jq-ui';
+@icon-jq-ui-x: 100px;
+@icon-jq-ui-y: 218px;
+@icon-jq-ui-offset-x: -100px;
+@icon-jq-ui-offset-y: -218px;
+@icon-jq-ui-width: 100px;
+@icon-jq-ui-height: 100px;
+@icon-jq-ui-total-width: 496px;
+@icon-jq-ui-total-height: 374px;
+@icon-jq-ui-image: '../../img/sprite-08055009215604514.png';
+@icon-jq-ui: 100px 218px -100px -218px 100px 100px 496px 374px '../../img/sprite-08055009215604514.png' 'icon-jq-ui';
+@icon-jquery-name: 'icon-jquery';
+@icon-jquery-x: 100px;
+@icon-jquery-y: 115px;
+@icon-jquery-offset-x: -100px;
+@icon-jquery-offset-y: -115px;
+@icon-jquery-width: 100px;
+@icon-jquery-height: 100px;
+@icon-jquery-total-width: 496px;
+@icon-jquery-total-height: 374px;
+@icon-jquery-image: '../../img/sprite-08055009215604514.png';
+@icon-jquery: 100px 115px -100px -115px 100px 100px 496px 374px '../../img/sprite-08055009215604514.png' 'icon-jquery';
+@icon-js-name: 'icon-js';
+@icon-js-x: 0px;
+@icon-js-y: 0px;
+@icon-js-offset-x: 0px;
+@icon-js-offset-y: 0px;
+@icon-js-width: 100px;
+@icon-js-height: 115px;
+@icon-js-total-width: 496px;
+@icon-js-total-height: 374px;
+@icon-js-image: '../../img/sprite-08055009215604514.png';
+@icon-js: 0px 0px 0px 0px 100px 115px 496px 374px '../../img/sprite-08055009215604514.png' 'icon-js';
+@icon-mvc-name: 'icon-mvc';
+@icon-mvc-x: 396px;
+@icon-mvc-y: 100px;
+@icon-mvc-offset-x: -396px;
+@icon-mvc-offset-y: -100px;
+@icon-mvc-width: 100px;
+@icon-mvc-height: 93px;
+@icon-mvc-total-width: 496px;
+@icon-mvc-total-height: 374px;
+@icon-mvc-image: '../../img/sprite-08055009215604514.png';
+@icon-mvc: 396px 100px -396px -100px 100px 93px 496px 374px '../../img/sprite-08055009215604514.png' 'icon-mvc';
+@icon-php-name: 'icon-php';
+@icon-php-x: 100px;
+@icon-php-y: 318px;
+@icon-php-offset-x: -100px;
+@icon-php-offset-y: -318px;
+@icon-php-width: 100px;
+@icon-php-height: 52px;
+@icon-php-total-width: 496px;
+@icon-php-total-height: 374px;
+@icon-php-image: '../../img/sprite-08055009215604514.png';
+@icon-php: 100px 318px -100px -318px 100px 52px 496px 374px '../../img/sprite-08055009215604514.png' 'icon-php';
+@icon-sass-less-name: 'icon-sass-less';
+@icon-sass-less-x: 396px;
+@icon-sass-less-y: 268px;
+@icon-sass-less-offset-x: -396px;
+@icon-sass-less-offset-y: -268px;
+@icon-sass-less-width: 100px;
+@icon-sass-less-height: 45px;
+@icon-sass-less-total-width: 496px;
+@icon-sass-less-total-height: 374px;
+@icon-sass-less-image: '../../img/sprite-08055009215604514.png';
+@icon-sass-less: 396px 268px -396px -268px 100px 45px 496px 374px '../../img/sprite-08055009215604514.png' 'icon-sass-less';
+@icon-sql-name: 'icon-sql';
+@icon-sql-x: 296px;
+@icon-sql-y: 0px;
+@icon-sql-offset-x: -296px;
+@icon-sql-offset-y: 0px;
+@icon-sql-width: 100px;
+@icon-sql-height: 100px;
+@icon-sql-total-width: 496px;
+@icon-sql-total-height: 374px;
+@icon-sql-image: '../../img/sprite-08055009215604514.png';
+@icon-sql: 296px 0px -296px 0px 100px 100px 496px 374px '../../img/sprite-08055009215604514.png' 'icon-sql';
+@spritesheet-width: 496px;
+@spritesheet-height: 374px;
+@spritesheet-image: '../../img/sprite-08055009215604514.png';
+@spritesheet-sprites: @icon-ang @icon-azure @icon-bg-21px @icon-bootstrap @icon-cisco @icon-composer @icon-eng @icon-git @icon-gulp @icon-html @icon-jq-ui @icon-jquery @icon-js @icon-mvc @icon-php @icon-sass-less @icon-sql;
+@spritesheet: 496px 374px '../../img/sprite-08055009215604514.png' @spritesheet-sprites;
+
+/*
+The provided classes are intended to be used with the array-like variables
+
+.icon-home {
+  .sprite-width(@icon-home);
+}
+.icon-email {
+  .sprite(@icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.sprite-width(@sprite) {
+  width: extract(@sprite, 5);
+}
+
+.sprite-height(@sprite) {
+  height: extract(@sprite, 6);
+}
+
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 3);
+  @sprite-offset-y: extract(@sprite, 4);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+
+.sprite-image(@sprite) {
+  @sprite-image: extract(@sprite, 9);
+  @sprite-image-bare: ~`"@{sprite-image}".slice(1, -1)`;
+  background-image: url(@sprite-image-bare);
+}
+
+.sprite(@sprite) {
+  .sprite-image(@sprite);
+  .sprite-position(@sprite);
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+
+/*
+The `.sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of LESS
+
+This must be run when you have at least 2 sprites.
+  If run with a single sprite, then there will be reference errors.
+
+.sprites(@spritesheet-sprites);
+*/
+.sprites(@sprites, @i: 1) when (@i <= length(@sprites)) {
+  @sprite: extract(@sprites, @i);
+  @sprite-name: e(extract(@sprite, 10));
+  .@{sprite-name} {
+    .sprite(@sprite);
+  }
+  .sprites(@sprites, @i + 1);
+}

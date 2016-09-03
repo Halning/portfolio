@@ -20,7 +20,8 @@
     float: none;
 
     li a {
-      margin-right: 1.5em;
+      margin-right: 0.8em;
+      margin-left: 0.8em;
       text-align: center;
       font-size: 1.3em;
       border-radius: 0em;
@@ -43,9 +44,14 @@
         width: 100%;
         text-decoration: none;
       }
+      &:focus {
+        outline: none;
+        border: none;
+        background-color: transparent;
+      }
       @media only screen and (min-width: 600px) {
         font-size: 1em;
-        margin-left: 2.5em;
+        margin-left: 2em;
         .transitions-elem(font-size, 3s, ease);
       }
     }

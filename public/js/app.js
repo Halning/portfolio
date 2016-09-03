@@ -17,6 +17,10 @@ app.config(function ($routeProvider) {
             controller: 'ProjectController',
             templateUrl: 'templates/projects.html'
         })
+        .when('/timer', {
+            controller: 'TimerController',
+            templateUrl: 'templates/timer.html'
+        })
         .when('/contact', {
             //controller: 'MainController',
             templateUrl: 'templates/contact.html'

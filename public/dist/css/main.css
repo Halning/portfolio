@@ -28,7 +28,8 @@
   float: none;
 }
 .header .nav li a {
-  margin-right: 1.5em;
+  margin-right: 0.8em;
+  margin-left: 0.8em;
   text-align: center;
   font-size: 1.3em;
   border-radius: 0em;
@@ -50,10 +51,15 @@
   width: 100%;
   text-decoration: none;
 }
+.header .nav li a:focus {
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
 @media only screen and (min-width: 600px) {
   .header .nav li a {
     font-size: 1em;
-    margin-left: 2.5em;
+    margin-left: 2em;
     transition: font-size 3s ease 0s;
   }
 }
@@ -380,7 +386,7 @@ This must be run when you have at least 2 sprites.
   transform: translate(30px, 0);
 }
 .skills .col-md-3 .icon-html {
-  background-image: url(../../img/sprite-0737389073939994.png);
+  background-image: url(../../img/sprite-08055009215604514.png);
   background-position: -196px 0px;
   width: 100px;
   height: 109px;
@@ -388,7 +394,7 @@ This must be run when you have at least 2 sprites.
   margin-bottom: 5px;
 }
 .skills .col-md-3 .icon-less {
-  background-image: url(../../img/sprite-0737389073939994.png);
+  background-image: url(../../img/sprite-08055009215604514.png);
   background-position: -396px -268px;
   width: 100px;
   height: 45px;
@@ -396,7 +402,7 @@ This must be run when you have at least 2 sprites.
   margin-bottom: 40px;
 }
 .skills .col-md-3 .icon-boot {
-  background-image: url(../../img/sprite-0737389073939994.png);
+  background-image: url(../../img/sprite-08055009215604514.png);
   background-position: -200px -218px;
   width: 100px;
   height: 100px;
@@ -404,37 +410,37 @@ This must be run when you have at least 2 sprites.
   margin-bottom: 7.5px;
 }
 .skills .col-md-3 .icon-js {
-  background-image: url(../../img/sprite-0737389073939994.png);
+  background-image: url(../../img/sprite-08055009215604514.png);
   background-position: 0px 0px;
   width: 100px;
   height: 115px;
 }
 .skills .col-md-3 .icon-jquery {
-  background-image: url(../../img/sprite-0737389073939994.png);
+  background-image: url(../../img/sprite-08055009215604514.png);
   background-position: -100px -115px;
   width: 100px;
   height: 100px;
 }
 .skills .col-md-3 .icon-ang {
-  background-image: url(../../img/sprite-0737389073939994.png);
+  background-image: url(../../img/sprite-08055009215604514.png);
   background-position: 0px -115px;
   width: 100px;
   height: 103px;
 }
 .skills .col-md-3 .icon-gulp {
-  background-image: url(../../img/sprite-0737389073939994.png);
+  background-image: url(../../img/sprite-08055009215604514.png);
   background-position: -396px 0px;
   width: 100px;
   height: 100px;
 }
 .skills .col-md-3 .icon-jq-ui {
-  background-image: url(../../img/sprite-0737389073939994.png);
+  background-image: url(../../img/sprite-08055009215604514.png);
   background-position: -100px -218px;
   width: 100px;
   height: 100px;
 }
 .skills .col-md-3 .icon-php {
-  background-image: url(../../img/sprite-0737389073939994.png);
+  background-image: url(../../img/sprite-08055009215604514.png);
   background-position: -100px -318px;
   width: 100px;
   height: 52px;
@@ -442,7 +448,7 @@ This must be run when you have at least 2 sprites.
   margin-bottom: 35px;
 }
 .skills .col-md-3 .icon-sql {
-  background-image: url(../../img/sprite-0737389073939994.png);
+  background-image: url(../../img/sprite-08055009215604514.png);
   background-position: -296px 0px;
   width: 100px;
   height: 100px;
@@ -450,7 +456,7 @@ This must be run when you have at least 2 sprites.
   margin-bottom: 7.5px;
 }
 .skills .col-md-3 .icon-mvc {
-  background-image: url(../../img/sprite-0737389073939994.png);
+  background-image: url(../../img/sprite-08055009215604514.png);
   background-position: -396px -100px;
   width: 100px;
   height: 93px;
@@ -458,19 +464,19 @@ This must be run when you have at least 2 sprites.
   margin-bottom: 11.5px;
 }
 .skills .col-md-3 .icon-composer {
-  background-image: url(../../img/sprite-0737389073939994.png);
+  background-image: url(../../img/sprite-08055009215604514.png);
   background-position: -100px 0px;
   width: 96px;
   height: 115px;
 }
 .skills .col-md-3 .icon-git {
-  background-image: url(../../img/sprite-0737389073939994.png);
+  background-image: url(../../img/sprite-08055009215604514.png);
   background-position: 0px -218px;
   width: 100px;
   height: 100px;
 }
 .skills .col-md-3 .icon-azure {
-  background-image: url(../../img/sprite-0737389073939994.png);
+  background-image: url(../../img/sprite-08055009215604514.png);
   background-position: -396px -193px;
   width: 100px;
   height: 75px;
@@ -478,7 +484,7 @@ This must be run when you have at least 2 sprites.
   margin-bottom: 22.5px;
 }
 .skills .col-md-3 .icon-cisco {
-  background-image: url(../../img/sprite-0737389073939994.png);
+  background-image: url(../../img/sprite-08055009215604514.png);
   background-position: 0px -318px;
   width: 100px;
   height: 56px;
@@ -486,7 +492,7 @@ This must be run when you have at least 2 sprites.
   margin-bottom: 32px;
 }
 .skills .col-md-3 .icon-english {
-  background-image: url(../../img/sprite-0737389073939994.png);
+  background-image: url(../../img/sprite-08055009215604514.png);
   background-position: -296px -100px;
   width: 100px;
   height: 100px;
@@ -600,16 +606,40 @@ This must be run when you have at least 2 sprites.
   transition: margin-top 0.3s ease 0.6s;
   margin-top: 30px;
 }
-/* main contact */
+/* main timer */
 /* animation view */
-/* contact main */
-.contact.main .container {
-  text-align: center;
-  top: 50%;
-  position: relative;
-  margin: 200px auto;
-  transform: translateY(-60%);
+/* timer main */
+.timer.main {
+  background: url('../../img/timer.jpg') center center;
+  background-size: cover;
 }
+.timer.main h1 {
+  font-family: 'Indie Flower', cursive;
+  font-weight: 800;
+  margin-top: 10%;
+}
+.timer.main .row #current-timer__value {
+  font-family: 'Indie Flower', cursive;
+  font-size: 25px;
+}
+.timer.main .row button {
+  outline: none;
+  border: none;
+}
+.timer.main .row #result {
+  border: 2px solid #000;
+  margin: 20px 0 150px 0;
+  padding: 5px;
+}
+.timer.main .row #result h2 {
+  font-family: 'Indie Flower', cursive;
+}
+.timer.main .footer {
+  display: none;
+}
+/* main timer */
+/* animation view */
+/* timer main */
 /* Footer */
 .footer {
   padding-top: 2.5em;

@@ -3,7 +3,7 @@
  */
 "use strict";
 app.controller('MainController', ['$scope', function ($scope) {
-    $scope.sayHello = function () {
+    $scope.initJquery = function () {
         var windowWidth = $(window).width();
         var windowHeight = $(window).height();
         var scrollCounter = 0;
@@ -105,7 +105,10 @@ app.controller('MainController', ['$scope', function ($scope) {
             }
             $lastScrollTop = st;
 
-            if (!~window.location.href.indexOf('skills') && !~window.location.href.indexOf('projects') && !~window.location.href.indexOf('contact')) {
+            if (!~window.location.href.indexOf('skills')
+                && !~window.location.href.indexOf('projects')
+                && !~window.location.href.indexOf('contact')
+            && !~window.location.href.indexOf('timer')) {
                 console.log(window.location.href);
                 if (windowWidth > 1200) {
                     var revertColor = windowHeight - 40;
