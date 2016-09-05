@@ -8,7 +8,7 @@ app.controller('TimerController', function ($scope, $timeout) {
     var startDate = null;
     var $result = angular.element(document.querySelector("#result"));
     var $startStopButton = angular.element(document.querySelector(".row")).find('button').eq(0);
-    var $splitButton = angular.element(document.querySelector(".row")).find('button').eq(1);
+    var $splitButton = angular.element(document.querySelector("#split-btn"));
 
     var split = {
         minutes: 0,
@@ -93,7 +93,7 @@ app.controller('TimerController', function ($scope, $timeout) {
         }
     };
 
-    $scope.getSplit = function () {
+    $scope.getSplite = function () {
         split.minutes = $scope.calculate.minutes - split.minutes;
         split.seconds = $scope.calculate.seconds - split.seconds;
         split.millisecond = $scope.calculate.millisecond - split.millisecond;
