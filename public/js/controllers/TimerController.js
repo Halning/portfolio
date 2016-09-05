@@ -7,7 +7,7 @@ app.controller('TimerController', function ($scope, $timeout) {
     var stopDate = null;
     var startDate = null;
     var $result = angular.element(document.querySelector("#result"));
-    var $startStopButton = angular.element(document.querySelector(".row")).find('button').eq(0);
+    var $startStopButton = angular.element(document.querySelector("#stop-start__btn"));
     var $splitButton = angular.element(document.querySelector("#split-btn"));
 
     var split = {

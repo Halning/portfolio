@@ -9,7 +9,7 @@
                 <p id="current-timer__value">{{ calculate.minutes }} : {{ calculate.seconds }} : {{ calculate.millisecond }}</p>
             </div>
             <div class="col-md-12">
-                <button ng-click="toggleCounter(stopStartMark)" class="btn btn-success">{{ buttonText }}</button>
+                <button ng-click="toggleCounter(stopStartMark)" class="btn btn-success" id="stop-start__btn">{{ buttonText }}</button>
                 <button ng-click="getSplit()" class="btn btn-info" disabled="disabled" id="split-btn">{{ buttonTextObj.split }}</button>
                 <button ng-click="reset()" class="btn btn-warning">{{ buttonTextObj.reset }}</button>
                 <div id="result">
