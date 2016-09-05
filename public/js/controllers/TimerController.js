@@ -93,7 +93,7 @@ app.controller('TimerController', function ($scope, $timeout) {
         }
     };
 
-    $scope.getSplite = function () {
+    $scope.getSplit = function () {
         split.minutes = $scope.calculate.minutes - split.minutes;
         split.seconds = $scope.calculate.seconds - split.seconds;
         split.millisecond = $scope.calculate.millisecond - split.millisecond;
