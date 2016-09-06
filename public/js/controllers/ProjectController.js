@@ -14,31 +14,31 @@ app.controller('ProjectController', ['$scope', function($scope) {
             },
             {
                 href: '#',
-                src: 'http://placehold.it/585x328',
+                src: '../public/img/empty.png',
                 desc: 'Coming soon'
             }
         ],
         $scope.secondRow = [
             {
                 href: '#',
-                src: 'http://placehold.it/585x328',
+                src: '../public/img/empty.png',
                 desc: 'Coming soon'
             },
             {
                 href: '#',
-                src: 'http://placehold.it/585x328',
+                src: '../public/img/empty.png',
                 desc: 'Coming soon'
             }
         ],
         $scope.treeRow = [
             {
                 href: '#',
-                src: 'http://placehold.it/585x328',
+                src: '../public/img/empty.png',
                 desc: 'Coming soon'
             },
             {
                 href: '#',
-                src: 'http://placehold.it/585x328',
+                src: '../public/img/empty.png',
                 desc: 'Coming soon'
             }
         ],

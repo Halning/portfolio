@@ -377,155 +377,167 @@ This must be run when you have at least 2 sprites.
   }
 }
 /* main-2 skills */
-.skills .col-md-3 {
-  height: 165px;
-  margin-bottom: 4em;
+.skills {
+  background: url('../../img/skills2.jpg') center center;
+  background-size: cover;
+  color: #011;
 }
-.skills .col-md-3 div {
+.skills .col-md-3 {
+  padding: 5px;
+}
+.skills .col-md-3 .content-front__skill,
+.skills .col-md-3 .content-back__skill {
+  border: 1px solid #fff;
+  padding: 5px;
+  height: 180px;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+.skills .col-md-3 .content-front__skill div,
+.skills .col-md-3 .content-back__skill div {
   margin: 0 auto;
   transform: translate(30px, 0);
 }
-.skills .col-md-3 .icon-html {
+.skills .col-md-3 .content-front__skill {
+  box-shadow: 1px 1px 5px;
+}
+.skills .col-md-3 .content-back__skill {
+  box-shadow: inset 0px 0px 15px rgba(255, 255, 255, 0.5) !important;
+}
+.skills h2 {
+  font-family: 'Indie Flower', cursive;
+  padding: 30px;
+  border-bottom: 1px solid #fff;
+  border-top: 1px solid #fff;
+  opacity: 0;
+  font-size: 3em;
+  padding: 0;
+  margin: 1.5em 0;
+  box-shadow: 1px 1px 5px;
+  transform: translate(0, 20px);
+}
+.skills h2,
+.skills h3 {
+  text-shadow: 0px 5px 10px;
+}
+.skills .icon-html {
   background-image: url(../../img/sprite-08055009215604514.png);
   background-position: -196px 0px;
   width: 100px;
   height: 109px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
 }
-.skills .col-md-3 .icon-less {
+.skills .icon-less {
   background-image: url(../../img/sprite-08055009215604514.png);
   background-position: -396px -268px;
   width: 100px;
   height: 45px;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-top: 40px !important;
+  margin-bottom: 40px !important;
 }
-.skills .col-md-3 .icon-boot {
+.skills .icon-boot {
   background-image: url(../../img/sprite-08055009215604514.png);
   background-position: -200px -218px;
   width: 100px;
   height: 100px;
-  margin-top: 7.5px;
-  margin-bottom: 7.5px;
+  margin-top: 7.5px !important;
+  margin-bottom: 7.5px !important;
 }
-.skills .col-md-3 .icon-js {
+.skills .icon-js {
   background-image: url(../../img/sprite-08055009215604514.png);
   background-position: 0px 0px;
   width: 100px;
   height: 115px;
 }
-.skills .col-md-3 .icon-jquery {
+.skills .icon-jquery {
   background-image: url(../../img/sprite-08055009215604514.png);
   background-position: -100px -115px;
   width: 100px;
   height: 100px;
 }
-.skills .col-md-3 .icon-ang {
+.skills .icon-ang {
   background-image: url(../../img/sprite-08055009215604514.png);
   background-position: 0px -115px;
   width: 100px;
   height: 103px;
 }
-.skills .col-md-3 .icon-gulp {
+.skills .icon-gulp {
   background-image: url(../../img/sprite-08055009215604514.png);
   background-position: -396px 0px;
   width: 100px;
   height: 100px;
 }
-.skills .col-md-3 .icon-jq-ui {
+.skills .icon-jq-ui {
   background-image: url(../../img/sprite-08055009215604514.png);
   background-position: -100px -218px;
   width: 100px;
   height: 100px;
 }
-.skills .col-md-3 .icon-php {
+.skills .icon-php {
   background-image: url(../../img/sprite-08055009215604514.png);
   background-position: -100px -318px;
   width: 100px;
   height: 52px;
-  margin-top: 35px;
-  margin-bottom: 35px;
+  margin-top: 35px !important;
+  margin-bottom: 35px !important;
 }
-.skills .col-md-3 .icon-sql {
+.skills .icon-sql {
   background-image: url(../../img/sprite-08055009215604514.png);
   background-position: -296px 0px;
   width: 100px;
   height: 100px;
-  margin-top: 7.5px;
-  margin-bottom: 7.5px;
+  margin-top: 7.5px !important;
+  margin-bottom: 7.5px !important;
 }
-.skills .col-md-3 .icon-mvc {
+.skills .icon-mvc {
   background-image: url(../../img/sprite-08055009215604514.png);
   background-position: -396px -100px;
   width: 100px;
   height: 93px;
-  margin-top: 11.5px;
-  margin-bottom: 11.5px;
+  margin-top: 11.5px !important;
+  margin-bottom: 11.5px !important;
 }
-.skills .col-md-3 .icon-composer {
+.skills .icon-composer {
   background-image: url(../../img/sprite-08055009215604514.png);
   background-position: -100px 0px;
   width: 96px;
   height: 115px;
 }
-.skills .col-md-3 .icon-git {
+.skills .icon-git {
   background-image: url(../../img/sprite-08055009215604514.png);
   background-position: 0px -218px;
   width: 100px;
   height: 100px;
 }
-.skills .col-md-3 .icon-azure {
+.skills .icon-azure {
   background-image: url(../../img/sprite-08055009215604514.png);
   background-position: -396px -193px;
   width: 100px;
   height: 75px;
-  margin-top: 22.5px;
-  margin-bottom: 22.5px;
+  margin-top: 22.5px !important;
+  margin-bottom: 22.5px !important;
 }
-.skills .col-md-3 .icon-cisco {
+.skills .icon-cisco {
   background-image: url(../../img/sprite-08055009215604514.png);
   background-position: 0px -318px;
   width: 100px;
   height: 56px;
-  margin-top: 32px;
-  margin-bottom: 32px;
+  margin-top: 32px !important;
+  margin-bottom: 32px !important;
 }
-.skills .col-md-3 .icon-english {
+.skills .icon-english {
   background-image: url(../../img/sprite-08055009215604514.png);
   background-position: -296px -100px;
   width: 100px;
   height: 100px;
 }
-.skills .row:nth-child(5) .col-md-3:nth-child(1) img {
-  margin: 22.5px 0;
-}
-.skills .row:nth-child(5) .col-md-3:nth-child(4) img {
-  margin: 3.5px 0;
-}
-.skills .row:nth-child(7) .col-md-3:nth-child(2) img {
-  margin: 12.5px 0;
-}
-.skills .row:nth-child(7) .col-md-3:nth-child(3) img {
-  margin: 22px 0;
-}
-.skills h2 {
-  font-family: 'Indie Flower', cursive;
-  padding: 30px;
-  border-bottom: 1px solid #000;
-  border-top: 1px solid #000;
-  opacity: 0;
-  font-size: 3em;
-  padding: 0;
-  margin: 0 0 1.5em 0;
-  transform: translate(0, 20px);
-}
 .skills.init_2 h2 {
+  background-color: rgba(255, 255, 255, 0.2);
   opacity: 1;
   transition: all 0.5s ease 0s;
   transform: translate(0px, 0px);
 }
-.skills.init_2 .row .col-md-3 > div {
+.skills.init_2 .row .col-md-3 > div > div {
   transition: all 0.5s ease 0s;
   transform: translate(0px, 0px);
 }
