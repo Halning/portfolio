@@ -13,13 +13,15 @@ app.controller('TimerController', function ($scope, $timeout) {
     var split = {
         minutes: 0,
         seconds: 0,
-        millisecond: 0
+        millisecond: 0,
+        millisecondShow: 0
     };
 
     $scope.calculate = {
         minutes: 0,
         seconds: 0,
-        millisecond: 0
+        millisecond: 0,
+        millisecondShow: 0
     };
 
     $scope.stopStartMark = 0;
@@ -39,7 +41,7 @@ app.controller('TimerController', function ($scope, $timeout) {
         $scope.calculate.millisecond = (stopDate === null) ? Date.now() - beginDate : Date.now() - ((startDate - stopDate) + beginDate);
         $scope.calculate.seconds = Math.floor(($scope.calculate.millisecond / 1000) % 60);
         $scope.calculate.minutes = Math.floor(($scope.calculate.millisecond / 1000 / 60) % 60);
-        $scope.calculate.millisecond = $scope.calculate.millisecond - $scope.calculate.seconds * 1000;
+        $scope.calculate.millisecondShow = $scope.calculate.millisecond - $scope.calculate.seconds * 1000;
 
         timer = $timeout(updateCounter, 1);
     };
@@ -51,7 +53,7 @@ app.controller('TimerController', function ($scope, $timeout) {
         newP.css({border: "1px solid" + borderColor});
 
         $result.append(newP);
-        newP.text(buttonTextObjIndex + ' - ' + showDate.minutes + ' m : ' + showDate.seconds + ' s : ' + showDate.millisecond + ' ms');
+        newP.text(buttonTextObjIndex + ' - ' + showDate.minutes + ' m : ' + showDate.seconds + ' s : ' + showDate.millisecondShow + ' ms');
     }
 
     var stopTimer = function () {
@@ -103,6 +105,7 @@ app.controller('TimerController', function ($scope, $timeout) {
         split.minutes = $scope.calculate.minutes;
         split.seconds = $scope.calculate.seconds;
         split.millisecond = $scope.calculate.millisecond;
+        split.millisecondShow = split.millisecond - split.seconds * 1000;
     }
 
     $scope.reset = function () {
