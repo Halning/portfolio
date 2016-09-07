@@ -1,6 +1,7 @@
 /**
  * Created by halning on 02.09.16.
  */
+"use strict";
 app.controller('TimerController', function ($scope, $timeout) {
     var timer = null;
     var beginDate = null;

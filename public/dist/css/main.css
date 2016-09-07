@@ -387,6 +387,7 @@ This must be run when you have at least 2 sprites.
 }
 .skills .col-md-3 .content-front__skill,
 .skills .col-md-3 .content-back__skill {
+  border-radius: 3px;
   border: 1px solid #fff;
   padding: 5px;
   height: 180px;

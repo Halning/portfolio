@@ -1,6 +1,7 @@
 /**
  * Created by halning on 29.08.16.
  */
+"use strict";
 app.controller('SkillsController', ['$scope', function($scope) {
     $scope.viewClass = 'animate-skills';
     $scope.frontEnd= [

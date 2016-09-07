@@ -1,6 +1,7 @@
 /**
  * Created by halning on 29.08.16.
  */
+"use strict";
 app.controller('ProjectController', ['$scope', function($scope) {
     $scope.viewClass = 'animate-projects';
     $scope.projects = [
