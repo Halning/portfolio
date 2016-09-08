@@ -13,11 +13,14 @@ var del = require('del'); // удаление папок и файлов
 
 var path = {
     build: {//Тут мы укажем куда складывать готовые после сборки файлы
-        js: '',
+        js: 'public/dist/js',
         css: 'public/dist/css'
     },
     src: {//Пути откуда брать исходники
         js_plugins: [],
+        js_angular: [
+            'public/js/**/*.js'
+        ],
         js_custom: [],
         css: ['public/dist/css/main.css'],
         less: 'public/css/less/*.less'
@@ -25,10 +28,11 @@ var path = {
     build_file: {
         js_plugins: '',
         js_custom: '',
+        js_angular: 'app.js',
         css: 'app.min.css'
     },
     watch: {//Тут мы укажем, за изменением каких файлов мы хотим наблюдать
-        js: '',
+        js: 'public/js/**/*.js',
         less: 'public/css/less/**/*'
     }
 };
@@ -44,6 +48,12 @@ gulp.task('less', function () {
         .pipe(csso())
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(path.build.css));
+});
+
+gulp.task('angular', function(){
+    return gulp.src(path.src.js_angular)
+        .pipe(concat(path.build_file.js_angular))
+        .pipe(gulp.dest(path.build.js))
 });
 
 // Удаление старых файлов
@@ -82,6 +92,7 @@ gulp.task('sprite-create', ['sprite-clean'], function () {
 
 gulp.task('watcher', function () {
     gulp.watch(path.watch.less, ['less']);
+    gulp.watch(path.watch.js, ['angular']);
 });
 
 gulp.task('default', ['watcher']);

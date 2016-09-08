@@ -25,8 +25,13 @@
         <!-- Include the AngularJs animate library -->
         <script defer src="/node_modules/angular-animate/angular-animate.min.js"></script>
 
-
+        <!-- jquery -->
         <script defer src="/node_modules/jquery/dist/jquery.min.js"></script>
+
+        <!-- Angular -->
+        <script defer src="public/dist/js/app.js"></script>
+
+        <!-- styles -->
         <link type="text/css" rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
         <link type="text/css" rel="stylesheet" href="public/dist/css/app.min.css"/>
     </head>
@@ -39,24 +44,5 @@
         <div class="view-container">
         <div ng-view class="{{ viewClass }}"></div>
         </div>
-
-        <!-- Modules -->
-        <script defer src="public/js/app.js"></script>
-
-        <!-- Controllers-->
-        <script defer src="public/js/controllers/MainController.js"></script>
-        <script defer src="public/js/controllers/HomeController.js"></script>
-        <script defer src="public/js/controllers/SkillsController.js"></script>
-        <script defer src="public/js/controllers/ProjectController.js"></script>
-        <script defer src="public/js/controllers/TimerController.js"></script>
-
-        <!-- Services
-        <script src="js/services/photos.js"></script>-->
-
-        <!-- Directives -->
-        <script defer src="public/js/directives/readMore.js"></script>
-        <script defer src="public/js/directives/nav.js"></script>
-        <script defer src="public/js/directives/footer.js"></script>
-
     </body>
 </html>
