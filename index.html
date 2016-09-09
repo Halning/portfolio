@@ -1,48 +1,49 @@
 <!DOCTYPE html>
 
 <html lang="en">
-    <head>
-        <title>My Site</title>
-        <meta charset="utf-8">
-        <link rel="shortcut icon" href="public/img/zerg.png" type="image/png">
+<head>
+    <title>My Site</title>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="public/img/zerg.png" type="image/png">
 
-        <meta name="description"
-              content="Здравствуйте меня зовут Андрей. Я Full Stack программист. Я люблю кодить.">
-        <meta name="author" content="Andrei Khomenko">
-        <meta name="keywords"
-              content="andrei, khomenko, angular, php, jquery, javascript, cms, gulp, bootstrap, front-end, web, internet, layout, salleedesign, projet, project, work,  professional">
-
-
-        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <!-- Include the core AngularJS library -->
-        <script defer src="/node_modules/angular/angular.min.js"></script>
-
-        <!-- Include the AngularJS routing library -->
-        <script defer src="/node_modules/angular-route/angular-route.min.js"></script>
-
-        <!-- Include the AngularJs animate library -->
-        <script defer src="/node_modules/angular-animate/angular-animate.min.js"></script>
-
-        <!-- jquery -->
-        <script defer src="/node_modules/jquery/dist/jquery.min.js"></script>
-
-        <!-- Angular -->
-        <script defer src="public/dist/js/app.js"></script>
-
-        <!-- styles -->
-        <link type="text/css" rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
-        <link type="text/css" rel="stylesheet" href="public/dist/css/app.min.css"/>
-    </head>
+    <meta name="description"
+          content="Здравствуйте меня зовут Андрей. Я Full Stack программист. Я люблю кодить.">
+    <meta name="author" content="Andrei Khomenko">
+    <meta name="keywords"
+          content="andrei, khomenko, angular, php, jquery, javascript, cms, gulp, bootstrap, front-end, web, internet, layout, salleedesign, projet, project, work,  professional">
 
 
-    <body ng-app="GalleryApp">
+    <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-- navigation -->
-        <navigation></navigation>
-        <div class="view-container">
+    <!-- Include the core AngularJS library -->
+    <script defer src="/node_modules/angular/angular.min.js"></script>
+
+    <!-- Include the AngularJS routing library -->
+    <script defer src="/node_modules/angular-route/angular-route.min.js"></script>
+
+    <!-- Include the AngularJs animate library -->
+    <script defer src="/node_modules/angular-animate/angular-animate.min.js"></script>
+
+    <!-- jquery -->
+    <script defer src="/node_modules/jquery/dist/jquery.min.js"></script>
+
+    <!-- Angular -->
+    <script defer src="public/dist/js/app.js"></script>
+
+    <!-- styles -->
+    <link type="text/css" rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="public/dist/css/app.min.css"/>
+</head>
+
+
+<body ng-app="GalleryApp">
+    <noscript><span>У Вас отключён JavaScript...</span></noscript>
+
+    <!-- navigation -->
+    <navigation></navigation>
+    <div class="view-container">
         <div ng-view class="{{ viewClass }}"></div>
-        </div>
+    </div>
     </body>
 </html>
