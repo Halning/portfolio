@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row an" ng-repeat="value in projects">
             <div class="col-md-6"  ng-repeat="project in value">
-                <a href="{{ project.href }}">
+                <a ng-href="{{ project.href }}">
                     <img class="img-responsive img-thumbnail" ng-src="{{ project.src }}" alt="MakeWear">
                     <div class="descr" title="Интернет магазин одежды для оптовых и розничных покупателях">
                         {{ project.desc }}

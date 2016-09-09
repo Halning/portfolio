@@ -3,7 +3,7 @@
  */
 var app = angular.module('GalleryApp', ['ngRoute', 'ngAnimate']);
 
-app.config(function ($routeProvider) {
+app.config(["$locationProvider", '$routeProvider', function ($locationProvider, $routeProvider) {
     $routeProvider
         .when('/', {
             controller: 'HomeController',
@@ -28,4 +28,6 @@ app.config(function ($routeProvider) {
         .otherwise({
             redirectTo: '/'
         });
-});
+
+    $locationProvider.html5Mode(true);
+}]);

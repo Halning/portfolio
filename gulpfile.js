@@ -52,7 +52,9 @@ gulp.task('less', function () {
 
 gulp.task('angular', function(){
     return gulp.src(path.src.js_angular)
+        .pipe(sourcemaps.init())
         .pipe(concat(path.build_file.js_angular))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(path.build.js))
 });
 
