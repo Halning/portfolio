@@ -29,5 +29,5 @@ app.config(["$locationProvider", '$routeProvider', function ($locationProvider, 
             redirectTo: '/'
         });
 
-    $locationProvider.html5Mode(true);
+    //$locationProvider.html5Mode(true);
 }]);
