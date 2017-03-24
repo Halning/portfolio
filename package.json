@@ -1,36 +1,46 @@
 {
-  "name": "mysite",
-  "version": "2.0.0",
-  "description": "Andreii packege",
-  "main": "gulpfile.js",
+  "name": "porfolio1",
+  "version": "0.0.0",
+  "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Halning/portfolio"
-  },
+  "private": true,
   "dependencies": {
-    "angular": "^1.5.8",
-    "angular-animate": "^1.5.8",
-    "angular-route": "^1.5.8",
-    "bootstrap": "^3.3.7",
-    "jquery": "^3.1.0"
+    "@angular/common": "^2.4.0",
+    "@angular/compiler": "^2.4.0",
+    "@angular/core": "^2.4.0",
+    "@angular/forms": "^2.4.0",
+    "@angular/http": "^2.4.0",
+    "@angular/platform-browser": "^2.4.0",
+    "@angular/platform-browser-dynamic": "^2.4.0",
+    "@angular/router": "^3.4.0",
+    "core-js": "^2.4.1",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.7.6"
   },
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.0",
-    "gulp-csso": "^2.0.0",
-    "gulp-imagemin": "^3.0.3",
-    "gulp-less": "^3.1.0",
-    "gulp-plumber": "^1.1.0",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-spritesmith": "0.0.2",
-    "less-plugin-autoprefix": "^1.5.1",
-    "vinyl-buffer": "^1.0.0",
-    "gulp.spritesmith": "^6.2.1",
-    "del": "^2.2.2"
-  },
-  "author": "",
-  "license": "BSD-2-Clause"
+    "@angular/cli": "1.0.0-rc.4",
+    "@angular/compiler-cli": "^2.4.0",
+    "@types/jasmine": "2.5.38",
+    "@types/node": "~6.0.60",
+    "codelyzer": "~2.0.0",
+    "jasmine-core": "~2.5.2",
+    "jasmine-spec-reporter": "~3.2.0",
+    "karma": "~1.4.1",
+    "karma-chrome-launcher": "~2.0.0",
+    "karma-cli": "~1.0.1",
+    "karma-jasmine": "~1.1.0",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "karma-coverage-istanbul-reporter": "^0.2.0",
+    "protractor": "~5.1.0",
+    "ts-node": "~2.0.0",
+    "tslint": "~4.5.0",
+    "typescript": "~2.0.0"
+  }
 }
