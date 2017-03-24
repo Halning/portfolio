@@ -1,23 +1,24 @@
-@import "../helpers/var.less";
-@import "../helpers/mixins.less";
+@import "../../assets/css/helpers/var";
+@import "../../assets/css/helpers/mixins";
+
 /* main index */
 /* animation view */
-.animate-home.ng-enter {
-  .keyframes(fade-in-home, 0, 1, scale(0.1, 0.1), scale(1, 1));
-  .animation-elem(0.7s, fade-in-home, ease);
+/*.animate-home.ng-enter {
+  @include keyframes(fade-in-home, 0, 1, scale(0.1, 0.1), scale(1, 1));
+  @include animation-elem(0.7s, fade-in-home, ease);
   z-index: 100;
 }
 
 .animate-home.ng-leave {
-  .keyframes(fade-out-home, 1, 0, scale(1, 1), scale(0.1, 0.1));
-  .animation-elem(0.7s, fade-out-home, ease);
+  @include keyframes(fade-out-home, 1, 0, scale(1, 1), scale(0.1, 0.1));
+  @include animation-elem(0.7s, fade-out-home, ease);
   z-index:99;
-}
+}*/
 
 /* Jumbotrom */
 .home.main {
   .jumbotrom {
-    background: url(@main-url) center center;
+    background: url('../../assets/img/city3-min.jpg') center center;
     background-size: cover;
     text-align: center;
     position: relative;
@@ -28,7 +29,7 @@
       top: 50%;
       position: relative;
       margin: 0 auto;
-      .transform-elem(translateY(-60%));
+      @include transform-elem(translateY(-60%));
     }
 
     a {
@@ -39,8 +40,8 @@
       opacity: 0;
       text-decoration: none;
       cursor: pointer;
-      .transform-elem(translate(0, 60px));
-      .transitions-elem(all, 1s, ease);
+      @include transform-elem(translate(0, 60px));
+      @include transitions-elem(all, 1s, ease);
     }
 
     h1 {
@@ -50,7 +51,7 @@
       margin: 0;
       color: #fff;
       span {
-        font-family: @font-Indie;
+        font-family: $font-Indie;
       }
     }
 
@@ -59,34 +60,38 @@
       color: #fff;
       text-align: center;
       opacity: 0;
-      .transform-elem(translate(0, 20px));
+      @include transform-elem(translate(0, 20px));
     }
   }
 
-  .jumbotrom.init_1 h1 {
-    opacity: 1;
-    .transitions-elem(opacity, 0.5s, ease, 1s);
-  }
+  .jumbotrom.init_1 {
+    h1 {
+      opacity: 1;
+      @include transitions-elem(opacity, 0.5s, ease, 1s);
+    }
 
-  .jumbotrom.init_2 {
     h2 {
       opacity: 1;
       margin-bottom: 0.5em;
-      .transitions-elem(all, 1s, ease);
-      .transform-elem(translate(0px, 0px));
+      @include transitions-elem(all, 1s, ease);
+      @include transform-elem(translate(0px, 0px));
     }
 
     a {
       opacity: 1;
-      .transform-elem(translate(0px, 0px));
+      @include transform-elem(translate(0px, 0px));
     }
   }
+
+ /* .jumbotrom.init_2 {
+
+  }*/
 
   /* start reading */
   .start_reading {
     padding-top: 1.5em;
     text-align: left;
-    font-family: @font-text;
+    font-family: $font-text;
     @media only screen and (min-width: 500px) {
       padding-top: 2.5em;
     }
@@ -97,7 +102,7 @@
       line-height: 1.5em;
       font-size: 1.25em;
       @media screen and (min-width: 700px) {
-        .text-weight
+        @include text-weight;
       }
       .large-letter {
         font-size: 3.857142em;
@@ -115,7 +120,7 @@
       margin-top: 25px;
       margin-bottom: 15px;
       @media screen and (min-width: 700px) {
-        .text-weight
+        @include text-weight;
       }
       span {
         border-left: 1px solid #000;
@@ -125,15 +130,15 @@
     h4 {
       margin-bottom: 25px;
       @media screen and (min-width: 700px) {
-        .text-weight
+        @include text-weight;
       }
     }
 
     a {
       text-decoration: underline;
       cursor: pointer;
-      color: @color-black;
-      .transitions-elem(color, 0.2s, ease);
+      color: $color-black;
+      @include transitions-elem(color, 0.2s, ease);
       &:hover {
         color: #0fb7b7;
         text-decoration: underline;

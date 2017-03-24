@@ -1,21 +1,19 @@
-@import (inline) url(https://fonts.googleapis.com/css?family=Indie+Flower);
-@import (inline) url(https://fonts.googleapis.com/css?family=Merriweather);
-@import (inline) url(https://fonts.googleapis.com/css?family=Roboto);
-@import "helpers/var.less";
-@import "helpers/mixins.less";
-@import "layout/header.less";
-@import "pages/home.less";
-@import "pages/skills.less";
-@import "pages/projects.less";
-@import "pages/timer.less";
-@import "pages/contact.less";
-@import "layout/footer.less";
+@import "helpers/var";
+@import "helpers/mixins";
+@import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+//import "layout/header.less";
+//import "pages/home.less";
+//import "pages/skills.less";
+//import "pages/projects.less";
+//import "pages/timer.less";
+//import "pages/contact.less";
+//import "layout/footer.less";
 
 
 html, body {
   margin: 0;
   padding: 0;
-  font-family: @font-main;
+  font-family: $font-main;
 }
 
 body {
@@ -25,8 +23,8 @@ body {
   color: #393939;
   font-weight: 500;
   text-align: center;
-  overflow: hidden !important;
-  -webkit-overflow-scrolling: touch;
+/*  overflow: hidden !important;
+  -webkit-overflow-scrolling: touch;*/
   @media screen and (min-width: 600px) {
     font-size: 150%;
   }
@@ -41,7 +39,7 @@ body {
   position: relative;
 }
 
-.view-container {
+/*.view-container {
   position: relative;
 }
 
@@ -52,7 +50,7 @@ body {
   top: 0px;
   left: 0;
   right: 0;
-}
+}*/
 
 .skills, .projects {
   padding: 8em 0 0 0;

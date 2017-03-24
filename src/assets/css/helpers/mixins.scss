@@ -1,0 +1,71 @@
+@mixin transitions-elem($prop, $duration, $timing, $delay: 0s) {
+  -ms-transition: $prop $duration $timing $delay;
+  -webkit-transition: $prop $duration $timing $delay;
+  -moz-transition: $prop $duration $timing $delay;
+  -o-transition: $prop $duration $timing $delay;
+  transition: $prop $duration $timing $delay;
+}
+
+@mixin transform-elem($function) {
+  -webkit-transform: $function;
+  -moz-transform: $function;
+  -ms-transform: $function;
+  -o-transform: $function;
+  transform: $function;
+}
+
+@mixin text-weight {
+  width: 580px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* animation views replace */
+@mixin animation-elem($duration, $function, $timing: easy){
+  -webkit-animation: $duration $function;
+  -moz-animation: $duration $function;
+  -o-animation: $duration $function;
+  animation: $duration $function;
+  animation-timing-function: $timing;
+}
+
+/* for skills icon */
+@mixin margin-top-bottom($margin) {
+  margin-top: $margin !important;
+  margin-bottom: $margin !important;
+}
+
+@mixin keyframes($name, $opacityFrom, $opacityTo, $functionTransformFrom, $functionTransformTo) {
+  @keyframes #{$name} {
+    from {
+      opacity: $opacityFrom;
+      transform: $functionTransformFrom;
+    }
+    to {
+      opacity: $opacityTo;
+      transform: $functionTransformTo;
+    }
+  }
+
+  @-moz-keyframes #{$name} {
+    from {
+      opacity: $opacityFrom;
+      transform: $functionTransformFrom;
+    }
+    to {
+      opacity: $opacityTo;
+      transform: $functionTransformTo;
+    }
+  }
+
+  @-webkit-keyframes #{$name} {
+    from {
+      opacity: $opacityFrom;
+      transform: $functionTransformFrom;
+    }
+    to {
+      opacity: $opacityTo;
+      transform: $functionTransformTo;
+    }
+  }
+}
