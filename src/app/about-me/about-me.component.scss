@@ -5,6 +5,16 @@
   text-align: center;
   position: relative;
   margin: 0 auto;
+  background-color: #eee;
+}
+
+.active {
+  background-color: #cfd8dc;
+  transform: scale(1.1);
+}
+.inactive {
+  background-color: #eee;
+  transform: scale(1);
 }
 
 /* start reading */
