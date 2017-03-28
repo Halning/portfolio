@@ -1,0 +1,22 @@
+<div [ngClass]="{'in': toggleClassMenu, 'out': !toggleClassMenu,
+        'white': toggleClassMenuBW, 'black': !toggleClassMenuBW
+        ,'transparent': toggleClassTransparent}"
+     class="clearfix menu">
+    <ul class="nav nav-pills">
+        <li class="active">
+            <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
+        </li>
+        <li>
+            <a [routerLink]="['/about']" routerLinkActive="active">About</a>
+        </li>
+        <li>
+            <a [routerLink]="['/skills']" routerLinkActive="active">Skills</a>
+        </li>
+        <li>
+            <a [routerLink]="['/projects']" routerLinkActive="active">Projects</a>
+        </li>
+        <li>
+            <a [routerLink]="['/contact']" routerLinkActive="active">Contact</a>
+        </li>
+    </ul>
+</div>
