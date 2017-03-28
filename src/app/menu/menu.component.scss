@@ -1,9 +1,9 @@
 @import "../../assets/css/helpers/var";
 @import "../../assets/css/helpers/mixins";
 /* Header */
-.header {
+:host {
   padding: 15px 30px;
-  position: absolute;
+  position: fixed;
   width: 100%;
   display: inline-block;
   right: 0;
@@ -62,13 +62,13 @@
   }
 }
 
-.header.transparent {
+:host.transparent {
   background: none !important;
   border: none;
   box-shadow: none !important;
 }
 
-.header.in {
+:host.in {
   top: 0px;
   @include transitions-elem(all, 0.6s, ease);
   @media only screen and (min-width: 600px) {
@@ -76,7 +76,7 @@
   }
 }
 
-.header.out {
+:host.out {
   top: -85px;
   @include transitions-elem(all, 0.6s, ease);
   @media only screen and (min-width: 600px) {
@@ -84,7 +84,7 @@
   }
 }
 
-.header.black {
+:host.black {
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
   background: rgba(239, 238, 238, 0.9);
   li a {
@@ -95,24 +95,24 @@
   }
 }
 
-.header.white li a {
+:host.white li a {
   color: $color-white;
   &:after {
     background: $color-white;
   }
 }
 
-.header.white li.active a,
-.header.white li a:hover,
-.header.white li.active a:hover {
+:host.white li.active a,
+:host.white li a:hover,
+:host.white li.active a:hover {
   background-color: inherit;
   color: $color-white;
   @include transitions-elem(color, 1s, ease);
 }
 
-.header.black li.active a,
-.header.black li a:hover,
-.header.black li.active a:hover {
+:host.black li.active a,
+:host.black li a:hover,
+:host.black li.active a:hover {
   background-color: inherit;
   color: $color-black;
   @include transitions-elem(color, 1s, ease);

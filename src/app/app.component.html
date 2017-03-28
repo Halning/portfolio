@@ -1,6 +1,6 @@
-<nav>
-<!--  <a routerLink="/home" routerLinkActive="active">Home</a>-->
-<!--  <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-  <a routerLink="/heroes" routerLinkActive="active">Heroes</a>-->
-</nav>
+<ha-menu
+        [ngClass]="{'in': toggleClassMenu, 'out': !toggleClassMenu,
+        'white': toggleClassMenuBW, 'black': !toggleClassMenuBW}"
+        class="clearfix">
+</ha-menu>
 <router-outlet></router-outlet>

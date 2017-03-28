@@ -1,6 +1,4 @@
-import { Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
-import { HostListener } from '@angular/core';
-import { DOCUMENT } from '@angular/platform-browser';
+import { Component, OnInit } from '@angular/core';
 
 import { WindowRefService } from '../core/window-ref.service';
 
@@ -14,8 +12,6 @@ export class HomeComponent implements OnInit {
     screenHeight: string;
     animate = false;
 
-    lastScrollTop = 0;
-
     links = {
         codeAcademy: 'https://www.codecademy.com/',
         gitHub: 'https://github.com/Halning/brovary',
@@ -23,16 +19,8 @@ export class HomeComponent implements OnInit {
         cs50: 'https://cs50.harvard.edu/'
     };
 
-    @ViewChild('menu') menu: ElementRef;
 
-    @HostListener('window:scroll', [])
-    onWindowScroll() {
-        const number = this.document.body.scrollTop;
-        console.log(number);
-    }
-
-    constructor(private window: WindowRefService,
-                @Inject(DOCUMENT) private document: Document) {
+    constructor(private window: WindowRefService) {
     }
 
     ngOnInit() {
@@ -43,83 +31,12 @@ export class HomeComponent implements OnInit {
     }
 
     initMainSize(): void {
-        const windowWidth = this.window.nativeWindow.innerWidth;
         const windowHeight = this.window.nativeWindow.innerHeight;
 
         this.screenHeight = `${windowHeight + 1}px`;
     }
 
 
-    scroll(event: any): void {
-        console.log(event);
-        const st = event.scrollTop();
-        console.log(st);
-        console.log(this.menu);
-
-        // up and down scroll for the header
-        if (st > this.lastScrollTop) {
-            // downscroll code
-            console.log(this.menu);
-   /*         if (st > 0) {
-                if (this.menu.hasClass('in')) {
-                    scrollCounter++;
-                    if (scrollCounter >= 1) {
-                        $('.header').removeClass('in').addClass('out');
-                        scrollCounter = 0;
-                    }
-                }
-            }
-
-            if ($myelement.scrollTop() == $(document).height() - $(window).height()) {
-                $('.header').removeClass('out').addClass('in');
-            }*/
-
-        }/* else {
-            if ($('.header').hasClass('out')) {
-                scrollCounter++;
-                if (scrollCounter >= 3) {
-                    $('.header').removeClass('out').addClass('in');
-                    scrollCounter = 0;
-                }
-            }
-        }
-        $lastScrollTop = st;
-
-        if (!~window.location.href.indexOf('skills')
-            && !~window.location.href.indexOf('projects')
-            && !~window.location.href.indexOf('contact')
-            && !~window.location.href.indexOf('timer')) {
-            console.log(window.location.href);
-            if (windowWidth > 1200) {
-                var revertColor = windowHeight - 40;
-            } else {
-                var revertColor = windowHeight / 3;
-            }
-            if ($myelement.scrollTop() > revertColor) {
-                if ($(".header").hasClass('white'))
-                    $(".header").removeClass('white').addClass('black');
-                if ($(".header").hasClass('transparent'))
-                    $(".header").removeClass('transparent');
-            } else {
-                if ($myelement.find(".full-image").length > 0) {
-                    if ($(".header").hasClass('black'))
-                        $(".header").removeClass('black').addClass('white');
-                } else {
-                    if ($(".header").hasClass('black'))
-                        $(".header").addClass('transparent');
-                }
-            }
-        } else {
-            revertColor = 60;
-            if ($myelement.scrollTop() > revertColor) {
-                if ($(".header").hasClass('transparent'))
-                    $(".header").removeClass('transparent');
-            } else {
-                if ($(".header").hasClass('black'))
-                    $(".header").addClass('transparent');
-            }
-        } */
-    }
 
 
     /*   initJquery = function () {
