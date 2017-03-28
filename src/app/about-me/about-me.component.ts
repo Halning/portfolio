@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 
 @Component({
@@ -19,5 +19,8 @@ export class AboutMeComponent implements OnInit {
     }
 
     ngOnInit() {
+/*        const spanWidth = 10; // $('#text span').width();
+        console.log(this.text);
+        this.text.animate( { width: spanWidth }, 3000 );*/
     }
 }
