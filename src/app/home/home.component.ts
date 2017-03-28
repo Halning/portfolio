@@ -12,28 +12,14 @@ export class HomeComponent implements OnInit {
     screenHeight: string;
     animate = false;
 
-    links = {
-        codeAcademy: 'https://www.codecademy.com/',
-        gitHub: 'https://github.com/Halning/brovary',
-        makeWear: 'http://makewear.club/',
-        cs50: 'https://cs50.harvard.edu/'
-    };
-
-
     constructor(private window: WindowRefService) {
     }
 
     ngOnInit() {
-        this.initMainSize();
+        this.screenHeight = `${this.window.nativeWindow.innerHeight}px`;
         setTimeout(() => {
             this.animate = true;
         });
-    }
-
-    initMainSize(): void {
-        const windowHeight = this.window.nativeWindow.innerHeight;
-
-        this.screenHeight = `${windowHeight + 1}px`;
     }
 
 

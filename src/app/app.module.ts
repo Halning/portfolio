@@ -15,6 +15,8 @@ import { PerfectScrollbarConfigInterface } from 'angular2-perfect-scrollbar';
 
 import { AlertModule } from 'ng2-bootstrap';
 import { MenuComponent } from './menu/menu.component';
+import { AboutMeComponent } from './about-me/about-me.component';
+import { FooterComponent } from './footer/footer.component';
 
 const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -24,7 +26,9 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   declarations: [
     AppComponent,
     HomeComponent,
-    MenuComponent
+    MenuComponent,
+    AboutMeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

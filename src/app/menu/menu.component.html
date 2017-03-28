@@ -1,17 +1,22 @@
-<ul class="nav nav-pills">
-    <li class="active">
-        <a href="#/">Home</a>
-    </li>
-    <li>
-        <a href="#/skills">Skills</a>
-    </li>
-    <li>
-        <a href="#/projects">Work</a>
-    </li>
-    <li>
-        <a href="#/timer">Timer</a>
-    </li>
-    <li>
-        <a href="#/contact">Contact</a>
-    </li>
-</ul>
+<div [ngClass]="{'in': toggleClassMenu, 'out': !toggleClassMenu,
+        'white': toggleClassMenuBW, 'black': !toggleClassMenuBW
+        ,'transparent': toggleClassTransparent}"
+     class="clearfix menu">
+    <ul class="nav nav-pills">
+        <li class="active">
+            <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
+        </li>
+        <li>
+            <a [routerLink]="['/about']" routerLinkActive="active">About</a>
+        </li>
+        <li>
+            <a href="#/projects">Work</a>
+        </li>
+        <li>
+            <a href="#/timer">Timer</a>
+        </li>
+        <li>
+            <a href="#/contact">Contact</a>
+        </li>
+    </ul>
+</div>
