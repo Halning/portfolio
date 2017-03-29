@@ -1,27 +1,14 @@
 @import "../../assets/styles/var";
 @import "../../assets/styles/mixins";
-/* animation view */
-/*.animate-projects.ng-enter {
-  .keyframes(fade-in-projects, 0, 1, translateY(1000px), translateY(0px));
-  .animation-elem(0.3s, fade-in-projects, ease-out);
-  z-index: 100;
-}
 
-.animate-projects.ng-leave {
-  .keyframes(fade-out-projects, 1, 0, translateY(0px), translateY(1000px));
-  .animation-elem(0.5s, fade-out-projects, ease-out);
-  z-index:99;
-}*/
-/*main-2 projects*/
-
+/*projects*/
 .projects {
   padding: 3em 0 0 0;
-  .row {
-    margin-top: 500px;
-  }
+
   .col-md-6 {
     margin-bottom: 20px;
   }
+
   .project {
     display: block;
     &:hover {
@@ -44,7 +31,6 @@
     padding: 20px;
     opacity: 0;
     color: #204056;
-    text-align: left;
     line-height: 2;
     -webkit-transition: -webkit-transform 0.15s ease-in-out,opacity 0.15s ease-in-out;
     transition: transform 0.15s ease-in-out,opacity 0.15s ease-in-out;
@@ -52,20 +38,5 @@
     -ms-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
     @include transform-elem(scale(0.95));
-  }
-}
-
-.projects.init_2 {
-  .row:nth-of-type(1) {
-    @include transitions-elem(margin-top, 0.3s, ease);
-    margin-top: 30px;
-  }
-  .row:nth-of-type(2) {
-    @include transitions-elem(margin-top, 0.3s, ease, 0.3s);
-    margin-top: 30px;
-  }
-  .row:nth-of-type(3) {
-    @include transitions-elem(margin-top, 0.3s, ease, 0.6s);
-    margin-top: 30px;
   }
 }

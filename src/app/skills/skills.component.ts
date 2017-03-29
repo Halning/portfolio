@@ -49,7 +49,6 @@ import {
     ]
 })
 export class SkillsComponent implements OnInit {
-    animate = false;
 
     frontEnd = [
         [
@@ -137,9 +136,6 @@ export class SkillsComponent implements OnInit {
     }
 
     ngOnInit() {
-        setTimeout(() => {
-            this.animate = true;
-        });
     }
 
 }

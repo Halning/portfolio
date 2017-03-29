@@ -28,11 +28,28 @@ import {
                     style({opacity: 0, transform: 'translateY(1000px)',  offset: 1.0})
                 ]))
             ])
-        ])
+        ]),
+        trigger('projectTop', [
+            state('void', style({marginTop: '500px'})),
+            transition('void => 0', [
+                animate('0.3s ease', style({
+                    marginTop: '30px'
+                }))
+            ]),
+            transition('void => 1', [
+                animate('0.3s 0.3s ease', style({
+                    marginTop: '30px'
+                }))
+            ]),
+            transition('void => 2', [
+                animate('0.3s 0.6s ease', style({
+                    marginTop: '30px'
+                }))
+            ])
+        ]),
     ]
 })
 export class ProjectsComponent implements OnInit {
-    animate = false;
 
     projects = [
         [
@@ -73,15 +90,11 @@ export class ProjectsComponent implements OnInit {
                 desc: 'Coming soon'
             }
         ],
-    ]
+    ];
 
     constructor() {
     }
 
     ngOnInit() {
-        setTimeout(() => {
-            this.animate = true;
-        });
     }
-
 }

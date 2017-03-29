@@ -1,7 +1,7 @@
-<div class="projects main" [class.init_2]="animate" [@projectsState]>
+<div class="projects main" [@projectsState]>
 
     <div class="container">
-        <div class="row an" *ngFor="let value of projects">
+        <div class="row an" *ngFor="let value of projects; let i = index" [@projectTop]="i">
             <div class="col-md-6" *ngFor="let project of value">
                 <a class="project" href="{{ project.href }}">
                     <img class="img-responsive img-thumbnail" src="{{ project.src }}" alt="MakeWear">
