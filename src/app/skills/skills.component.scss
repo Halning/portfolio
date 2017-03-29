@@ -1,26 +1,8 @@
-@import "../../assets/css/helpers/var";
-@import "../../assets/css/helpers/mixins";
-//$import "../../helpers/sprite.less";
-/* animation view */
-/*
-.animate-skills.ng-enter {
-  .keyframes(fade-in-skill, 0, 1, skewY(-15deg), skewY(0deg));
-  .animation-elem(0.7s, fade-in-skill, ease);
-  z-index: 100;
-}
+@import "../../assets/styles/var";
+@import "../../assets/styles/mixins";
 
-.animate-skills.ng-leave {
-  .keyframes(fade-out-skill, 1, 0, scale(1, 1), scale(0.1, 0.1));
-  .animation-elem(0.7s, fade-out-skill, ease);
-  z-index: 99;
-}
-*/
-
-/* main-2 skills */
+/* skills */
 .skills {
-  //background: url($skills-url) center center;
-  background-size: cover;
-  background-color: g;
   color: #011;
   .col-md-3 {
     padding: 5px;
@@ -28,24 +10,21 @@
     .content-back__skill {
       padding: 5px;
       height: 180px;
-      div {
+      .skills-icon {
         margin: 0 auto;
-        @include transform-elem(translate(30px, 0));
       }
     }
   }
   .skills-title {
     padding: 30px;
-    opacity: 0;
     font-size: 3em;
-    padding: 0;
     margin: 1.5em 0;
-    @include transform-elem(translate(0, 20px));
   }
 
   .skills-title, .skill-name {
     text-shadow: 0px 5px 10px;
   }
+
   .icon-html {
     background-image: url('../../assets/img/sprite/html.png');
     width: 100px;
@@ -133,18 +112,5 @@
     background-image: url('../../assets/img/sprite/eng.png');
     width: 100px;
     height: 100px;
-  }
-}
-
-.skills.init_2 {
-  .skills-title {
-    background-color: rgba(999, 999, 999, 0.2);
-    opacity: 1;
-    @include transitions-elem(all, 0.5s, ease);
-    @include transform-elem(translate(0px, 0px));
-  }
-  .row .col-md-3 > div > div {
-    @include transitions-elem(all, 0.5s, ease);
-    @include transform-elem(translate(0px, 0px));
   }
 }

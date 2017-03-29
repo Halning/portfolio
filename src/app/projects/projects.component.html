@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row an" *ngFor="let value of projects">
             <div class="col-md-6" *ngFor="let project of value">
-                <a href="{{ project.href }}">
+                <a class="project" href="{{ project.href }}">
                     <img class="img-responsive img-thumbnail" src="{{ project.src }}" alt="MakeWear">
                     <div class="descr" title="Интернет магазин одежды для оптовых и розничных покупателях">
                         {{ project.desc }}

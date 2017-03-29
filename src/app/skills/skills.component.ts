@@ -27,6 +27,24 @@ import {
                     style({opacity: 0, transform: 'skewY(-15deg)',  offset: 1.0})
                 ]))
             ])
+        ]),
+        trigger('skillsIcon', [
+            state('void', style({transform: 'translate(30px, 0)'})),
+            transition('void => *', [
+                animate('0.5s ease', style({
+                    transform: 'translate(0px, 0px)'
+                }))
+            ])
+        ]),
+        trigger('skillsTitle', [
+            state('void', style({opacity: 0, transform: 'translate(0, 20px)'})),
+            transition('void => *', [
+                animate('0.5s ease', style({
+                    opacity: 1,
+                    backgroundColor: 'rgba(999, 999, 999, 0.2)',
+                    transform: 'translate(0px, 0px)'
+                }))
+            ])
         ])
     ]
 })

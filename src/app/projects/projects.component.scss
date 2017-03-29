@@ -1,5 +1,5 @@
-@import "../../assets/css/helpers/var";
-@import "../../assets/css/helpers/mixins";
+@import "../../assets/styles/var";
+@import "../../assets/styles/mixins";
 /* animation view */
 /*.animate-projects.ng-enter {
   .keyframes(fade-in-projects, 0, 1, translateY(1000px), translateY(0px));
@@ -22,7 +22,7 @@
   .col-md-6 {
     margin-bottom: 20px;
   }
-  a {
+  .project {
     display: block;
     &:hover {
       opacity: 1;
