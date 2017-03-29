@@ -18,33 +18,45 @@ import {
     styleUrls: ['home.component.scss'],
     animations: [
         trigger('homeState', [
-            state('out', style({transform: 'scale(0.1, 0.1)'})),
+            state('in', style({transform: 'scale(1, 1)'})),
             transition('void => *', [
                 animate(300, keyframes([
                     style({opacity: 0, transform: 'scale(0.1, 0.1)', offset: 0}),
-                    style({opacity: 1, transform: 'scale(1, 1)',     offset: 1.0})
+                    style({opacity: 1, transform: 'scale(1, 1)', offset: 1.0})
                 ]))
             ]),
             transition('* => void', [
                 animate(300, keyframes([
-                    style({opacity: 1, transform: 'scale(1, 1)',     offset: 0}),
-                    style({opacity: 0, transform: 'scale(0.1, 0.1)',  offset: 1.0})
+                    style({opacity: 1, transform: 'scale(1, 1)', offset: 0}),
+                    style({opacity: 0, transform: 'scale(0.1, 0.1)', offset: 1.0})
                 ]))
             ])
-        ])
+        ]),
+        trigger('homeMainTitle', [
+            state('in', style({opacity: 1})),
+            state('void', style({opacity: 0})),
+            transition('void => *', [
+                animate('0.5s 0.7s ease')
+            ])
+        ]),
+        trigger('homeTitle', [
+            state('void', style({opacity: 0, transform: 'translate(0, 20px)'})),
+            transition('void => *', [
+                animate('1s ease', style({
+                    opacity: 1,
+                    transform: 'translate(0px, 0px)'
+                }))
+            ])
+        ]),
     ]
 })
 export class HomeComponent implements OnInit {
     screenHeight: string;
-    animate = false;
 
     constructor(private window: WindowRefService) {
     }
 
     ngOnInit() {
         this.screenHeight = `${this.window.nativeWindow.innerHeight}px`;
-        setTimeout(() => {
-            this.animate = true;
-        });
     }
 }

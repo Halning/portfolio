@@ -1,20 +1,6 @@
 @import "../../assets/css/helpers/var";
 @import "../../assets/css/helpers/mixins";
 
-/* main index */
-/* animation view */
-/*.animate-home.ng-enter {
-  @include keyframes(fade-in-home, 0, 1, scale(0.1, 0.1), scale(1, 1));
-  @include animation-elem(0.7s, fade-in-home, ease);
-  z-index: 100;
-}
-
-.animate-home.ng-leave {
-  @include keyframes(fade-out-home, 1, 0, scale(1, 1), scale(0.1, 0.1));
-  @include animation-elem(0.7s, fade-out-home, ease);
-  z-index:99;
-}*/
-
 /* Jumbotrom */
 .home.main {
   .jumbotrom {
@@ -32,20 +18,7 @@
       @include transform-elem(translateY(-60%));
     }
 
-    a {
-      font-size: 0.857142857142em;
-      font-style: italic;
-      font-weight: 500;
-      color: #fff;
-      opacity: 0;
-      text-decoration: none;
-      cursor: pointer;
-      @include transform-elem(translate(0, 60px));
-      @include transitions-elem(all, 1s, ease);
-    }
-
-    h1 {
-      opacity: 0;
+    .home-main-title {
       font-size: 3em;
       padding: 0;
       margin: 0;
@@ -55,31 +28,10 @@
       }
     }
 
-    h2 {
+    .home-title {
       font-size: 1.5em;
       color: #fff;
       text-align: center;
-      opacity: 0;
-      @include transform-elem(translate(0, 20px));
-    }
-  }
-
-  .jumbotrom.init_1 {
-    h1 {
-      opacity: 1;
-      @include transitions-elem(opacity, 0.5s, ease, 1s);
-    }
-
-    h2 {
-      opacity: 1;
-      margin-bottom: 0.5em;
-      @include transitions-elem(all, 1s, ease);
-      @include transform-elem(translate(0px, 0px));
-    }
-
-    a {
-      opacity: 1;
-      @include transform-elem(translate(0px, 0px));
     }
   }
 
