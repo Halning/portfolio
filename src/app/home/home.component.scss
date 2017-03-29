@@ -1,8 +1,7 @@
 @import "../../assets/styles/var";
-@import "../../assets/styles/mixins";
 
 /* Jumbotrom */
-.home.main {
+:host {
   .jumbotrom {
     background: url('../../assets/img/city3-min.jpg') center center;
     background-size: cover;
@@ -12,17 +11,16 @@
 
     .container {
       text-align: center;
-      top: 50%;
+      top: 42%;
       position: relative;
       margin: 0 auto;
-      @include transform-elem(translateY(-60%));
     }
 
     .home-main-title {
       font-size: 3em;
       padding: 0;
       margin: 0;
-      color: #fff;
+      color: $color-white;
       span {
         font-family: $font-Indie;
       }
@@ -30,13 +28,13 @@
 
     .home-title {
       font-size: 1.5em;
-      color: #fff;
+      color: $color-white;
       text-align: center;
     }
   }
 
   .btn-about {
-    color: #fff;
+    color: $color-white;
     font-style: italic;
   }
 }

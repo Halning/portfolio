@@ -57,6 +57,10 @@ export class HomeComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.initMainSize();
+    }
+
+    initMainSize(): void {
         this.screenHeight = `${this.window.nativeWindow.innerHeight}px`;
     }
 }

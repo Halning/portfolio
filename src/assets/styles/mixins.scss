@@ -14,12 +14,6 @@
   transform: $function;
 }
 
-@mixin text-weight {
-  width: 580px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 /* animation views replace */
 @mixin animation-elem($duration, $function, $timing: easy){
   -webkit-animation: $duration $function;
