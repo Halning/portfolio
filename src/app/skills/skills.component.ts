@@ -1,9 +1,34 @@
 import { Component, OnInit } from '@angular/core';
+import {
+    trigger,
+    state,
+    style,
+    animate,
+    transition,
+    keyframes
+} from '@angular/animations';
 
 @Component({
     selector: 'ha-skills',
     templateUrl: './skills.component.html',
-    styleUrls: ['./skills.component.scss']
+    styleUrls: ['./skills.component.scss'],
+    animations: [
+        trigger('skillsState', [
+            state('out', style({transform: 'skewY(-15deg)'})),
+            transition('void => *', [
+                animate(300, keyframes([
+                    style({opacity: 0, transform: 'skewY(-15deg)', offset: 0}),
+                    style({opacity: 1, transform: 'skewY(0deg)',     offset: 1.0})
+                ]))
+            ]),
+            transition('* => void', [
+                animate(300, keyframes([
+                    style({opacity: 1, transform: 'skewY(0deg)',     offset: 0}),
+                    style({opacity: 0, transform: 'skewY(-15deg)',  offset: 1.0})
+                ]))
+            ])
+        ])
+    ]
 })
 export class SkillsComponent implements OnInit {
     animate = false;
