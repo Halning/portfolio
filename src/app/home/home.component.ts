@@ -36,13 +36,13 @@ import {
             state('in', style({opacity: 1})),
             state('void', style({opacity: 0})),
             transition('void => *', [
-                animate('0.5s 0.7s ease')
+                animate('0.5s 1.5s ease')
             ])
         ]),
         trigger('homeTitle', [
             state('void', style({opacity: 0, transform: 'translate(0, 20px)'})),
             transition('void => *', [
-                animate('1s ease', style({
+                animate('1s 0.8s ease', style({
                     opacity: 1,
                     transform: 'translate(0px, 0px)'
                 }))
