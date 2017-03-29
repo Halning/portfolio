@@ -1,5 +1,5 @@
-@import "../../assets/css/helpers/var";
-@import "../../assets/css/helpers/mixins";
+@import "../../assets/styles/var";
+@import "../../assets/styles/mixins";
 /* Header */
 .menu {
   padding: 15px 30px;
@@ -21,9 +21,9 @@
 
     li a {
       margin-right: 0.8em;
-      margin-left: 0.8em;
+      margin-left: 2em;
       text-align: center;
-      font-size: 1.3em;
+      font-size: 1em;
       border-radius: 0em;
       padding: 0;
       &:after {
@@ -38,6 +38,9 @@
         -moz-transition: width 0.3s, opacity 0.2s, -moz-transform 0.3s;
         -o-transition: width 0.3s, opacity 0.2s, -o-transform 0.3s;
         transition: width 0.3s, opacity 0.2s, -webkit-transform 0.3s, -moz-transform 0.3s, -o-transform 0.3s, transform 0.3s;
+        @media only screen and (max-width: 600px) {
+          margin-top: 17px;
+        }
       }
       &:hover::after,  &.active::after{
         opacity: 1;
@@ -49,9 +52,8 @@
         border: none;
         background-color: transparent;
       }
-      @media only screen and (min-width: 600px) {
-        font-size: 1em;
-        margin-left: 2em;
+      @media only screen and (max-width: 600px) {
+        margin-left: 0.8em;
         @include transitions-elem(font-size, 3s, ease);
       }
     }

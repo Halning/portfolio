@@ -19,7 +19,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "ha",
       "styles": [
-        "assets/css/styles.scss"
+        "assets/styles/styles.scss"
       ],
       "scripts": [
         "../node_modules/hammerjs/hammer.min.js"

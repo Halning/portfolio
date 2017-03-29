@@ -1,17 +1,10 @@
-@import "helpers/var";
-@import "helpers/mixins";
+@import "var";
+@import "mixins";
 @import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 //@import '../../../node_modules/@angular/material/core/theming/prebuilt/deeppurple-amber.css';
 //@import '../../../node_modules/@angular/material/core/theming/prebuilt/indigo-pink.css';
 //@import '../../../node_modules/@angular/material/core/theming/prebuilt/pink-bluegrey.css';
 @import '../../../node_modules/@angular/material/core/theming/prebuilt/purple-green.css';
-//import "layout/header.less";
-//import "pages/home.less";
-//import "pages/skills.less";
-//import "pages/projects.less";
-//import "pages/timer.less";
-//import "pages/contact.less";
-//import "layout/footer.less";
 
 
 html, body {
@@ -42,15 +35,26 @@ body {
   position: relative;
 }
 
-/*.view-container {
-  position: relative;
-}
-
-.animate-home.ng-enter, .animate-home.ng-leave,
-.animate-skills.ng-enter, .animate-skills.ng-leave,
-.animate-projects.ng-enter, .animate-projects.ng-leave{
-  position: absolute;
-  top: 0px;
+.loading {
+  opacity: 0;
+  transition: opacity .8s ease-in-out;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
   left: 0;
-  right: 0;
-}*/
+  background: #000;
+  z-index: -1;
+}
+ha-app-root:empty + .loading {
+  opacity: 1;
+  z-index: 100;
+}
+ha-app-root:empty + .loading h1 {
+  color: #EEE;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  transform: translate(0, -50%);
+}
