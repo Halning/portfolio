@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 import {
     trigger,
@@ -9,20 +10,20 @@ import {
     keyframes
 } from '@angular/animations';
 
+
 @Component({
     selector: 'ha-projects',
     templateUrl: './projects.component.html',
     styleUrls: ['./projects.component.scss'],
     animations: [
         trigger('projectsState', [
-            state('out', style({transform: 'translateY(1000px)'})),
-            transition('void => *', [
+            transition(':enter', [
                 animate(300, keyframes([
                     style({opacity: 0, transform: 'translateY(1000px)', offset: 0}),
                     style({opacity: 1, transform: 'translateY(0px)',     offset: 1.0})
                 ]))
             ]),
-            transition('* => void', [
+            transition(':leave', [
                 animate(300, keyframes([
                     style({opacity: 1, transform: 'translateY(0px)',     offset: 0}),
                     style({opacity: 0, transform: 'translateY(1000px)',  offset: 1.0})
@@ -92,9 +93,10 @@ export class ProjectsComponent implements OnInit {
         ],
     ];
 
-    constructor() {
+    constructor(private titleService: Title ) {
     }
 
     ngOnInit() {
+        this.titleService.setTitle('Projects');
     }
 }

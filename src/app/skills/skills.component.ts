@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import {
     trigger,
     state,
@@ -14,14 +15,13 @@ import {
     styleUrls: ['./skills.component.scss'],
     animations: [
         trigger('skillsState', [
-            state('out', style({transform: 'skewY(-15deg)'})),
-            transition('void => *', [
+            transition(':enter', [
                 animate(300, keyframes([
                     style({opacity: 0, transform: 'skewY(-15deg)', offset: 0}),
                     style({opacity: 1, transform: 'skewY(0deg)',     offset: 1.0})
                 ]))
             ]),
-            transition('* => void', [
+            transition(':leave', [
                 animate(300, keyframes([
                     style({opacity: 1, transform: 'skewY(0deg)',     offset: 0}),
                     style({opacity: 0, transform: 'skewY(-15deg)',  offset: 1.0})
@@ -30,7 +30,7 @@ import {
         ]),
         trigger('skillsIcon', [
             state('void', style({transform: 'translate(30px, 0)'})),
-            transition('void => *', [
+            transition(':enter', [
                 animate('0.5s ease', style({
                     transform: 'translate(0px, 0px)'
                 }))
@@ -38,10 +38,9 @@ import {
         ]),
         trigger('skillsTitle', [
             state('void', style({opacity: 0, transform: 'translate(0, 20px)'})),
-            transition('void => *', [
+            transition(':enter', [
                 animate('0.5s ease', style({
                     opacity: 1,
-                    backgroundColor: 'rgba(999, 999, 999, 0.2)',
                     transform: 'translate(0px, 0px)'
                 }))
             ])
@@ -132,10 +131,11 @@ export class SkillsComponent implements OnInit {
         ]
     ];
 
-    constructor() {
+    constructor(private titleService: Title) {
     }
 
     ngOnInit() {
+        this.titleService.setTitle('Skills');
     }
 
 }
