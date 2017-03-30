@@ -20,14 +20,13 @@ import {
     styleUrls: ['home.component.scss'],
     animations: [
         trigger('homeState', [
-            state('in', style({transform: 'scale(1, 1)'})),
-            transition('void => *', [
+            transition(':enter', [
                 animate(300, keyframes([
                     style({opacity: 0, transform: 'scale(0.1, 0.1)', offset: 0}),
                     style({opacity: 1, transform: 'scale(1, 1)', offset: 1.0})
                 ]))
             ]),
-            transition('* => void', [
+            transition(':leave', [
                 animate(300, keyframes([
                     style({opacity: 1, transform: 'scale(1, 1)', offset: 0}),
                     style({opacity: 0, transform: 'scale(0.1, 0.1)', offset: 1.0})
@@ -35,15 +34,14 @@ import {
             ])
         ]),
         trigger('homeMainTitle', [
-            state('in', style({opacity: 1})),
             state('void', style({opacity: 0})),
-            transition('void => *', [
-                animate('0.5s 1.5s ease')
+            transition(':enter', [
+                animate('0.5s 1.5s ease', style({opacity: 1}))
             ])
         ]),
         trigger('homeTitle', [
             state('void', style({opacity: 0, transform: 'translate(0, 20px)'})),
-            transition('void => *', [
+            transition(':enter', [
                 animate('1s 0.8s ease', style({
                     opacity: 1,
                     transform: 'translate(0px, 0px)'

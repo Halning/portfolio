@@ -17,14 +17,13 @@ import {
     styleUrls: ['./projects.component.scss'],
     animations: [
         trigger('projectsState', [
-            state('out', style({transform: 'translateY(1000px)'})),
-            transition('void => *', [
+            transition(':enter', [
                 animate(300, keyframes([
                     style({opacity: 0, transform: 'translateY(1000px)', offset: 0}),
                     style({opacity: 1, transform: 'translateY(0px)',     offset: 1.0})
                 ]))
             ]),
-            transition('* => void', [
+            transition(':leave', [
                 animate(300, keyframes([
                     style({opacity: 1, transform: 'translateY(0px)',     offset: 0}),
                     style({opacity: 0, transform: 'translateY(1000px)',  offset: 1.0})

@@ -10,21 +10,19 @@ import {
 } from '@angular/animations';
 
 
-
 @Component({
     selector: 'ha-about-me',
     templateUrl: 'about-me.component.html',
     styleUrls: ['about-me.component.scss'],
     animations: [
         trigger('aboutState', [
-            state('out', style({transform: 'scale(0.1, 0.1)'})),
-            transition('void => *', [
+            transition(':enter', [
                 animate(300, keyframes([
                     style({opacity: 0, transform: 'scale(0.1, 0.1)', offset: 0}),
                     style({opacity: 1, transform: 'scale(1, 1)', offset: 1.0})
                 ]))
             ]),
-            transition('* => void', [
+            transition(':leave', [
                 animate(300, keyframes([
                     style({opacity: 1, transform: 'scale(1, 1)', offset: 0}),
                     style({opacity: 0, transform: 'scale(0.1, 0.1)', offset: 1.0})
@@ -32,19 +30,15 @@ import {
             ])
         ]),
         trigger('print', [
-            transition('void => *', [
-                animate(3000, keyframes([
-                    style({width: '0', transform: 'steps(100, end)', offset: 0}),
-                    style({width: '30em', transform: 'steps(100, end)', offset: 1.0})
-                ]))
+            state('void', style({width: '0', transform: 'steps(100, end)'})),
+            transition(':enter', [
+                animate(3000, style({width: '30em', transform: 'steps(100, end)'}))
             ])
         ]),
         trigger('alive', [
-            transition('void => *', [
-                animate(1000, keyframes([
-                    style({opacity: 0.9, transform: 'scale(0.8)', offset: 0}),
-                    style({opacity: 1, transform: 'scale(1)', offset: 1.0})
-                ]))
+            state('void', style({opacity: 0.9, transform: 'scale(0.8)'})),
+            transition(':enter', [
+                animate(1000, style({opacity: 1, transform: 'scale(1)'}))
             ])
         ])
     ]
