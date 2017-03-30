@@ -1,4 +1,5 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import {
     trigger,
     state,
@@ -7,6 +8,7 @@ import {
     transition,
     keyframes
 } from '@angular/animations';
+
 
 
 @Component({
@@ -56,9 +58,10 @@ export class AboutMeComponent implements OnInit {
         cs50: 'https://cs50.harvard.edu/'
     };
 
-    constructor() {
+    constructor(private titleService: Title) {
     }
 
     ngOnInit() {
+        this.titleService.setTitle('About Me');
     }
 }

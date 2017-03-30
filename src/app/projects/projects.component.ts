@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 import {
     trigger,
@@ -8,6 +9,7 @@ import {
     transition,
     keyframes
 } from '@angular/animations';
+
 
 @Component({
     selector: 'ha-projects',
@@ -92,9 +94,10 @@ export class ProjectsComponent implements OnInit {
         ],
     ];
 
-    constructor() {
+    constructor(private titleService: Title ) {
     }
 
     ngOnInit() {
+        this.titleService.setTitle('Projects');
     }
 }

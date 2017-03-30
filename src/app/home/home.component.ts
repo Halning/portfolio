@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 import { WindowRefService } from '../core/window-ref.service';
 
@@ -10,6 +11,7 @@ import {
     transition,
     keyframes
 } from '@angular/animations';
+
 
 
 @Component({
@@ -53,11 +55,13 @@ import {
 export class HomeComponent implements OnInit {
     screenHeight: string;
 
-    constructor(private window: WindowRefService) {
+    constructor(private window: WindowRefService,
+                private titleService: Title ) {
     }
 
     ngOnInit() {
         this.initMainSize();
+        this.titleService.setTitle('Home');
     }
 
     initMainSize(): void {
