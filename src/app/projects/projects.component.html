@@ -1,7 +1,7 @@
 <div class="projects" [@projectsState]>
 
-    <div class="container-fluid">
-        <div class="row an" *ngFor="let value of projects; let i = index" [@projectTop]="i">
+    <div class="container">
+        <div class="row" *ngFor="let value of projects; let i = index" [@projectTop]="i">
             <div class="col-md-6 project" *ngFor="let project of value" (press)="goToProject(project?.href)">
                 <img class="img-responsive img-thumbnail project-img" src="{{ project?.src }}" alt="MakeWear">
                 <div class="project-description">

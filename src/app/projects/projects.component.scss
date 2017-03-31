@@ -12,7 +12,7 @@
   .project {
     display: block;
     cursor: pointer;
-    margin-bottom: 20px;
+    padding: 0;
     &:hover {
       opacity: 1;
       background-color: rgba(255,255,255,0.8);
@@ -34,11 +34,16 @@
     opacity: 0;
     color: #204056;
     line-height: 2;
+    font-size: 1.3em;
     -webkit-transition: -webkit-transform 0.15s ease-in-out,opacity 0.15s ease-in-out;
     transition: transform 0.15s ease-in-out,opacity 0.15s ease-in-out;
     -webkit-transform-origin: 50% 50%;
     -ms-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
     @include transform-elem(scale(0.95));
+    @include screenMaxW600 {
+      font-size: 1em;
+      line-height: 1.5em;
+    }
   }
 }
