@@ -1,6 +1,13 @@
 @import "../assets/styles/styles";
+
+/* vendors */
 @import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 //@import '../../../node_modules/@angular/material/core/theming/prebuilt/deeppurple-amber.css';
 //@import '../../../node_modules/@angular/material/core/theming/prebuilt/indigo-pink.css';
 //@import '../../../node_modules/@angular/material/core/theming/prebuilt/pink-bluegrey.css';
 @import '../../node_modules/@angular/material/core/theming/prebuilt/purple-green.css';
+
+/* fonts */
+@import url("https://fonts.googleapis.com/css?family=Indie+Flower");
+@import url("https://fonts.googleapis.com/css?family=Merriweather");
+@import url("https://fonts.googleapis.com/css?family=Roboto");

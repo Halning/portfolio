@@ -1,7 +1,6 @@
-import { Component, OnInit, Inject, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { WindowRefService } from '../core/window-ref.service';
-import { DOCUMENT } from '@angular/platform-browser';
 import { Location } from '@angular/common';
 
 @Component({
@@ -27,7 +26,7 @@ export class MenuComponent implements OnInit {
 
     @HostListener('window:scroll', [])
     onWindowScroll() {
-        const st = this.document.body.scrollTop;
+        const st = this.window.nativeDocument.body.scrollTop;
 
         this.toggleInOutMenuClass(st);
         this.lastScrollTop = st;
@@ -35,7 +34,6 @@ export class MenuComponent implements OnInit {
     }
 
     constructor(private window: WindowRefService,
-                @Inject(DOCUMENT) private document: Document,
                 private location: Location, private router: Router) {
         this.router.events.subscribe((e) => {
             this.onWindowScroll();

@@ -5,7 +5,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4300",
+    "start:aot": "ng serve --aot --port 4301",
     "build": "ng build",
+    "build:prod": "ng build --prod",
+    "build:prod:aot": "ng build --prod --aot",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -23,7 +26,6 @@
     "@angular/platform-browser": "~4.0.0",
     "@angular/platform-browser-dynamic": "~4.0.0",
     "@angular/router": "~4.0.0",
-    "angular2-perfect-scrollbar": "^2.0.6",
     "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
     "hammerjs": "^2.0.8",
