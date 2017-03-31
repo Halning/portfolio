@@ -3,31 +3,31 @@
 
 /*projects*/
 .projects {
-  padding: 3em 0 0 0;
-  @media screen and (max-width: 600px) {
-    padding: 4em 0 0 0;
-  }
-  .col-md-6 {
-    margin-bottom: 20px;
+  padding: 4em 0 0 0;
+  @include transitions-elem(all, 3s, ease);
+  @include screenMaxW600 {
+    padding: 5em 0 0 0;
   }
 
   .project {
     display: block;
+    cursor: pointer;
+    margin-bottom: 20px;
     &:hover {
       opacity: 1;
       background-color: rgba(255,255,255,0.8);
       @include transform-elem(scale(1));
-      img {
+      .project-img {
         opacity: .2;
       }
-      div {
+      .project-description {
         opacity: 1;
         @include transform-elem(scale(1));
       }
     }
   }
 
-  .descr {
+  .project-description {
     position: absolute;
     top: 0;
     padding: 20px;

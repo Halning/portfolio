@@ -6,7 +6,6 @@
 //@import '../../../node_modules/@angular/material/core/theming/prebuilt/pink-bluegrey.css';
 @import '../../../node_modules/@angular/material/core/theming/prebuilt/purple-green.css';
 
-
 html, body {
   margin: 0;
   padding: 0;
@@ -15,24 +14,14 @@ html, body {
 
 body {
   background-color: rgba(239, 238, 238, 1);
-  font-size: 100%;
+  font-size: 150%;
   line-height: 1.75em;
-  color: #393939;
+  color: $color-body-font;
   font-weight: 500;
   text-align: center;
-  /*  overflow: hidden !important;
-    -webkit-overflow-scrolling: touch;*/
-  @media screen and (min-width: 600px) {
-    font-size: 150%;
+  @include screenMaxW600 {
+    font-size: 100%;
   }
-}
-
-.main {
-  margin: 0px;
-  width: 100%;
-  height: auto;
-  display: block;
-  position: relative;
 }
 
 .loading {
@@ -46,10 +35,12 @@ body {
   background: #000;
   z-index: -1;
 }
+
 ha-app-root:empty + .loading {
   opacity: 1;
   z-index: 100;
 }
+
 ha-app-root:empty + .loading h1 {
   color: #EEE;
   position: absolute;
