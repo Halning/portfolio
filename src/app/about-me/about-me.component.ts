@@ -32,7 +32,7 @@ import {
         trigger('print', [
             state('void', style({width: '0', transform: 'steps(100, end)'})),
             transition(':enter', [
-                animate(3000, style({width: '30em', transform: 'steps(100, end)'}))
+                animate(3000, style({width: '100%', transform: 'steps(100, end)'}))
             ])
         ]),
         trigger('alive', [

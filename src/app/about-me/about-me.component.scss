@@ -2,7 +2,7 @@
 @import "../../assets/styles/mixins";
 
 .css-typing {
-  width: 30em;
+  width: 100%;
   white-space: nowrap;
   overflow: hidden;
 }
@@ -53,7 +53,7 @@
     text-decoration: underline;
     cursor: pointer;
     color: $color-black;
-    @include transitions-elem(color, 0.2s, ease);
+    //@include transitions-elem(color, 0.2s, ease);
     &:hover {
       color: #0fb7b7;
       text-decoration: underline;

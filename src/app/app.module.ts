@@ -10,9 +10,6 @@ import { AppRoutingModule } from './app.routing.module';
 import { HomeComponent } from './home/home.component';
 import { CoreModule } from './core/core.module';
 
-import { PerfectScrollbarModule } from 'angular2-perfect-scrollbar';
-import { PerfectScrollbarConfigInterface } from 'angular2-perfect-scrollbar';
-
 import { AlertModule } from 'ng2-bootstrap';
 import { MenuComponent } from './menu/menu.component';
 import { AboutMeComponent } from './about-me/about-me.component';
@@ -21,9 +18,6 @@ import { SkillsComponent } from './skills/skills.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
 
-const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
-  suppressScrollX: true
-};
 
 @NgModule({
   declarations: [
@@ -44,7 +38,6 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     BrowserAnimationsModule,
     AppRoutingModule,
     CoreModule,
-    PerfectScrollbarModule.forRoot(PERFECT_SCROLLBAR_CONFIG),
     AlertModule.forRoot()
   ],
   providers: [Title],

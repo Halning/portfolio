@@ -41,7 +41,7 @@ testem.log
 .DS_Store
 Thumbs.db
 
-#farebase
+# firebase
 /functions
 .firebaserc
 database.rules.json
