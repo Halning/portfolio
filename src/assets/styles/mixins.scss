@@ -1,3 +1,29 @@
+@mixin hover{
+  :host-context(.desktop-mode) & {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin screenMaxW980 {
+  @media all and (max-width: 980px) {
+    @content
+  }
+}
+
+@mixin screenMaxW600 {
+  @media all and (max-width: 600px) {
+    @content
+  }
+}
+
+@mixin screenMaxW400 {
+  @media all and (max-width: 400px) {
+    @content
+  }
+}
+
 @mixin transitions-elem($prop, $duration, $timing, $delay: 0s) {
   -ms-transition: $prop $duration $timing $delay;
   -webkit-transition: $prop $duration $timing $delay;

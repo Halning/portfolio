@@ -1,10 +1,10 @@
-<div class="main" (window:resize)="initMainSize()" [@homeState]>
+<div class="home" (window:resize)="initMainSize()" [@homeState] *ngIf="screenHeight">
 
-    <div class="jumbotrom" [ngStyle]="{'height': screenHeight}">
-        <div class="container">
+    <div class="home-image" [ngStyle]="{'height': screenHeight}">
+        <div class="home-container">
             <h1 class="home-main-title" [@homeMainTitle]>I am <span>Andrei</span></h1>
             <h2 [@homeTitle] class="home-title">Front end developer</h2>
-            <button md-button routerLink="/about" class="btn-about">About Me</button>
+            <button md-button routerLink="/about" class="home-btn-about">About Me</button>
         </div>
     </div>
 

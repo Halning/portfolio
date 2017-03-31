@@ -7,18 +7,15 @@
   overflow: hidden;
 }
 
-.container {
-  text-align: center;
-  position: relative;
-  margin: 0 auto;
-  background-color: #eee;
-}
-
 /* start reading */
-.start_reading {
+.about-me {
   padding-top: 2.5em;
   text-align: left;
   font-family: $font-text;
+  @include screenMaxW600 {
+    padding-top: 4em;
+  }
+  @include transitions-elem(all, 3s, ease);
 
   .about-article-text {
     margin-bottom: 1.00em;
@@ -43,8 +40,8 @@
     span {
       border-left: 1px solid #000;
     }
-    @media screen and (max-width: 600px) {
-      font-size: 1em;
+    @include screenMaxW600 {
+      font-size: 2em;
     }
   }
 
@@ -52,7 +49,7 @@
     margin-bottom: 25px;
   }
 
-  .links {
+  .about-links {
     text-decoration: underline;
     cursor: pointer;
     color: $color-black;
@@ -63,17 +60,17 @@
     }
   }
 
-  .ornament {
+  .about-ornament {
     margin-top: 3em;
     margin-bottom: 1.5em;
     text-align: center;
 
-    @media screen and (max-width: 600px) {
+    @include screenMaxW600 {
       margin-top: 5em;
     }
     svg {
       height: 75px;
-      @media screen and (max-width: 600px) {
+      @include screenMaxW600 {
         height: 45px;
       }
     }

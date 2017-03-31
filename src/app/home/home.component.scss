@@ -2,14 +2,14 @@
 
 /* Jumbotrom */
 :host {
-  .jumbotrom {
+  .home-image {
     background: url('../../assets/img/city3-min.jpg') center center;
     background-size: cover;
     text-align: center;
     position: relative;
     top: 0;
 
-    .container {
+    .home-container {
       text-align: center;
       top: 42%;
       position: relative;
@@ -33,7 +33,7 @@
     }
   }
 
-  .btn-about {
+  .home-btn-about {
     color: $color-white;
     font-style: italic;
   }

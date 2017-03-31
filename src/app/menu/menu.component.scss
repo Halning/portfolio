@@ -13,19 +13,37 @@
   top: -85px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  @include transitions-elem(all, 3s, ease);
+  @include screenMaxW600 {
+    padding: 15px 20px;
+  }
+  @include screenMaxW400 {
+    padding: 15px;
+  }
 
   .nav {
     display: inline-block;
     list-style: none;
-    float: none;
+    float: right;
+    @include screenMaxW600 {
+      float: none;
+    }
 
-    li a {
+    .menu-pill .menu-nav {
       margin-right: 0.8em;
       margin-left: 2em;
       text-align: center;
       font-size: 1em;
       border-radius: 0em;
       padding: 0;
+      @include screenMaxW600 {
+        margin-left: 0.7em;
+        font-size: 1.4em;
+      }
+      @include screenMaxW400 {
+        margin-left: 0.4em;
+        font-size: 1.1em;
+      }
       &:after {
         margin-top: 25px;
         position: absolute;
@@ -38,28 +56,20 @@
         -moz-transition: width 0.3s, opacity 0.2s, -moz-transform 0.3s;
         -o-transition: width 0.3s, opacity 0.2s, -o-transform 0.3s;
         transition: width 0.3s, opacity 0.2s, -webkit-transform 0.3s, -moz-transform 0.3s, -o-transform 0.3s, transform 0.3s;
-        @media only screen and (max-width: 600px) {
-          margin-top: 17px;
+        @include screenMaxW600 {
+          margin-top: 1.5em;
         }
       }
-      &:hover::after,  &.active::after{
+      &:hover::after, &.menu-active::after {
         opacity: 1;
         width: 100%;
         text-decoration: none;
       }
-      &.active {
+      &.menu-active {
         outline: none;
         border: none;
         background-color: transparent;
       }
-      @media only screen and (max-width: 600px) {
-        margin-left: 0.8em;
-        @include transitions-elem(font-size, 3s, ease);
-      }
-    }
-
-    @media only screen and (min-width: 600px) {
-      float: right;
     }
   }
 }
@@ -73,23 +83,20 @@
 .menu.in {
   top: 0px;
   @include transitions-elem(all, 0.6s, ease);
-  @media only screen and (min-width: 600px) {
-    top: 0px;
-  }
 }
 
 .menu.out {
-  top: -85px;
+  top: -104px;
   @include transitions-elem(all, 0.6s, ease);
-  @media only screen and (min-width: 600px) {
-    top: -104px;
+  @include screenMaxW600 {
+    top: -85px;
   }
 }
 
 .menu.black {
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
   background: rgba(239, 238, 238, 0.9);
-  li a {
+  .menu-pill .menu-nav {
     color: #393939;
     &:after {
       background: $color-black
@@ -97,24 +104,24 @@
   }
 }
 
-.menu.white li a {
+.menu.white .menu-pill .menu-nav {
   color: $color-white;
   &:after {
     background: $color-white;
   }
 }
 
-.menu.white li.active a,
-.menu.white li a:hover,
-.menu.white li.active a:hover {
+.menu.white .menu-pill.menu-active .menu-nav,
+.menu.white .menu-pill .menu-nav:hover,
+.menu.white .menu-pill.menu-active .menu-nav:hover {
   background-color: inherit;
   color: $color-white;
   @include transitions-elem(color, 1s, ease);
 }
 
-.menu.black li.active a,
-.menu.black li a:hover,
-.menu.black li.active a:hover {
+.menu.black .menu-pill.menu-active .menu-nav,
+.menu.black .menu-pill .menu-nav:hover,
+.menu.black .menu-pill.menu-active .menu-nav:hover {
   background-color: inherit;
   color: $color-black;
   @include transitions-elem(color, 1s, ease);

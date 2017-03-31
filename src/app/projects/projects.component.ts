@@ -10,6 +10,8 @@ import {
     keyframes
 } from '@angular/animations';
 
+import { WindowRefService } from '../core/window-ref.service';
+
 
 @Component({
     selector: 'ha-projects',
@@ -20,13 +22,13 @@ import {
             transition(':enter', [
                 animate(300, keyframes([
                     style({opacity: 0, transform: 'translateY(1000px)', offset: 0}),
-                    style({opacity: 1, transform: 'translateY(0px)',     offset: 1.0})
+                    style({opacity: 1, transform: 'translateY(0px)', offset: 1.0})
                 ]))
             ]),
             transition(':leave', [
                 animate(300, keyframes([
-                    style({opacity: 1, transform: 'translateY(0px)',     offset: 0}),
-                    style({opacity: 0, transform: 'translateY(1000px)',  offset: 1.0})
+                    style({opacity: 1, transform: 'translateY(0px)', offset: 0}),
+                    style({opacity: 0, transform: 'translateY(1000px)', offset: 1.0})
                 ]))
             ])
         ]),
@@ -93,10 +95,15 @@ export class ProjectsComponent implements OnInit {
         ],
     ];
 
-    constructor(private titleService: Title ) {
+    constructor(private titleService: Title,
+                private window: WindowRefService) {
     }
 
     ngOnInit() {
         this.titleService.setTitle('Projects');
+    }
+
+    goToProject(url: string): void {
+        this.window.nativeWindow.location.href = url;
     }
 }
