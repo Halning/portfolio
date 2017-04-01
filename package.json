@@ -9,6 +9,8 @@
     "build": "ng build",
     "build:prod": "ng build --prod",
     "build:prod:aot": "ng build --prod --aot",
+    "biuld:p:a::firebase:d": "ng build --prod --aot && npm run firebase:deploy",
+    "firebase:deploy": "firebase deploy",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
