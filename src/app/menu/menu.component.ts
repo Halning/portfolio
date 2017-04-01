@@ -35,7 +35,7 @@ export class MenuComponent implements OnInit {
 
     constructor(private window: WindowRefService,
                 private location: Location, private router: Router) {
-        this.router.events.subscribe((e) => {
+        this.router.events.subscribe(() => {
             this.onWindowScroll();
         });
     }
