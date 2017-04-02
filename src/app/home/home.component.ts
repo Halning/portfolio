@@ -61,8 +61,7 @@ export class HomeComponent implements OnInit {
         this.initMainSize();
         this.titleService.setTitle('Home');
     }
-
     initMainSize(): void {
-        this.screenHeight = `${this.window.nativeWindow.innerHeight}px`;
+        this.screenHeight = `${this.window.nativeWindow.innerHeight + 2}px`;
     }
 }

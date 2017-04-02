@@ -2,57 +2,31 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-6 col-md-8 col-xs-10 col-lg-offset-3 col-md-offset-2 col-xs-offset-1">
+
                 <p class="about-article-text">
                     <span class="large-letter">М</span>
-                    <span class="capital-letter">еня зовут Андрей Хоменко.</span> Я Full Stack программист. Я люблю
+                    <span class="capital-letter">еня зовут Андрей Хоменко.</span> Я Front End программист. Я люблю
                     кодить и
                     вот мой путь.
                 </p>
-                <h2 class="css-typing about-article" [@print]>Этап 1&nbsp;&nbsp;<span>&nbsp;&nbsp;Начало пути.</span>
-                </h2>
-                <h4 class="about-date">Декабрь 2014 – Август 2015</h4>
-                <p [@alive] class="about-article-text">
-                    По совету друга и наставника (опытного программиста) начал учить Web-програмирование на
-                    <a class="about-links" href="{{ links.codeAcademy }}" target="_blank">CodeCademy</a>,
-                    а так же на других ресурсах доступных в интернете.
-                    Получив первые знание сразу начал реализовывать их на практике в собственном проекте
-                    <a class="about-links" href="{{ links.gitHub }}"
-                       target="_blank">https://github.com/Halning/brovary</a>.
-                    К сожалению проект не был до конца реализован так как наступил Этап 2.
-                </p>
 
-                <h2 class="css-typing about-article" [@print]>Этап 2&nbsp;&nbsp;<span>&nbsp;&nbsp;Первая работа</span>
-                </h2>
-                <h4 class="about-date">Август 2015 – Июнь 2016</h4>
-                <p [@alive] class="about-article-text">
-                    Компания <a class="about-links" href="{{ links.makeWear }}" target="_blank">MakeWear</a>.
-                    Был взят в компанию для разработки парсера(скраппера) товаров из более 30 сайтов.
-                    Скраппер реализовывался на PHP в ООП с использованием шаблонов проектирования.
-                <p class="about-article-text">
-                    После успешно выполненной задачи занимался корзиной c нуля.
-                    Использовал Bootstrap, LESS , Query, Query UI, Pjax, Google API а так же AJAX и JSON для общения с
-                    сервером.
-                    Серверная часть реализовывалась на PHP в связке с MySQL.В это же время познакомился с Gulp и начал
-                    его
-                    использовать.
-                </p>
-                <p [@alive] class="about-article-text">
-                    В последние месяцы выполнял много задач по разработки Акции компании от верстки до серверной части.
-                    А также в свободное время проходил курс CS50 - <a class="about-links" href="{{ links.cs50 }}"
-                                                                      target="_blank">https://cs50.harvard.edu/</a>.
-                    В компании работал в
-                    scrum-команде.
-                    Есть небольшой опыт в DevOps и Azure.
-                </p>
+                <ng-container *ngFor="let stage of content; let i = index">
+                    <h2 class="css-typing about-article" [@print]>Этап {{i + 1}}&nbsp;&nbsp;
+                        <span>&nbsp;&nbsp;{{stage.main}}</span>
+                    </h2>
+                    <h4 class="about-date">{{stage.date}}</h4>
+                    <p [@alive] class="about-article-text" *ngFor="let p of stage.textMain">
+                        <ng-container *ngFor="let cont of p; let i = even;">
+                            <ng-container *ngIf="i; else elseBlock">{{cont}}</ng-container>
+                            <ng-template #elseBlock>
+                                <a class="about-links" href="{{cont.link}}" target="_blank">
+                                    {{cont.linkName}}
+                                </a>
+                            </ng-template>
+                        </ng-container>
+                    </p>
+                </ng-container>
 
-                <h2 class="css-typing about-article" [@print]>Этап 3&nbsp;&nbsp;<span></span>&nbsp;&nbsp;Осознание</h2>
-                <h4 class="about-date"></h4>
-                <p [@alive] class="about-article-text">
-                    В Июне закончил курс CS50 и стал более глубоко изучать JavaScript.
-                    От состояния “мне нравиться JavaScript” перешел к “я люблю JavaScript”.
-                    С этих пор и до этого дня я учу его и все что с ним связано. В первую очередь Angular 1.x.
-                    В данный момент изучаю Angular 2.
-                </p>
                 <figure class="about-ornament">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px"
                      y="0px" viewBox="0 0 77.5 45.5" enable-background="new 0 0 77.5 45.5" xml:space="preserve">

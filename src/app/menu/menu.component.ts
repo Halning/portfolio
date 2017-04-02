@@ -10,8 +10,6 @@ import { Location } from '@angular/common';
 })
 export class MenuComponent implements OnInit {
 
-    screenHeight: string;
-
     windowWidth: number;
     windowHeight: number;
 
@@ -47,8 +45,6 @@ export class MenuComponent implements OnInit {
     initMainSize(): void {
         this.windowWidth = this.window.nativeWindow.innerWidth;
         this.windowHeight = this.window.nativeWindow.innerHeight;
-
-        this.screenHeight = `${this.windowHeight + 1}px`;
     }
 
     private toggleInOutMenuClass(st: number): void {
