@@ -26,7 +26,7 @@ export class MenuComponent implements OnInit {
 
     @HostListener('window:scroll', [])
     onWindowScroll() {
-        const st = this.window.nativeDocument.body.scrollTop;
+        const st = this.window.nativeDocument.scrollingElement.scrollTop;
 
         this.toggleInOutMenuClass(st);
         this.lastScrollTop = st;

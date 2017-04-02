@@ -1,5 +1,8 @@
 @import "var";
 @import "mixins";
+@import url("https://fonts.googleapis.com/css?family=Indie+Flower");
+@import url("https://fonts.googleapis.com/css?family=Merriweather");
+@import url("https://fonts.googleapis.com/css?family=Roboto");
 
 html, body {
   padding: 0;
@@ -14,4 +17,6 @@ body {
   font-weight: 500 !important;
   text-align: center !important;
 }
+
+
 
