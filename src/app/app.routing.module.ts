@@ -6,6 +6,7 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { SkillsComponent } from './skills/skills.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 const routes: Routes = [
@@ -14,7 +15,9 @@ const routes: Routes = [
     {path: 'about', component: AboutMeComponent},
     {path: 'skills', component: SkillsComponent},
     {path: 'projects', component: ProjectsComponent},
-    {path: 'contact', component: ContactComponent}
+    {path: 'contact', component: ContactComponent},
+
+    {path: '**', component: PageNotFoundComponent}
 ];
 
 @NgModule({

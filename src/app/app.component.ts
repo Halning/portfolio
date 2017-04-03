@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
         this.router.events
             .subscribe(event => {
                 if (event instanceof NavigationEnd) {
-                    if (event.url === '/home') {
+                    if (event.url === '/home' || event.id === 1) {
                         this.showFooter = false;
                     } else {
                         this.showFooter = true;

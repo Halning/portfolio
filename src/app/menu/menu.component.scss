@@ -37,10 +37,11 @@
       border-radius: 0em;
       padding: 0;
       @include screenMaxW600 {
-        margin-left: 0.2em;
+        margin-left: 0.1em;
+        font-size: 1.1em;
       }
       @include screenMaxW400 {
-        font-size: 1em;
+        font-size: 0.9em;
       }
       &:after {
         margin-top: 25px;
