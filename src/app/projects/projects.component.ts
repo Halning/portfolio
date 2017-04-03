@@ -64,8 +64,8 @@ export class ProjectsComponent implements OnInit {
                 'Приобрел опыт в верстке, jQuery, Bootstrap, PHP, MySQL, Gulp, Git и др.'
             },
             {
-                href: '#',
-                src: '../../assets/img/empty.png',
+                href: 'https://equerest.com/',
+                src: '../../assets/img/equerest.jpg',
                 desc: 'Coming soon'
             }
         ],
