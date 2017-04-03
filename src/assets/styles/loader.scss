@@ -9,6 +9,11 @@
   z-index: -1;
 }
 
+ha-app-root {
+  display: block;
+  height: 100%;
+}
+
 ha-app-root:empty + .loading {
   opacity: 1;
   z-index: 100;

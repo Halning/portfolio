@@ -8,3 +8,15 @@
 @import '../../node_modules/@angular/material/core/theming/prebuilt/purple-green.css';
 
 
+.wrap {
+  display: block;
+  position: relative;
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto -100px;
+  overflow: hidden;
+}
+
+.push {
+  height: 100px;
+}

@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 
 
 @Component({
@@ -9,7 +10,22 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
+    showFooter = true;
+
+    constructor(private router: Router) {
+    }
+
     ngOnInit() {
+        this.router.events
+            .subscribe(event => {
+                if (event instanceof NavigationEnd) {
+                    if (event.url === '/home') {
+                        this.showFooter = false;
+                    } else {
+                        this.showFooter = true;
+                    }
+                }
+            });
     }
 }
 
