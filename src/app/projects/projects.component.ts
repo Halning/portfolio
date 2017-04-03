@@ -54,8 +54,6 @@ import { WindowRefService } from '../core/window-ref.service';
 })
 export class ProjectsComponent implements OnInit {
 
-    activeProject: any;
-
     projects = [
         [
             {
@@ -63,42 +61,36 @@ export class ProjectsComponent implements OnInit {
                 src: '../../assets/img/mw1.png',
                 desc: 'Интернет магазин одежды для оптовых и розничных покупателей.' +
                 'Время работы над проектом 9 месяцев. Выполнял разнообразные задачи от верстки до разработки парсера на PHP.' +
-                'Приобрел опыт в верстке, jQuery, Bootstrap, PHP, MySQL, Gulp, Git и др.',
-                active: false
+                'Приобрел опыт в верстке, jQuery, Bootstrap, PHP, MySQL, Gulp, Git и др.'
             },
             {
                 href: 'https://equerest.com/',
                 src: '../../assets/img/equerest.jpg',
-                desc: 'Coming soon',
-                active: false
+                desc: 'Coming soon'
             }
         ],
         [
             {
                 href: '#',
                 src: '../../assets/img/empty.png',
-                desc: 'Coming soon',
-                active: false
+                desc: 'Coming soon'
             },
             {
                 href: '#',
                 src: '../../assets/img/empty.png',
-                desc: 'Coming soon',
-                active: false
+                desc: 'Coming soon'
             }
         ],
         [
             {
                 href: '#',
                 src: '../../assets/img/empty.png',
-                desc: 'Coming soon',
-                active: false
+                desc: 'Coming soon'
             },
             {
                 href: '#',
                 src: '../../assets/img/empty.png',
-                desc: 'Coming soon',
-                active: false
+                desc: 'Coming soon'
             }
         ],
     ];
@@ -115,14 +107,4 @@ export class ProjectsComponent implements OnInit {
         this.window.nativeWindow.location.href = url;
     }
 
-    showInfo(project: any): void {
-        if (this.activeProject) {
-            this.activeProject.active = false;
-            this.activeProject = project;
-            this.activeProject.active = true;
-        } else  {
-            this.activeProject = project;
-            this.activeProject.active = true;
-        }
-    }
 }

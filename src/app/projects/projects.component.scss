@@ -16,7 +16,7 @@
     .project-img {
       width: 100%;
     }
-    &.active {
+    &:hover {
       opacity: 1;
       background-color: rgba(255,255,255,0.8);
       @include transform-elem(scale(1));
