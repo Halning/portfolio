@@ -19,9 +19,7 @@
                         <ng-container *ngFor="let cont of p; let i = even;">
                             <ng-container *ngIf="i; else elseBlock">{{cont}}</ng-container>
                             <ng-template #elseBlock>
-                                <a class="about-links" href="{{cont.link}}" target="_blank">
-                                    {{cont.linkName}}
-                                </a>
+                                <a class="about-links" href="{{cont.link}}" target="_blank">{{cont.linkName}}</a>
                             </ng-template>
                         </ng-container>
                     </p>

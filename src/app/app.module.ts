@@ -10,7 +10,6 @@ import { AppRoutingModule } from './app.routing.module';
 import { HomeComponent } from './home/home.component';
 import { CoreModule } from './core/core.module';
 
-import { AlertModule } from 'ng2-bootstrap';
 import { MenuComponent } from './menu/menu.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { FooterComponent } from './footer/footer.component';
@@ -37,8 +36,7 @@ import { ContactComponent } from './contact/contact.component';
     MaterialModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    CoreModule,
-    AlertModule.forRoot()
+    CoreModule
   ],
   providers: [Title],
   bootstrap: [AppComponent]
