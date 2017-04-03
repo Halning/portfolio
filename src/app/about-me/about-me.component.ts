@@ -9,6 +9,8 @@ import {
     keyframes
 } from '@angular/animations';
 
+import {AboutContentModel} from "./AboutContent.model";
+
 
 @Component({
     selector: 'ha-about-me',
@@ -32,7 +34,7 @@ import {
         trigger('print', [
             state('void', style({width: '0', transform: 'steps(100, end)'})),
             transition(':enter', [
-                animate(3000, style({width: '100%', transform: 'steps(100, end)'}))
+                animate(2000, style({width: '100%', transform: 'steps(100, end)'}))
             ])
         ]),
         trigger('alive', [
@@ -45,12 +47,8 @@ import {
 })
 
 export class AboutMeComponent implements OnInit {
-    links = {
-        codeAcademy: 'https://www.codecademy.com/',
-        gitHub: 'https://github.com/Halning/brovary',
-        makeWear: 'http://makewear.club/',
-        cs50: 'https://cs50.harvard.edu/'
-    };
+
+    content = new AboutContentModel().chapters;
 
     constructor(private titleService: Title) {
     }

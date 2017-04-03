@@ -22,6 +22,9 @@
     margin-top: 0;
     line-height: 1.5em;
     font-size: 1.25em;
+    @include screenMaxW600 {
+      font-size: 1em;
+    }
     .large-letter {
       font-size: 3.857142em;
       padding-top: 20px;
@@ -41,19 +44,25 @@
       border-left: 1px solid #000;
     }
     @include screenMaxW600 {
-      font-size: 2em;
+      font-size: 1.5em;
+    }
+    @include screenMaxW400 {
+      font-size: 1.3em;
     }
   }
 
   .about-date {
     margin-bottom: 25px;
+    @include screenMaxW400 {
+      font-size: 0.9em;
+    }
   }
 
   .about-links {
     text-decoration: underline;
     cursor: pointer;
     color: $color-black;
-    //@include transitions-elem(color, 0.2s, ease);
+    @include transitions-elem(color, 0.2s, ease);
     &:hover {
       color: #0fb7b7;
       text-decoration: underline;

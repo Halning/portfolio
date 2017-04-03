@@ -10,8 +10,6 @@ import { Location } from '@angular/common';
 })
 export class MenuComponent implements OnInit {
 
-    screenHeight: string;
-
     windowWidth: number;
     windowHeight: number;
 
@@ -26,7 +24,7 @@ export class MenuComponent implements OnInit {
 
     @HostListener('window:scroll', [])
     onWindowScroll() {
-        const st = this.window.nativeDocument.body.scrollTop;
+        const st = this.window.nativeDocument.scrollingElement.scrollTop;
 
         this.toggleInOutMenuClass(st);
         this.lastScrollTop = st;
@@ -35,7 +33,7 @@ export class MenuComponent implements OnInit {
 
     constructor(private window: WindowRefService,
                 private location: Location, private router: Router) {
-        this.router.events.subscribe((e) => {
+        this.router.events.subscribe(() => {
             this.onWindowScroll();
         });
     }
@@ -47,8 +45,6 @@ export class MenuComponent implements OnInit {
     initMainSize(): void {
         this.windowWidth = this.window.nativeWindow.innerWidth;
         this.windowHeight = this.window.nativeWindow.innerHeight;
-
-        this.screenHeight = `${this.windowHeight + 1}px`;
     }
 
     private toggleInOutMenuClass(st: number): void {
