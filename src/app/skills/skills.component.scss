@@ -35,18 +35,40 @@
     }
   }
 
-
+ /* frontend */
+  .icon-js {
+    background-image: url('../../assets/img/sprite/js.png');
+    width: 100px;
+    height: 115px;
+  }
+  .icon-ang2 {
+    background-image: url('../../assets/img/sprite/ang2.png');
+    width: 100px;
+    height: 100px;
+    @include margin-top-bottom(12.5px);
+  }
+  .icon-ang {
+    background-image: url('../../assets/img/sprite/ang.png');
+    width: 100px;
+    height: 103px;
+    @include margin-top-bottom(11px);
+  }
+  .icon-jquery {
+    background-image: url('../../assets/img/sprite/jquery.png');
+    width: 100px;
+    height: 100px;
+    @include margin-top-bottom(12.5px);
+  }
   .icon-html {
     background-image: url('../../assets/img/sprite/html.png');
     width: 100px;
     height: 109px;
-    @include margin-top-bottom(5px);
   }
   .icon-less {
     background-image: url('../../assets/img/sprite/sass-less.png');
     width: 100px;
     height: 45px;
-    @include margin-top-bottom(43px);
+    @include margin-top-bottom(42px);
   }
   .icon-boot {
     background-image: url('../../assets/img/sprite/bootstrap.png');
@@ -54,36 +76,51 @@
     height: 100px;
     @include margin-top-bottom(7.5px);
   }
-  .icon-js {
-    background-image: url('../../assets/img/sprite/js.png');
-    width: 100px;
-    height: 115px;
-  }
-  .icon-jquery {
-    background-image: url('../../assets/img/sprite/jquery.png');
+  .icon-bulma {
+    background-image: url('../../assets/img/sprite/bulma.png');
     width: 100px;
     height: 100px;
+    @include margin-top-bottom(8px);
   }
-  .icon-ang {
-    background-image: url('../../assets/img/sprite/ang.png');
+  .icon-webpack {
+    background-image: url('../../assets/img/sprite/webpack.png');
     width: 100px;
-    height: 103px;
+    height: 100px;
   }
   .icon-gulp {
     background-image: url('../../assets/img/sprite/gulp.png');
     width: 100px;
     height: 100px;
   }
-  .icon-jq-ui {
-    background-image: url('../../assets/img/sprite/gulp.png');
+  .icon-jasmine {
+    background-image: url('../../assets/img/sprite/jasmine.png');
     width: 100px;
     height: 100px;
   }
+  .icon-npm {
+    background-image: url('../../assets/img/sprite/npm.png');
+    width: 100px;
+    height: 60px;
+    @include margin-top-bottom(30px);
+  }
+/*  .icon-jq-ui {
+    background-image: url('../../assets/img/sprite/gulp.png');
+    width: 100px;
+    height: 100px;
+  }*/
+
+  /* backend */
   .icon-php {
     background-image: url('../../assets/img/sprite/php.png');
     width: 100px;
     height: 52px;
-    @include margin-top-bottom(35px);
+    @include margin-top-bottom(40px);
+  }
+  .icon-nodejs {
+    background-image: url('../../assets/img/sprite/nodejs.png');
+    width: 100px;
+    height: 50px;
+    @include margin-top-bottom(40px);
   }
   .icon-sql {
     background-image: url('../../assets/img/sprite/sql.png');
@@ -91,19 +128,41 @@
     height: 100px;
     @include margin-top-bottom(7.5px);
   }
-  .icon-mvc {
-    background-image: url('../../assets/img/sprite/mvc.png');
-    width: 100px;
-    height: 93px;
-    @include margin-top-bottom(11.5px);
-  }
   .icon-composer {
     background-image: url('../../assets/img/sprite/composer.png');
     width: 100px;
     height: 115px;
   }
+/*  .icon-mvc {
+    background-image: url('../../assets/img/sprite/mvc.png');
+    width: 100px;
+    height: 93px;
+    @include margin-top-bottom(11.5px);
+  }*/
+
+  /* others */
+  .icon-phpstorm {
+    background-image: url('../../assets/img/sprite/phpstorm.png');
+    width: 100px;
+    height: 100px;
+  }
+  .icon-netbeans {
+    background-image: url('../../assets/img/sprite/netbeans.png');
+    width: 100px;
+    height: 100px;
+  }
+  .icon-ubuntu {
+    background-image: url('../../assets/img/sprite/ubuntu.png');
+    width: 100px;
+    height: 100px;
+  }
   .icon-git {
     background-image: url('../../assets/img/sprite/git.png');
+    width: 100px;
+    height: 100px;
+  }
+  .icon-jira {
+    background-image: url('../../assets/img/sprite/jira.png');
     width: 100px;
     height: 100px;
   }

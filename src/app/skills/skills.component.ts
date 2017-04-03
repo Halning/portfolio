@@ -52,6 +52,25 @@ export class SkillsComponent implements OnInit {
     frontEnd = [
         [
             {
+                name: 'JS',
+                icon: 'js'
+            },
+            {
+                name: 'Angular',
+                icon: 'ang2'
+            },
+            {
+                name: 'AngularJS',
+                icon: 'ang'
+            },
+
+            {
+                name: 'jQuery',
+                icon: 'jquery'
+            }
+        ],
+        [
+            {
                 name: 'HTML & CSS',
                 icon: 'html'
             },
@@ -64,29 +83,28 @@ export class SkillsComponent implements OnInit {
                 icon: 'boot'
             },
             {
-                name: 'JS',
-                icon: 'js'
+                name: 'Bulma',
+                icon: 'bulma'
             }
-
         ],
         [
             {
-                name: 'jQuery',
-                icon: 'jquery'
-            },
-            {
-                name: 'AngularJS',
-                icon: 'ang'
+                name: 'Webpack',
+                icon: 'webpack'
             },
             {
                 name: 'Gulp',
                 icon: 'gulp'
             },
             {
-                name: 'jQuery-UI',
-                icon: 'jq-ui'
+                name: 'Jasmine',
+                icon: 'jasmine'
+            },
+            {
+                name: 'Npm',
+                icon: 'npm'
             }
-        ],
+        ]
     ];
 
     backEnd = [
@@ -96,12 +114,12 @@ export class SkillsComponent implements OnInit {
                 icon: 'php'
             },
             {
-                name: 'SQL',
-                icon: 'sql'
+                name: 'NodeJs',
+                icon: 'nodejs'
             },
             {
-                name: 'MVC',
-                icon: 'mvc'
+                name: 'SQL',
+                icon: 'sql'
             },
             {
                 name: 'Composer',
@@ -113,8 +131,26 @@ export class SkillsComponent implements OnInit {
     other = [
         [
             {
+                name: 'PhpStorm',
+                icon: 'phpstorm'
+            },
+            {
+                name: 'NetBeans',
+                icon: 'netbeans'
+            },
+            {
+                name: 'Linux',
+                icon: 'ubuntu'
+            },
+            {
                 name: 'Git',
                 icon: 'git'
+            },
+        ],
+        [
+            {
+                name: 'Jira',
+                icon: 'jira'
             },
             {
                 name: 'Azure',
