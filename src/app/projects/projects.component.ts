@@ -59,21 +59,21 @@ export class ProjectsComponent implements OnInit {
             {
                 href: 'http://makewear.club',
                 src: '../../assets/img/mw1.png',
-                desc: 'Интернет магазин одежды для оптовых и розничных покупателей.' +
-                'Время работы над проектом 9 месяцев. Выполнял разнообразные задачи от верстки до разработки парсера на PHP.' +
-                'Приобрел опыт в верстке, jQuery, Bootstrap, PHP, MySQL, Gulp, Git и др.'
+                desc: `Интернет магазин одежды для оптовых и розничных покупателей. 
+                Время работы над проектом 9 месяцев. Выполнял разнообразные задачи от верстки до разработки парсера на PHP.
+                Приобрел опыт в верстке, jQuery, Bootstrap, PHP, MySQL, Gulp, Git и др.`
             },
             {
                 href: 'https://equerest.com/',
-                src: '../../assets/img/equerest.jpg',
-                desc: 'Coming soon'
+                src: '../../assets/img/rsz_equerest.jpg',
+                desc: `Инвестиционная платформа. В проекте работал с такими технологиями как Angular 1.5 (AngularJs), Gulp, SASS, Bulma и Bootstrap 3 иногда jQuery.`
             }
         ],
         [
             {
                 href: '#',
-                src: '../../assets/img/empty.png',
-                desc: 'Coming soon'
+                src: '../../assets/img/rsz_top-secret.jpg',
+                desc: `Работаю с такими технологиями как Angular, Angular Material, Angular Cli, Angular Animations, Webpack.`
             },
             {
                 href: '#',
