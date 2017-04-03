@@ -44,7 +44,7 @@ export class AboutContentModel {
             ]
         },
         {
-            main: 'Первая работа Frontend',
+            main: 'Первая Frontend',
             date: 'Июль 2016 – Октябрь 2016',
             textMain: [
                 ['Компания',

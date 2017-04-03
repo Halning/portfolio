@@ -44,10 +44,10 @@
       border-left: 1px solid #000;
     }
     @include screenMaxW600 {
-      font-size: 1.5em;
+      font-size: 1.4em;
     }
     @include screenMaxW400 {
-      font-size: 1.3em;
+      font-size: 1.2em;
     }
   }
 
