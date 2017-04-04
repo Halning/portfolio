@@ -4,7 +4,8 @@ import { Component, OnInit } from '@angular/core';
     selector: 'ha-footer',
     template: `
         <div class="footer container">
-            2017 © Kyiv
+            This site was created on Angular
+            <p>2017 © Kyiv</p>
         </div>`,
     styleUrls: ['./footer.component.scss']
 })
