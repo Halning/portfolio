@@ -23,7 +23,7 @@
   }
 
   .nav {
-    display: inline-block;
+    display: inline-flex;
     list-style: none;
     float: right;
     @include screenMaxW600 {
