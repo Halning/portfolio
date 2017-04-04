@@ -16,6 +16,7 @@
   @include transitions-elem(all, 3s, ease);
   @include screenMaxW600 {
     padding: 15px 17px;
+    text-align: center;
   }
   @include screenMaxW400 {
     padding: 15px 10px;
