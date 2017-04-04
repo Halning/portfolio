@@ -18,21 +18,21 @@
   }
   .skills-title, .skill-name {
     text-shadow: 0px 5px 10px;
+    text-align: center;
   }
 
   .skills-title {
-    text-align: center;
     padding: 0.5em 0 0.2em 0;
-    font-size: 3em;
-    margin: 1.5em 0 1em 0;
+    font-size: 2.5em;
+    margin: 1.5em 0 0.5em 0;
     @include screenMaxW600 {
-      font-size: 2.5em;
+      font-size: 2em;
     }
   }
   .skill-name {
-    font-size: 1.5em;
+    font-size: 1.2em;
     @include screenMaxW600 {
-      font-size: 1.1em;
+      font-size: 1em;
     }
   }
 
@@ -46,19 +46,19 @@
     background-image: url('../../assets/img/sprite/ang2.png');
     width: 100px;
     height: 100px;
-    @include margin-top-bottom(12.5px);
+    @include margin-top-bottom(7.5px);
   }
   .icon-ang {
     background-image: url('../../assets/img/sprite/ang.png');
     width: 100px;
     height: 103px;
-    @include margin-top-bottom(11px);
+    @include margin-top-bottom(6px);
   }
   .icon-jquery {
     background-image: url('../../assets/img/sprite/jquery.png');
     width: 100px;
     height: 100px;
-    @include margin-top-bottom(12.5px);
+    @include margin-top-bottom(7.5px);
   }
   .icon-html {
     background-image: url('../../assets/img/sprite/html.png');
@@ -69,19 +69,19 @@
     background-image: url('../../assets/img/sprite/sass-less.png');
     width: 100px;
     height: 45px;
-    @include margin-top-bottom(42px);
+    @include margin-top-bottom(32px);
   }
   .icon-boot {
     background-image: url('../../assets/img/sprite/bootstrap.png');
     width: 100px;
     height: 100px;
-    @include margin-top-bottom(7.5px);
+    @include margin-top-bottom(4.5px);
   }
   .icon-bulma {
     background-image: url('../../assets/img/sprite/bulma.png');
     width: 100px;
     height: 100px;
-    @include margin-top-bottom(8px);
+    @include margin-top-bottom(4.5px);
   }
   .icon-webpack {
     background-image: url('../../assets/img/sprite/webpack.png');
@@ -102,7 +102,7 @@
     background-image: url('../../assets/img/sprite/npm.png');
     width: 100px;
     height: 60px;
-    @include margin-top-bottom(30px);
+    @include margin-top-bottom(20px);
   }
 /*  .icon-jq-ui {
     background-image: url('../../assets/img/sprite/gulp.png');
@@ -115,13 +115,13 @@
     background-image: url('../../assets/img/sprite/php.png');
     width: 100px;
     height: 52px;
-    @include margin-top-bottom(40px);
+    @include margin-top-bottom(31.5px);
   }
   .icon-nodejs {
     background-image: url('../../assets/img/sprite/nodejs.png');
     width: 100px;
     height: 50px;
-    @include margin-top-bottom(40px);
+    @include margin-top-bottom(32.5px);
   }
   .icon-sql {
     background-image: url('../../assets/img/sprite/sql.png');
@@ -171,13 +171,13 @@
     background-image: url('../../assets/img/sprite/azure.png');
     width: 100px;
     height: 75px;
-    @include margin-top-bottom(22.5px);
+    @include margin-top-bottom(12.5px);
   }
   .icon-cisco {
     background-image: url('../../assets/img/sprite/cisco.png');
     width: 100px;
     height: 56px;
-    @include margin-top-bottom(32px);
+    @include margin-top-bottom(22px);
   }
   .icon-english {
     background-image: url('../../assets/img/sprite/eng.png');

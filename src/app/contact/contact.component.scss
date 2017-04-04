@@ -15,6 +15,10 @@
     text-decoration: underline;
     cursor: pointer;
     color: $color-black;
+    h4 {
+      font-size: 1em;
+    }
+
     @include transitions-elem(color, 0.2s, ease);
     &:hover {
       color: #0fb7b7;
@@ -38,7 +42,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    a {
+    button {
       outline: none;
     }
   }
@@ -52,11 +56,9 @@
   word-wrap: break-word;
 }
 
-
 /* material */
 .large-icon {
-  width: 50px !important;
-  height: 50px !important;
+  height: 60px !important;
 }
 
 .mat-input-placeholder {

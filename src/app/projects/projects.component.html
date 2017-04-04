@@ -5,7 +5,7 @@
             <div class="col-md-6 project" *ngFor="let project of value">
 
                 <md-card class="project-card">
-                    <img class="img-responsive img-thumbnail project-img" src="{{project?.src}}" alt="{{project?.btn}}">
+                    <img class="img-fluid img-thumbnail project-img" src="{{project?.src}}" alt="{{project?.btn}}">
                     <button md-button class="btn" (tap)="goToProject(project?.href)">{{ project?.btn }}</button>
                 </md-card>
 

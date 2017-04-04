@@ -31,24 +31,23 @@
     }
 
     .menu-pill .menu-nav {
+      position: relative;
       margin-right: 0.8em;
       margin-left: 1.5em;
       text-align: center;
-      font-size: 1.2em;
       border-radius: 0em;
       padding: 0;
       @include screenMaxW600 {
         margin-left: 0.1em;
-        font-size: 1.1em;
       }
       @include screenMaxW400 {
-        font-size: 0.9em;
+        font-size: 0.8em;
       }
       &:after {
         margin-top: 25px;
         position: absolute;
         left: 0;
-        width: 0%;
+        width: 0;
         height: 2px;
         content: '';
         opacity: 0;
@@ -57,7 +56,10 @@
         -o-transition: width 0.3s, opacity 0.2s, -o-transform 0.3s;
         transition: width 0.3s, opacity 0.2s, -webkit-transform 0.3s, -moz-transform 0.3s, -o-transform 0.3s, transform 0.3s;
         @include screenMaxW600 {
-          margin-top: 1.5em;
+          margin-top: 1.6em;
+        }
+        @include screenMaxW400 {
+          margin-top: 1.8em;
         }
       }
       &:hover::after, &.menu-active::after {
