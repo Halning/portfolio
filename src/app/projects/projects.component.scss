@@ -41,9 +41,10 @@
     text-transform: uppercase;
     font-size: 1.5em;
     font-weight: 500;
-    opacity: .1;
+    opacity: 0;
     color: $color-body-font;
     outline: none;
     font-family: $font-main;
+    @include transitions-elem(all, 0.3s, ease-out);
   }
 }
