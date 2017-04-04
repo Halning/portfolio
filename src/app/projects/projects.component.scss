@@ -10,44 +10,40 @@
   }
 
   .project {
-    display: block;
     cursor: pointer;
     padding: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
     .project-img {
+      opacity: 1;
+      @include transitions-elem(all, 0.3s, ease-out);
       width: 100%;
     }
-    // TODO touch scroll not working on mobile
+
     &:hover {
-      opacity: 1;
-      background-color: rgba(255,255,255,0.8);
-      @include transform-elem(scale(1));
+      background-color: rgba(255, 255, 255, 0.8);
       .project-img {
-        opacity: .2;
+        @include transform-elem(scale(1.1));
+        opacity: .4;
       }
-      .project-description {
+      .btn {
         opacity: 1;
-        @include transform-elem(scale(1));
+        @include transform-elem(scale(1.1));
       }
     }
   }
 
-  .project-description {
+  .btn {
     position: absolute;
-    top: 0;
-    padding: 20px;
-    opacity: 0;
-    color: #204056;
-    line-height: 2;
-    font-size: 1.1em;
-    -webkit-transition: -webkit-transform 0.15s ease-in-out,opacity 0.15s ease-in-out;
-    transition: transform 0.15s ease-in-out,opacity 0.15s ease-in-out;
-    -webkit-transform-origin: 50% 50%;
-    -ms-transform-origin: 50% 50%;
-    transform-origin: 50% 50%;
-    @include transform-elem(scale(0.95));
-    @include screenMaxW600 {
-      font-size: 1em;
-      line-height: 1.5em;
-    }
+    text-transform: uppercase;
+    font-size: 1.5em;
+    font-weight: 500;
+    opacity: .1;
+    color: $color-body-font;
+    outline: none;
+    font-family: $font-main;
   }
 }

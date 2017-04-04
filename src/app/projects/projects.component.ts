@@ -59,38 +59,36 @@ export class ProjectsComponent implements OnInit {
             {
                 href: 'http://makewear.club',
                 src: '../../assets/img/mw1.png',
-                desc: `Интернет магазин одежды для оптовых и розничных покупателей. 
-                Время работы над проектом 9 месяцев. Выполнял разнообразные задачи от верстки до разработки парсера на PHP.
-                Приобрел опыт в верстке, jQuery, Bootstrap, PHP, MySQL, Gulp, Git и др.`
+                btn: `MakeWear`
             },
             {
                 href: 'https://equerest.com/',
-                src: '../../assets/img/rsz_equerest.jpg',
-                desc: `Инвестиционная платформа. В проекте работал с такими технологиями как Angular 1.5 (AngularJs), Gulp, SASS, Bulma и Bootstrap 3 иногда jQuery.`
+                src: '../../assets/img/equerest.jpg',
+                btn: `equerest`
+            }
+        ],
+        [
+            {
+                href: 'https://cosmonova.net',
+                src: '../../assets/img/top-secret.jpg',
+                btn: `Cosmonova`
+            },
+            {
+                href: '#',
+                src: '../../assets/img/empty.png',
+                btn: 'Coming soon'
             }
         ],
         [
             {
                 href: '#',
-                src: '../../assets/img/rsz_top-secret.jpg',
-                desc: `Работаю с такими технологиями как Angular, Angular Material, Angular Cli, Angular Animations, Webpack.`
+                src: '../../assets/img/empty.png',
+                btn: 'Coming soon'
             },
             {
                 href: '#',
                 src: '../../assets/img/empty.png',
-                desc: 'Coming soon'
-            }
-        ],
-        [
-            {
-                href: '#',
-                src: '../../assets/img/empty.png',
-                desc: 'Coming soon'
-            },
-            {
-                href: '#',
-                src: '../../assets/img/empty.png',
-                desc: 'Coming soon'
+                btn: 'Coming soon'
             }
         ],
     ];
@@ -104,6 +102,7 @@ export class ProjectsComponent implements OnInit {
     }
 
     goToProject(url: string): void {
+        console.log(url);
         this.window.nativeWindow.location.href = url;
     }
 
