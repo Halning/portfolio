@@ -102,7 +102,6 @@ export class ProjectsComponent implements OnInit {
     }
 
     goToProject(url: string): void {
-        console.log(url);
         this.window.nativeWindow.location.href = url;
     }
 

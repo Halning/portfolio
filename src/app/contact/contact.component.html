@@ -1,3 +1,75 @@
 <div class="contact">
 
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 contact-list pd-10">
+                <md-card>
+                    <md-list>
+                        <h3 md-subheader>Contacts</h3>
+                        <md-list-item *ngFor="let contact of contacts">
+                            <md-icon md-list-avatar>{{contact.icon}}</md-icon>
+                            <h4 md-line>{{contact.name}}</h4>
+                            <p md-line> {{contact.value}} </p>
+                        </md-list-item>
+                        <md-divider></md-divider>
+                        <h3 md-subheader>Social network</h3>
+                        <md-list-item *ngFor="let social of socials">
+                            <md-icon md-list-avatar class="large-icon">{{social.icon}}</md-icon>
+                            <a md-line class="about-links" href="{{social.link}}" target="_blank">
+                                <h4>{{social.name}}</h4>
+                            </a>
+                            <span md-line>&nbsp;</span>
+                        </md-list-item>
+                    </md-list>
+                </md-card>
+            </div>
+
+            <div class="col-md-6 contact-list pd-10">
+                <md-card>
+                    <h2>Send Email</h2>
+                    <hr>
+                    <div [hidden]="submitted">
+                        <form class="contact-form" (ngSubmit)="onSubmit()" #contactForm="ngForm">
+
+                            <md-input-container class="full-width">
+                                <input mdInput placeholder="Subject" maxlength="60" required
+                                       [(ngModel)]="mail.subject" name="subject">
+                            </md-input-container>
+
+                            <md-input-container class="full-width">
+                            <textarea mdInput placeholder="Message" class="contacts-textarea"
+                                      [(ngModel)]="mail.message" name="message">Здравствуйте, Андрей!</textarea>
+                            </md-input-container>
+
+                            <div class="form-btns">
+                                <button type="button" md-fab (click)="cancel()" [disabled]="contactForm.form.pristine">
+                                    <md-icon>clear</md-icon>
+                                </button>
+                                <button md-fab type="submit" [disabled]="!contactForm.form.valid || contactForm.form.pristine">
+                                    <md-icon>mail_outline</md-icon>
+                                </button>
+                            </div>
+
+                        </form>
+                    </div>
+
+                    <div [hidden]="!submitted" class="mail-submitted">
+                        <h3>You submitted the following:</h3>
+                        <div class="row">
+                            <div class="col-xs-3">Subject</div>
+                            <div class="col-xs-9  pull-left">{{ mail.subject }}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-3">Message</div>
+                            <div class="col-xs-9 pull-left">{{ mail.message }}</div>
+                        </div>
+                        <br>
+                        <button md-fab type="button" (click)="submitted=false">
+                            <md-icon>mail_outline</md-icon>
+                        </button>
+                    </div>
+                </md-card>
+            </div>
+        </div>
+    </div>
 </div>

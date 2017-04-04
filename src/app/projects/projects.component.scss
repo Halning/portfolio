@@ -13,9 +13,12 @@
     cursor: pointer;
     padding: 0;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+
+    .project-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
 
     .project-img {
       opacity: 1;
@@ -46,5 +49,12 @@
     outline: none;
     font-family: $font-main;
     @include transitions-elem(all, 0.3s, ease-out);
+  }
+
+  /* material */
+  .mat-card {
+    background: #fff;
+    margin: 2px 1px;
+    padding: 1em 2em;
   }
 }

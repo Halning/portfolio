@@ -3,8 +3,12 @@
     <div class="container">
         <div class="row" *ngFor="let value of projects; let i = index" [@projectTop]="i">
             <div class="col-md-6 project" *ngFor="let project of value">
-                <img class="img-responsive img-thumbnail project-img" src="{{project?.src}}" alt="{{project?.btn}}">
-                <button md-button class="btn" (tap)="goToProject(project?.href)">{{ project?.btn }}</button>
+
+                <md-card class="project-card">
+                    <img class="img-responsive img-thumbnail project-img" src="{{project?.src}}" alt="{{project?.btn}}">
+                    <button md-button class="btn" (tap)="goToProject(project?.href)">{{ project?.btn }}</button>
+                </md-card>
+
             </div>
         </div>
     </div>

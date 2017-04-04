@@ -1,0 +1,64 @@
+@import "../../assets/styles/var";
+@import "../../assets/styles/mixins";
+
+.contact {
+  padding: 4em 1em 0;
+  h4 {
+    line-height: unset;
+  }
+
+  .pd-10 {
+    padding: 10px;
+  }
+
+  .about-links {
+    text-decoration: underline;
+    cursor: pointer;
+    color: $color-black;
+    @include transitions-elem(color, 0.2s, ease);
+    &:hover {
+      color: #0fb7b7;
+      text-decoration: underline;
+    }
+  }
+}
+
+.contact-form {
+  font-size: 1.3em;
+
+  .full-width {
+    width: 100%;
+  }
+
+  .contacts-textarea {
+    height: 200px;
+  }
+
+  .form-btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    a {
+      outline: none;
+    }
+  }
+}
+
+.mail-submitted {
+  font-size: 1.2em;
+}
+
+
+/* material */
+.large-icon {
+  width: 50px !important;
+  height: 50px !important;
+}
+
+.mat-input-placeholder {
+  padding-top: 1.34375vh;
+  left: 0.97656vw;
+  font-size: 1.5625vh;
+  line-height: 2.34375vh;
+  color: #588c97;
+}
