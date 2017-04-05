@@ -15,11 +15,8 @@
   -moz-osx-font-smoothing: grayscale;
   @include transitions-elem(all, 3s, ease);
   @include screenMaxW600 {
-    padding: 15px 17px;
+    padding: 0 0 15px 0;
     text-align: center;
-  }
-  @include screenMaxW400 {
-    padding: 15px 10px;
   }
 
   .nav {

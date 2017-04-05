@@ -79,7 +79,7 @@ export class SkillsComponent implements OnInit {
                 icon: 'less'
             },
             {
-                name: 'Bootstrap 3',
+                name: 'Bootstrap 3, 4',
                 icon: 'boot'
             },
             {
