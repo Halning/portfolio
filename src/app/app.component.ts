@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, Inject, LOCALE_ID, OnInit, ViewEncapsulation} from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
 
 
@@ -10,9 +10,15 @@ import {NavigationEnd, Router} from '@angular/router';
 })
 export class AppComponent implements OnInit {
 
+    languages = [
+        { code: 'en', label: 'English'},
+        { code: 'ru', label: 'Русский'},
+    ];
+
     showFooter = true;
 
-    constructor(private router: Router) {
+    constructor(private router: Router,
+                @Inject(LOCALE_ID) protected localeId: string) {
     }
 
     ngOnInit() {

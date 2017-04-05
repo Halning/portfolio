@@ -14,6 +14,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "i18n:en": "ng xi18n --progress --verbose --locale en-US --output-path src/locale",
+    "i18n:serve:ru": "ng serve --aot --i18n-file=src/locale/messages.ru.xlf --locale=ru --i18n-format=xlf",
+    "build-i18n": "for lang in en ru; do ng build --output-path=dist/$lang --aot -prod --bh /$lang/ --i18n-file=src/locale/messages.$lang.xlf --i18n-format=xlf --locale=$lang; done",
     "precache": "sw-precache --verbose --config=sw-precache-config.js"
   },
   "private": true,
