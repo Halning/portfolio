@@ -31,6 +31,9 @@
   }
   .skill-name {
     font-size: 1.2em;
+    margin: 0;
+    padding-top: 19px;
+    padding-bottom: 10px;
     @include screenMaxW600 {
       font-size: 1em;
     }
