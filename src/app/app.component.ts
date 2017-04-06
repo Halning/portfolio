@@ -1,5 +1,8 @@
-import {Component, Inject, LOCALE_ID, OnInit, ViewEncapsulation} from '@angular/core';
-import {NavigationEnd, Router} from '@angular/router';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { TranslateService } from 'ng2-translate';
 
 
 @Component({
@@ -10,15 +13,17 @@ import {NavigationEnd, Router} from '@angular/router';
 })
 export class AppComponent implements OnInit {
 
-    languages = [
-        { code: 'en', label: 'English'},
-        { code: 'ru', label: 'Русский'},
-    ];
-
     showFooter = true;
 
     constructor(private router: Router,
-                @Inject(LOCALE_ID) protected localeId: string) {
+                private af: AngularFire,
+                private translate: TranslateService) {
+        // this.items = af.database.list('/item');
+        // this language will be used as a fallback when a translation isn't found in the current language
+        translate.setDefaultLang('en');
+
+        // the lang to use, if the lang isn't available, it will use the current loader to get them
+        translate.use('en');
     }
 
     ngOnInit() {

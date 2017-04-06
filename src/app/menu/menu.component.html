@@ -4,19 +4,32 @@
      class="clearfix menu">
     <ul class="nav nav-pills">
         <li class="menu-pill nav-item">
-            <a class="menu-nav nav-link" [routerLink]="['/home']" routerLinkActive="menu-active" i18n>Home</a>
+            <a class="menu-nav nav-link" [routerLink]="['/home']" routerLinkActive="menu-active">
+                {{'Menu.Home' | translate}}
+            </a>
         </li>
         <li class="menu-pill nav-item">
-            <a class="menu-nav nav-link" [routerLink]="['/about']" routerLinkActive="menu-active">About</a>
+            <a class="menu-nav nav-link" [routerLink]="['/about']" routerLinkActive="menu-active">
+                {{'Menu.About' | translate}}
+            </a>
         </li>
         <li class="menu-pill nav-item">
-            <a class="menu-nav nav-link" [routerLink]="['/skills']" routerLinkActive="menu-active">Skills</a>
+            <a class="menu-nav nav-link" [routerLink]="['/skills']" routerLinkActive="menu-active">
+                {{'Menu.Skills' | translate}}
+            </a>
         </li>
         <li class="menu-pill nav-item">
-            <a class="menu-nav nav-link" [routerLink]="['/projects']" routerLinkActive="menu-active">Projects</a>
+            <a class="menu-nav nav-link" [routerLink]="['/projects']" routerLinkActive="menu-active">
+                {{'Menu.Projects' | translate}}
+            </a>
         </li>
         <li class="menu-pill nav-item">
-            <a class="menu-nav nav-link" [routerLink]="['/contacts']" routerLinkActive="menu-active">Contact</a>
+            <a class="menu-nav nav-link" [routerLink]="['/contacts']" routerLinkActive="menu-active">
+                {{'Menu.Contacts' | translate}}
+            </a>
+        </li>
+        <li *ngFor="let lang of languages" class="menu-pill nav-item">
+            <a class="menu-nav nav-link" (click)="setLocale(lang.code)">{{lang.label}}</a>
         </li>
     </ul>
 </div>

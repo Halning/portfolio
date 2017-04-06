@@ -54,13 +54,14 @@ export class HomeComponent implements OnInit {
     screenHeight: string;
 
     constructor(private window: WindowRefService,
-                private titleService: Title ) {
+                private titleService: Title) {
     }
 
     ngOnInit() {
         this.initMainSize();
         this.titleService.setTitle('Home');
     }
+
     initMainSize(): void {
         this.screenHeight = `${this.window.nativeWindow.innerHeight + 2}px`;
     }

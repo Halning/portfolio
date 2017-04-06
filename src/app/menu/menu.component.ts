@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { WindowRefService } from '../core/window-ref.service';
 import { Location } from '@angular/common';
 
+import { TranslateService } from 'ng2-translate';
+
 @Component({
     selector: 'ha-menu',
     templateUrl: 'menu.component.html',
@@ -22,6 +24,11 @@ export class MenuComponent implements OnInit {
     toggleClassMenuBW = true;
     toggleClassTransparent = true;
 
+    languages = [
+        {code: 'en', label: 'English'},
+        {code: 'ru', label: 'Русский'},
+    ];
+
     @HostListener('window:scroll', [])
     onWindowScroll() {
         const st = this.window.nativeDocument.scrollingElement.scrollTop;
@@ -32,7 +39,8 @@ export class MenuComponent implements OnInit {
     }
 
     constructor(private window: WindowRefService,
-                private location: Location, private router: Router) {
+                private location: Location, private router: Router,
+                private translate: TranslateService) {
         this.router.events.subscribe(() => {
             this.onWindowScroll();
         });
@@ -40,6 +48,10 @@ export class MenuComponent implements OnInit {
 
     ngOnInit() {
         this.initMainSize();
+    }
+
+    setLocale(code: string): void {
+        this.translate.use(code);
     }
 
     initMainSize(): void {

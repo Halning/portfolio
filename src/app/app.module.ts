@@ -1,9 +1,12 @@
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { Http, HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { AngularFireModule } from 'angularfire2';
+import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
@@ -18,29 +21,46 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
+// Must export the config
+export const firebaseConfig = {
+    apiKey: 'AIzaSyCDt3MxLJfw2jIOnN8eebgmjyLaGYyZpr4',
+    authDomain: 'portfolio-2a12b.firebaseapp.com',
+    databaseURL: 'https://portfolio-2a12b.firebaseio.com',
+    projectId: 'portfolio-2a12b',
+    storageBucket: 'portfolio-2a12b.appspot.com',
+    messagingSenderId: '604580569158'
+};
+
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    MenuComponent,
-    AboutMeComponent,
-    FooterComponent,
-    SkillsComponent,
-    ProjectsComponent,
-    ContactComponent,
-    PageNotFoundComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    MaterialModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    CoreModule
-  ],
-  providers: [Title],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HomeComponent,
+        MenuComponent,
+        AboutMeComponent,
+        FooterComponent,
+        SkillsComponent,
+        ProjectsComponent,
+        ContactComponent,
+        PageNotFoundComponent
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        MaterialModule,
+        BrowserAnimationsModule,
+        AngularFireModule.initializeApp(firebaseConfig),
+        TranslateModule.forRoot({
+            provide: TranslateLoader,
+            useFactory: (http: Http) => new TranslateStaticLoader(http, 'src/assets/i18n', '.json'),
+            deps: [Http]
+        }),
+        AppRoutingModule,
+        CoreModule
+    ],
+    providers: [Title],
+    bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
