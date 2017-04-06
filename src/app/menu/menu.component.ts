@@ -1,9 +1,9 @@
-import { Component, OnInit, HostListener } from '@angular/core';
-import { Router } from '@angular/router';
-import { Location } from '@angular/common';
+import {Component, OnInit, HostListener} from '@angular/core';
+import {Router} from '@angular/router';
+import {Location} from '@angular/common';
 
-import { TranslateService } from 'ng2-translate';
-import { WindowRefService } from '../core/window-ref.service';
+import {TranslateService} from 'ng2-translate';
+import {WindowRefService} from '../core/window-ref.service';
 
 @Component({
     selector: 'ha-menu',
@@ -16,7 +16,6 @@ export class MenuComponent implements OnInit {
     windowHeight: number;
 
     lastScrollTop = 0;
-    scrollCounter = 0;
     menuTopStyle = '0px';
 
     revertColor: number;
@@ -28,14 +27,18 @@ export class MenuComponent implements OnInit {
     showMenuMaterial = false;
 
     languages = [
-        {code: 'en', label: 'En'},
-        {code: 'ru', label: 'Ru'},
-        {code: 'ua', label: 'Ua'},
+        {code: 'en', label: 'En', active: true},
+        {code: 'ru', label: 'Ru', active: false},
+        {code: 'ua', label: 'Ua', active: false},
     ];
+    currentLang = this.languages[0];
 
     mainMenu = [
-        {code: 'asd', label: 'Home'},
-        {code: 'asd', label: 'Home'}
+        {link: '/home', label: 'Home'},
+        {link: '/about', label: 'About'},
+        {link: '/skills', label: 'Skills'},
+        {link: '/projects', label: 'Projects'},
+        {link: '/contacts', label: 'Contacts'}
     ];
 
     @HostListener('window:scroll', [])
@@ -45,8 +48,6 @@ export class MenuComponent implements OnInit {
         this.toggleInOutMenuClass(st);
         this.lastScrollTop = st;
         this.toggleWhiteBlackClass(st);
-
-        this.menuTopStyle = `${st}px`;
     }
 
     constructor(private window: WindowRefService,
@@ -62,6 +63,13 @@ export class MenuComponent implements OnInit {
     }
 
     setLocale(code: string): void {
+        this.currentLang.active = false;
+        this.languages.forEach((lang) => {
+            if (lang.code === code) {
+                this.currentLang = lang;
+                this.currentLang.active = true;
+            }
+        });
         this.translate.use(code);
     }
 
@@ -76,22 +84,13 @@ export class MenuComponent implements OnInit {
         // up and down scroll for the header
         if (st > this.lastScrollTop) {
             if (st > 0 && this.toggleClassMenu) {
-
-                this.scrollCounter++;
-                if (this.scrollCounter >= 1) {
-                    this.toggleClassMenu = false;
-                    this.scrollCounter = 0;
-                }
+                this.toggleClassMenu = false;
+                this.menuTopStyle = `0px`;
 
             }
         } else {
-            if (!this.toggleClassMenu) {
-                this.scrollCounter++;
-                if (this.scrollCounter >= 3) {
-                    this.toggleClassMenu = true;
-                    this.scrollCounter = 0;
-                }
-            }
+            this.toggleClassMenu = true;
+            this.menuTopStyle = `${st - 5}px`;
         }
     }
 

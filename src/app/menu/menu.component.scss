@@ -86,12 +86,12 @@
 
 .menu.in {
   top: 0px;
-  @include transitions-elem(all, 0.6s, ease);
+  @include transitions-elem(all, 0.3s, ease);
 }
 
 .menu.out {
   top: -104px;
-  @include transitions-elem(all, 0.6s, ease);
+  @include transitions-elem(all, 0.3s, ease);
   @include screenMaxW600 {
     top: -85px;
   }
@@ -142,6 +142,12 @@
   outline: none;
   text-align: center;
   font-size: 1.1em;
+}
+
+.btn-active {
+  outline: none;
+  border: none;
+  background: rgba(0,0,0,.04);
 }
 
 

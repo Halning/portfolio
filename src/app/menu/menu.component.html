@@ -5,11 +5,14 @@
             <div class="menu menu-lang" *ngIf="!showMenuMaterial"
                  [ngClass]="{'in': toggleClassMenu, 'out': !toggleClassMenu,
         'white': toggleClassMenuBW, 'black': !toggleClassMenuBW
-        ,'transparent': toggleClassTransparent}">
+        ,'transparent': toggleClassTransparent}" [ngStyle]="{'top': menuTopStyle}">
 
-                <button md-button [mdMenuTriggerFor]="langs">{{'Menu.lang' | translate}}</button>
+                <button md-button [mdMenuTriggerFor]="langs">
+                    {{currentLang.label}}
+                </button>
                 <md-menu #langs="mdMenu">
-                    <button md-menu-item *ngFor="let lang of languages" (click)="setLocale(lang.code)">{{lang.label}}
+                    <button md-menu-item *ngFor="let lang of languages"
+                            (click)="setLocale(lang.code)">{{lang.label}}
                     </button>
                 </md-menu>
 
@@ -18,11 +21,15 @@
             <div class="menu menu-lang" *ngIf="showMenuMaterial"
                  [ngClass]="{'in': toggleClassMenu, 'out': !toggleClassMenu,
         'white': toggleClassMenuBW, 'black': !toggleClassMenuBW
-        ,'transparent': toggleClassTransparent}">
+        ,'transparent': toggleClassTransparent}" [ngStyle]="{'top': menuTopStyle}">
 
-                <button md-button [mdMenuTriggerFor]="menu"><md-icon>apps</md-icon></button>
+                <button md-button [mdMenuTriggerFor]="menu">
+                    <md-icon>apps</md-icon>
+                </button>
                 <md-menu #menu="mdMenu">
-                    <button md-menu-item *ngFor="let lang of mainMenu" (click)="setLocale(lang.code)">{{lang.label}}
+                    <button md-menu-item *ngFor="let item of mainMenu"
+                            [routerLink]="[item.link]" routerLinkActive="btn-active">
+                        {{'Menu.' + item.label | translate}}
                     </button>
                 </md-menu>
 
@@ -35,11 +42,15 @@
             <div class="menu menu-lang"
                  [ngClass]="{'in': toggleClassMenu, 'out': !toggleClassMenu,
         'white': toggleClassMenuBW, 'black': !toggleClassMenuBW
-        ,'transparent': toggleClassTransparent}">
+        ,'transparent': toggleClassTransparent}" [ngStyle]="{'top': menuTopStyle}">
 
-                <button md-button [mdMenuTriggerFor]="langs">{{'Menu.lang' | translate}}</button>
+                <button md-button [mdMenuTriggerFor]="langs">
+                    {{currentLang.label}}
+                </button>
                 <md-menu #langs="mdMenu">
-                    <button md-menu-item *ngFor="let lang of languages" (click)="setLocale(lang.code)">{{lang.label}}
+                    <button md-menu-item *ngFor="let lang of languages"
+                            (click)="setLocale(lang.code)">
+                        {{lang.label}}
                     </button>
                 </md-menu>
 
@@ -52,29 +63,10 @@
         'white': toggleClassMenuBW, 'black': !toggleClassMenuBW
         ,'transparent': toggleClassTransparent}" [ngStyle]="{'top': menuTopStyle}">
                 <ul class="nav nav-pills">
-                    <li class="menu-pill nav-item">
-                        <a class="menu-nav nav-link" [routerLink]="['/home']" routerLinkActive="menu-active">
-                            {{'Menu.Home' | translate}}
-                        </a>
-                    </li>
-                    <li class="menu-pill nav-item">
-                        <a class="menu-nav nav-link" [routerLink]="['/about']" routerLinkActive="menu-active">
-                            {{'Menu.About' | translate}}
-                        </a>
-                    </li>
-                    <li class="menu-pill nav-item">
-                        <a class="menu-nav nav-link" [routerLink]="['/skills']" routerLinkActive="menu-active">
-                            {{'Menu.Skills' | translate}}
-                        </a>
-                    </li>
-                    <li class="menu-pill nav-item">
-                        <a class="menu-nav nav-link" [routerLink]="['/projects']" routerLinkActive="menu-active">
-                            {{'Menu.Projects' | translate}}
-                        </a>
-                    </li>
-                    <li class="menu-pill nav-item">
-                        <a class="menu-nav nav-link" [routerLink]="['/contacts']" routerLinkActive="menu-active">
-                            {{'Menu.Contacts' | translate}}
+                    <li class="menu-pill nav-item" *ngFor="let item of mainMenu">
+                        <a class="menu-nav nav-link"
+                           [routerLink]="['item.link']" routerLinkActive="menu-active">
+                            {{'Menu.' + item.label | translate}}
                         </a>
                     </li>
                 </ul>
