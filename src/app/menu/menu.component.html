@@ -1,35 +1,55 @@
-<div [ngClass]="{'in': toggleClassMenu, 'out': !toggleClassMenu,
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-2">
+            <div class="menu menu-lang" [ngClass]="{'in': toggleClassMenu, 'out': !toggleClassMenu,
         'white': toggleClassMenuBW, 'black': !toggleClassMenuBW
-        ,'transparent': toggleClassTransparent}"
-     class="clearfix menu">
-    <ul class="nav nav-pills">
-        <li class="menu-pill nav-item">
-            <a class="menu-nav nav-link" [routerLink]="['/home']" routerLinkActive="menu-active">
-                {{'Menu.Home' | translate}}
-            </a>
-        </li>
-        <li class="menu-pill nav-item">
-            <a class="menu-nav nav-link" [routerLink]="['/about']" routerLinkActive="menu-active">
-                {{'Menu.About' | translate}}
-            </a>
-        </li>
-        <li class="menu-pill nav-item">
-            <a class="menu-nav nav-link" [routerLink]="['/skills']" routerLinkActive="menu-active">
-                {{'Menu.Skills' | translate}}
-            </a>
-        </li>
-        <li class="menu-pill nav-item">
-            <a class="menu-nav nav-link" [routerLink]="['/projects']" routerLinkActive="menu-active">
-                {{'Menu.Projects' | translate}}
-            </a>
-        </li>
-        <li class="menu-pill nav-item">
-            <a class="menu-nav nav-link" [routerLink]="['/contacts']" routerLinkActive="menu-active">
-                {{'Menu.Contacts' | translate}}
-            </a>
-        </li>
-        <li *ngFor="let lang of languages" class="menu-pill nav-item">
-            <a class="menu-nav nav-link" (click)="setLocale(lang.code)">{{lang.label}}</a>
-        </li>
-    </ul>
+        ,'transparent': toggleClassTransparent}">
+
+                <button md-button [mdMenuTriggerFor]="menu">{{'Menu.lang' | translate}}</button>
+                <md-menu #menu="mdMenu">
+                    <button md-menu-item *ngFor="let lang of languages" (click)="setLocale(lang.code)">{{lang.label}}
+                    </button>
+                </md-menu>
+
+            </div>
+
+        </div>
+
+        <div class="col-10">
+            <div class="menu" [ngClass]="{'in': toggleClassMenu, 'out': !toggleClassMenu,
+        'white': toggleClassMenuBW, 'black': !toggleClassMenuBW
+        ,'transparent': toggleClassTransparent}">
+                <ul class="nav nav-pills">
+                    <li class="menu-pill nav-item">
+                        <a class="menu-nav nav-link" [routerLink]="['/home']" routerLinkActive="menu-active">
+                            {{'Menu.Home' | translate}}
+                        </a>
+                    </li>
+                    <li class="menu-pill nav-item">
+                        <a class="menu-nav nav-link" [routerLink]="['/about']" routerLinkActive="menu-active">
+                            {{'Menu.About' | translate}}
+                        </a>
+                    </li>
+                    <li class="menu-pill nav-item">
+                        <a class="menu-nav nav-link" [routerLink]="['/skills']" routerLinkActive="menu-active">
+                            {{'Menu.Skills' | translate}}
+                        </a>
+                    </li>
+                    <li class="menu-pill nav-item">
+                        <a class="menu-nav nav-link" [routerLink]="['/projects']" routerLinkActive="menu-active">
+                            {{'Menu.Projects' | translate}}
+                        </a>
+                    </li>
+                    <li class="menu-pill nav-item">
+                        <a class="menu-nav nav-link" [routerLink]="['/contacts']" routerLinkActive="menu-active">
+                            {{'Menu.Contacts' | translate}}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
+
+

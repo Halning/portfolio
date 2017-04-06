@@ -31,6 +31,10 @@ export const firebaseConfig = {
     messagingSenderId: '604580569158'
 };
 
+export function createTranslateLoader(http: Http) {
+    return new TranslateStaticLoader(http, './assets/i18n', '.json');
+}
+
 
 @NgModule({
     declarations: [
@@ -53,7 +57,7 @@ export const firebaseConfig = {
         AngularFireModule.initializeApp(firebaseConfig),
         TranslateModule.forRoot({
             provide: TranslateLoader,
-            useFactory: (http: Http) => new TranslateStaticLoader(http, 'src/assets/i18n', '.json'),
+            useFactory: (createTranslateLoader),
             deps: [Http]
         }),
         AppRoutingModule,

@@ -1,0 +1,16 @@
+{
+  "Menu": {
+    "Home": "Головна",
+    "About": "Про мене",
+    "Skills": "Навички",
+    "Projects": "Проекти",
+    "Contacts": "Контакти",
+    "lang": "Мова"
+  },
+  "Home": {
+    "Iam": "Я ",
+    "Andrei": "Andrei",
+    "FED": "Front end розробник",
+    "AboutMe": "Про мене"
+  }
+}

@@ -2,9 +2,11 @@
 
     <div class="home-image" [ngStyle]="{'height': screenHeight}">
         <div class="home-container">
-            <h1 class="home-main-title" [@homeMainTitle]>I am <span>Andrei</span></h1>
-            <h2 [@homeTitle] class="home-title">Front end developer</h2>
-            <button md-button routerLink="/about" class="home-btn-about">About Me</button>
+            <h1 class="home-main-title" [@homeMainTitle]>
+                {{'Home.Iam' | translate}}<span>{{'Home.Andrei' | translate}}</span>
+            </h1>
+            <h2 [@homeTitle] class="home-title">{{'Home.FED' | translate}}</h2>
+            <button md-button routerLink="/about" class="home-btn-about">{{'Home.AboutMe' | translate}}</button>
         </div>
     </div>
 

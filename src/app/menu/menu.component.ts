@@ -1,9 +1,9 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
-import { WindowRefService } from '../core/window-ref.service';
 import { Location } from '@angular/common';
 
 import { TranslateService } from 'ng2-translate';
+import { WindowRefService } from '../core/window-ref.service';
 
 @Component({
     selector: 'ha-menu',
@@ -25,8 +25,9 @@ export class MenuComponent implements OnInit {
     toggleClassTransparent = true;
 
     languages = [
-        {code: 'en', label: 'English'},
-        {code: 'ru', label: 'Русский'},
+        {code: 'en', label: 'En'},
+        {code: 'ru', label: 'Ru'},
+        {code: 'ua', label: 'Ua'},
     ];
 
     @HostListener('window:scroll', [])

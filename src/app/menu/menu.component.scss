@@ -3,13 +3,13 @@
 /* Header */
 .menu {
   padding: 15px 30px;
-  position: fixed;
+  position: absolute;
   width: 100%;
   display: inline-block;
   right: 0;
   left: 0;
   z-index: 50;
-  overflow-x: hidden;
+  overflow: hidden;
   top: -85px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -43,6 +43,7 @@
       &:after {
         margin-top: 25px;
         position: absolute;
+        top: 0;
         left: 0;
         width: 0;
         height: 2px;
@@ -71,6 +72,10 @@
       }
     }
   }
+}
+
+.menu-lang {
+  padding: 10px 5px;
 }
 
 .menu.transparent {
@@ -103,7 +108,7 @@
   }
 }
 
-.menu.white .menu-pill .menu-nav {
+.menu.white .menu-pill .menu-nav, .menu.white .mat-button {
   color: $color-white;
   &:after {
     background: $color-white;
@@ -125,5 +130,19 @@
   color: $color-black;
   @include transitions-elem(color, 1s, ease);
 }
+
+/* material */
+.mat-button {
+  outline: none;
+  font-size: 1em;
+  font-family: "Merriweather", serif !important;
+}
+
+.mat-menu-item {
+  outline: none;
+  text-align: center;
+  font-size: 1.1em;
+}
+
 
 

@@ -4,6 +4,13 @@
     "About": "About",
     "Skills": "Skills",
     "Projects": "Projects",
-    "Contacts": "Contacts"
+    "Contacts": "Contacts",
+    "lang": "Lang"
+  },
+  "Home": {
+    "Iam": "I am ",
+    "Andrei": "Andrei",
+    "FED": "Front end developer",
+    "AboutMe": "About Me"
   }
 }
