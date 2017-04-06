@@ -17,6 +17,7 @@ export class MenuComponent implements OnInit {
 
     lastScrollTop = 0;
     scrollCounter = 0;
+    menuTopStyle = '0px';
 
     revertColor: number;
 
@@ -24,10 +25,17 @@ export class MenuComponent implements OnInit {
     toggleClassMenuBW = true;
     toggleClassTransparent = true;
 
+    showMenuMaterial = false;
+
     languages = [
         {code: 'en', label: 'En'},
         {code: 'ru', label: 'Ru'},
         {code: 'ua', label: 'Ua'},
+    ];
+
+    mainMenu = [
+        {code: 'asd', label: 'Home'},
+        {code: 'asd', label: 'Home'}
     ];
 
     @HostListener('window:scroll', [])
@@ -37,6 +45,8 @@ export class MenuComponent implements OnInit {
         this.toggleInOutMenuClass(st);
         this.lastScrollTop = st;
         this.toggleWhiteBlackClass(st);
+
+        this.menuTopStyle = `${st}px`;
     }
 
     constructor(private window: WindowRefService,
@@ -58,6 +68,8 @@ export class MenuComponent implements OnInit {
     initMainSize(): void {
         this.windowWidth = this.window.nativeWindow.innerWidth;
         this.windowHeight = this.window.nativeWindow.innerHeight;
+
+        this.showMenuMaterial = this.windowWidth < 700;
     }
 
     private toggleInOutMenuClass(st: number): void {
