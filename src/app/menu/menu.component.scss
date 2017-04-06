@@ -23,23 +23,15 @@
     display: inline-flex;
     list-style: none;
     float: right;
-    @include screenMaxW600 {
-      float: none;
-    }
 
     .menu-pill .menu-nav {
       position: relative;
-      margin-right: 0.8em;
-      margin-left: 1.5em;
+      margin-right: 0.5em;
+      margin-left: 0.8em;
       text-align: center;
       border-radius: 0em;
       padding: 0;
-      @include screenMaxW600 {
-        margin-left: 0.1em;
-      }
-      @include screenMaxW400 {
-        font-size: 0.8em;
-      }
+
       &:after {
         margin-top: 25px;
         position: absolute;
@@ -53,12 +45,6 @@
         -moz-transition: width 0.3s, opacity 0.2s, -moz-transform 0.3s;
         -o-transition: width 0.3s, opacity 0.2s, -o-transform 0.3s;
         transition: width 0.3s, opacity 0.2s, -webkit-transform 0.3s, -moz-transform 0.3s, -o-transform 0.3s, transform 0.3s;
-        @include screenMaxW600 {
-          margin-top: 1.6em;
-        }
-        @include screenMaxW400 {
-          margin-top: 1.8em;
-        }
       }
       &:hover::after, &.menu-active::after {
         opacity: 1;

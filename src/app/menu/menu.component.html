@@ -65,7 +65,7 @@
                 <ul class="nav nav-pills">
                     <li class="menu-pill nav-item" *ngFor="let item of mainMenu">
                         <a class="menu-nav nav-link"
-                           [routerLink]="['item.link']" routerLinkActive="menu-active">
+                           [routerLink]="[item.link]" routerLinkActive="menu-active">
                             {{'Menu.' + item.label | translate}}
                         </a>
                     </li>
