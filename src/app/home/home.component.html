@@ -2,7 +2,7 @@
 
     <div class="home-image" [ngStyle]="{'height': screenHeight}">
         <div class="home-container">
-            <h1 class="home-hello">{{'Home.hello' | translate}}</h1>
+            <h1 class="home-hello" [@homeHello]>{{'Home.hello' | translate}}</h1>
             <h1 class="home-main-title" [@homeMainTitle]>
                 {{'Home.Iam' | translate}}<span>{{'Home.Andrei' | translate}}</span>
             </h1>

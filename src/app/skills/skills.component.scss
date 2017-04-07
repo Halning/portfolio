@@ -176,15 +176,20 @@
     height: 75px;
     @include margin-top-bottom(12.5px);
   }
-  .icon-cisco {
-    background-image: url('../../assets/img/sprite/cisco.png');
+  .icon-firebase {
+    background-image: url('../../assets/img/sprite/firebase.png');
     width: 100px;
-    height: 56px;
-    @include margin-top-bottom(22px);
+    height: 100px;
   }
   .icon-english {
     background-image: url('../../assets/img/sprite/eng.png');
     width: 100px;
     height: 100px;
   }
+/*  .icon-cisco {
+    background-image: url('../../assets/img/sprite/cisco.png');
+    width: 100px;
+    height: 56px;
+    @include margin-top-bottom(22px);
+  }*/
 }

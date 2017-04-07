@@ -33,16 +33,25 @@ import {
                 ]))
             ])
         ]),
-        trigger('homeMainTitle', [
+        trigger('homeHello', [
             state('void', style({opacity: 0})),
             transition(':enter', [
-                animate('0.5s 1.5s ease', style({opacity: 1}))
+                animate('0.8s 0.5s ease', style({opacity: 1}))
+            ])
+        ]),
+        trigger('homeMainTitle', [
+            state('void', style({opacity: 0, transform: 'translate(0, -20px)'})),
+            transition(':enter', [
+                animate('1s 0.8s ease', style({
+                    opacity: 1,
+                    transform: 'translate(0px, 0px)'
+                }))
             ])
         ]),
         trigger('homeTitle', [
             state('void', style({opacity: 0, transform: 'translate(0, 20px)'})),
             transition(':enter', [
-                animate('1s 0.8s ease', style({
+                animate('1s 1.2s ease', style({
                     opacity: 1,
                     transform: 'translate(0px, 0px)'
                 }))

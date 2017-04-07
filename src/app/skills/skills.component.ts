@@ -157,8 +157,8 @@ export class SkillsComponent implements OnInit {
                 icon: 'azure'
             },
             {
-                name: 'Cisco',
-                icon: 'cisco'
+                name: 'Firebase',
+                icon: 'firebase'
             },
             {
                 name: 'English pre-intermediate',
