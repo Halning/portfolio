@@ -9,7 +9,7 @@ import {
     keyframes
 } from '@angular/animations';
 
-import {AboutContentModel} from "./AboutContent.model";
+import { AboutContentModel } from './AboutContent.model';
 
 
 @Component({

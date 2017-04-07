@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+// import { AngularFire } from 'angularfire2';
 import { TranslateService } from 'ng2-translate';
-import { LocalStorageService, SessionStorageService } from 'ng2-webstorage';
+import { LocalStorageService } from 'ng2-webstorage';
 
 
 @Component({
@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
     showFooter = true;
 
     constructor(private router: Router,
-                private af: AngularFire,
+                // private af: AngularFire,
                 private translate: TranslateService,
                 private localSt: LocalStorageService) {
         // this.items = af.database.list('/item');
@@ -32,11 +32,7 @@ export class AppComponent implements OnInit {
         this.router.events
             .subscribe(event => {
                 if (event instanceof NavigationEnd) {
-                    if (event.url === '/home') {
-                        this.showFooter = false;
-                    } else {
-                        this.showFooter = true;
-                    }
+                    this.showFooter = event.url !== '/home';
                 }
             });
     }

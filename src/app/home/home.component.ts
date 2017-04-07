@@ -11,7 +11,7 @@ import {
     transition,
     keyframes
 } from '@angular/animations';
-
+import { Http, Headers } from '@angular/http';
 
 
 @Component({
@@ -63,7 +63,8 @@ export class HomeComponent implements OnInit {
     screenHeight: string;
 
     constructor(private window: WindowRefService,
-                private titleService: Title) {
+                private titleService: Title,
+                private http: Http) {
     }
 
     ngOnInit() {
@@ -73,5 +74,19 @@ export class HomeComponent implements OnInit {
 
     initMainSize(): void {
         this.screenHeight = `${this.window.nativeWindow.innerHeight + 2}px`;
+    }
+
+    ggg(): void {
+        const headers = new Headers();
+        // var creds = 'name=' + usercreds.username + '&password=' + usercreds.password;
+        const emailid = 'name=' + 'Halning';
+
+        headers.append('Content-Type', 'application/X-www-form-urlencoded');
+
+        this.http.post('/api/sendmail', emailid, {headers: headers}).subscribe((data) => {
+            if (data.json().success) {
+                console.log('Sent successfully');
+            }
+        });
     }
 }
