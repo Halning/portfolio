@@ -3,14 +3,11 @@
 /* Header */
 .menu {
   padding: 15px 30px;
-  position: absolute;
+  position: fixed;
   width: 100%;
-  display: inline-block;
-  right: 0;
-  left: 0;
-  z-index: 50;
   overflow: hidden;
   top: -85px;
+  z-index: 100;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   @include transitions-elem(all, 3s, ease);
@@ -30,10 +27,10 @@
       margin-left: 0.8em;
       text-align: center;
       border-radius: 0em;
-      padding: 0;
+      padding: 5px 0 0 0;
 
       &:after {
-        margin-top: 25px;
+        margin-top: 30px;
         position: absolute;
         top: 0;
         left: 0;
@@ -72,12 +69,12 @@
 
 .menu.in {
   top: 0px;
-  @include transitions-elem(all, 0.3s, ease);
+  @include transitions-elem(top, 0.3s, ease);
 }
 
 .menu.out {
   top: -104px;
-  @include transitions-elem(all, 0.3s, ease);
+  @include transitions-elem(top, 0.3s, ease);
   @include screenMaxW600 {
     top: -85px;
   }
@@ -130,10 +127,20 @@
   font-size: 1.1em;
 }
 
+/deep/ .mat-menu-content {
+  padding: 0 !important;
+}
+
+.mat-menu-item:hover:not([disabled]) {
+  background: rgba(0, 0, 0,.25);
+  color: #EEEEEE;
+}
+
 .btn-active {
   outline: none;
   border: none;
-  background: rgba(0,0,0,.04);
+  color: #EEEEEE;
+  background: rgba(0, 0, 0,.4);
 }
 
 

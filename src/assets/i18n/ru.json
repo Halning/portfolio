@@ -7,9 +7,10 @@
     "Contacts": "Контакты"
   },
   "Home": {
+    "hello": "Привет",
     "Iam": "Я ",
-    "Andrei": "Andrei",
-    "FED": "Front end разработчик",
+    "Andrei": "Андрей",
+    "FED": "Front-end разработчик",
     "AboutMe": "Обо мне"
   }
 }

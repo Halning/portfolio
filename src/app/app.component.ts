@@ -3,6 +3,7 @@ import { NavigationEnd, Router } from '@angular/router';
 
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { TranslateService } from 'ng2-translate';
+import { LocalStorageService, SessionStorageService } from 'ng2-webstorage';
 
 
 @Component({
@@ -17,13 +18,14 @@ export class AppComponent implements OnInit {
 
     constructor(private router: Router,
                 private af: AngularFire,
-                private translate: TranslateService) {
+                private translate: TranslateService,
+                private localSt: LocalStorageService) {
         // this.items = af.database.list('/item');
         // this language will be used as a fallback when a translation isn't found in the current language
         this.translate.setDefaultLang('en');
 
         // the lang to use, if the lang isn't available, it will use the current loader to get them
-        this.translate.use('en');
+        this.setLanguage();
     }
 
     ngOnInit() {
@@ -37,6 +39,14 @@ export class AppComponent implements OnInit {
                     }
                 }
             });
+    }
+
+    private setLanguage(): void {
+        const curLang = this.localSt.retrieve('language');
+
+        if (!curLang) {
+            this.localSt.store('language', 'en');
+        }
     }
 }
 

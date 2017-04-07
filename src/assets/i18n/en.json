@@ -7,9 +7,10 @@
     "Contacts": "Contacts"
   },
   "Home": {
+    "hello": "Hello",
     "Iam": "I am ",
     "Andrei": "Andrei",
-    "FED": "Front end developer",
+    "FED": "Front-end developer",
     "AboutMe": "About Me"
   }
 }

@@ -1,9 +1,10 @@
-import {Component, OnInit, HostListener} from '@angular/core';
-import {Router} from '@angular/router';
-import {Location} from '@angular/common';
+import { Component, OnInit, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
-import {TranslateService} from 'ng2-translate';
-import {WindowRefService} from '../core/window-ref.service';
+import { TranslateService } from 'ng2-translate';
+import { WindowRefService } from '../core/window-ref.service';
+import {LocalStorageService, SessionStorageService} from 'ng2-webstorage';
 
 @Component({
     selector: 'ha-menu',
@@ -17,8 +18,6 @@ export class MenuComponent implements OnInit {
 
     lastScrollTop = 0;
     menuTopStyle = '0px';
-
-    revertColor: number;
 
     toggleClassMenu = true;
     toggleClassMenuBW = true;
@@ -52,7 +51,8 @@ export class MenuComponent implements OnInit {
 
     constructor(private window: WindowRefService,
                 private location: Location, private router: Router,
-                private translate: TranslateService) {
+                private translate: TranslateService,
+                private localSt: LocalStorageService) {
         this.router.events.subscribe(() => {
             this.onWindowScroll();
         });
@@ -60,6 +60,8 @@ export class MenuComponent implements OnInit {
 
     ngOnInit() {
         this.initMainSize();
+        const curLang = this.localSt.retrieve('language');
+        this.setLocale(curLang);
     }
 
     setLocale(code: string): void {
@@ -71,13 +73,14 @@ export class MenuComponent implements OnInit {
             }
         });
         this.translate.use(code);
+        this.localSt.store('language', code);
     }
 
     initMainSize(): void {
         this.windowWidth = this.window.nativeWindow.innerWidth;
         this.windowHeight = this.window.nativeWindow.innerHeight;
 
-        this.showMenuMaterial = this.windowWidth < 700;
+        this.showMenuMaterial = this.windowWidth < 768;
     }
 
     private toggleInOutMenuClass(st: number): void {
@@ -96,21 +99,8 @@ export class MenuComponent implements OnInit {
 
     private toggleWhiteBlackClass(st: number): void {
         if (this.location.path().includes('home')) {
-
-            if (this.windowWidth > 1200) {
-                this.revertColor = this.windowHeight - 40;
-            } else {
-                this.revertColor = this.windowHeight / 3;
-            }
-            if (st > this.revertColor) {
-                if (this.toggleClassMenuBW) {
-                    this.toggleClassMenuBW = false;
-                }
-
-            } else {
-                if (!this.toggleClassMenuBW) {
-                    this.toggleClassMenuBW = true;
-                }
+            if (!this.toggleClassMenuBW) {
+                this.toggleClassMenuBW = true;
             }
         } else {
             this.toggleClassMenuBW = false;
