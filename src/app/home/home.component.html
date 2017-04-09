@@ -1,14 +1,12 @@
 <div class="home" (window:resize)="initMainSize()" [@homeState] *ngIf="screenHeight">
 
-    <div class="home-image" [ngStyle]="{'height': screenHeight}">
-        <div class="home-container">
+    <div class="home-image text-center" [ngStyle]="{'height': screenHeight}">
             <h1 class="home-hello" [@homeHello] (click)="ggg()">{{'Home.hello' | translate}}</h1>
             <h1 class="home-main-title" [@homeMainTitle]>
                 {{'Home.Iam' | translate}}<span>{{'Home.Andrei' | translate}}</span>
             </h1>
             <h2 [@homeTitle] class="home-title">{{'Home.FED' | translate}}</h2>
             <button md-button routerLink="/about" class="home-btn-about">{{'Home.AboutMe' | translate}}</button>
-        </div>
     </div>
 
 </div>
