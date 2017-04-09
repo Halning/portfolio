@@ -1,11 +1,31 @@
-import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import {Component, OnInit} from '@angular/core';
+import {Title} from '@angular/platform-browser';
+
+import {
+    trigger,
+    state,
+    style,
+    animate,
+    transition,
+    keyframes
+} from '@angular/animations';
 
 @Component({
     selector: 'ha-contact',
     templateUrl: './contact.component.html',
-    styleUrls: ['./contact.component.scss']
+    styleUrls: ['./contact.component.scss'],
+    animations: [
+        trigger('contactsState', [
+            transition(':enter', [
+                animate(300, keyframes([
+                    style({opacity: 0, transform: 'rotate(90deg)', offset: 0}),
+                    style({opacity: 1, transform: 'rotate(0)', offset: 1.0})
+                ]))
+            ])
+        ])
+    ]
 })
+
 export class ContactComponent implements OnInit {
 
     mail = {

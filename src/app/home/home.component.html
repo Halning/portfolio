@@ -1,4 +1,4 @@
-<div class="home" (window:resize)="initMainSize()" [@homeState] *ngIf="screenHeight">
+<div  (window:resize)="initMainSize()" [@homeState] *ngIf="screenHeight">
 
     <div class="home-image text-center" [ngStyle]="{'height': screenHeight}">
             <h1 class="home-hello" [@homeHello] (click)="ggg()">{{'Home.hello' | translate}}</h1>
