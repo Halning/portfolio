@@ -1,7 +1,7 @@
 <div  (window:resize)="initMainSize()" [@homeState] *ngIf="screenHeight">
 
     <div class="home-image text-center" [ngStyle]="{'height': screenHeight}">
-            <h1 class="home-hello" [@homeHello] (click)="ggg()">{{'Home.hello' | translate}}</h1>
+            <h1 class="home-hello" [@homeHello]>{{'Home.hello' | translate}}</h1>
             <h1 class="home-main-title" [@homeMainTitle]>
                 {{'Home.Iam' | translate}}<span>{{'Home.Andrei' | translate}}</span>
             </h1>

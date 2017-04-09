@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Title} from '@angular/platform-browser';
+import {Http, Headers, RequestOptions} from '@angular/http';
 
 import {
     trigger,
@@ -76,7 +77,8 @@ export class ContactComponent implements OnInit {
         }
     ];
 
-    constructor(private titleService: Title) {
+    constructor(private titleService: Title,
+                private http: Http) {
     }
 
     ngOnInit() {
@@ -89,8 +91,14 @@ export class ContactComponent implements OnInit {
     }
 
     onSubmit(): void {
-        console.log(this.mail);
+        const mail = `subject=${this.mail.subject}&message=${this.mail.message}`;
+
+        let headers = new Headers({ 'Content-Type': 'application/X-www-form-urlencoded' });
+        let options = new RequestOptions({ headers: headers });
+
+        this.http.post('https://us-central1-portfolio-2a12b.cloudfunctions.net/sendMeMail', mail, options).subscribe((data) => {
+            console.log(data);
+        });
         this.submitted = true;
     }
-
 }
