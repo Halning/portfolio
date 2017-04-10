@@ -2,7 +2,6 @@ import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Http, HttpModule } from '@angular/http';
-import { MaterialModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AngularFireModule } from 'angularfire2';
@@ -13,6 +12,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 import { HomeComponent } from './home/home.component';
 import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
 
 import { MenuComponent } from './menu/menu.component';
 import { AboutMeComponent } from './about-me/about-me.component';
@@ -21,6 +21,7 @@ import { SkillsComponent } from './skills/skills.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HaLoaderComponent } from './shared/ha-loader/ha-loader.component';
 
 // Must export the config
 export const firebaseConfig = {
@@ -38,6 +39,22 @@ export function createTranslateLoader(http: Http) {
 
 
 @NgModule({
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        BrowserAnimationsModule,
+        AngularFireModule.initializeApp(firebaseConfig),
+        SharedModule,
+        TranslateModule.forRoot({
+            provide: TranslateLoader,
+            useFactory: (createTranslateLoader),
+            deps: [Http]
+        }),
+        Ng2Webstorage.forRoot({ prefix: 'hal', separator: '.' }),
+        AppRoutingModule,
+        CoreModule
+    ],
     declarations: [
         AppComponent,
         HomeComponent,
@@ -47,23 +64,8 @@ export function createTranslateLoader(http: Http) {
         SkillsComponent,
         ProjectsComponent,
         ContactComponent,
-        PageNotFoundComponent
-    ],
-    imports: [
-        BrowserModule,
-        FormsModule,
-        HttpModule,
-        MaterialModule,
-        BrowserAnimationsModule,
-        AngularFireModule.initializeApp(firebaseConfig),
-        TranslateModule.forRoot({
-            provide: TranslateLoader,
-            useFactory: (createTranslateLoader),
-            deps: [Http]
-        }),
-        Ng2Webstorage.forRoot({ prefix: 'hal', separator: '.' }),
-        AppRoutingModule,
-        CoreModule
+        PageNotFoundComponent,
+        HaLoaderComponent
     ],
     providers: [Title],
     bootstrap: [AppComponent]

@@ -25,10 +25,11 @@
             </div>
 
             <div class="col-md-6 contact-list pd-10" [@mailBlock]>
-                <md-card>
+                <md-card [ngStyle]="{'background-color': submitColor}">
                     <h2>Send Email</h2>
                     <hr>
-                    <div [hidden]="submitted">
+                    <ha-ha-loader></ha-ha-loader>
+                    <div [hidden]="submitted || showLoader || submitColor">
                         <form class="contact-form" (ngSubmit)="onSubmit()" #contactForm="ngForm">
 
                             <md-input-container class="full-width">
@@ -55,19 +56,32 @@
 
                     <div [hidden]="!submitted" class="mail-submitted">
                         <h4>You submitted the following:</h4>
+                        <hr>
                         <div class="row">
-                            <div class="col-xs-3">Subject</div>
-                            <div class="col-xs-9  pull-left">{{ mail.subject }}</div>
+                            <div class="col-3">Subject:</div>
+                            <div class="col-9  float-left">{{ mail.subject }}</div>
                         </div>
+                        <hr>
                         <div class="row">
-                            <div class="col-xs-3">Message</div>
-                            <div class="col-xs-9 pull-left word-wrap">{{ mail.message }}</div>
+                            <div class="col-3">Message:</div>
+                            <div class="col-9 float-left word-wrap">{{ mail.message }}</div>
                         </div>
                         <br>
-                        <button md-fab type="button" (click)="submitted=false">
+                        <button md-fab type="button"
+                                (click)="submitted=false; submitColor = ''; showError = false;">
                             <md-icon>mail_outline</md-icon>
                         </button>
                     </div>
+
+                    <div [hidden]="!showError" class="mail-submitted">
+                        <h4 class="text-center p-5">Oops, try again!</h4>
+                        <hr>
+                        <button md-fab type="button"
+                                (click)="submitted=false; submitColor = ''; showError = false;">
+                            <md-icon>mail_outline</md-icon>
+                        </button>
+                    </div>
+                    <br>
                 </md-card>
             </div>
         </div>

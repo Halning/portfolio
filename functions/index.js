@@ -41,11 +41,9 @@ function sendMail(request, response, formattedDate) {
         subject: request.body.subject
     }, (err) => {
         if (err) {
-            // return response.json({status: '', msg: 'sent'});
-            response.send(`${err} Fuck`);
+            response.status(500).send('Can send mail emailjs error');
         } else {
             response.status(200).send(formattedDate);
-            // response.send(request.body.message);
         }
     });
 }

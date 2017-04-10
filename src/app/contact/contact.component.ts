@@ -1,15 +1,15 @@
 import {Component, OnInit} from '@angular/core';
 import {Title} from '@angular/platform-browser';
-import {Http, Headers, RequestOptions} from '@angular/http';
 
 import {
     trigger,
     state,
     style,
     animate,
-    transition,
-    keyframes
+    transition
 } from '@angular/animations';
+
+import { HaApiRequest } from '../core/request/HaApiRequest';
 
 @Component({
     selector: 'ha-contact',
@@ -51,6 +51,10 @@ export class ContactComponent implements OnInit {
     };
 
     submitted = false;
+    showLoader = false;
+    submitColor = '';
+
+    showError = false;
 
     contacts = [
         {
@@ -94,7 +98,7 @@ export class ContactComponent implements OnInit {
     ];
 
     constructor(private titleService: Title,
-                private http: Http) {
+                private apiHttp: HaApiRequest) {
     }
 
     ngOnInit() {
@@ -107,14 +111,18 @@ export class ContactComponent implements OnInit {
     }
 
     onSubmit(): void {
-        const mail = `subject=${this.mail.subject}&message=${this.mail.message}`;
-
-        const headers = new Headers({ 'Content-Type': 'application/X-www-form-urlencoded' });
-        const options = new RequestOptions({ headers: headers });
-
-        this.http.post('https://us-central1-portfolio-2a12b.cloudfunctions.net/sendMeMail', mail, options).subscribe((data) => {
-            console.log(data);
+        this.showLoader = true;
+        this.apiHttp.request(`/sendMeMail`, {
+            method: 'POST',
+            body: this.mail
+        }).subscribe(() => {
+            this.submitted = true;
+            this.submitColor = 'rgba(0, 153, 0, .2)';
+            this.showLoader = false;
+        }, () => {
+            this.showLoader = false;
+            this.submitColor = 'rgba(255, 0, 0, .1)';
+            this.showError = true;
         });
-        this.submitted = true;
     }
 }
