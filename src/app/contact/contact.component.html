@@ -1,22 +1,22 @@
-<div class="contact" [@contactsState]>
+<div class="contact">
 
     <div class="container">
         <div class="row">
-            <div class="col-md-6 contact-list pd-10">
+            <div class="col-md-6 contact-list pd-10" [@contactBlockList]>
                 <md-card>
                     <md-list>
                         <h3 md-subheader>Contacts</h3>
                         <md-list-item *ngFor="let contact of contacts">
                             <md-icon md-list-avatar>{{contact.icon}}</md-icon>
                             <h4 md-line>{{contact.name}}</h4>
-                            <p md-line> {{contact.value}} </p>
+                            <p md-line [@print] class="css-typing"> {{contact.value}} </p>
                         </md-list-item>
                         <md-divider></md-divider>
                         <h3 md-subheader>Social network</h3>
                         <md-list-item *ngFor="let social of socials">
                             <md-icon md-list-avatar class="large-icon">{{social.icon}}</md-icon>
                             <a md-line class="about-links" href="{{social.link}}" target="_blank">
-                                <h4>{{social.name}}</h4>
+                                <h4 [@print] class="css-typing">{{social.name}}</h4>
                             </a>
                             <span md-line>&nbsp;</span>
                         </md-list-item>
@@ -24,7 +24,7 @@
                 </md-card>
             </div>
 
-            <div class="col-md-6 contact-list pd-10">
+            <div class="col-md-6 contact-list pd-10" [@mailBlock]>
                 <md-card>
                     <h2>Send Email</h2>
                     <hr>

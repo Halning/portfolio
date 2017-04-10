@@ -1,6 +1,11 @@
 @import "../../assets/styles/var";
 @import "../../assets/styles/mixins";
 
+.css-typing {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 .contact {
   padding: 4em 1em 0;
   h4 {

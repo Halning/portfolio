@@ -16,12 +16,28 @@ import {
     templateUrl: './contact.component.html',
     styleUrls: ['./contact.component.scss'],
     animations: [
-        trigger('contactsState', [
+        trigger('contactBlockList', [
+            state('void', style({opacity: 0, transform: 'rotate(-90deg)'})),
             transition(':enter', [
-                animate(300, keyframes([
-                    style({opacity: 0, transform: 'rotate(90deg)', offset: 0}),
-                    style({opacity: 1, transform: 'rotate(0)', offset: 1.0})
-                ]))
+                animate('.3s ease', style({
+                    opacity: 1,
+                    transform: 'rotate(0)'
+                }))
+            ])
+        ]),
+        trigger('mailBlock', [
+            state('void', style({opacity: 0, transform: 'rotate(90deg)'})),
+            transition(':enter', [
+                animate('.3s ease', style({
+                    opacity: 1,
+                    transform: 'rotate(0)'
+                }))
+            ])
+        ]),
+        trigger('print', [
+            state('void', style({width: '0', transform: 'steps(100, end)'})),
+            transition(':enter', [
+                animate(2000, style({width: '100%', transform: 'steps(100, end)'}))
             ])
         ])
     ]
@@ -93,8 +109,8 @@ export class ContactComponent implements OnInit {
     onSubmit(): void {
         const mail = `subject=${this.mail.subject}&message=${this.mail.message}`;
 
-        let headers = new Headers({ 'Content-Type': 'application/X-www-form-urlencoded' });
-        let options = new RequestOptions({ headers: headers });
+        const headers = new Headers({ 'Content-Type': 'application/X-www-form-urlencoded' });
+        const options = new RequestOptions({ headers: headers });
 
         this.http.post('https://us-central1-portfolio-2a12b.cloudfunctions.net/sendMeMail', mail, options).subscribe((data) => {
             console.log(data);

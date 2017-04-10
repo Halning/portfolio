@@ -1,4 +1,4 @@
-var functions = require('firebase-functions');
+const functions = require('firebase-functions');
 const email = require("emailjs/email");
 const moment = require('moment');
 const cors = require('cors')({origin: true});
@@ -39,7 +39,7 @@ function sendMail(request, response, formattedDate) {
         to: 'Halning <halningus@gmail.com>',
         cc: '',
         subject: request.body.subject
-    }, (err, message) => {
+    }, (err) => {
         if (err) {
             // return response.json({status: '', msg: 'sent'});
             response.send(`${err} Fuck`);
