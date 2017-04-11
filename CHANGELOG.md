@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unrelised]
 ### Features
+ - send mail from contacts
+ - contacts animation add
  
  ### Code Refactoring
  
