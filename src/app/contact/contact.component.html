@@ -83,10 +83,12 @@
                     <div [hidden]="!showError" class="mail-submitted">
                         <h4 class="text-center p-5">Oops, try again!</h4>
                         <hr>
-                        <button md-fab type="button"
-                                (click)="submitted=false; submitColor = ''; showError = false;">
-                            <md-icon>mail_outline</md-icon>
-                        </button>
+                        <div class="text-center">
+                            <button md-fab type="button"
+                                    (click)="submitted=false; submitColor = ''; showError = false;">
+                                <md-icon>mail_outline</md-icon>
+                            </button>
+                        </div>
                     </div>
                     <br>
                 </md-card>

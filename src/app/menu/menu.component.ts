@@ -2,7 +2,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { TranslateService } from 'ng2-translate';
+import { TranslateService } from '@ngx-translate/core';
 import { WindowRefService } from '../core/window-ref.service';
 import {LocalStorageService } from 'ng2-webstorage';
 
@@ -27,8 +27,8 @@ export class MenuComponent implements OnInit {
 
     languages = [
         {code: 'en', label: 'En', active: true},
-        {code: 'ru', label: 'Ru', active: false},
         {code: 'ua', label: 'Ua', active: false},
+        {code: 'ru', label: 'Ru', active: false},
     ];
     currentLang = this.languages[0];
 

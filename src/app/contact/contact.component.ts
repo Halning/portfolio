@@ -10,7 +10,7 @@ import {
 } from '@angular/animations';
 
 import { HaApiRequest } from '../core/request/HaApiRequest';
-import { LangChangeEvent, TranslateService } from 'ng2-translate';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 
 @Component({
     selector: 'ha-contact',
