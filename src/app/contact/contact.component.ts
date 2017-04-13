@@ -102,28 +102,13 @@ export class ContactComponent implements OnInit {
                 private apiHttp: HaApiRequest,
                 private translate: TranslateService) {
         this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-            if (!this.mail.message || this.mail.message === 'Hello, Andrei!'
-                || this.mail.message === 'Здравствуйте, Андрей!'
-                || this.mail.message === 'Привет, Андрей!') {
-                switch (event.lang) {
-                    case 'en':
-                        this.mail.message = 'Hello, Andrei!';
-                        break;
-                    case 'ru':
-                        this.mail.message = 'Здравствуйте, Андрей!';
-                        break;
-                    case 'ua':
-                        this.mail.message = 'Привет, Андрей!';
-                        break;
-                    default:
-                        this.mail.message = 'Hello, Andrei!';
-                }
-            }
+            this.setDefaultMailMassage(event.lang);
         });
     }
 
     ngOnInit() {
         this.titleService.setTitle('Contact');
+        this.setDefaultMailMassage(this.translate.currentLang);
     }
 
     cancel(): void {
@@ -145,5 +130,25 @@ export class ContactComponent implements OnInit {
             this.submitColor = 'rgba(255, 0, 0, .1)';
             this.showError = true;
         });
+    }
+
+    private setDefaultMailMassage(lang: string): void {
+        if (!this.mail.message || this.mail.message === 'Hello, Andrei!'
+            || this.mail.message === 'Здравствуйте, Андрей!'
+            || this.mail.message === 'Привет, Андрей!') {
+            switch (lang) {
+                case 'en':
+                    this.mail.message = 'Hello, Andrei!';
+                    break;
+                case 'ru':
+                    this.mail.message = 'Здравствуйте, Андрей!';
+                    break;
+                case 'ua':
+                    this.mail.message = 'Привет, Андрей!';
+                    break;
+                default:
+                    this.mail.message = 'Hello, Andrei!';
+            }
+        }
     }
 }
