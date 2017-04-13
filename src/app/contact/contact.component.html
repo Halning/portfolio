@@ -38,15 +38,18 @@
                             </md-input-container>
 
                             <md-input-container class="full-width">
-                            <textarea mdInput placeholder="Message" required class="contacts-textarea"
-                                      [(ngModel)]="mail.message" name="message">Здравствуйте, Андрей!</textarea>
+                                <textarea mdInput placeholder="Message"
+                                          required class="contacts-textarea"
+                                          [(ngModel)]="mail.message" name="message">
+                                </textarea>
                             </md-input-container>
 
                             <div class="form-btns">
                                 <button type="button" md-fab (click)="cancel()" [disabled]="contactForm.form.pristine">
                                     <md-icon>clear</md-icon>
                                 </button>
-                                <button md-fab type="submit" [disabled]="!contactForm.form.valid || contactForm.form.pristine">
+                                <button md-fab type="submit"
+                                        [disabled]="!contactForm.form.valid || contactForm.form.pristine">
                                     <md-icon>mail_outline</md-icon>
                                 </button>
                             </div>
@@ -54,23 +57,27 @@
                         </form>
                     </div>
 
-                    <div [hidden]="!submitted" class="mail-submitted">
-                        <h4>You submitted the following:</h4>
+                    <div [hidden]="!submitted">
+                        <h5>You submitted the following:</h5>
                         <hr>
-                        <div class="row">
-                            <div class="col-3">Subject:</div>
-                            <div class="col-9  float-left">{{ mail.subject }}</div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-3">Message:</div>
-                            <div class="col-9 float-left word-wrap">{{ mail.message }}</div>
-                        </div>
-                        <br>
-                        <button md-fab type="button"
-                                (click)="submitted=false; submitColor = ''; showError = false;">
-                            <md-icon>mail_outline</md-icon>
-                        </button>
+                        <form class="contact-form">
+                            <md-input-container class="full-width">
+                                <input mdInput placeholder="Subject" disabled
+                                       [ngModel]="mail.message" name="subject">
+                            </md-input-container>
+
+                            <md-input-container class="full-width">
+                            <textarea mdInput placeholder="Message" class="contacts-textarea" disabled
+                                      [ngModel]="mail.message" name="message"></textarea>
+                            </md-input-container>
+
+                            <div class="form-btns">
+                                <button md-fab type="button"
+                                        (click)="submitted=false; submitColor = ''; showError = false;">
+                                    <md-icon>mail_outline</md-icon>
+                                </button>
+                            </div>
+                        </form>
                     </div>
 
                     <div [hidden]="!showError" class="mail-submitted">

@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {Title} from '@angular/platform-browser';
+import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 import {
     trigger,
@@ -10,6 +10,7 @@ import {
 } from '@angular/animations';
 
 import { HaApiRequest } from '../core/request/HaApiRequest';
+import { LangChangeEvent, TranslateService } from 'ng2-translate';
 
 @Component({
     selector: 'ha-contact',
@@ -47,7 +48,7 @@ export class ContactComponent implements OnInit {
 
     mail = {
         subject: '',
-        message: ''
+        message: ``
     };
 
     submitted = false;
@@ -98,7 +99,27 @@ export class ContactComponent implements OnInit {
     ];
 
     constructor(private titleService: Title,
-                private apiHttp: HaApiRequest) {
+                private apiHttp: HaApiRequest,
+                private translate: TranslateService) {
+        this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+            if (!this.mail.message || this.mail.message === 'Hello, Andrei!'
+                || this.mail.message === 'Здравствуйте, Андрей!'
+                || this.mail.message === 'Привет, Андрей!') {
+                switch (event.lang) {
+                    case 'en':
+                        this.mail.message = 'Hello, Andrei!';
+                        break;
+                    case 'ru':
+                        this.mail.message = 'Здравствуйте, Андрей!';
+                        break;
+                    case 'ua':
+                        this.mail.message = 'Привет, Андрей!';
+                        break;
+                    default:
+                        this.mail.message = 'Hello, Andrei!';
+                }
+            }
+        });
     }
 
     ngOnInit() {

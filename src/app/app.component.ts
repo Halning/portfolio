@@ -15,7 +15,7 @@ import { LocalStorageService } from 'ng2-webstorage';
 export class AppComponent implements OnInit {
 
     showFooter = true;
-    private _messaging: firebase.messaging.Messaging;
+    // private _messaging: firebase.messaging.Messaging;
 
     constructor(private router: Router,
                 private af: AngularFire,
