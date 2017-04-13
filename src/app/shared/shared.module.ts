@@ -5,8 +5,7 @@ import {
   MdButtonModule, MdListModule
 } from '@angular/material';
 
-// TODO why when declaration component here set error
-// import { HaLoaderComponent } from './ha-loader/ha-loader.component';
+import { HaLoaderComponent } from './ha-loader/ha-loader.component';
 import { HaLoaderService } from './ha-loader/ha-loader.service';
 
 const SE_MODULES_RE_EXPORT = [
@@ -24,8 +23,8 @@ const SE_MODULES_RE_EXPORT = [
   imports: [
     SE_MODULES_RE_EXPORT
   ],
-  declarations: [/*HaLoaderComponent*/],
+  declarations: [HaLoaderComponent],
   providers: [HaLoaderService],
-  exports: [SE_MODULES_RE_EXPORT]
+  exports: [SE_MODULES_RE_EXPORT, HaLoaderComponent]
 })
 export class SharedModule { }
