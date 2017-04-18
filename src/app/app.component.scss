@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto|Marck+Script|Merriweather|Indie+Flower|Material+Icons");
+
+/* vendors */
+@import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+//@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+//@import '~@angular/material/core/theming/prebuilt/indigo-pink.css';
+//@import '~@angular/material/core/theming/prebuilt/pink-bluegrey.css';
+//@import '~@angular/material/core/theming/prebuilt/purple-green.css';
+
+.wrap {
+  display: block;
+  position: relative;
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto -100px;
+  overflow: hidden;
+}
+
+.push {
+  height: 100px;
+}

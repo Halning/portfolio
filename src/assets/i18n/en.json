@@ -1,0 +1,16 @@
+{
+  "Menu": {
+    "Home": "Home",
+    "About": "About",
+    "Skills": "Skills",
+    "Projects": "Projects",
+    "Contacts": "Contacts"
+  },
+  "Home": {
+    "hello": "Hello",
+    "Iam": "I am ",
+    "Andrei": "Andrei",
+    "FED": "Front-end developer",
+    "AboutMe": "About Me"
+  }
+}

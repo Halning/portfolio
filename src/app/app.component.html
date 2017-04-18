@@ -1,0 +1,11 @@
+<ha-menu></ha-menu>
+
+<div class="wrap">
+
+    <router-outlet></router-outlet>
+
+    <div class="push" *ngIf="showFooter"></div>
+</div>
+
+
+<ha-footer *ngIf="showFooter"></ha-footer>

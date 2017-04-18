@@ -1,0 +1,23 @@
+@import "loader";
+@import "var";
+@import "mixins";
+
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+
+html, body {
+  padding: 0;
+  font-family: $font-main !important;
+  height: 100%;
+}
+
+body {
+  background-color: rgba(239, 238, 238, 1) !important;
+  line-height: 1.75em !important;
+  color: $color-body-font !important;
+  font-weight: 500 !important;
+  overflow: auto;
+}
+
+
+

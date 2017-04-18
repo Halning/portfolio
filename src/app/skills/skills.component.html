@@ -1,0 +1,39 @@
+<div class="skills" [@skillsState]>
+
+    <div class="container">
+
+        <p class="skills-title" [@skillsTitle]>Front-end skills</p>
+        <div class="row" *ngFor="let value of frontEnd">
+            <div class="col-md-3 col-sm-3 col-xs-6 col-6" *ngFor="let skill of value">
+                <div class="content-front__skill">
+                    <div [@skillsIcon] class="icon-{{ skill.icon }} skills-icon"></div>
+                    <h3 class="skill-name">{{ skill.name }}</h3>
+                </div>
+            </div>
+        </div>
+
+
+        <p class="skills-title" [@skillsTitle]>Back-end skills</p>
+        <div class="row" *ngFor="let value of backEnd">
+            <div class="col-md-3 col-sm-3 col-xs-6 col-6" *ngFor="let skill of value">
+                <div class="content-back__skill">
+                    <div class="icon-{{skill.icon}} skills-icon"></div>
+                    <h3 class="skill-name">{{ skill.name }}</h3>
+                </div>
+            </div>
+        </div>
+
+
+        <p class="skills-title" [@skillsTitle]>Other skills</p>
+        <div class="row" *ngFor="let value of other">
+            <div class="col-md-3 col-sm-3 col-xs-6 col-6" *ngFor="let skill of value">
+                <div class="content-front__skill">
+                    <div class="icon-{{ skill.icon }} skills-icon"></div>
+                    <h3 class="skill-name">{{ skill.name }}</h3>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

@@ -1,0 +1,75 @@
+@import "../../assets/styles/var";
+@import "../../assets/styles/mixins";
+
+.css-typing {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.contact {
+  padding: 4em 1em 0;
+  h4 {
+    line-height: unset;
+  }
+
+  .pd-10 {
+    padding: 10px;
+  }
+
+  .about-links {
+    text-decoration: underline;
+    cursor: pointer;
+    color: $color-black;
+    h4 {
+      font-size: 1em;
+    }
+
+    @include transitions-elem(color, 0.2s, ease);
+    &:hover {
+      color: #0fb7b7;
+      text-decoration: underline;
+    }
+  }
+}
+
+.contact-form {
+  font-size: 1.3em;
+
+  .full-width {
+    width: 100%;
+  }
+
+  .contacts-textarea {
+    height: 200px;
+  }
+
+  .form-btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    button {
+      outline: none;
+    }
+  }
+}
+
+.mail-submitted {
+  font-size: 1.2em;
+}
+
+/* material */
+.large-icon {
+  height: 60px !important;
+}
+
+.mat-input-placeholder {
+  padding-top: 1.34375vh;
+  left: 0.97656vw;
+  font-size: 1.5625vh;
+  line-height: 2.34375vh;
+  color: #588c97;
+}
+
+.mat-card {
+  padding: 24px 16px 5px 16px;
+}

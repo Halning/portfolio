@@ -1,0 +1,49 @@
+@import "../../assets/styles/var";
+
+/* Jumbotrom */
+:host {
+  .home-image {
+    background: url('../../assets/img/city.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .home-container {
+      text-align: center;
+    }
+
+    .home-hello {
+      font-family: $font-mark-script;
+      color: $color-white;
+      padding: 0;
+      margin: 0;
+    }
+
+    .home-main-title {
+      font-size: 3em;
+      padding: 0;
+      margin: 0;
+      color: $color-white;
+      span {
+        font-family: $font-mark-script;
+        //font-family: $font-Indie;
+      }
+    }
+
+    .home-title {
+      font-size: 1.5em;
+      color: $color-white;
+      text-align: center;
+    }
+  }
+
+  .home-btn-about {
+    color: $color-white;
+    font-style: italic;
+  }
+}

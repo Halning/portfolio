@@ -1,0 +1,195 @@
+@import "../../assets/styles/var";
+@import "../../assets/styles/mixins";
+
+/* skills */
+.skills {
+  color: #011;
+  @include transitions-elem(all, 3s, ease);
+  .col-md-3 {
+    padding: 5px;
+    .content-front__skill,
+    .content-back__skill {
+      padding: 5px;
+      height: 180px;
+      .skills-icon {
+        margin: 0 auto;
+      }
+    }
+  }
+  .skills-title, .skill-name {
+    text-shadow: 0px 5px 10px;
+    text-align: center;
+  }
+
+  .skills-title {
+    padding: 0.5em 0 0.2em 0;
+    font-size: 2.5em;
+    margin: 1.5em 0 0.5em 0;
+    @include screenMaxW600 {
+      font-size: 2em;
+    }
+  }
+  .skill-name {
+    font-size: 1.2em;
+    margin: 0;
+    padding-top: 19px;
+    padding-bottom: 10px;
+    @include screenMaxW600 {
+      font-size: 1em;
+    }
+  }
+
+ /* frontend */
+  .icon-js {
+    background-image: url('../../assets/img/sprite/js.png');
+    width: 100px;
+    height: 115px;
+  }
+  .icon-ang2 {
+    background-image: url('../../assets/img/sprite/ang2.png');
+    width: 100px;
+    height: 100px;
+    @include margin-top-bottom(7.5px);
+  }
+  .icon-ang {
+    background-image: url('../../assets/img/sprite/ang.png');
+    width: 100px;
+    height: 103px;
+    @include margin-top-bottom(6px);
+  }
+  .icon-jquery {
+    background-image: url('../../assets/img/sprite/jquery.png');
+    width: 100px;
+    height: 100px;
+    @include margin-top-bottom(7.5px);
+  }
+  .icon-html {
+    background-image: url('../../assets/img/sprite/html.png');
+    width: 100px;
+    height: 109px;
+  }
+  .icon-less {
+    background-image: url('../../assets/img/sprite/sass-less.png');
+    width: 100px;
+    height: 45px;
+    @include margin-top-bottom(32px);
+  }
+  .icon-boot {
+    background-image: url('../../assets/img/sprite/bootstrap.png');
+    width: 100px;
+    height: 100px;
+    @include margin-top-bottom(4.5px);
+  }
+  .icon-bulma {
+    background-image: url('../../assets/img/sprite/bulma.png');
+    width: 100px;
+    height: 100px;
+    @include margin-top-bottom(4.5px);
+  }
+  .icon-webpack {
+    background-image: url('../../assets/img/sprite/webpack.png');
+    width: 100px;
+    height: 100px;
+  }
+  .icon-gulp {
+    background-image: url('../../assets/img/sprite/gulp.png');
+    width: 100px;
+    height: 100px;
+  }
+  .icon-jasmine {
+    background-image: url('../../assets/img/sprite/jasmine.png');
+    width: 100px;
+    height: 100px;
+  }
+  .icon-npm {
+    background-image: url('../../assets/img/sprite/npm.png');
+    width: 100px;
+    height: 60px;
+    @include margin-top-bottom(20px);
+  }
+/*  .icon-jq-ui {
+    background-image: url('../../assets/img/sprite/gulp.png');
+    width: 100px;
+    height: 100px;
+  }*/
+
+  /* backend */
+  .icon-php {
+    background-image: url('../../assets/img/sprite/php.png');
+    width: 100px;
+    height: 52px;
+    @include margin-top-bottom(31.5px);
+  }
+  .icon-nodejs {
+    background-image: url('../../assets/img/sprite/nodejs.png');
+    width: 100px;
+    height: 50px;
+    @include margin-top-bottom(32.5px);
+  }
+  .icon-sql {
+    background-image: url('../../assets/img/sprite/sql.png');
+    width: 100px;
+    height: 100px;
+    @include margin-top-bottom(7.5px);
+  }
+  .icon-composer {
+    background-image: url('../../assets/img/sprite/composer.png');
+    width: 100px;
+    height: 115px;
+  }
+/*  .icon-mvc {
+    background-image: url('../../assets/img/sprite/mvc.png');
+    width: 100px;
+    height: 93px;
+    @include margin-top-bottom(11.5px);
+  }*/
+
+  /* others */
+  .icon-phpstorm {
+    background-image: url('../../assets/img/sprite/phpstorm.png');
+    width: 100px;
+    height: 100px;
+  }
+  .icon-netbeans {
+    background-image: url('../../assets/img/sprite/netbeans.png');
+    width: 100px;
+    height: 100px;
+  }
+  .icon-ubuntu {
+    background-image: url('../../assets/img/sprite/ubuntu.png');
+    width: 100px;
+    height: 100px;
+  }
+  .icon-git {
+    background-image: url('../../assets/img/sprite/git.png');
+    width: 100px;
+    height: 100px;
+  }
+  .icon-jira {
+    background-image: url('../../assets/img/sprite/jira.png');
+    width: 100px;
+    height: 100px;
+  }
+  .icon-azure {
+    background-image: url('../../assets/img/sprite/azure.png');
+    width: 100px;
+    height: 75px;
+    @include margin-top-bottom(12.5px);
+  }
+  .icon-firebase {
+    background-image: url('../../assets/img/sprite/firebase.png');
+    width: 100px;
+    height: 100px;
+  }
+  .icon-english {
+    background-image: url('../../assets/img/sprite/eng.png');
+    width: 100px;
+    height: 100px;
+  }
+/*  .icon-cisco {
+    background-image: url('../../assets/img/sprite/cisco.png');
+    width: 100px;
+    height: 56px;
+    @include margin-top-bottom(22px);
+  }*/
+}
