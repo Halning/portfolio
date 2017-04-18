@@ -78,7 +78,7 @@ export class ContactComponent implements OnInit {
     socials = [
         {
             name: 'LinkedIn',
-            link: '#',
+            link: 'https://www.linkedin.com/in/andreii-khomenko-552821141/',
             icon: 'group'
         },
         {
@@ -90,12 +90,12 @@ export class ContactComponent implements OnInit {
             name: 'Facebook',
             link: 'https://www.facebook.com/profile.php?id=100005548219474',
             icon: 'tag_faces'
-        },
+        }/*,
         {
             name: 'VK',
             link: 'https://vk.com/halning',
             icon: 'contacts'
-        }
+        }*/
     ];
 
     constructor(private titleService: Title,
