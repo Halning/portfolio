@@ -14,7 +14,7 @@ import { LocalStorageService } from 'ng2-webstorage';
 })
 export class AppComponent implements OnInit {
 
-    showFooter = true;
+    showFooter = false;
     // private _messaging: firebase.messaging.Messaging;
 
     constructor(private router: Router,
@@ -33,7 +33,7 @@ export class AppComponent implements OnInit {
         this.router.events
             .subscribe(event => {
                 if (event instanceof NavigationEnd) {
-                    this.showFooter = event.url !== '/home';
+                    this.showFooter = event.url !== '' && event.url !== '/home' && event.url !== '/';
                 }
             });
     }

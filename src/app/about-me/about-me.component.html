@@ -11,14 +11,9 @@
                 </p>
 
                 <ng-container *ngFor="let stage of content; let i = index">
-                    <h2 *ngIf="!i; else indexBlock" class="css-typing about-article" [@print]>Этап {{i + 1}}&nbsp;&nbsp;
+                    <h2 class="css-typing about-article" [@print]>Этап {{i + 1}}&nbsp;&nbsp;
                         <span>&nbsp;&nbsp;{{stage.main}}</span>
                     </h2>
-                    <ng-template #indexBlock>
-                        <h2 class="css-typing about-article" [@print]>Этап {{content.length - i + 1}}&nbsp;&nbsp;
-                            <span>&nbsp;&nbsp;{{stage.main}}</span>
-                        </h2>
-                    </ng-template>
 
                     <h4 class="about-date">{{stage.date}}</h4>
 

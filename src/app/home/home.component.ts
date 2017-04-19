@@ -71,6 +71,6 @@ export class HomeComponent implements OnInit {
     }
 
     initMainSize(): void {
-        this.screenHeight = `${this.window.nativeWindow.innerHeight + 2}px`;
+        this.screenHeight = `${this.window.nativeWindow.innerHeight}px`;
     }
 }

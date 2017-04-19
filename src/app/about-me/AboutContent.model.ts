@@ -16,43 +16,6 @@ export class AboutContentModel {
             ],
         },
         {
-            main: 'В данный момент',
-            date: 'Октябрь 2016 - сейчас',
-            textMain: [
-                ['Компания',
-                    {
-                        linkName: 'Cosmonova',
-                        link: 'https://cosmonova.net/'
-                    },
-                    '. Должность Frontend-разработчик. Используемые технологии: ',
-                    {
-                        linkName: 'Angular',
-                        link: 'https://angular.io/'
-                    },
-                    `, кроме основного ядра Angular Material, Angular Cli, Angular Animations, Webpack. 
-                    Написания Unit тестов, а также тестов в контексте выполнения Angular, верстка. 
-                    Работа  в scrum-команде, управление проектом через Jira. Разглашать больше информации не имею парво!)`
-                ]
-            ]
-        },
-        {
-            main: 'Первая Frontend',
-            date: 'Июль 2016 – Октябрь 2016',
-            textMain: [
-                ['Компания',
-                    {
-                        linkName: 'Equerest',
-                        link: 'https://equerest.com/'
-                    },
-                    `. В компании работал именно Frontend-разработчиком.
-                    Первая и основная моя задача верстка проекта под мобильные устройства и оптимизация, 
-                    расширение функционала Angular, по большей части переход на Component-based app архитектуру.
-                     В проекте работал с такими технологиями как Angular 1.5, Gulp, SASS, Bulma и Bootstrap 3 иногда jQuery.
-                     Работа организована по scrum. Контроль версии Git.`
-                ]
-            ]
-        },
-        {
             main: 'Первая работа',
             date: 'Август 2015 – Июнь 2016',
             textMain: [
@@ -80,6 +43,43 @@ export class AboutContentModel {
                     '. В компании работал в scrum-команде. Есть небольшой опыт в DevOps и Azure.'
                 ]
             ]
-        }
+        },
+        {
+            main: 'Первая Frontend',
+            date: 'Июль 2016 – Октябрь 2016',
+            textMain: [
+                ['Компания',
+                    {
+                        linkName: 'Equerest',
+                        link: 'https://equerest.com/'
+                    },
+                    `. В компании работал именно Frontend-разработчиком.
+                    Первая и основная моя задача верстка проекта под мобильные устройства и оптимизация, 
+                    расширение функционала Angular, по большей части переход на Component-based app архитектуру.
+                     В проекте работал с такими технологиями как Angular 1.5, Gulp, SASS, Bulma и Bootstrap 3 иногда jQuery.
+                     Работа организована по scrum. Контроль версии Git.`
+                ]
+            ]
+        },
+        {
+            main: 'В данный момент',
+            date: 'Октябрь 2016 - сейчас',
+            textMain: [
+                ['Компания',
+                    {
+                        linkName: 'Cosmonova',
+                        link: 'https://cosmonova.net/'
+                    },
+                    '. Должность Frontend-разработчик. Используемые технологии: ',
+                    {
+                        linkName: 'Angular',
+                        link: 'https://angular.io/'
+                    },
+                    `, кроме основного ядра Angular Material, Angular Cli, Angular Animations, Webpack. 
+                    Написания Unit тестов, а также тестов в контексте выполнения Angular, верстка. 
+                    Работа  в scrum-команде, управление проектом через Jira. Разглашать больше информации не имею парво!)`
+                ]
+            ]
+        },
     ];
 }
