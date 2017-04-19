@@ -8,7 +8,13 @@ module.exports = {
         'dist/**.ico',
         'dist/assets/img/*',
         'dist/manifest.json',
-        'dist/assets/i18n/*'
+        'dist/assets/i18n/*',
+        'dist/assets/icons/*',
+        'dist/**.woff2',
+        'dist/**.woff',
+        'dist/**.eot',
+        'dist/**.svg',
+        'dist/**.ttf'
     ],
     root: 'dist',
     stripPrefix: 'dist/',
