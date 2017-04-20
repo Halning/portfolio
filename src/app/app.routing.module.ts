@@ -11,13 +11,13 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 const routes: Routes = [
     {path: '', redirectTo: '/home', pathMatch: 'full'},
-    {path: 'home', component: HomeComponent},
-    {path: 'about', component: AboutMeComponent},
-    {path: 'skills', component: SkillsComponent},
-    {path: 'projects', component: ProjectsComponent},
-    {path: 'contacts', component: ContactComponent},
+    {path: 'home', component: HomeComponent, data: {title: 'Home'}},
+    {path: 'about', component: AboutMeComponent, data: {title: 'About Me'}},
+    {path: 'skills', component: SkillsComponent, data: {title: 'Skills'}},
+    {path: 'projects', component: ProjectsComponent, data: {title: 'Projects'}},
+    {path: 'contacts', component: ContactComponent, data: {title: 'Contacts'}},
 
-    {path: '**', component: PageNotFoundComponent}
+    {path: '**', component: PageNotFoundComponent, data: {title: 'Not Found'}}
 ];
 
 @NgModule({

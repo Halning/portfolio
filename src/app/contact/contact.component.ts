@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
 
 import {
     trigger,
@@ -91,23 +92,28 @@ export class ContactComponent implements OnInit {
             link: 'https://www.facebook.com/profile.php?id=100005548219474',
             icon: 'tag_faces'
         }/*,
-        {
-            name: 'VK',
-            link: 'https://vk.com/halning',
-            icon: 'contacts'
-        }*/
+         {
+         name: 'VK',
+         link: 'https://vk.com/halning',
+         icon: 'contacts'
+         }*/
     ];
 
     constructor(private titleService: Title,
                 private apiHttp: HaApiRequest,
-                private translate: TranslateService) {
+                private translate: TranslateService,
+                private route: ActivatedRoute) {
         this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
             this.setDefaultMailMassage(event.lang);
         });
     }
 
     ngOnInit() {
-        this.titleService.setTitle('Contact');
+        this.route.data
+            .subscribe((data) => {
+                this.titleService.setTitle(data.title);
+            });
+
         this.setDefaultMailMassage(this.translate.currentLang);
     }
 

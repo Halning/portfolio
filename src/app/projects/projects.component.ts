@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
 
 import {
     trigger,
@@ -94,11 +95,15 @@ export class ProjectsComponent implements OnInit {
     ];
 
     constructor(private titleService: Title,
-                private window: WindowRefService) {
+                private window: WindowRefService,
+                private route: ActivatedRoute) {
     }
 
     ngOnInit() {
-        this.titleService.setTitle('Projects');
+        this.route.data
+            .subscribe((data) => {
+                this.titleService.setTitle(data.title);
+            });
     }
 
     goToProject(url: string): void {

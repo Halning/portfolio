@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
 
 import { WindowRefService } from '../core/window-ref.service';
 
@@ -19,12 +20,17 @@ export class PageNotFoundComponent implements OnInit {
     screenHeight: string;
 
     constructor(private window: WindowRefService,
-                private titleService: Title) {
+                private titleService: Title,
+                private route: ActivatedRoute) {
     }
 
     ngOnInit() {
         this.initMainSize();
-        this.titleService.setTitle('Not Found');
+
+        this.route.data
+            .subscribe((data) => {
+                this.titleService.setTitle(data.title);
+            });
     }
 
     initMainSize(): void {
