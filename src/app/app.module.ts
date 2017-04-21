@@ -41,7 +41,9 @@ export function createTranslateLoader(http: Http) {
 
 @NgModule({
     imports: [
-        BrowserModule,
+        BrowserModule.withServerTransition({
+            appId: 'portfolio'
+        }),
         FormsModule,
         HttpModule,
         BrowserAnimationsModule,

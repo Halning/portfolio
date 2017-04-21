@@ -1,10 +1,9 @@
 {
-  "name": "porfolio",
+  "name": "portfolio",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 4300",
     "start:aot": "ng serve --aot --port 4301",
     "build": "ng build",
     "build:prod": "ng build --prod",
@@ -14,7 +13,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "precache": "sw-precache --verbose --config=sw-precache-config.js"
+    "precache": "sw-precache --verbose --config=sw-precache-config.js",
+    "prestart": "ng build --prod && ngc",
+    "start": "ts-node src/server.ts"
   },
   "private": true,
   "dependencies": {
@@ -28,6 +29,7 @@
     "@angular/material": "^2.0.0-beta.3",
     "@angular/platform-browser": "~4.0.3",
     "@angular/platform-browser-dynamic": "~4.0.3",
+    "@angular/platform-server": "^4.0.3",
     "@angular/router": "~4.0.3",
     "@ngx-translate/core": "^6.0.1",
     "@ngx-translate/http-loader": "0.0.3",
