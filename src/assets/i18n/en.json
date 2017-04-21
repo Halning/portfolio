@@ -13,6 +13,20 @@
     "FED": "Front-end developer",
     "AboutMe": "About Me"
   },
+  "About": {
+    "mainM": "M",
+    "name": "y name is Andrei Khomenko.",
+    "loveCode": "I like to write code and here is my way.",
+    "stage": "Stage",
+    "stage1": {
+      "name": "the beginning of my way.",
+      "date": "December 2014-August 2015",
+      "textMain": {
+        "0": "For advice of my friend and mentor (experienced programmer) I began to learn a web-programming with the help of",
+        "1": "and other available on the Internet resources. As I had got first knowledge of programming I began to implement it in my own project. Unfortunately, the project has not been finished."
+      }
+    }
+  },
   "Skills": {
     "skills": "skills",
     "other": "Other"

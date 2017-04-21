@@ -1,17 +1,15 @@
 export class AboutContentModel {
     chapters = [
         {
-            main: 'Начало пути',
-            date: 'Декабрь 2014 – Август 2015',
+            main: 'About.stage1.name',
+            date: 'About.stage1.date',
             textMain: [
-                [`По совету друга и наставника (опытного программиста) начал учить Web-програмирование на`,
+                ['About.stage1.textMain.0',
                     {
                         linkName: 'CodeCademy',
                         link: 'https://www.codecademy.com/'
                     },
-                    `, а так же на других ресурсах доступных в интернете.
-                    Получив первые знание сразу начал реализовывать их на практике в собственном проекте.
-                     К сожалению проект не был до конца реализован.`
+                    'About.stage1.textMain.1'
                 ]
             ],
         },
