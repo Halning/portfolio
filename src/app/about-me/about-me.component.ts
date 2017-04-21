@@ -10,8 +10,10 @@ import {
     keyframes
 } from '@angular/animations';
 
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
+
 import { AboutContentModel } from './AboutContent.model';
-import { LangChangeEvent, TranslateService } from "@ngx-translate/core";
+
 
 
 @Component({
