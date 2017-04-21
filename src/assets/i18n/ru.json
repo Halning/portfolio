@@ -12,5 +12,18 @@
     "Andrei": "Андрей",
     "FED": "Front-end разработчик",
     "AboutMe": "Обо мне"
+  },
+  "Skills": {
+    "skills": "навыки",
+    "other": "Другие"
+  },
+  "Contacts": {
+    "contacts": "Контакты",
+    "sn": "Социальные сети",
+    "sendmail": "Отправить письмо",
+    "subject": "Тема",
+    "message": "Сообщение",
+    "subMessage": "Вы отправили:",
+    "mailError": "Ошибка, попробуйте снова!"
   }
 }

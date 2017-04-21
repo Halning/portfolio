@@ -5,14 +5,14 @@
             <div class="col-md-6 contact-list pd-10" [@contactBlockList]>
                 <md-card>
                     <md-list>
-                        <h3 md-subheader>Contacts</h3>
+                        <h3 md-subheader>{{'Contacts.contacts' | translate}}</h3>
                         <md-list-item *ngFor="let contact of contacts">
                             <md-icon md-list-avatar>{{contact.icon}}</md-icon>
                             <h4 md-line>{{contact.name}}</h4>
                             <p md-line [@print] class="css-typing"> {{contact.value}} </p>
                         </md-list-item>
                         <md-divider></md-divider>
-                        <h3 md-subheader>Social network</h3>
+                        <h3 md-subheader>{{'Contacts.sn' | translate}}</h3>
                         <md-list-item *ngFor="let social of socials">
                             <md-icon md-list-avatar class="large-icon">{{social.icon}}</md-icon>
                             <a md-line class="about-links" href="{{social.link}}" target="_blank">
@@ -26,19 +26,20 @@
 
             <div class="col-md-6 contact-list pd-10" [@mailBlock]>
                 <md-card [ngStyle]="{'background-color': submitColor}">
-                    <h2>Send Email</h2>
+                    <h2>{{'Contacts.sendmail' | translate}}</h2>
                     <hr>
                     <ha-ha-loader></ha-ha-loader>
                     <div [hidden]="submitted || showLoader || submitColor">
                         <form class="contact-form" (ngSubmit)="onSubmit()" #contactForm="ngForm">
 
                             <md-input-container class="full-width">
-                                <input mdInput placeholder="Subject" maxlength="60" required
+                                <input mdInput placeholder="{{'Contacts.subject' | translate}}"
+                                       maxlength="60" required
                                        [(ngModel)]="mail.subject" name="subject">
                             </md-input-container>
 
                             <md-input-container class="full-width">
-                                <textarea mdInput placeholder="Message"
+                                <textarea mdInput placeholder="{{'Contacts.message' | translate}}"
                                           required class="contacts-textarea"
                                           [(ngModel)]="mail.message" name="message">
                                 </textarea>
@@ -58,16 +59,18 @@
                     </div>
 
                     <div [hidden]="!submitted">
-                        <h5>You submitted the following:</h5>
+                        <h5>{{'Contacts.subMessage' | translate}}</h5>
                         <hr>
                         <form class="contact-form">
                             <md-input-container class="full-width">
-                                <input mdInput placeholder="Subject" disabled
+                                <input mdInput placeholder="{{'Contacts.subject' | translate}}"
+                                       disabled
                                        [ngModel]="mail.subject" name="subject">
                             </md-input-container>
 
                             <md-input-container class="full-width">
-                            <textarea mdInput placeholder="Message" class="contacts-textarea" disabled
+                            <textarea mdInput placeholder="{{'Contacts.message' | translate}}"
+                                      class="contacts-textarea" disabled
                                       [ngModel]="mail.message" name="message"></textarea>
                             </md-input-container>
 
@@ -81,7 +84,7 @@
                     </div>
 
                     <div [hidden]="!showError" class="mail-submitted">
-                        <h4 class="text-center p-5">Oops, try again!</h4>
+                        <h4 class="text-center p-5">{{'Contacts.mailError' | translate}}</h4>
                         <hr>
                         <div class="text-center">
                             <button md-fab type="button"

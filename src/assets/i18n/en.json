@@ -12,5 +12,18 @@
     "Andrei": "Andrei",
     "FED": "Front-end developer",
     "AboutMe": "About Me"
+  },
+  "Skills": {
+    "skills": "skills",
+    "other": "Other"
+  },
+  "Contacts": {
+    "contacts": "Contacts",
+    "sn": "Social networks",
+    "sendmail": "Send mail",
+    "subject": "Subject",
+    "message": "Message",
+    "subMessage": "You submitted the following",
+    "mailError": "Oops, try again!"
   }
 }

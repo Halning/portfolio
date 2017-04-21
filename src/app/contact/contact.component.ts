@@ -150,7 +150,7 @@ export class ContactComponent implements OnInit {
                     this.mail.message = 'Здравствуйте, Андрей!';
                     break;
                 case 'ua':
-                    this.mail.message = 'Привет, Андрей!';
+                    this.mail.message = 'Вітаю, Андрій!';
                     break;
                 default:
                     this.mail.message = 'Hello, Andrei!';

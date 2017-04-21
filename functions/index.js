@@ -35,7 +35,7 @@ function sendMail(request, response, formattedDate) {
 
     server.send({
         text: request.body.message,
-        from: 'Mi Portfolio <hhalningg@gmail.com>',
+        from: 'Me Portfolio <hhalningg@gmail.com>',
         to: 'Halning <halningus@gmail.com>',
         cc: '',
         subject: request.body.subject
