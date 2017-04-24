@@ -10,7 +10,7 @@ import {
     keyframes
 } from '@angular/animations';
 
-import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
 
 import { AboutContentModel } from './AboutContent.model';
 
@@ -72,7 +72,7 @@ export class AboutMeComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+        this.translate.onLangChange.subscribe(() => {
             this.animate = 'inactive';
             setTimeout(() => {
                 this.animate = 'active';

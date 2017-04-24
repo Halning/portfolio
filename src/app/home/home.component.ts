@@ -13,6 +13,8 @@ import {
     keyframes
 } from '@angular/animations';
 
+import { TranslateService } from '@ngx-translate/core';
+
 
 @Component({
     selector: 'ha-home',
@@ -34,37 +36,54 @@ import {
             ])
         ]),
         trigger('homeHello', [
+            state('inactive', style({opacity: 0})),
+            state('active', style({opacity: 1})),
             state('void', style({opacity: 0})),
             transition(':enter', [
                 animate('0.8s 0.5s ease', style({opacity: 1}))
+            ]),
+            transition('inactive => active', [
+                animate('0.8s ease')
             ])
         ]),
         trigger('homeMainTitle', [
-            state('void', style({opacity: 0, transform: 'translate(0, -20px)'})),
+            state('inactive', style({opacity: 0, transform: 'translate(0, -20px)'})),
+            state('active', style({opacity: 1, transform: 'translate(0px, 0px)'})),
+            state('void', style({opacity: 0, transform: 'translate(0px, -20px)'})),
             transition(':enter', [
                 animate('1s 0.8s ease', style({
                     opacity: 1,
                     transform: 'translate(0px, 0px)'
                 }))
+            ]),
+            transition('inactive => active', [
+                animate('0.8s 0.5s ease')
             ])
         ]),
         trigger('homeTitle', [
+            state('inactive', style({opacity: 0, transform: 'translate(0, 20px)'})),
+            state('active', style({opacity: 1, transform: 'translate(0px, 0px)'})),
             state('void', style({opacity: 0, transform: 'translate(0, 20px)'})),
             transition(':enter', [
                 animate('1s 1.2s ease', style({
                     opacity: 1,
                     transform: 'translate(0px, 0px)'
                 }))
+            ]),
+            transition('inactive => active', [
+                animate('0.8s 1s ease')
             ])
         ]),
     ]
 })
 export class HomeComponent implements OnInit {
     screenHeight: string;
+    animate: string;
 
     constructor(private window: WindowRefService,
                 private titleService: Title,
-                private route: ActivatedRoute) {
+                private route: ActivatedRoute,
+                private translate: TranslateService) {
     }
 
     ngOnInit() {
@@ -74,6 +93,13 @@ export class HomeComponent implements OnInit {
             .subscribe((data) => {
                 this.titleService.setTitle(data.title);
             });
+
+        this.translate.onLangChange.subscribe(() => {
+            this.animate = 'inactive';
+            setTimeout(() => {
+                this.animate = 'active';
+            })
+        });
     }
 
     initMainSize(): void {
