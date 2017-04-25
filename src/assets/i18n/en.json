@@ -1,4 +1,11 @@
 {
+  "Titles": {
+    "home": "Home: Halning portfolio main page",
+    "about": "About myself: Halning experience information",
+    "skills": "Skills: My developer skills list",
+    "projects": "Projects: Halning projects I worked with and work with",
+    "contacts": "Contacts: my contacts"
+  },
   "Menu": {
     "Home": "Home",
     "About": "About",

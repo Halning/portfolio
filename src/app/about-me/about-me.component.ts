@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
 import {
     trigger,
     state,
@@ -13,6 +12,7 @@ import {
 import { TranslateService } from '@ngx-translate/core';
 
 import { AboutContentModel } from './AboutContent.model';
+import { LocalStorageService } from 'ng2-webstorage';
 
 
 
@@ -67,20 +67,27 @@ export class AboutMeComponent implements OnInit {
     animate: string;
 
     constructor(private titleService: Title,
-                private route: ActivatedRoute,
-                private translate: TranslateService) {
+                private translate: TranslateService,
+                private localSt: LocalStorageService) {
     }
 
     ngOnInit() {
-        this.translate.onLangChange.subscribe(() => {
+        const curLang = this.localSt.retrieve('language');
+        this.setTranslateTitle(curLang);
+
+        this.translate.onLangChange.subscribe((res) => {
+            this.setTranslateTitle(res.lang);
+
             this.animate = 'inactive';
             setTimeout(() => {
                 this.animate = 'active';
             })
         });
-        this.route.data
-            .subscribe((data) => {
-                this.titleService.setTitle(data.title);
-            });
+    }
+
+    private setTranslateTitle(lang: string): void {
+        this.translate.getTranslation(lang).subscribe(translate => {
+            this.titleService.setTitle(translate.Titles.about);
+        });
     }
 }

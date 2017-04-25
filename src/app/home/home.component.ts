@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
 
 import { WindowRefService } from '../core/window-ref.service';
 
@@ -14,6 +13,7 @@ import {
 } from '@angular/animations';
 
 import { TranslateService } from '@ngx-translate/core';
+import { LocalStorageService } from 'ng2-webstorage';
 
 
 @Component({
@@ -82,27 +82,32 @@ export class HomeComponent implements OnInit {
 
     constructor(private window: WindowRefService,
                 private titleService: Title,
-                private route: ActivatedRoute,
-                private translate: TranslateService) {
+                private translate: TranslateService,
+                private localSt: LocalStorageService) {
     }
 
     ngOnInit() {
         this.initMainSize();
+        const curLang = this.localSt.retrieve('language');
+        this.setTranslateTitle(curLang);
 
-        this.route.data
-            .subscribe((data) => {
-                this.titleService.setTitle(data.title);
-            });
+        this.translate.onLangChange.subscribe((res) => {
+            this.setTranslateTitle(res.lang);
 
-        this.translate.onLangChange.subscribe(() => {
             this.animate = 'inactive';
             setTimeout(() => {
                 this.animate = 'active';
-            })
+            });
         });
     }
 
     initMainSize(): void {
         this.screenHeight = `${this.window.nativeWindow.innerHeight}px`;
+    }
+
+    private setTranslateTitle(lang: string): void {
+        this.translate.getTranslation(lang).subscribe(translate => {
+            this.titleService.setTitle(translate.Titles.home);
+        });
     }
 }

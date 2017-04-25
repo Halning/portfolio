@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
 
 import {
     trigger,
@@ -12,6 +11,7 @@ import {
 
 import { HaApiRequest } from '../core/request/HaApiRequest';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
+import { LocalStorageService } from 'ng2-webstorage';
 
 @Component({
     selector: 'ha-contact',
@@ -102,19 +102,18 @@ export class ContactComponent implements OnInit {
     constructor(private titleService: Title,
                 private apiHttp: HaApiRequest,
                 private translate: TranslateService,
-                private route: ActivatedRoute) {
-        this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-            this.setDefaultMailMassage(event.lang);
-        });
+                private localSt: LocalStorageService) {
+
     }
 
     ngOnInit() {
-        this.route.data
-            .subscribe((data) => {
-                this.titleService.setTitle(data.title);
-            });
+        const curLang = this.localSt.retrieve('language');
+        this.setTranslateTitle(curLang);
 
-        this.setDefaultMailMassage(this.translate.currentLang);
+        this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+            this.setDefaultMailMassage(event.lang);
+            this.setTranslateTitle(event.lang);
+        });
     }
 
     cancel(): void {
@@ -156,5 +155,11 @@ export class ContactComponent implements OnInit {
                     this.mail.message = 'Hello, Andrei!';
             }
         }
+    }
+
+    private setTranslateTitle(lang: string): void {
+        this.translate.getTranslation(lang).subscribe(translate => {
+            this.titleService.setTitle(translate.Titles.contacts);
+        });
     }
 }

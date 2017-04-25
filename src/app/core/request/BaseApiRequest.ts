@@ -5,7 +5,7 @@ import { BaseRequest } from './BaseRequest';
 
 export class BaseApiRequest extends BaseRequest {
 
-    private baseUrl = 'http://api.development.dev.ams';
+    private baseUrl = 'https://us-central1-portfolio-2a12b.cloudfunctions.net';
 
     request<T>(url: string, options?: RequestOptionsArgs): Observable<T> {
         this.baseUrl = 'https://us-central1-portfolio-2a12b.cloudfunctions.net';

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
 import {
     trigger,
     state,
@@ -9,6 +8,8 @@ import {
     transition,
     keyframes
 } from '@angular/animations';
+import { TranslateService } from '@ngx-translate/core';
+import { LocalStorageService } from 'ng2-webstorage';
 
 @Component({
     selector: 'ha-skills',
@@ -169,14 +170,22 @@ export class SkillsComponent implements OnInit {
     ];
 
     constructor(private titleService: Title,
-                private route: ActivatedRoute) {
+                private translate: TranslateService,
+                private localSt: LocalStorageService) {
     }
 
     ngOnInit() {
-        this.route.data
-            .subscribe((data) => {
-                this.titleService.setTitle(data.title);
-            });
+        const curLang = this.localSt.retrieve('language');
+        this.setTranslateTitle(curLang);
+
+        this.translate.onLangChange.subscribe((res) => {
+            this.setTranslateTitle(res.lang);
+        });
     }
 
+    private setTranslateTitle(lang: string): void {
+        this.translate.getTranslation(lang).subscribe(translate => {
+            this.titleService.setTitle(translate.Titles.skills);
+        });
+    }
 }
