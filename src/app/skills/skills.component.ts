@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 import {
     trigger,
     state,
@@ -171,10 +171,13 @@ export class SkillsComponent implements OnInit {
 
     constructor(private titleService: Title,
                 private translate: TranslateService,
-                private localSt: LocalStorageService) {
+                private localSt: LocalStorageService,
+                private meta: Meta) {
     }
 
     ngOnInit() {
+        this.initMetaTags();
+
         const curLang = this.localSt.retrieve('language');
         this.setTranslateTitle(curLang);
 
@@ -187,5 +190,10 @@ export class SkillsComponent implements OnInit {
         this.translate.getTranslation(lang).subscribe(translate => {
             this.titleService.setTitle(translate.Titles.skills);
         });
+    }
+
+    private initMetaTags(): void {
+        this.meta.updateTag({name: 'description',
+            content: 'Skills: My developer skills list'});
     }
 }

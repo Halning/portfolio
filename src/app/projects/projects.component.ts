@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 
 import {
     trigger,
@@ -98,10 +98,13 @@ export class ProjectsComponent implements OnInit {
     constructor(private titleService: Title,
                 private window: WindowRefService,
                 private translate: TranslateService,
-                private localSt: LocalStorageService) {
+                private localSt: LocalStorageService,
+                private meta: Meta) {
     }
 
     ngOnInit() {
+        this.initMetaTags();
+
         const curLang = this.localSt.retrieve('language');
         this.setTranslateTitle(curLang);
 
@@ -118,5 +121,10 @@ export class ProjectsComponent implements OnInit {
         this.translate.getTranslation(lang).subscribe(translate => {
             this.titleService.setTitle(translate.Titles.projects);
         });
+    }
+
+    private initMetaTags(): void {
+        this.meta.updateTag({name: 'description',
+            content: 'Projects: Halning projects I worked with and work with'});
     }
 }

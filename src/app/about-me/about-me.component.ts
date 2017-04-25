@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 import {
     trigger,
     state,
@@ -13,7 +13,6 @@ import { TranslateService } from '@ngx-translate/core';
 
 import { AboutContentModel } from './AboutContent.model';
 import { LocalStorageService } from 'ng2-webstorage';
-
 
 
 @Component({
@@ -68,10 +67,13 @@ export class AboutMeComponent implements OnInit {
 
     constructor(private titleService: Title,
                 private translate: TranslateService,
-                private localSt: LocalStorageService) {
+                private localSt: LocalStorageService,
+                private meta: Meta) {
     }
 
     ngOnInit() {
+        this.initMetaTags();
+
         const curLang = this.localSt.retrieve('language');
         this.setTranslateTitle(curLang);
 
@@ -89,5 +91,10 @@ export class AboutMeComponent implements OnInit {
         this.translate.getTranslation(lang).subscribe(translate => {
             this.titleService.setTitle(translate.Titles.about);
         });
+    }
+
+    private initMetaTags(): void {
+        this.meta.updateTag({name: 'description',
+            content: 'About myself: Halning experience information'});
     }
 }

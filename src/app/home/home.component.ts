@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 
 import { WindowRefService } from '../core/window-ref.service';
 
@@ -83,11 +83,13 @@ export class HomeComponent implements OnInit {
     constructor(private window: WindowRefService,
                 private titleService: Title,
                 private translate: TranslateService,
-                private localSt: LocalStorageService) {
+                private localSt: LocalStorageService,
+                private meta: Meta) {
     }
 
     ngOnInit() {
         this.initMainSize();
+        this.initMetaTags();
         const curLang = this.localSt.retrieve('language');
         this.setTranslateTitle(curLang);
 
@@ -109,5 +111,9 @@ export class HomeComponent implements OnInit {
         this.translate.getTranslation(lang).subscribe(translate => {
             this.titleService.setTitle(translate.Titles.home);
         });
+    }
+
+    private initMetaTags(): void {
+        this.meta.updateTag({name: 'description', content: 'Contacts: my contacts'});
     }
 }
