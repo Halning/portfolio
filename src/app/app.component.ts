@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 
-import { AngularFire } from 'angularfire2';
+// import { AngularFire } from 'angularfire2';
 import { TranslateService } from '@ngx-translate/core';
 import { LocalStorageService } from 'ng2-webstorage';
 
@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
     // private _messaging: firebase.messaging.Messaging;
 
     constructor(private router: Router,
-                private af: AngularFire,
+                // private af: AngularFire,
                 private translate: TranslateService,
                 private localSt: LocalStorageService) {
         // this.items = af.database.list('/item');
