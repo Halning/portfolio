@@ -76,15 +76,21 @@ export class AboutMeComponent implements OnInit {
 
         const curLang = this.localSt.retrieve('language');
         this.setTranslateTitle(curLang);
+        this.startAnimation();
 
         this.translate.onLangChange.subscribe((res) => {
             this.setTranslateTitle(res.lang);
-
-            this.animate = 'inactive';
-            setTimeout(() => {
-                this.animate = 'active';
-            })
+            this.startAnimation();
         });
+
+    }
+
+    private startAnimation(): void {
+        this.animate = 'inactive';
+
+        setTimeout(() => {
+            this.animate = 'active';
+        })
     }
 
     private setTranslateTitle(lang: string): void {

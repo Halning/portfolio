@@ -20,20 +20,6 @@ import { LocalStorageService } from 'ng2-webstorage';
     templateUrl: './projects.component.html',
     styleUrls: ['./projects.component.scss'],
     animations: [
-        trigger('projectsState', [
-            transition(':enter', [
-                animate(300, keyframes([
-                    style({opacity: 0, transform: 'translateY(1000px)', offset: 0}),
-                    style({opacity: 1, transform: 'translateY(0px)', offset: 1.0})
-                ]))
-            ]),
-            transition(':leave', [
-                animate(300, keyframes([
-                    style({opacity: 1, transform: 'translateY(0px)', offset: 0}),
-                    style({opacity: 0, transform: 'translateY(1000px)', offset: 1.0})
-                ]))
-            ])
-        ]),
         trigger('projectTop', [
             state('void', style({marginTop: '500px'})),
             transition('void => 0', [
@@ -42,12 +28,12 @@ import { LocalStorageService } from 'ng2-webstorage';
                 }))
             ]),
             transition('void => 1', [
-                animate('0.3s 0.3s ease', style({
+                animate('0.3s 300ms ease', style({
                     marginTop: '30px'
                 }))
             ]),
             transition('void => 2', [
-                animate('0.3s 0.6s ease', style({
+                animate('0.3s 600ms ease', style({
                     marginTop: '30px'
                 }))
             ])
