@@ -6,8 +6,7 @@ import {
     state,
     style,
     animate,
-    transition,
-    keyframes
+    transition
 } from '@angular/animations';
 
 import { WindowRefService } from '../core/window-ref.service';

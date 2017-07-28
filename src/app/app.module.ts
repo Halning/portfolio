@@ -1,7 +1,7 @@
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Http, HttpModule } from '@angular/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AngularFireModule } from 'angularfire2';
@@ -34,7 +34,7 @@ export const firebaseConfig = {
     messagingSenderId: '604580569158'
 };
 
-export function createTranslateLoader(http: Http) {
+export function createTranslateLoader(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
@@ -43,7 +43,7 @@ export function createTranslateLoader(http: Http) {
     imports: [
         BrowserModule,
         FormsModule,
-        HttpModule,
+        HttpClientModule,
         BrowserAnimationsModule,
         AngularFireModule.initializeApp(firebaseConfig),
         SharedModule,
@@ -51,10 +51,10 @@ export function createTranslateLoader(http: Http) {
             loader: {
                 provide: TranslateLoader,
                 useFactory: (createTranslateLoader),
-                deps: [Http]
+                deps: [HttpClient]
             }
         }),
-        Ng2Webstorage.forRoot({ prefix: 'hal', separator: '.' }),
+        Ng2Webstorage.forRoot({prefix: 'hal', separator: '.'}),
         AppRoutingModule,
         CoreModule
     ],
