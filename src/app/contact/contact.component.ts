@@ -91,12 +91,7 @@ export class ContactComponent implements OnInit {
             name: 'Facebook',
             link: 'https://www.facebook.com/profile.php?id=100005548219474',
             icon: 'tag_faces'
-        }/*,
-         {
-         name: 'VK',
-         link: 'https://vk.com/halning',
-         icon: 'contacts'
-         }*/
+        }
     ];
 
     constructor(private titleService: Title,
