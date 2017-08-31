@@ -28,21 +28,21 @@ exports.sendMeMail = functions.https.onRequest((request, response) => {
 
 function sendMail(request, response, formattedDate) {
     const server = email.server.connect({
-        user: "hhalningg@gmail.com",
-        password: "80983522900ah",
+        user: "halningus@gmail.com",
+        password: "a80983522900h",
         host: "smtp.gmail.com",
         ssl: true
     });
 
     server.send({
         text: request.body.message,
-        from: 'Me Portfolio <hhalningg@gmail.com>',
+        from: 'Me Portfolio <halningus@gmail.com>',
         to: 'Halning <halningus@gmail.com>',
         cc: '',
         subject: request.body.subject
     }, (err) => {
         if (err) {
-            response.status(500).send('Can send mail emailjs error');
+            response.status(500).send(err);
         } else {
             response.status(200).send(formattedDate);
         }

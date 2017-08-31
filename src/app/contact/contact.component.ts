@@ -49,7 +49,7 @@ export class ContactComponent implements OnInit {
 
     mail = {
         subject: '',
-        message: ``
+        message: ''
     };
 
     submitted = false;
@@ -109,7 +109,6 @@ export class ContactComponent implements OnInit {
         this.setTranslateTitle(curLang);
 
         this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-            this.setDefaultMailMassage(event.lang);
             this.setTranslateTitle(event.lang);
         });
     }
@@ -133,26 +132,6 @@ export class ContactComponent implements OnInit {
             this.submitColor = 'rgba(255, 0, 0, .1)';
             this.showError = true;
         });
-    }
-
-    private setDefaultMailMassage(lang: string): void {
-        if (!this.mail.message || this.mail.message === 'Hello, Andrei!'
-            || this.mail.message === 'Здравствуйте, Андрей!'
-            || this.mail.message === 'Привет, Андрей!') {
-            switch (lang) {
-                case 'en':
-                    this.mail.message = 'Hello, Andrei!';
-                    break;
-                case 'ru':
-                    this.mail.message = 'Здравствуйте, Андрей!';
-                    break;
-                case 'ua':
-                    this.mail.message = 'Вітаю, Андрій!';
-                    break;
-                default:
-                    this.mail.message = 'Hello, Andrei!';
-            }
-        }
     }
 
     private setTranslateTitle(lang: string): void {
