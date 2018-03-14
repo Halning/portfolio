@@ -71,7 +71,12 @@ export class ContactComponent implements OnInit {
         },
         {
             name: 'Skype',
-            value: 'Halningus',
+            value: 'live:halningus',
+            icon: 'contacts'
+        },
+        {
+            name: 'Telegram',
+            value: '@halning',
             icon: 'contacts'
         }
     ];
@@ -79,7 +84,7 @@ export class ContactComponent implements OnInit {
     socials = [
         {
             name: 'LinkedIn',
-            link: 'https://www.linkedin.com/in/andreii-khomenko-552821141/',
+            link: 'https://www.linkedin.com/in/andrii-khomenko/',
             icon: 'group'
         },
         {

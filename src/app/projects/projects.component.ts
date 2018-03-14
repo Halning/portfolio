@@ -44,7 +44,7 @@ export class ProjectsComponent implements OnInit {
     projects = [
         [
             {
-                href: 'http://makewear.club',
+                href: 'http://makewear.com.ua/',
                 src: '../../assets/img/mw1.png',
                 btn: `MakeWear`
             },
