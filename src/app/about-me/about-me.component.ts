@@ -12,7 +12,7 @@ import {
 import { TranslateService } from '@ngx-translate/core';
 
 import { AboutContentModel } from './AboutContent.model';
-import { LocalStorageService } from 'ng2-webstorage';
+import { LocalStorageService } from 'ngx-webstorage';
 
 
 @Component({

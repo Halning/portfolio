@@ -13,7 +13,7 @@ import {
 } from '@angular/animations';
 
 import { TranslateService } from '@ngx-translate/core';
-import { LocalStorageService } from 'ng2-webstorage';
+import { LocalStorageService } from 'ngx-webstorage';
 
 
 @Component({

@@ -5,7 +5,7 @@ import { HaLoaderService } from './ha-loader.service';
     selector: 'ha-ha-loader',
     template: `
         <div class="loader-wrapper" *ngIf="isShowLoader">
-            <md-spinner class="loader"></md-spinner>
+            <mat-spinner class="loader"></mat-spinner>
         </div>`,
     styleUrls: ['./ha-loader.component.scss']
 })

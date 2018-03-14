@@ -4,7 +4,7 @@ import { Location } from '@angular/common';
 
 import { TranslateService } from '@ngx-translate/core';
 import { WindowRefService } from '../core/window-ref.service';
-import {LocalStorageService } from 'ng2-webstorage';
+import {LocalStorageService } from 'ngx-webstorage';
 
 @Component({
     selector: 'ha-menu',

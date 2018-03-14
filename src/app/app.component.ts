@@ -3,7 +3,7 @@ import { NavigationEnd, Router } from '@angular/router';
 
 // import { AngularFire } from 'angularfire2';
 import { TranslateService } from '@ngx-translate/core';
-import { LocalStorageService } from 'ng2-webstorage';
+import { LocalStorageService } from 'ngx-webstorage';
 
 
 @Component({

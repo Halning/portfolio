@@ -7,9 +7,9 @@ import { WindowRefService } from '../core/window-ref.service';
 @Component({
     selector: 'ha-page-not-found',
     template: `
-        <md-card class="card" [ngStyle]="{'height': screenHeight}">
+        <mat-card class="card" [ngStyle]="{'height': screenHeight}">
             <img src="../../assets/img/404.jpg">
-        </md-card>`,
+        </mat-card>`,
     styles: [`.card {
         display: flex;
         align-items: center;

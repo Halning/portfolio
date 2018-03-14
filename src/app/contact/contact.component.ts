@@ -11,7 +11,7 @@ import {
 
 import { HaApiRequest } from '../core/request/HaApiRequest';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
-import { LocalStorageService } from 'ng2-webstorage';
+import { LocalStorageService } from 'ngx-webstorage';
 
 @Component({
     selector: 'ha-contact',

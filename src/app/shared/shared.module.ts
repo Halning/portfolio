@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
-  MdCardModule, MdMenuModule, MdProgressSpinnerModule, MdInputModule, MdIconModule,
-  MdButtonModule, MdListModule
+  MatCardModule, MatMenuModule, MatProgressSpinnerModule, MatInputModule, MatIconModule,
+  MatButtonModule, MatListModule
 } from '@angular/material';
 
 import { HaLoaderComponent } from './ha-loader/ha-loader.component';
@@ -10,13 +10,13 @@ import { HaLoaderService } from './ha-loader/ha-loader.service';
 
 const SE_MODULES_RE_EXPORT = [
   CommonModule,
-  MdProgressSpinnerModule,
-  MdCardModule,
-  MdMenuModule,
-  MdInputModule,
-  MdIconModule,
-  MdButtonModule,
-  MdListModule
+  MatProgressSpinnerModule,
+  MatCardModule,
+  MatMenuModule,
+  MatInputModule,
+  MatIconModule,
+  MatButtonModule,
+  MatListModule
 ];
 
 @NgModule({

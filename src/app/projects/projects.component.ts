@@ -11,7 +11,7 @@ import {
 
 import { WindowRefService } from '../core/window-ref.service';
 import { TranslateService } from '@ngx-translate/core';
-import { LocalStorageService } from 'ng2-webstorage';
+import { LocalStorageService } from 'ngx-webstorage';
 
 
 @Component({
