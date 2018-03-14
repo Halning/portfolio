@@ -4,9 +4,9 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 4300",
+    "start": "ng serve -p 4300 -pr",
     "start:aot": "ng serve --aot --port 4301",
-    "build": "ng build",
+    "build": "ng build -pr",
     "build:prod": "ng build -e prod",
     "build:prod:aot": "ng build -e prod --aot",
     "biuld:p:a::firebase:d": "ng build -e prod --aot && npm run precache && npm run firebase:deploy",
@@ -14,7 +14,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "precache": "sw-precache --verbose --config=sw-precache-config.js"
+    "precache": "sw-precache --verbose --config=sw-precache-config.js",
+    "compodoc": "./node_modules/.bin/compodoc -p src/tsconfig.app.json"
   },
   "private": true,
   "dependencies": {
@@ -45,6 +46,7 @@
   },
   "devDependencies": {
     "@angular/cli": "^1.7.3",
+    "@compodoc/compodoc": "^1.0.5",
     "@types/hammerjs": "^2.0.35",
     "@types/jasmine": "2.8.6",
     "@types/node": "^9.4.7",
