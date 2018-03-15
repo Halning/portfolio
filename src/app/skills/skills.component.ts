@@ -73,6 +73,10 @@ export class SkillsComponent implements OnInit {
         ],
         [
             {
+                name: 'ES6',
+                icon: 'es6'
+            },
+            {
                 name: 'HTML & CSS',
                 icon: 'html'
             },
@@ -84,10 +88,6 @@ export class SkillsComponent implements OnInit {
                 name: 'Bootstrap 3, 4',
                 icon: 'boot'
             },
-            {
-                name: 'Bulma',
-                icon: 'bulma'
-            }
         ],
         [
             {
@@ -116,7 +116,7 @@ export class SkillsComponent implements OnInit {
                 icon: 'php'
             },
             {
-                name: 'NodeJs',
+                name: 'Basic NodeJs',
                 icon: 'nodejs'
             },
             {
