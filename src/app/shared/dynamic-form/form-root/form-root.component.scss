@@ -4,6 +4,7 @@
   display: block;
   outline: 1px solid $color-quartz;
   background-color: $color-china-ivory;
+  line-height: normal;
 }
 
 :host-context(bo-modal) {
