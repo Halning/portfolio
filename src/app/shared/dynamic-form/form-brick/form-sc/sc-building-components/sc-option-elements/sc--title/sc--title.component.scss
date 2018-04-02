@@ -1,0 +1,12 @@
+@import '../../../../../../../../assets/styles/var';
+
+:host {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 20px;
+  white-space: nowrap;
+  color: $color-regal-blue;
+  font-family: $ubuntu-condensed;
+  font-size: 16px;
+}

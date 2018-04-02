@@ -1,0 +1,77 @@
+@import '../../../../../../assets/styles/var';
+
+// placeholder
+
+.placeholder-section {
+  justify-content: space-between;
+  padding: 0 48px 0 10px;
+}
+
+.plh-icon {
+  margin-left: -6px;
+  color: $color-quartz;
+  font-size: 42px;
+}
+
+.search-i {
+  position: absolute;
+  right: 0;
+  width: 48px;
+  text-align: center;
+  font-size: 30px;
+}
+
+// selected section
+
+.selected-section {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 48px;
+
+  &.with-del {
+    padding-right: 70px;
+  }
+}
+
+// btns
+
+.buttons {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+}
+
+.button {
+  cursor: pointer;
+  width: 28px;
+  text-align: center;
+
+  i {
+    color: $color-periwincle;
+    font-size: 30px;
+  }
+
+  &:hover {
+    i {
+      color: $color-tomato;
+    }
+  }
+}
+
+// styles for formType 'page'
+
+:host-context(.page) {
+
+  .plh-icon {
+    margin-bottom: -5px;
+    margin-top: -5px;
+    font-size: 25px;
+  }
+
+}

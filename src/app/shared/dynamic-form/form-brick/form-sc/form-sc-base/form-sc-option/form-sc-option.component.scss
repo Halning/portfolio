@@ -1,0 +1,25 @@
+@import '../../../../../../../assets/styles/var';
+
+:host {
+  display: inline-block;
+  border-top: 1px solid $color-spray;
+  padding: 6px 10px;
+  width: 100%;
+
+  &:first-child {
+    border: 0;
+  }
+}
+
+:host-context(.search-list) {
+  cursor: pointer;
+
+  &:hover,
+  &.active {
+    /deep/ {
+      bo-form-sc--title {
+        color: $color-tomato;
+      }
+    }
+  }
+}

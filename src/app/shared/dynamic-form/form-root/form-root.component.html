@@ -1,0 +1,54 @@
+<div class="form-title" *ngIf="reactiveForm?.label">{{reactiveForm?.label}}</div>
+
+<div *ngIf="reactiveForm?.responseError" class="form-error">
+    <div class="form-error-detail">
+        Error {{reactiveForm?.responseError?.status}}: {{reactiveForm?.responseError?.statusText}}
+    </div>
+
+    <div class="button" (click)="deleteFormError()">
+        <i class="i-basic_delete_regular"></i>
+    </div>
+</div>
+
+<form [formGroup]="reactiveForm"
+      (ngSubmit)="onSubmit()"
+      novalidate class="container"
+      [ngClass]="{'widget': reactiveForm.formType === 'widget', 'page': reactiveForm.formType === 'page'}">
+    <div class="row">
+        <div class="col-5 br" *ngIf="!env.production">
+            <pre>
+                <p>Form value: {{ reactiveForm.value | json }}</p>
+                <p>Form status: {{ reactiveForm.status | json }}</p>
+            </pre>
+        </div>
+
+        <div [ngClass]="{'col-7': !env.production, 'col-12': env.production}">
+            <bo-form-dynamic class="row"
+                             [controlsArray]="reactiveForm.controlsArray"
+                             [form]="reactiveForm">
+            </bo-form-dynamic>
+        </div>
+    </div>
+
+
+    <div class="form-btn-container">
+        <button type="button" class="form-btn" (click)="onClose()">
+            Cancel
+        </button>
+
+        <button type='submit' class="form-btn"
+                *ngIf="!reactiveForm?.disabledView && reactiveForm?.actionUrl"
+                [disabled]="reactiveForm.invalid || reactiveForm.pristine">
+            Save
+        </button>
+
+        <button class="form-btn"
+                *ngIf="!reactiveForm?.disabledView"
+                [disabled]="reactiveForm.pristine"
+                (click)="revert()">
+            Revert
+        </button>
+    </div>
+</form>
+
+<bo-block-loader *ngIf="reactiveForm?.loading"></bo-block-loader>

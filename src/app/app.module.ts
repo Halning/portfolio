@@ -8,6 +8,9 @@ import { AngularFireModule } from 'angularfire2';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemService } from './core/request/in-memory.service';
+
 import { Ng2Webstorage } from 'ngx-webstorage';
 
 import { AppComponent } from './app.component';
@@ -23,6 +26,7 @@ import { SkillsComponent } from './skills/skills.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { FormExamplesComponent } from './form-examples/form-examples.component';
 
 // Must export the config
 export const firebaseConfig = {
@@ -54,6 +58,10 @@ export function createTranslateLoader(http: HttpClient) {
                 deps: [HttpClient]
             }
         }),
+        InMemoryWebApiModule.forRoot(InMemService, {
+            passThruUnknownUrl: true,
+            delay: 300
+        }),
         Ng2Webstorage.forRoot({prefix: 'hal', separator: '.'}),
         AppRoutingModule,
         CoreModule
@@ -67,6 +75,7 @@ export function createTranslateLoader(http: HttpClient) {
         SkillsComponent,
         ProjectsComponent,
         ContactComponent,
+        FormExamplesComponent,
         PageNotFoundComponent
     ],
     providers: [Title],

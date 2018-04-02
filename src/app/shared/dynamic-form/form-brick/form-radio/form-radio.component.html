@@ -1,0 +1,26 @@
+<ng-container [formGroup]="group">
+
+    <div class="rad-container_all">
+
+        <div class="rad-label">
+            <i class="alarm-i i-basic_alarm_regular"
+               [matTooltip]="controlIns.errors | formError"
+               matTooltipClass="error-tooltip"></i>
+            <div>{{controlIns?.label}}</div>
+        </div>
+
+        <div class="rad-container_items">
+            <ng-container *ngFor="let opt of controlIns.options">
+
+                <input class="rad-input" [formControlName]="controlIns.key"
+                       type="radio"
+                       [id]="opt.value" [value]="opt.value" [attr.disabled]="opt.disabled">
+                <label class="rad-opt_label" [for]="opt.value" (click)="onTouched()">
+                    {{opt.label}}
+                </label>
+
+            </ng-container>
+        </div>
+    </div>
+
+</ng-container>

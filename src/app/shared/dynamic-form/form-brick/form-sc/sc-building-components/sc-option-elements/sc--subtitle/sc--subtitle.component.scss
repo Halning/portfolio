@@ -1,0 +1,10 @@
+@import '../../../../../../../../assets/styles/var';
+
+:host {
+  display: block;
+  line-height: 12px;
+  word-wrap: break-word;
+  color: $color-half-baked;
+  font-size: 12px;
+  font-weight: 300;
+}

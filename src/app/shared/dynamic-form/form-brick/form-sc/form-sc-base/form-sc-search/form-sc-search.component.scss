@@ -1,0 +1,124 @@
+@import '../../../../../../../assets/styles/var';
+
+// wrap
+
+.wrap {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+}
+
+.wrap-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1001;
+
+  &.error {
+    .input-section {
+      border-color: $color-tomato;
+    }
+
+    .drop-wr {
+      border-color: $color-tomato;
+    }
+
+    .tooltip-pl {
+      background: $color-tomato;
+    }
+  }
+}
+
+.wrap-inner {
+  position: relative;
+}
+
+// input section
+
+.input-section {
+  position: relative;
+  margin: 0 -1px;
+  border: 1px solid $color-spray;
+  box-shadow: 0 3px 5px $color-echo-blue;
+}
+
+.search-input {
+  border: 0;
+  padding: 0 10px;
+  width: 100%;
+  height: 49px;
+  font-family: $sans-serif;
+  font-size: 14px;
+}
+
+// options section
+
+.drop-wr {
+  position: absolute;
+  left: -1px;
+  border: 1px solid $color-spray;
+  box-shadow: 0 3px 5px $color-echo-blue;
+  background: $color-white;
+  width: calc(100% + 2px);
+
+  &.down {
+    top: 100%;
+    margin-top: -1px;
+  }
+
+  &.top {
+    bottom: 100%;
+    margin-bottom: -1px;
+  }
+}
+
+.tooltip-pl {
+  background: $color-spray;
+  padding: 4px 10px;
+  color: $color-white;
+  font-size: 13px;
+}
+
+.search-list-wr {
+  position: relative;
+  overflow: auto; // instead custom-scroll
+}
+
+.search-list {
+  height: 100%;
+  overflow: hidden;
+}
+
+// loader
+
+.loader-section {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 12px;
+  align-items: center;
+  height: 100%;
+}
+
+.loader {
+  animation: spin 1s infinite linear;
+  border: 2px solid $color-blizzard-blue;
+  border-radius: 50%;
+  border-top-color: $color-iris-blue;
+  width: 24px;
+  height: 24px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

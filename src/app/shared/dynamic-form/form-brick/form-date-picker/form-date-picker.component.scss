@@ -1,0 +1,157 @@
+//@import '../../../../../assets/styles/var';
+//
+//:host {
+//  display: block;
+//  cursor: pointer;
+//  padding: 0;
+//  vertical-align: middle;
+//  white-space: nowrap;
+//
+//  &.ng-invalid {
+//    &.ng-touched {
+//      /deep/ .alarm-i {
+//        display: block;
+//      }
+//    }
+//  }
+//
+//  &.disabled {
+//    pointer-events: none;
+//
+//    .delivery-container {
+//      background-color: $color-clear-day;
+//      color: $color-echo-blue;
+//    }
+//
+//    .chosen-time {
+//      opacity: .7;
+//      color: $color-echo-blue;
+//    }
+//  }
+//}
+//
+//.drop-container {
+//  height: 100%;
+//}
+//
+//// counter field
+//
+//.delivery-container {
+//  display: flex;
+//  position: relative;
+//  height: 100%;
+//  align-items: stretch;
+//}
+//
+//// placeholder
+//
+//.placeholder-section, .chosen-section {
+//  display: flex;
+//  position: relative;
+//  cursor: pointer;
+//  padding: 0 28px 0 10px;
+//  width: 100%;
+//  min-height: 44px;
+//  align-items: center;
+//  justify-content: start;
+//}
+//
+//.plh-text {
+//  display: block;
+//  overflow: hidden;
+//  text-overflow: ellipsis;
+//  white-space: nowrap;
+//}
+//
+//.placeholder {
+//  display: flex;
+//  width: 100%;
+//  color: $color-echo-blue;
+//  align-items: center;
+//}
+//
+//.search-i {
+//  display: flex;
+//  position: absolute;
+//  top: 0;
+//  right: 0;
+//  width: 48px;
+//  height: 100%;
+//  text-align: center;
+//  color: $color-echo-blue;
+//  font-size: 30px;
+//  align-items: center;
+//  justify-content: center;
+//
+//  &:hover {
+//    color: $color-tomato;
+//  }
+//}
+//
+//.selected-val {
+//  font-family: $ubuntu-condensed;
+//  font-size: 20px;
+//}
+//
+//.chosen-time {
+//  opacity: 0.52;
+//  text-transform: lowercase;
+//  color: $color-regal-blue;
+//}
+//
+//// btns
+//
+//.buttons {
+//  display: flex;
+//  position: absolute;
+//  top: 0;
+//  right: 10px;
+//  height: 100%;
+//  flex-direction: row;
+//  align-items: center;
+//}
+//
+//.button {
+//  cursor: pointer;
+//  width: 28px;
+//  text-align: center;
+//
+//  i {
+//    color: $color-periwincle;
+//    font-size: 30px;
+//  }
+//
+//  &:hover {
+//    i {
+//      color: $color-tomato;
+//    }
+//  }
+//}
+//
+//// styles for formType 'widget'
+//
+//:host-context(.widget) {
+//  outline: 1px solid $color-quartz;
+//  background-color: $color-white;
+//  min-height: 45px;
+//}
+//
+//// styles for formType 'page'
+//
+//:host-context(.page) {
+//  margin: 7px 0;
+//
+//  .placeholder {
+//    margin: 0 10px 10px;
+//    color: $color-half-baked;
+//    font-size: 14px;
+//  }
+//
+//  .delivery-container {
+//    outline: 1px solid $color-quartz;
+//    background-color: $color-white;
+//    height: calc(100% - 26px);
+//    min-height: 45px;
+//  }
+//
+//}

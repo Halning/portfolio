@@ -1,0 +1,161 @@
+@import '../../../../../../assets/styles/var';
+
+:host {
+  display: block;
+  padding: 0;
+
+  &.disabled {
+    pointer-events: none;
+
+    .form-sc {
+      background-color: $color-clear-day;
+    }
+
+    /deep/ bo-form-sc--title,
+    /deep/ bo-form-sc--subtitle,
+    /deep/ bo-form-sc--icon {
+      color: $color-echo-blue;
+    }
+  }
+
+  &.ng-invalid {
+    &.ng-touched {
+      /deep/ .alarm-i {
+        display: block;
+      }
+    }
+  }
+}
+
+.form-sc {
+  position: relative;
+  background: $color-white;
+  height: 100%;
+}
+
+// placeholder
+
+.placeholder-section {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: start;
+  cursor: pointer;
+  padding: 0 28px 0 10px;
+  height: 100%;
+}
+
+.placeholder {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: $color-echo-blue;
+}
+
+.plh-text {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.search-i {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 6px;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 100%;
+  color: $color-echo-blue;
+  font-size: 16px;
+
+  &:hover {
+    color: $color-tomato;
+  }
+}
+
+// selected
+
+.selected-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 0 28px 0 2px;
+  height: 100%;
+
+  &.with-del {
+    padding-right: 50px;
+  }
+
+  .no-br {
+    border: 0;
+  }
+}
+
+.kostyli-alarm {
+  position: relative;
+  left: 10px;
+}
+
+// btns
+
+.buttons {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 6px;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 22px;
+
+  i {
+    color: $color-periwincle;
+  }
+
+  &:hover {
+    i {
+      color: $color-tomato;
+    }
+  }
+}
+
+.btn-open {
+  font-size: 16px;
+}
+
+// styles for formType 'widget'
+
+:host-context(.widget) {
+  outline: 1px solid $color-quartz;
+  min-height: 45px;
+}
+
+// styles for formType 'page'
+
+:host-context(.page) {
+  margin: 7px 0;
+
+  .placeholder {
+    margin: 0 10px 10px;
+    color: $color-half-baked;
+    font-size: 14px;
+  }
+
+  .form-sc {
+    min-height: 45px;
+    outline: 1px solid $color-quartz;
+    height: calc(100% - 26px);
+  }
+
+}

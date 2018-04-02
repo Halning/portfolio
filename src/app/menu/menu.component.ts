@@ -37,7 +37,8 @@ export class MenuComponent implements OnInit {
         {link: '/about', label: 'About'},
         {link: '/skills', label: 'Skills'},
         {link: '/projects', label: 'Projects'},
-        {link: '/contacts', label: 'Contacts'}
+        {link: '/contacts', label: 'Contacts'},
+        {link: '/some', label: 'Some'}
     ];
 
     @HostListener('window:scroll', [])

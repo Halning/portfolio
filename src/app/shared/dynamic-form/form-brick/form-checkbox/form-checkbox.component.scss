@@ -1,0 +1,94 @@
+@import '../../../../../assets/styles/var';
+
+:host {
+  background-color: $color-china-ivory;
+
+  &.disabled {
+    pointer-events: none;
+
+    .form-checkbox {
+      .form-checkbox-label {
+        color: $color-echo-blue;
+      }
+      .form-switch_check {
+        .form-inline_bl {
+          background-color: $color-clear-day;
+          .form-checkbox_point {
+            background-color: $color-clear-day;
+          }
+        }
+      }
+    }
+  }
+
+  //&.ng-valid {
+  //  &.ng-dirty {
+  //  }
+  //}
+}
+
+// styles for formType 'widget'
+
+:host-context(.widget) {
+  outline: 1px solid $color-quartz;
+}
+
+.form-checkbox {
+  padding: 15px 0;
+
+  .form-checkbox-label {
+    display: inline-block;
+    margin-left: 5px;
+    vertical-align: top;
+    line-height: 26px;
+    color: $color-half-baked;
+    font-family: $ubuntu-condensed;
+    font-size: 14px;
+    font-weight: lighter;
+  }
+
+  .form-switch_check {
+    display: inline-block;
+
+    .form-inline_bl {
+      display: block;
+      border: 1px solid $color-periwincle;
+      border-radius: 25px;
+      background: $color-catskill-white;
+      cursor: pointer;
+      padding: 0;
+      width: 38px;
+      height: 25px;
+
+      &.checked {
+        background-color: $color-conifer;
+      }
+    }
+
+    .form-checkbox-input {
+      position: absolute;
+      left: -9999px;
+      visibility: hidden;
+
+      + .form-inline_bl {
+        .form-checkbox_point {
+          display: inline-block;
+          position: relative;
+          top: 0;
+          left: 0;
+          transition: 0.1s linear;
+          margin: -1px 0 0 -1px;
+          border: 1px solid $color-periwincle;
+          border-radius: 25px;
+          background: $color-white;
+          width: 25px;
+          height: 25px;
+
+          &.tran {
+            left: 13px;
+          }
+        }
+      }
+    }
+  }
+}

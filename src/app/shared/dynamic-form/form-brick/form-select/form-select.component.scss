@@ -1,0 +1,173 @@
+@import '../../../../../assets/styles/var';
+
+:host {
+  display: block;
+  padding: 0;
+
+  &.disabled {
+    pointer-events: none;
+
+    .form-select-wr {
+      background-color: $color-clear-day;
+    }
+
+    .opt-icon,
+    .opt-text-section,
+    .opt-label,
+    .opt-val {
+      color: $color-echo-blue;
+    }
+  }
+
+  &.ng-invalid {
+    &.ng-touched {
+      /deep/ .alarm-i {
+        display: block;
+      }
+    }
+  }
+}
+
+.form-select-wr {
+  position: relative;
+  background: $color-white;
+  height: 100%;
+}
+
+// placeholder
+
+.placeholder-section {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: start;
+  cursor: pointer;
+  padding: 0 28px 0 10px;
+  height: 100%;
+}
+
+.placeholder {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: $color-echo-blue;
+}
+
+.plh-text {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// selected-section
+
+.selected-section {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  outline: none;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0 28px 0 2px;
+  width: 100%;
+  height: 100%;
+}
+
+.selected {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0 10px;
+  width: 100%;
+  text-align: left;
+}
+
+.search-i {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 6px;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 100%;
+  color: $color-quartz;
+  font-size: 16px;
+
+  &:hover {
+    color: $color-tomato;
+  }
+}
+
+// inside options of select
+
+/deep/ .icon-wr {
+  display: block;
+  margin: 0 0 0 -6px;
+}
+
+/deep/ .opt-icon {
+  color: $color-spray;
+  font-size: 42px;
+}
+
+/deep/ .opt-val-wr {
+  width: 100%;
+}
+
+/deep/ .opt-text-section {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/deep/ .opt-label {
+  max-width: 85%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 12px;
+  white-space: nowrap;
+  color: $color-half-baked;
+  font-size: 12px;
+  font-weight: 300;
+}
+
+/deep/ .opt-val {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: $color-regal-blue;
+  font-family: $ubuntu-condensed;
+  font-size: 16px;
+}
+
+// styles for formType 'widget'
+
+:host-context(.widget) {
+  outline: 1px solid $color-quartz;
+  min-height: 45px;
+}
+
+// styles for formType 'page'
+
+:host-context(.page) {
+  margin: 7px 0;
+
+  .placeholder {
+    margin: 0 10px 10px;
+    color: $color-half-baked;
+    font-size: 14px;
+  }
+
+  .form-select-wr {
+    height: calc(100% - 26px);
+    min-height: 45px;
+  }
+
+  .form-select-wr {
+    outline: 1px solid $color-quartz;
+  }
+
+}

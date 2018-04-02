@@ -1,0 +1,222 @@
+@import '../../../../../assets/styles/var';
+
+:host {
+  display: block;
+  padding: 0;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  &.ng-invalid {
+    &.ng-dirty {
+      /deep/ .alarm-i {
+        display: block;
+      }
+    }
+  }
+
+  &.disabled {
+    pointer-events: none;
+
+    .counter-container {
+      background-color: $color-clear-day;
+    }
+
+    .counter-input,
+    .counter-label {
+      color: $color-echo-blue;
+    }
+  }
+}
+
+// counter field
+
+.counter-container {
+  display: flex;
+  position: relative;
+  align-items: stretch;
+  height: 100%;
+  background-color: $color-white;
+}
+
+// placeholder
+
+.placeholder-section {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: start;
+  cursor: pointer;
+  padding: 0 28px 0 12px;
+  width: 100%;
+  min-height: 44px;
+}
+
+.plh-text {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.placeholder {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: $color-echo-blue;
+}
+
+// counter-section
+
+.counter-input-section {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: start;
+  cursor: pointer;
+  padding: 0 28px 0 12px;
+  width: 100%;
+}
+
+.counter-input-wr {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  font-size: 14px;
+}
+
+.counter-label-input-wr {
+  width: 100%;
+}
+
+.counter-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: $color-half-baked;
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.counter-input {
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+  width: 100%;
+  height: 24px;
+  overflow: hidden;
+  text-align: left;
+  line-height: 24px;
+  color: $color-night-rider;
+  font-family: $ubuntu-condensed;
+  font-size: 16px;
+
+  // &[contenteditable='false'] {
+  // color: $color-white;
+  // }
+}
+
+// btns section
+
+.btns-section {
+  display: inline-block;
+  position: absolute;
+  right: 7px;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.count-btn {
+  display: block;
+  position: relative;
+  outline: 0;
+  border: 0;
+  background-color: transparent;
+  width: 18px;
+  height: 50%;
+
+  &::after {
+    position: absolute;
+    left: 4px;
+    transition: border-color 0.15s;
+    border: 5px solid transparent;
+    content: '';
+  }
+
+  &.btn-up {
+    &::after {
+      bottom: 4px;
+      border-bottom: 6px solid $color-quartz;
+    }
+  }
+
+  &.btn-down {
+    &::after {
+      top: 4px;
+      border-top: 6px solid $color-quartz;
+    }
+  }
+
+  &:not([disabled]) {
+    cursor: pointer;
+
+    &:focus,
+    &:hover {
+      &.btn-up {
+        &::after {
+          border-bottom-color: $color-tomato;
+        }
+      }
+
+      &.btn-down {
+        &::after {
+          border-top-color: $color-tomato;
+        }
+      }
+    }
+  }
+
+  &:focus {
+    &::before {
+      display: block;
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      border: 1px solid $color-spray;
+      border-radius: 2px;
+      box-shadow: 0 0 1px $color-spray;
+      width: calc(100% + 2px);
+      height: calc(100% + 2px);
+      content: '';
+      box-sizing: border-box;
+    }
+  }
+}
+
+// styles for formType 'widget'
+
+:host-context(.widget) {
+  background-color: $color-white;
+  outline: 1px solid $color-quartz;
+  min-height: 45px;
+}
+
+// styles for formType 'page'
+
+:host-context(.page) {
+  margin: 7px 0;
+
+  .placeholder {
+    margin: 0 10px 10px;
+    color: $color-half-baked;
+    font-size: 14px;
+  }
+
+  .counter-container {
+    outline: 1px solid $color-quartz;
+    min-height: 45px;
+    height: auto;
+  }
+
+}

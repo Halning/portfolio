@@ -1,0 +1,14 @@
+@import '../../../../../../../../assets/styles/var';
+
+:host {
+  display: block;
+}
+
+.mark {
+  display: inline-block;
+  border-radius: 2px;
+  background: $color-mint-tulip;
+  padding: 2px 4px;
+  color: $color-shakespeare;
+  font-size: 12px;
+}

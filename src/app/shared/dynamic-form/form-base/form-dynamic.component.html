@@ -1,0 +1,145 @@
+<ng-container [formGroup]="form" class="row">
+    <!--<ng-container *ngFor="let control of controlsKeys"-->
+    <!--boDynamicBase-->
+    <!--[controlKey]="control"-->
+    <!--[group]="form">-->
+    <!--</ng-container>-->
+
+    <ng-container *ngFor="let control of controlsArray">
+        <ng-container [ngSwitch]="control['controlType']">
+            <ng-container *ngSwitchCase="'form-group'">
+                <bo-form-group *ngIf="!control['hidden']"
+                               [@flyInOut]="'in'"
+                               [ngClass]="[control['grid'], control['controlType']]"
+                               [group]="form"
+                               [controlIns]="control">
+                </bo-form-group>
+            </ng-container>
+
+            <ng-container *ngSwitchCase="'form-group-separate'">
+                <bo-form-group *ngIf="!control['hidden']"
+                               [@flyInOut]="'in'"
+                               [ngClass]="[control['grid'], control['controlType']]"
+                               [group]="form"
+                               [controlIns]="control">
+                </bo-form-group>
+            </ng-container>
+
+            <ng-container *ngSwitchCase="'sc'">
+                <bo-form-sc *ngIf="!control['hidden']"
+                            [@flyInOut]="'in'"
+                            [class]="control['grid']"
+                            [boBehEnable]="control.disabledView"
+                            [formControlName]="control.key"
+                            [controlIns]="control">
+                </bo-form-sc>
+            </ng-container>
+
+            <ng-container *ngSwitchCase="'sc-widget'">
+                <bo-form-sc-widget *ngIf="!control['hidden']"
+                                   [@flyInOut]="'in'"
+                                   [class]="control['grid']"
+                                   [boBehEnable]="control.disabledView"
+                                   [formControlName]="control.key"
+                                   [controlIns]="control">
+                </bo-form-sc-widget>
+            </ng-container>
+
+            <ng-container *ngSwitchCase="'counter'">
+                <bo-form-counter *ngIf="!control['hidden']"
+                                 [@flyInOut]="'in'"
+                                 [boBehEnable]="control.disabledView"
+                                 [class]="control['grid']"
+                                 [formControlName]="control.key"
+                                 [controlIns]="control">
+                </bo-form-counter>
+            </ng-container>
+
+            <ng-container *ngSwitchCase="'counter-price'">
+                <bo-form-counter-price *ngIf="!control['hidden']"
+                                       [@flyInOut]="'in'"
+                                       [boBehEnable]="control.disabledView"
+                                       [class]="control['grid']"
+                                       [formControlName]="control.key"
+                                       [controlIns]="control">
+                </bo-form-counter-price>
+            </ng-container>
+
+            <ng-container *ngSwitchCase="'radio'">
+                <bo-form-radio *ngIf="!control['hidden']"
+                               [@flyInOut]="'in'"
+                               [boBehEnable]="control.disabledView"
+                               [ngClass]="[control['grid'], control['style']]"
+                               [formControlName]="control.key"
+                               [group]="form"
+                               [controlIns]="control">
+                </bo-form-radio>
+            </ng-container>
+
+            <ng-container *ngSwitchCase="'radio-big'">
+                <bo-form-radio *ngIf="!control['hidden']"
+                               [@flyInOut]="'in'"
+                               [boBehEnable]="control.disabledView"
+                               [ngClass]="[control['grid'], control['style']]"
+                               [formControlName]="control.key"
+                               [group]="form"
+                               [controlIns]="control">
+                </bo-form-radio>
+            </ng-container>
+
+            <ng-container *ngSwitchCase="'radio-center'">
+                <bo-form-radio *ngIf="!control['hidden']"
+                               [@flyInOut]="'in'"
+                               [boBehEnable]="control.disabledView"
+                               [ngClass]="[control['grid'], control['style']]"
+                               [formControlName]="control.key"
+                               [group]="form"
+                               [controlIns]="control">
+                </bo-form-radio>
+            </ng-container>
+
+            <ng-container *ngSwitchCase="'select'">
+                <bo-form-select *ngIf="!control['hidden']"
+                                [@flyInOut]="'in'"
+                                [boBehEnable]="control.disabledView"
+                                [class]="control['grid']"
+                                [formControlName]="control.key"
+                                [controlIns]="control">
+                </bo-form-select>
+            </ng-container>
+
+            <ng-container *ngSwitchCase="'checkbox'">
+                <bo-form-checkbox *ngIf="!control['hidden']"
+                                  class="col-12"
+                                  [@flyInOut]="'in'"
+                                  [boBehEnable]="control.disabledView"
+                                  [formControlName]="control.key"
+                                  [group]="form"
+                                  [controlIns]="control">
+                </bo-form-checkbox>
+            </ng-container>
+
+            <ng-container *ngSwitchCase="'textbox'">
+                <bo-form-textbox *ngIf="!control['hidden']"
+                                 class="col-12"
+                                 [@flyInOut]="'in'"
+                                 [boBehEnable]="control.disabledView"
+                                 [formControlName]="control.key"
+                                 [group]="form"
+                                 [controlIns]="control">
+                </bo-form-textbox>
+            </ng-container>
+
+            <!--<ng-container *ngSwitchCase="'datePicker'">-->
+                <!--<bo-form-date-picker *ngIf="!control['hidden']"-->
+                                     <!--[class]="control['grid']"-->
+                                     <!--[@flyInOut]="'in'"-->
+                                     <!--[boBehEnable]="control.disabledView"-->
+                                     <!--[formControlName]="control.key"-->
+                                     <!--[controlIns]="control">-->
+                <!--</bo-form-date-picker>-->
+            <!--</ng-container>-->
+        </ng-container>
+    </ng-container>
+</ng-container>
+

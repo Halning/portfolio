@@ -1,0 +1,54 @@
+<div class="placeholder"  *ngIf="controlIns.root['formType'] === 'page'">
+    <!--<i *ngIf="controlIns?.labelIcon" class="plh-icon i-{{controlIns.labelIcon}}_regular"></i>-->
+    <span class="plh-text">{{controlIns?.label}}</span>
+    <span *ngIf="responseError">Error {{responseError?.code}}: {{responseError?.message}}</span>
+</div>
+
+<div class="form-sc" #rootScRef [class.error]="responseError">
+
+    <div class="placeholder-section"
+         *ngIf="!controlIns?.selectedOption"
+         (click)="appendSearchToBody()"
+         (click)="onTouched()">
+
+        <i class="alarm-i i-basic_alarm_regular"
+           [matTooltip]="controlIns?.errors | formError"
+           matTooltipClass="error-tooltip"></i>
+
+        <div class="placeholder" *ngIf="controlIns.root['formType'] === 'widget'">
+            <i *ngIf="controlIns?.labelIcon" class="plh-icon i-{{controlIns.labelIcon}}_regular"></i>
+            <span class="plh-text" *ngIf="!responseError">{{controlIns?.label}}</span>
+            <span *ngIf="responseError">Error {{responseError?.code}}: {{responseError?.message}}</span>
+        </div>
+
+        <i *ngIf="!controlIns?.disabledView" class="search-i i-basic_search_regular"></i>
+    </div>
+
+    <div class="selected-section"
+         *ngIf="controlIns?.selectedOption"
+         [class.with-del]="controlIns?.required"
+         (click)="onTouched()">
+
+        <i class="alarm-i i-basic_alarm_regular"
+           [matTooltip]="controlIns?.errors | formError"
+           matTooltipClass="error-tooltip"></i>
+
+        <bo-form-sc-option class="no-br"
+                           [option]="controlIns?.selectedOption"
+                           [viewConfig]="controlIns?.selectedConfig">
+        </bo-form-sc-option>
+
+        <div class="buttons" *ngIf="!controlIns?.disabledView">
+            <div class="button" (click)="appendSearchToBody()">
+                <i class="i-basic_edit_regular"></i>
+            </div>
+            <div class="button" *ngIf="!controlIns?.required" (click)="onDeleteClick()">
+                <i class="i-basic_delete_regular"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="loader-section">
+        <div class="loader"></div>
+    </div>
+</div>

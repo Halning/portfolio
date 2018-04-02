@@ -7,6 +7,7 @@ import { SkillsComponent } from './skills/skills.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { FormExamplesComponent } from './form-examples/form-examples.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
     {path: 'skills', component: SkillsComponent},
     {path: 'projects', component: ProjectsComponent},
     {path: 'contacts', component: ContactComponent},
+    {path: 'some', component: FormExamplesComponent},
 
     {path: '**', component: PageNotFoundComponent, data: {title: 'Not Found'}}
 ];

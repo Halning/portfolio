@@ -1,0 +1,52 @@
+
+<div class="placeholder" *ngIf="controlIns.root['formType'] === 'page'">
+    <span class="plh-text">{{controlIns?.label}}</span>
+</div>
+
+<div class="counter-container" (click)="onTouched()">
+
+    <div class="placeholder-section" *ngIf="!elementFocus && !controlIns.value" (click)="focusInput = true">
+
+        <div class="placeholder" >
+            <i class="alarm-i i-basic_alarm_regular"
+               [matTooltip]="controlIns?.errors | formError"
+               matTooltipClass="error-tooltip"></i>
+
+            <span class="plh-text" *ngIf="controlIns.root['formType'] === 'widget'">{{controlIns?.label}}</span>
+        </div>
+
+    </div>
+
+    <div class="counter-input-section" *ngIf="elementFocus || controlIns.value" (click)="focusInput = true">
+
+        <div class="counter-input-wr">
+            <i class="alarm-i i-basic_alarm_regular"
+               [matTooltip]="controlIns?.errors | formError"
+               matTooltipClass="error-tooltip"></i>
+
+            <div class="counter-label-input-wr">
+                <div *ngIf="controlIns.root['formType'] === 'widget' && (elementFocus || controlIns.value)" class="counter-label">
+                    {{controlIns.label}}
+                </div>
+
+                <div class="counter-input"
+                     [attr.contenteditable]="!controlIns.disabledView"
+                     tabindex="0"
+                     #counterInput
+                     (input)="onInputValue($event)"
+                     (blur)="focusInput = false">
+                    {{controlIns.value}}
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="btns-section">
+        <button type="button" class="count-btn btn-up" (click)="onCountUp()"
+                [disabled]="controlIns.disabledView"></button>
+        <button type="button" class="count-btn btn-down" (click)="onCountDown()"
+                [disabled]="controlIns.disabledView"></button>
+    </div>
+
+</div>

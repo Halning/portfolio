@@ -1,0 +1,41 @@
+@import '../../../../../../assets/styles/var';
+
+:host {
+  width: 100%;
+
+  &.disabled {
+    .currency-section {
+      background-color: $color-clear-day;
+    }
+  }
+}
+
+.counter-input-section,
+.placeholder-section {
+  width: 50%;
+}
+
+// currency-section
+
+.currency-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  outline: 1px solid $color-quartz;
+  background-color: $color-china-ivory;
+  padding: 5px;
+  width: 50%;
+  font-family: $ubuntu;
+
+  .cur-label {
+    color: $color-half-baked;
+    font-size: 12px;
+  }
+
+  .cur-value {
+    width: 100%;
+    color: $color-regal-blue;
+    font-size: 14px;
+  }
+}

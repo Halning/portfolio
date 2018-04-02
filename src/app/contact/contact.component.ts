@@ -9,9 +9,10 @@ import {
     transition
 } from '@angular/animations';
 
-import { HaApiRequest } from '../core/request/HaApiRequest';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { LocalStorageService } from 'ngx-webstorage';
+
+import { ApiRequestService } from '../core/request/api-request.service';
 
 @Component({
     selector: 'ha-contact',
@@ -100,7 +101,7 @@ export class ContactComponent implements OnInit {
     ];
 
     constructor(private titleService: Title,
-                private apiHttp: HaApiRequest,
+                private apiHttp: ApiRequestService,
                 private translate: TranslateService,
                 private localSt: LocalStorageService,
                 private meta: Meta) {

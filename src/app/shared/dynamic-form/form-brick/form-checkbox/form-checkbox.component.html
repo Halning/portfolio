@@ -1,0 +1,21 @@
+<ng-container [formGroup]="group">
+
+    <div class="form-checkbox">
+        <i class="alarm-i i-basic_alarm_regular"
+           [matTooltip]="controlIns.errors | formError"
+           matTooltipClass="error-tooltip"></i>
+
+        <span class="form-switch_check">
+            <input class="form-checkbox-input" [id]="controlIns.key" type="checkbox" [formControlName]="controlIns.key">
+            <label class="form-inline_bl"
+                   [for]="controlIns.key"
+                   (click)="onTouched()"
+                   [class.checked]="controlIns.value">
+                <span class="form-checkbox_point" [class.tran]="controlIns.value"></span>
+            </label>
+        </span>
+        <span class="form-checkbox-label">{{controlIns.label}}</span>
+    </div>
+
+
+</ng-container>

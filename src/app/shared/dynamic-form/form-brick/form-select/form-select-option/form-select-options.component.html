@@ -1,0 +1,27 @@
+<div class="wrap" (click)="onCloseWrap()"></div>
+<div class="wrap-content" #optionsWr>
+    <div class="wrap-inner">
+        <div class="drop-wr" #dropWr>
+            <ul class="option-wr" #optionsListWr>
+
+                <li class="list-option"
+                    *ngFor="let opt of options"
+                    (click)="onSelectOption(opt)"
+                    [class.disabledOpt]="opt.disabled">
+                    <div class="icon-wr" *ngIf="opt?.icon">
+                        <i class="opt-icon i-{{opt?.icon}}_regular"></i>
+                    </div>
+                    <div class="opt-val-wr">
+                        <div class="opt-label">{{label}}</div>
+
+                        <div class="opt-text-section">
+                            <div class="opt-val">{{opt?.key}}</div>
+                        </div>
+                    </div>
+
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</div>

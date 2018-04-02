@@ -1,0 +1,52 @@
+<!--<div class="drop-container" #dropDownParent>-->
+
+    <!--<div class="placeholder" *ngIf="controlIns.root['formType'] === 'page'">-->
+        <!--<span class="plh-text">{{controlIns?.label}}</span>-->
+    <!--</div>-->
+
+    <!--<div class="delivery-container">-->
+
+        <!--<div class="placeholder-section"-->
+             <!--(click)="openDropdown()"-->
+             <!--(click)="onTouched()"-->
+             <!--*ngIf="!selectedDate">-->
+
+            <!--<i class="alarm-i i-basic_alarm_regular"-->
+               <!--[matTooltip]="controlIns?.errors | formError"-->
+               <!--matTooltipClass="error-tooltip"></i>-->
+
+            <!--<div class="placeholder" *ngIf="controlIns.root['formType'] === 'widget'">-->
+                <!--<span class="plh-text">{{controlIns?.label}}</span>-->
+            <!--</div>-->
+
+            <!--<i *ngIf="!controlIns?.disabledView" class="search-i i-basic_search_regular"></i>-->
+        <!--</div>-->
+
+
+        <!--<div class="chosen-section" *ngIf="selectedDate">-->
+
+            <!--<div class="selected-section"-->
+                 <!--(click)="onTouched()">-->
+
+                <!--<div class="selected-text">-->
+                    <!--<div class="selected-val">-->
+                        <!--{{selectedDate | date: 'dd.MM.yy'}}-->
+                        <!--<span class="chosen-time" *ngIf="!isOpenDropdown">-->
+                            <!--{{selectedDate | date: 'h:mm a'}}-->
+                        <!--</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="buttons" *ngIf="!controlIns?.disabledView">-->
+                <!--<div class="button" (click)="openDropdown()">-->
+                    <!--<i class="i-basic_edit_regular"></i>-->
+                <!--</div>-->
+                <!--<div class="button" *ngIf="!controlIns?.required" (click)="onDeleteClick()">-->
+                    <!--<i class="i-basic_delete_regular"></i>-->
+                <!--</div>-->
+            <!--</div>-->
+
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->

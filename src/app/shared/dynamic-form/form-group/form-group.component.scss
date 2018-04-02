@@ -1,0 +1,10 @@
+@import '../../../../assets/styles/var';
+
+:host-context(.widget) {
+  //outline: 1px solid $color-quartz;
+  min-height: 45px;
+
+  &.form-group-separate {
+    margin-bottom: 10px;
+  }
+}

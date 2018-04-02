@@ -1,0 +1,116 @@
+@import '../../../../assets/styles/var';
+
+:host {
+  display: block;
+  outline: 1px solid $color-quartz;
+  background-color: $color-china-ivory;
+}
+
+:host-context(bo-modal) {
+  width: 500px;
+}
+
+.form-title {
+  padding: 15px 0;
+  text-align: center;
+  line-height: 29px;
+  color: $color-regal-blue;
+  font-family: $ubuntu-condensed;
+  font-size: 25px;
+}
+
+// form-container
+
+.form-btn-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+
+  .form-btn {
+    display: block;
+    margin-left: 10px;
+    border: 0;
+    border-radius: 2px;
+    background: $color-bunting;
+    cursor: pointer;
+    width: 215px;
+    height: 45px;
+    color: $color-white;
+    font-size: 16px;
+    font-weight: 500;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:disabled {
+      background-color: $color-echo-blue;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.br {
+  outline: 1px solid $color-quartz;
+  background-color: $color-white;
+}
+
+// error section
+
+.form-error {
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+  margin-bottom: 10px;
+  background-color: $color-tomato;
+  padding: 5px;
+  color: $color-regal-blue;
+
+  .form-error-detail {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .button {
+    cursor: pointer;
+    width: 28px;
+    text-align: center;
+
+    i {
+      color: $color-periwincle;
+      font-size: 30px;
+    }
+
+    &:hover {
+      i {
+        color: $color-white;
+      }
+    }
+  }
+}
+
+// styles in nested form components
+
+/deep/ .alarm-i {
+  display: none;
+  line-height: 0;
+  color: $color-tomato;
+  font-size: 24px;
+}
+
+/deep/ .cdk-overlay-container .error-tooltip {
+  display: inline-block;
+  background-color: $color-tomato;
+  max-width: 200px;
+}
+
+//form-btn styles for formType 'page'
+.page {
+
+  /deep/ .form-btn-container {
+    padding-top: 30px;
+  }
+
+}

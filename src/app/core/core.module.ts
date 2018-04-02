@@ -1,18 +1,15 @@
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
 
 import { WindowRefService } from './window-ref.service';
-import { HaApiRequest } from './request/HaApiRequest';
+import { ApiRequestService } from './request/api-request.service';
 
 const SERVICES = [
-    HaApiRequest,
-    WindowRefService,
+    ApiRequestService,
+    WindowRefService
 ];
 
 @NgModule({
-    imports: [
-        HttpModule
-    ],
+    imports: [],
     exports: [],
     declarations: [],
     providers: [SERVICES],

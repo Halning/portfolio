@@ -1,0 +1,45 @@
+
+<div class="placeholder" *ngIf="controlIns.root['formType'] === 'page'">
+    <span class="plh-text">{{controlIns?.label}}</span>
+</div>
+
+<div class="form-sc" #rootScRef>
+
+    <div class="placeholder-section"
+         *ngIf="!controlIns?.selectedOption"
+         (click)="appendSearchToBody()" (click)="onTouched()">
+
+        <i class="alarm-i i-basic_alarm_regular"
+           [matTooltip]="controlIns?.errors | formError"
+           matTooltipClass="error-tooltip"></i>
+
+        <div class="placeholder" *ngIf="controlIns.root['formType'] === 'widget'">
+            <span class="plh-text">{{controlIns?.label}}</span>
+        </div>
+
+        <i class="search-i i-basic_arrowdown_solid" *ngIf="!controlIns?.disabledView"></i>
+    </div>
+
+    <div class="selected-section"
+         *ngIf="controlIns?.selectedOption"
+         [class.with-del]="!controlIns?.required"
+         (click)="appendSearchToBody()"
+         (click)="onTouched()">
+
+        <i class="alarm-i i-basic_alarm_regular kostyli-alarm"
+           [matTooltip]="controlIns?.errors | formError"
+           matTooltipClass="error-tooltip"></i>
+
+        <bo-form-sc-option class="no-br"
+                           [option]="controlIns?.selectedOption"
+                           [viewConfig]="controlIns?.selectedConfig">
+        </bo-form-sc-option>
+
+        <div class="buttons" *ngIf="!controlIns?.disabledView">
+            <div class="btn btn-open">
+                <i class="i-basic_arrowdown_solid"></i>
+            </div>
+        </div>
+    </div>
+
+</div>

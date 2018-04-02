@@ -1,0 +1,134 @@
+@import '../../../../../assets/styles/var';
+
+:host {
+  background-color: $color-white;
+
+  &.disabled {
+    pointer-events: none;
+    .rad-input + label {
+      border-color: $color-quartz;
+      background-color: $color-quartz;
+      color: $color-white;
+    }
+  }
+
+  &.ng-invalid {
+    &.ng-dirty {
+      .rad-opt_label {
+        border: 1px solid $color-tomato;
+      }
+
+      .alarm-i {
+        display: block;
+      }
+    }
+  }
+
+  // big radio btns for controlType - 'radio-big'
+  &.radio-big {
+    background-color: $color-china-ivory;
+    padding: 10px;
+
+    .rad-opt_label {
+      margin: 10px 10px 0 0;
+      background-color: $color-white;
+      padding: 10px 15px;
+      font-size: 14px;
+    }
+  }
+
+  // centered radio btns for controlType - 'radio-center'
+  &.radio-center {
+    background-color: $color-china-ivory;
+    padding: 10px;
+
+    .rad-opt_label {
+      margin: 10px 5px 0;
+      background-color: $color-white;
+      padding: 10px 15px;
+      font-size: 14px;
+      text-align: center;
+      flex: 1 1 0;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+
+    .rad-container_items {
+      justify-content: center;
+      align-items: normal;
+    }
+  }
+}
+
+.rad-container_all {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: left;
+  padding: 5px 0;
+  font-size: 12px;
+
+  .rad-label {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    color: $color-half-baked;
+  }
+}
+
+.rad-container_items {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: left;
+  width: 480px;
+}
+
+.rad-opt_label {
+  margin: 5px 5px 0 0;
+  border: 1px solid $color-periwincle;
+  border-radius: 1px;
+  cursor: pointer;
+  padding: 5px 10px;
+  color: $color-quartz;
+  background-color: $color-white;
+
+  &.disable {
+    pointer-events: none;
+  }
+}
+
+.rad-input {
+  display: none;
+
+  &:checked + label {
+    border-color: $color-conifer;
+    background-color: $color-conifer;
+    color: $color-white;
+  }
+
+  &:disabled + label {
+    border-color: $color-quartz;
+    background-color: $color-quartz;
+    color: $color-white;
+  }
+}
+
+// styles for formType 'widget'
+
+:host-context(.widget) {
+  outline: 1px solid $color-quartz;
+}
+
+// styles for formType 'page'
+
+:host-context(.page) {
+  background-color: transparent;
+
+  .rad-label {
+    color: $color-half-baked;
+    font-size: 14px;
+  }
+}

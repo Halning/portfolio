@@ -1,0 +1,28 @@
+@import '../../../../../../../../assets/styles/var';
+
+:host {
+  display: block;
+}
+
+.stats-item {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.label {
+  display: inline-block;
+  padding-right: 3px;
+  line-height: 14px;
+  word-wrap: break-word;
+  color: $color-half-baked;
+  font-size: 12px;
+}
+
+.value {
+  display: inline-block;
+  line-height: 14px;
+  word-wrap: break-word;
+  color: $color-regal-blue;
+  font-size: 12px;
+}

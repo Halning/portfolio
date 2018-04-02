@@ -1,0 +1,31 @@
+<!--<div class="dropdown-content">-->
+    <!--<div class="calendar-section" *ngIf="flags.isCalendarOpen">-->
+
+        <!--<dp-day-calendar-->
+                <!--[displayDate]= "data.selectedDate"-->
+                <!--[config]="calendarConfig"-->
+                <!--(onSelect)="onDaySelect($event)">-->
+        <!--</dp-day-calendar>-->
+
+        <!--<div class="select-time"-->
+             <!--*ngIf="data.selectedDate"-->
+             <!--(click)="onSelectTimeClick()">-->
+            <!--{{data.parentConfig.translates.selectTime}}-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="hours-section" *ngIf="flags.isHoursOpen">-->
+        <!--<div class="select-date" (click)="flags.isCalendarOpen = true; flags.isHoursOpen = false">-->
+            <!--{{data.parentConfig.translates.selectDate}}-->
+        <!--</div>-->
+        <!--<div class="hours-list">-->
+            <!--<div class="hour-item-wr" *ngFor="let hour of data.hours">-->
+                <!--<button class="hour-item"-->
+                        <!--[disabled]="hour.disabled"-->
+                        <!--[class.active]="hour.active"-->
+                        <!--(click)="!hour.disabled && onHourSelect(hour)">-->
+                    <!--{{hour.val}}-->
+                <!--</button>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->

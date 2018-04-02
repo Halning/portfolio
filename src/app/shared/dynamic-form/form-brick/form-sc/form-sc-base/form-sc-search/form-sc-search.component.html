@@ -1,0 +1,42 @@
+<div class="wrap" (click)="onCloseWrap()"></div>
+<div class="wrap-content" #searchWr [class.error]="responseError">
+    <div class="wrap-inner">
+
+        <div class="input-section">
+            <input type="text" class="search-input" (input)="onInput($event)" #searchInput>
+            <div class="loader-section" *ngIf="flags.isSearchProcess">
+                <div class="loader"></div>
+            </div>
+        </div>
+
+        <div class="drop-wr"
+             [ngClass]="{
+                'down': flags.isDownDirection,
+                'top': !flags.isDownDirection
+             }">
+            <div class="search-list-wr" #searchOptionsWr>
+                <div class="tooltip-pl"
+                     *ngIf="flags.isSearchProcess && !responseError">
+                    Searching...
+                </div>
+                <div class="tooltip-pl" *ngIf="!optionsCol?.length
+                     && !flags.isSearchProcess && !responseError">
+                    No matches found
+                </div>
+                <div class="tooltip-pl" *ngIf="responseError">
+                    Error {{responseError.status}}: {{responseError.statusText}}
+                </div>
+
+                <div class="search-list" *ngIf="optionsCol?.length">
+                    <bo-form-sc-option *ngFor="let option of optionsCol"
+                                       [class.active]="option?.active"
+                                       [option]="option"
+                                       [viewConfig]="optionColConfig"
+                                       (mouseover)="onOptionMouseOver(option)"
+                                       (click)="onSelectOption(option)">
+                    </bo-form-sc-option>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
