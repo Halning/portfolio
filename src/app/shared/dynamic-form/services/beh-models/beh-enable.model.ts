@@ -12,7 +12,8 @@ export class BehEnable extends BehBase {
         //     this.controlIns.disabledView = value;
         // }
         // if parent group is disabledView set current control disabled
-        if ((<BoFormGroup>this.controlIns.parent).disabledView) {
+        if (this.controlIns.parent && (<BoFormGroup>this.controlIns.parent).disabledView
+            || (<BoFormGroup>this.controlIns.root).disabledView) {
             this.controlIns.disabledView = (<BoFormGroup>this.controlIns.parent).disabledView;
         } else if (this.controlIns.disabledView !== value) {
             this.controlIns.disabledView = value;

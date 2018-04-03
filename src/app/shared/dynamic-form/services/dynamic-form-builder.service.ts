@@ -31,6 +31,7 @@ export class DynamicFormBuilderService extends (<EmMixin>e.EM(e.EmptyClass)) {
     createForm(formConfig: IAnyObj): BoFormRoot {
         formConfig['controlType'] = 'form-root';
         formConfig['controls'] = this.createGroup(this.getControls(formConfig), formConfig);
+        formConfig['controls'] = this._sortControls(formConfig['controls']);
         return new BoFormRoot(formConfig);
     }
 
