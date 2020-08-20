@@ -69,6 +69,22 @@ export class AboutContentModel {
           'About.stage4.textMain.2'
         ]
       ]
+    },
+    {
+      main: 'About.stage5.name',
+      date: 'About.stage5.date',
+      textMain: [
+        [
+          'About.stage5.textMain.0',
+          {
+            linkName: 'EPAM Systems',
+            link: 'https://www.epam.com/'
+          },
+          'About.stage5.textMain.1'
+        ],
+        ['About.stage5.textMain.2'],
+        ['About.stage5.textMain.3']
+      ]
     }
   ];
 }

@@ -1,10 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'assets/styles/loader';
+@import 'assets/styles/var';
+@import 'assets/styles/mixins';
+//@import 'assets/styles/fonts';
 
 html,
 body {
+  padding: 0;
+  font-family: $font-main !important;
   height: 100%;
 }
+
 body {
   margin: 0;
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  background-color: rgba(239, 238, 238, 1) !important;
+  line-height: 1.75em !important;
+  color: $color-body-font !important;
+  font-weight: 500 !important;
+  overflow: auto;
 }

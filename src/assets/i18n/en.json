@@ -27,17 +27,17 @@
     "stage": "Stage",
     "stage1": {
       "name": "the beginning of my way.",
-      "date": "December 2014-August 2015",
+      "date": "December 2014 - August 2015",
       "textMain": {
-        "0": "For advice of my friend and mentor (experienced programmer) I began to learn a web-programming with the help of",
-        "1": "and other available on the Internet resources. As I had got first knowledge of programming I began to implement it in my own project. Unfortunately, the project has not been finished."
+        "0": "For advice of my friend and mentor (experienced programmer) I began to learn a web-programming with the help of ",
+        "1": " and other available on the Internet resources. As I had got first knowledge of programming I began to implement it in my own project. Unfortunately, the project has not been finished."
       }
     },
     "stage2": {
       "name": "the first job",
-      "date": "August 2015-June 2016",
+      "date": "August 2015 - June 2016",
       "textMain": {
-        "0": "Company",
+        "0": "Company ",
         "1": ". Development of parser(scraper) for collection of information from more than 30 web-sites. The scraper was written on Object Oriented PHP with using of pattern designs.",
         "2": "After the successful accomplishing of the task  I worked on a basket from scratch. I used Bootstrap, LESS , Query, Query UI, Pjax, Google API, AJAX and JSON for the сommunication with the server. The server-side was written on PHP in conjunction with MySQL.",
         "3": "In the last months I performed many tasks from server-side to layout. Also in free time I have passed CS50 Harvard course - ",
@@ -46,19 +46,29 @@
     },
     "stage3": {
       "name": "the first front-end",
-      "date": "June 2016-October 2016",
+      "date": "June 2016 - October 2016",
       "textMain": {
-        "0": "Company",
+        "0": "Company ",
         "1": ". In this company I worked exactly as a front-end programmer.  My first and main tasks were a layout of project for mobile devices, optimization and extension of functionality, transition on Component-based app architecture. During this project I worked with such technologies as Angular 1.5, Gulp, SASS, Bulma and Bootstrap 3, sometimes jQuery. The work was organized by Scrum. The Git control version."
       }
     },
     "stage4": {
-      "name": "current moment",
-      "date": "October 2016 - now",
+      "name": "the first big company",
+      "date": "October 2016 - April 2018",
       "textMain": {
-        "0": "Company",
-        "1": ". Now I occupy the position of the front-end developer. Work with Angular and such technologies",
+        "0": "Company ",
+        "1": ". I was on the position of the front-end developer. Work with Angular and such technologies ",
         "2": " as Angular Material, Angular Cli, Angular Animations, Angular Universal, Webpack. Writing of Unit tests and texts in the context of Angular. Layout, SASS layout. Work in a Scrum team, the project management is caring out by Jira."
+      }
+    },
+    "stage5": {
+      "name": "current moment",
+      "date": "April 2018 - until now",
+      "textMain": {
+        "0": "Company ",
+        "1": ". I work as a Senior Software Engineer. On the current project, I work as a Lead of the FrontEnd stream. \n My current project related to credit reports. Client from the USA.",
+        "2": "In the first project in Epam, I was a member of a big team with 9 JS engineers, 15 Java engineers, and 4 QA. At current my project before reducing cause of COVID I had been working with 3 JS engineers, 10 Java engineers, 2 QA.",
+        "3": "I have been working with Angular 2+ since I was hired by EPAM."
       }
     }
   },
