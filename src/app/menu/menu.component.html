@@ -7,28 +7,28 @@
         <div class="col-4 col-sm-2 text-left p-0">
             <ng-container *ngIf="!showMenuMaterial">
 
-                <button md-button [mdMenuTriggerFor]="langs">
+                <button mat-button [matMenuTriggerFor]="langs">
                     {{currentLang.label}}
                 </button>
-                <md-menu #langs="mdMenu">
-                    <button md-menu-item *ngFor="let lang of languages" [class.btn-active]="lang.active"
+                <mat-menu #langs="matMenu">
+                    <button mat-menu-item *ngFor="let lang of languages" [class.btn-active]="lang.active"
                             (click)="setLocale(lang.code)">{{lang.label}}
                     </button>
-                </md-menu>
+                </mat-menu>
 
             </ng-container>
 
             <ng-container *ngIf="showMenuMaterial" class="float-left">
 
-                <button md-button [mdMenuTriggerFor]="menu">
-                    <md-icon>apps</md-icon>
+                <button mat-button [matMenuTriggerFor]="menu">
+                    <mat-icon>apps</mat-icon>
                 </button>
-                <md-menu #menu="mdMenu">
-                    <button md-menu-item *ngFor="let item of mainMenu"
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item *ngFor="let item of mainMenu"
                             [routerLink]="[item.link]" routerLinkActive="btn-active">
                         {{'Menu.' + item.label | translate}}
                     </button>
-                </md-menu>
+                </mat-menu>
 
             </ng-container>
 
@@ -36,15 +36,15 @@
 
         <div class="col-4 col-sm-2" *ngIf="showMenuMaterial" class="float-right">
 
-            <button md-button [mdMenuTriggerFor]="langs">
+            <button mat-button [matMenuTriggerFor]="langs">
                 {{currentLang.label}}
             </button>
-            <md-menu #langs="mdMenu">
-                <button md-menu-item *ngFor="let lang of languages" [class.btn-active]="lang.active"
+            <mat-menu #langs="matMenu">
+                <button mat-menu-item *ngFor="let lang of languages" [class.btn-active]="lang.active"
                         (click)="setLocale(lang.code)">
                     {{lang.label}}
                 </button>
-            </md-menu>
+            </mat-menu>
 
 
         </div>

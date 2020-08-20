@@ -1,5 +1,5 @@
-@import "../../assets/styles/var";
-@import "../../assets/styles/mixins";
+@import '../../assets/styles/var';
+@import '../../assets/styles/mixins';
 
 /* skills */
 .skills {
@@ -16,7 +16,8 @@
       }
     }
   }
-  .skills-title, .skill-name {
+  .skills-title,
+  .skill-name {
     text-shadow: 0px 5px 10px;
     text-align: center;
   }
@@ -39,7 +40,7 @@
     }
   }
 
- /* frontend */
+  /* frontend */
   .icon-js {
     background-image: url('../../assets/img/sprite/js.png');
     width: 100px;
@@ -80,8 +81,8 @@
     height: 100px;
     @include margin-top-bottom(4.5px);
   }
-  .icon-bulma {
-    background-image: url('../../assets/img/sprite/bulma.png');
+  .icon-es6 {
+    background-image: url('../../assets/img/sprite/es-6.png');
     width: 100px;
     height: 100px;
     @include margin-top-bottom(4.5px);
@@ -107,7 +108,7 @@
     height: 60px;
     @include margin-top-bottom(20px);
   }
-/*  .icon-jq-ui {
+  /*  .icon-jq-ui {
     background-image: url('../../assets/img/sprite/gulp.png');
     width: 100px;
     height: 100px;
@@ -137,7 +138,7 @@
     width: 100px;
     height: 115px;
   }
-/*  .icon-mvc {
+  /*  .icon-mvc {
     background-image: url('../../assets/img/sprite/mvc.png');
     width: 100px;
     height: 93px;
@@ -186,7 +187,7 @@
     width: 100px;
     height: 100px;
   }
-/*  .icon-cisco {
+  /*  .icon-cisco {
     background-image: url('../../assets/img/sprite/cisco.png');
     width: 100px;
     height: 56px;

@@ -4,27 +4,20 @@
             <div class="col-11 col-md-8">
 
                 <p class="about-article-text">
-                    <span class="large-letter">М</span>
-                    <span class="capital-letter">еня зовут Андрей Хоменко.</span> Я Front End программист. Я люблю
-                    кодить и
-                    вот мой путь.
+                    <span class="capital-letter"><span class="large-letter">{{'About.mainM' | translate}}</span>{{'About.name' | translate}}</span>
+                    {{'About.loveCode' | translate}}
                 </p>
 
                 <ng-container *ngFor="let stage of content; let i = index">
-                    <h2 *ngIf="!i; else indexBlock" class="css-typing about-article" [@print]>Этап {{i + 1}}&nbsp;&nbsp;
-                        <span>&nbsp;&nbsp;{{stage.main}}</span>
+                    <h2 class="css-typing about-article" [@print]="animate">{{'About.stage' | translate}} {{i + 1}}&nbsp;&nbsp;
+                        <span>&nbsp;&nbsp;{{stage.main | translate}}</span>
                     </h2>
-                    <ng-template #indexBlock>
-                        <h2 class="css-typing about-article" [@print]>Этап {{content.length - i + 1}}&nbsp;&nbsp;
-                            <span>&nbsp;&nbsp;{{stage.main}}</span>
-                        </h2>
-                    </ng-template>
 
-                    <h4 class="about-date">{{stage.date}}</h4>
+                    <h4 class="about-date">{{stage.date | translate}}</h4>
 
-                    <p [@alive] class="about-article-text" *ngFor="let p of stage.textMain">
+                    <p [@alive]="animate" class="about-article-text" *ngFor="let p of stage.textMain">
                         <ng-container *ngFor="let cont of p; let i = even;">
-                            <ng-container *ngIf="i; else elseBlock">{{cont}}</ng-container>
+                            <ng-container *ngIf="i; else elseBlock">{{cont | translate}}</ng-container>
                             <ng-template #elseBlock>
                                 <a class="about-links" [href]="cont.link" target="_blank">{{cont.linkName}}</a>
                             </ng-template>
