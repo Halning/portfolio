@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-6 form-ex">
+        <ng-container *ngIf="productExForm">
+
+            <bo-form-root [reactiveForm]="productExForm"></bo-form-root>
+
+        </ng-container>
+    </div>
+
+    <div class="col-6 form-ex">
+        <ng-container *ngIf="crForm">
+
+            <bo-form-root [reactiveForm]="crForm"></bo-form-root>
+
+        </ng-container>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-8 form-ex">
+        <ng-container *ngIf="deliveryTermForm">
+
+            <bo-form-root [reactiveForm]="deliveryTermForm"></bo-form-root>
+
+        </ng-container>
+    </div>
+
+</div>
+
+

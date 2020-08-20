@@ -3,54 +3,55 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 contact-list pd-10" [@contactBlockList]>
-                <md-card>
-                    <md-list>
-                        <h3 md-subheader>Contacts</h3>
-                        <md-list-item *ngFor="let contact of contacts">
-                            <md-icon md-list-avatar>{{contact.icon}}</md-icon>
-                            <h4 md-line>{{contact.name}}</h4>
-                            <p md-line [@print] class="css-typing"> {{contact.value}} </p>
-                        </md-list-item>
-                        <md-divider></md-divider>
-                        <h3 md-subheader>Social network</h3>
-                        <md-list-item *ngFor="let social of socials">
-                            <md-icon md-list-avatar class="large-icon">{{social.icon}}</md-icon>
-                            <a md-line class="about-links" href="{{social.link}}" target="_blank">
+                <mat-card>
+                    <mat-list>
+                        <h3 mat-subheader>{{'Contacts.contacts' | translate}}</h3>
+                        <mat-list-item *ngFor="let contact of contacts">
+                            <mat-icon mat-list-avatar>{{contact.icon}}</mat-icon>
+                            <h4 mat-line>{{contact.name}}</h4>
+                            <p mat-line [@print] class="css-typing"> {{contact.value}} </p>
+                        </mat-list-item>
+                        <mat-divider></mat-divider>
+                        <h3 mat-subheader>{{'Contacts.sn' | translate}}</h3>
+                        <mat-list-item *ngFor="let social of socials">
+                            <mat-icon mat-list-avatar class="large-icon">{{social.icon}}</mat-icon>
+                            <a mat-line class="about-links" href="{{social.link}}" target="_blank">
                                 <h4 [@print] class="css-typing">{{social.name}}</h4>
                             </a>
-                            <span md-line>&nbsp;</span>
-                        </md-list-item>
-                    </md-list>
-                </md-card>
+                            <span mat-line>&nbsp;</span>
+                        </mat-list-item>
+                    </mat-list>
+                </mat-card>
             </div>
 
             <div class="col-md-6 contact-list pd-10" [@mailBlock]>
-                <md-card [ngStyle]="{'background-color': submitColor}">
-                    <h2>Send Email</h2>
+                <mat-card [ngStyle]="{'background-color': submitColor}">
+                    <h2>{{'Contacts.sendmail' | translate}}</h2>
                     <hr>
                     <ha-ha-loader></ha-ha-loader>
                     <div [hidden]="submitted || showLoader || submitColor">
                         <form class="contact-form" (ngSubmit)="onSubmit()" #contactForm="ngForm">
 
-                            <md-input-container class="full-width">
-                                <input mdInput placeholder="Subject" maxlength="60" required
+                            <mat-form-field class="full-width">
+                                <input matInput placeholder="{{'Contacts.subject' | translate}}"
+                                       maxlength="60" required
                                        [(ngModel)]="mail.subject" name="subject">
-                            </md-input-container>
+                            </mat-form-field>
 
-                            <md-input-container class="full-width">
-                                <textarea mdInput placeholder="Message"
+                            <mat-form-field class="full-width">
+                                <textarea matInput placeholder="{{'Contacts.message' | translate}}"
                                           required class="contacts-textarea"
                                           [(ngModel)]="mail.message" name="message">
                                 </textarea>
-                            </md-input-container>
+                            </mat-form-field>
 
                             <div class="form-btns">
-                                <button type="button" md-fab (click)="cancel()" [disabled]="contactForm.form.pristine">
-                                    <md-icon>clear</md-icon>
+                                <button type="button" mat-fab (click)="cancel()" [disabled]="contactForm.form.pristine">
+                                    <mat-icon>clear</mat-icon>
                                 </button>
-                                <button md-fab type="submit"
+                                <button mat-fab type="submit"
                                         [disabled]="!contactForm.form.valid || contactForm.form.pristine">
-                                    <md-icon>mail_outline</md-icon>
+                                    <mat-icon>mail_outline</mat-icon>
                                 </button>
                             </div>
 
@@ -58,40 +59,42 @@
                     </div>
 
                     <div [hidden]="!submitted">
-                        <h5>You submitted the following:</h5>
+                        <h5>{{'Contacts.subMessage' | translate}}</h5>
                         <hr>
                         <form class="contact-form">
-                            <md-input-container class="full-width">
-                                <input mdInput placeholder="Subject" disabled
+                            <mat-form-field class="full-width">
+                                <input matInput placeholder="{{'Contacts.subject' | translate}}"
+                                       disabled
                                        [ngModel]="mail.subject" name="subject">
-                            </md-input-container>
+                            </mat-form-field>
 
-                            <md-input-container class="full-width">
-                            <textarea mdInput placeholder="Message" class="contacts-textarea" disabled
+                            <mat-form-field class="full-width">
+                            <textarea matInput placeholder="{{'Contacts.message' | translate}}"
+                                      class="contacts-textarea" disabled
                                       [ngModel]="mail.message" name="message"></textarea>
-                            </md-input-container>
+                            </mat-form-field>
 
                             <div class="form-btns">
-                                <button md-fab type="button"
+                                <button mat-fab type="button"
                                         (click)="submitted=false; submitColor = ''; showError = false;">
-                                    <md-icon>mail_outline</md-icon>
+                                    <mat-icon>mail_outline</mat-icon>
                                 </button>
                             </div>
                         </form>
                     </div>
 
                     <div [hidden]="!showError" class="mail-submitted">
-                        <h4 class="text-center p-5">Oops, try again!</h4>
+                        <h4 class="text-center p-5">{{'Contacts.mailError' | translate}}</h4>
                         <hr>
                         <div class="text-center">
-                            <button md-fab type="button"
+                            <button mat-fab type="button"
                                     (click)="submitted=false; submitColor = ''; showError = false;">
-                                <md-icon>mail_outline</md-icon>
+                                <mat-icon>mail_outline</mat-icon>
                             </button>
                         </div>
                     </div>
                     <br>
-                </md-card>
+                </mat-card>
             </div>
         </div>
     </div>
