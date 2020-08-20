@@ -2,8 +2,6 @@ import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-// import { AngularFireModule } from 'angularfire2';
-
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 import { HomeComponent } from './home/home.component';
@@ -22,16 +20,18 @@ import { SharedModule } from './@shared/shared.module';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
 
 // Must export the config
-export const firebaseConfig = {
-  apiKey: 'AIzaSyCDt3MxLJfw2jIOnN8eebgmjyLaGYyZpr4',
-  authDomain: 'portfolio-2a12b.firebaseapp.com',
-  databaseURL: 'https://portfolio-2a12b.firebaseio.com',
-  projectId: 'portfolio-2a12b',
-  storageBucket: 'portfolio-2a12b.appspot.com',
-  messagingSenderId: '604580569158'
-};
+// export const firebaseConfig = {
+//   apiKey: 'AIzaSyCDt3MxLJfw2jIOnN8eebgmjyLaGYyZpr4',
+//   authDomain: 'portfolio-2a12b.firebaseapp.com',
+//   databaseURL: 'https://portfolio-2a12b.firebaseio.com',
+//   projectId: 'portfolio-2a12b',
+//   storageBucket: 'portfolio-2a12b.appspot.com',
+//   messagingSenderId: '604580569158'
+// };
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -40,10 +40,10 @@ export function HttpLoaderFactory(http: HttpClient) {
 @NgModule({
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase),
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    // AngularFireModule.initializeApp(firebaseConfig),
     SharedModule,
     TranslateModule.forRoot({
       loader: {
