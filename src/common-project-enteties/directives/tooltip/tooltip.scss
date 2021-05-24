@@ -1,0 +1,50 @@
+.ng-tooltip {
+  @apply absolute;
+  @apply shadow;
+  @apply opacity-0;
+  @apply text-xs;
+  @apply z-10;
+  @extend .border__default;
+  white-space: break-spaces;
+  padding: 3px 8px;
+  background-color: theme('colors.gray.200');
+
+  &::after {
+    @apply top-full;
+    @apply left-1/2;
+    margin-left: -4px;
+    @apply border-4;
+  }
+}
+
+.ng-tooltip-show {
+  @apply opacity-100;
+}
+
+.ng-tooltip-below {
+  &::after {
+    @apply bottom-full;
+    @apply left-1/2;
+    left: 50%;
+    margin-left: -4px;
+    @apply border-4;
+  }
+}
+
+.ng-tooltip-left {
+  &::after {
+    @apply top-1/2;
+    @apply left-full;
+    margin-left: -4px;
+    @apply border-4;
+  }
+}
+
+.ng-tooltip-right {
+  &::after {
+    @apply top-1/2;
+    @apply right-full;
+    margin-left: -4px;
+    @apply border-4;
+  }
+}

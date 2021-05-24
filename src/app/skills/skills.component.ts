@@ -167,7 +167,7 @@ export class SkillsComponent implements OnInit {
         icon: 'firebase'
       },
       {
-        name: 'English pre-intermediate',
+        name: 'English B2',
         icon: 'english'
       }
     ]
