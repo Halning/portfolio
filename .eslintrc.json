@@ -21,7 +21,8 @@
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
         "plugin:@angular-eslint/all",
         "plugin:@angular-eslint/template/process-inline-templates",
-        "plugin:rxjs/recommended"
+        "plugin:rxjs/recommended",
+        "plugin:prettier/recommended"
       ],
       "rules": {
         "@angular-eslint/directive-selector": [

@@ -8,7 +8,12 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "lint-css": "stylelint src/**/*.scss"
+    "lint:all": "npm run lint-css && npm run lint",
+    "lint-css": "stylelint src/**/*.scss",
+    "prettier:fix": "npm run prettier:fix:ts && npm run prettier:fix:scss && npm run prettier:fix:html",
+    "prettier:fix:ts": "prettier --config \".prettierrc.json\" --write \"src/**/*.ts\"",
+    "prettier:fix:scss": "prettier --config \".prettierrc.json\" --write \"src/**/*.scss\"",
+    "prettier:fix:html": "prettier --config \".prettierrc.json\" --write \"src/**/*.html\""
   },
   "private": true,
   "dependencies": {
