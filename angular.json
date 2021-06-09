@@ -101,6 +101,38 @@
           }
         }
       }
+    },
+    "my-awesome-lib": {
+      "projectType": "library",
+      "root": "projects/my-awesome-lib",
+      "sourceRoot": "projects/my-awesome-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/my-awesome-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/my-awesome-lib/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/my-awesome-lib/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/my-awesome-lib/**/*.ts",
+              "projects/my-awesome-lib/**/*.html"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "portfolio",
