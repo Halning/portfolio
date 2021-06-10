@@ -100,6 +100,43 @@
               "src/**/*.html"
             ]
           }
+        },
+        "cypress-run": {
+          "builder": "@briebug/cypress-schematic:cypress",
+          "options": {
+            "devServerTarget": "portfolio:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "portfolio:serve:production"
+            }
+          }
+        },
+        "cypress-open": {
+          "builder": "@briebug/cypress-schematic:cypress",
+          "options": {
+            "devServerTarget": "portfolio:serve",
+            "watch": true,
+            "headless": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "portfolio:serve:production"
+            }
+          }
+        },
+        "e2e": {
+          "builder": "@briebug/cypress-schematic:cypress",
+          "options": {
+            "devServerTarget": "portfolio:serve",
+            "watch": true,
+            "headless": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "portfolio:serve:production"
+            }
+          }
         }
       }
     },
@@ -131,6 +168,46 @@
               "projects/my-awesome-lib/**/*.ts",
               "projects/my-awesome-lib/**/*.html"
             ]
+          }
+        },
+        "cypress-run": {
+          "builder": "@briebug/cypress-schematic:cypress",
+          "options": {
+            "devServerTarget": "my-awesome-lib:serve",
+            "configFile": "projects/my-awesome-lib/cypress.json"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "my-awesome-lib:serve:production"
+            }
+          }
+        },
+        "cypress-open": {
+          "builder": "@briebug/cypress-schematic:cypress",
+          "options": {
+            "devServerTarget": "my-awesome-lib:serve",
+            "watch": true,
+            "headless": false,
+            "configFile": "projects/my-awesome-lib/cypress.json"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "my-awesome-lib:serve:production"
+            }
+          }
+        },
+        "e2e": {
+          "builder": "@briebug/cypress-schematic:cypress",
+          "options": {
+            "devServerTarget": "my-awesome-lib:serve",
+            "watch": true,
+            "headless": false,
+            "configFile": "projects/my-awesome-lib/cypress.json"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "my-awesome-lib:serve:production"
+            }
           }
         }
       }
