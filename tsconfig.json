@@ -12,8 +12,12 @@
     "declaration": false,
     "downlevelIteration": true,
     "paths": {
-      "my-awesome-lib": [
-        "dist/my-awesome-lib/my-awesome-lib",
+      "@port/my-awesome-lib/*": [
+        "projects/my-awesome-lib/*",
+        "projects/my-awesome-lib"
+      ],
+      "@port/my-awesome-lib": [
+        "dist/my-awesome-lib/*",
         "dist/my-awesome-lib"
       ]
     },
@@ -22,12 +26,7 @@
     "importHelpers": true,
     "target": "es2017",
     "module": "es2020",
-    "lib": [
-      "es2018",
-      "es2019",
-      "es2020",
-      "dom"
-    ],
+    "lib": ["es2018", "es2019", "es2020", "dom"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
