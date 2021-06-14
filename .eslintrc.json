@@ -1,18 +1,12 @@
 {
   "root": true,
-  "ignorePatterns": [
-    "projects/**/*"
-  ],
+  "ignorePatterns": ["projects/**/*"],
   "plugins": ["rxjs", "rxjs-angular"],
   "overrides": [
     {
-      "files": [
-        "*.ts"
-      ],
+      "files": ["*.ts"],
       "parserOptions": {
-        "project": [
-          "tsconfig.json"
-        ],
+        "project": ["tsconfig.json"],
         "createDefaultProgram": true
       },
       "extends": [
@@ -25,6 +19,22 @@
         "plugin:prettier/recommended"
       ],
       "rules": {
+        "@typescript-eslint/member-ordering": [
+          "error",
+          {
+            "default": [
+              "decorated-field",
+              "public-field",
+              "protected-field",
+              "private-field",
+              "constructor",
+              "public-method",
+              "protected-method",
+              "private-method"
+            ]
+          }
+        ],
+        "rxjs-angular/prefer-composition": ["error"],
         "@angular-eslint/directive-selector": [
           "error",
           {
@@ -44,12 +54,8 @@
       }
     },
     {
-      "files": [
-        "*.html"
-      ],
-      "extends": [
-        "plugin:@angular-eslint/template/all"
-      ],
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/all"],
       "rules": {
         "@angular-eslint/template/i18n": ["off"],
         "@angular-eslint/template/click-events-have-key-events": ["off"]

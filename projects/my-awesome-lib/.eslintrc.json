@@ -10,8 +10,8 @@
       ],
       "parserOptions": {
         "project": [
-          "projects/my-awesome-lib/tsconfig.lib.json",
-          "projects/my-awesome-lib/tsconfig.spec.json"
+          "tsconfig.lib.json",
+          "tsconfig.spec.json"
         ],
         "createDefaultProgram": true
       },

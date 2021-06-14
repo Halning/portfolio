@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { of } from 'rxjs';
-import { filter } from 'rxjs/operators';
 import { from } from 'rxjs';
+import { filter } from 'rxjs/operators';
 import { TypeGuard } from '@port/my-awesome-lib';
 
 @Component({
@@ -10,15 +9,19 @@ import { TypeGuard } from '@port/my-awesome-lib';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  title = 'port';
+  private title = 'port';
+  ggg = 'port';
 
-  ngOnInit(): void {
+  private ggggg(): any {}
+
+  ngOnInit() {
     const arrayWithFalsyValues = [1, undefined, 0, 2, '', null];
     from(arrayWithFalsyValues)
       .pipe(filter(TypeGuard.isDefined))
       .subscribe((ggg) => {
         console.log(ggg);
       });
+
     const arrayWithoutFalsyValues = arrayWithFalsyValues.filter(
       TypeGuard.isDefined,
     );
