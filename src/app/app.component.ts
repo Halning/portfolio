@@ -1,12 +1,13 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  OnDestroy,
+  Inject,
+  NgZone,
   OnInit,
 } from '@angular/core';
 import { from } from 'rxjs';
 import { filter } from 'rxjs/operators';
-import { isDefined, SubSink } from '@port/my-awesome-lib';
+import { isDefined, SubSink, zonefree, zonefull } from '@port/my-awesome-lib';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 
 @Component({
@@ -17,15 +18,21 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 })
 @UntilDestroy()
 export class AppComponent implements OnInit {
-  ggg = 'port';
-  private title = 'port';
+  title = 'port';
 
   private subscription = new SubSink();
+
+  constructor(@Inject(NgZone) private readonly zone: NgZone) {}
 
   ngOnInit() {
     const arrayWithFalsyValues = [1, undefined, 0, 2, '', null];
     this.subscription.sink = from(arrayWithFalsyValues)
-      .pipe(filter(isDefined), untilDestroyed(this))
+      .pipe(
+        zonefree(this.zone),
+        filter(isDefined),
+        zonefull(this.zone),
+        untilDestroyed(this),
+      )
       .subscribe((ggg) => {
         console.log(ggg);
       });
