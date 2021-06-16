@@ -1,7 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+[data-stuck] {
+  position: sticky;
+  top: 0;
+  transition: transform 0.3s;
+}
+
+[data-stuck='false'] {
+  transform: translate3d(0, -100%, 0);
+  transition: transform 0.3s 0.5s;
+}
