@@ -19,7 +19,10 @@ import { filter } from 'rxjs/operators';
 export class FormEventsLoggingService {
   private readonly NAMELESS_TASK = 'Nameless task';
 
-  constructor(private logService: LogService, private formService: FormService) {}
+  constructor(
+    private logService: LogService,
+    private formService: FormService,
+  ) {}
 
   setUp(): void {
     this.subscribeOnFormLoadedEvent();
@@ -27,14 +30,18 @@ export class FormEventsLoggingService {
   }
 
   private subscribeOnFormCompletedEvent(): void {
-    this.formService.taskCompleted.subscribe((event: FormEvent) => {
+    this.formService.taskCompleted.subscribe((event: Function ) => {
       this.logService.debug(`User completed task: ${event.form.taskName}`);
     });
   }
 
   private subscribeOnFormLoadedEvent(): void {
     this.formService.formLoaded
-      .pipe(filter((event: FormEvent) => event.form.taskName !== this.NAMELESS_TASK))
+      .pipe(
+        filter(
+          (event: FormEvent) => event.form.taskName !== this.NAMELESS_TASK,
+        ),
+      )
       .subscribe((event: FormEvent) => {
         this.logService.debug(`User opened task: ${event.form.taskName}`);
       });

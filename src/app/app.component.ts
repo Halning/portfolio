@@ -1,29 +1,35 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
 import { from } from 'rxjs';
 import { filter } from 'rxjs/operators';
-import { TypeGuard } from '@port/my-awesome-lib';
+import { isDefined, SubSink } from '@port/my-awesome-lib';
+import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 
 @Component({
-  selector: 'app-root',
+  selector: 'port-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
+@UntilDestroy()
 export class AppComponent implements OnInit {
-  private title = 'port';
   ggg = 'port';
+  private title = 'port';
 
-  private ggggg(): any {}
+  private subscription = new SubSink();
 
   ngOnInit() {
     const arrayWithFalsyValues = [1, undefined, 0, 2, '', null];
-    from(arrayWithFalsyValues)
-      .pipe(filter(TypeGuard.isDefined))
+    this.subscription.sink = from(arrayWithFalsyValues)
+      .pipe(filter(isDefined), untilDestroyed(this))
       .subscribe((ggg) => {
         console.log(ggg);
       });
 
-    const arrayWithoutFalsyValues = arrayWithFalsyValues.filter(
-      TypeGuard.isDefined,
-    );
+    const arrayWithoutFalsyValues = arrayWithFalsyValues.filter(isDefined);
   }
 }

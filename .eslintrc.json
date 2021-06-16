@@ -34,7 +34,12 @@
             ]
           }
         ],
-        "rxjs-angular/prefer-composition": ["error"],
+        "rxjs-angular/prefer-takeuntil": [
+          "error",
+          {
+            "alias": ["untilDestroyed"]
+          }
+        ],
         "@angular-eslint/directive-selector": [
           "error",
           {
