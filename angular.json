@@ -12,6 +12,10 @@
         "@schematics/angular:component": {
           "style": "scss",
           "changeDetection": "OnPush"
+        },
+        "@ngneat/spectator:spectator-component": {
+          "style": "scss",
+          "changeDetection": "OnPush"
         }
       },
       "root": "",
@@ -215,6 +219,6 @@
   },
   "defaultProject": "portfolio",
   "cli": {
-    "defaultCollection": "@angular-eslint/schematics"
+    "defaultCollection": "@ngneat/spectator"
   }
 }

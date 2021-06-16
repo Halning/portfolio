@@ -1,8 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgLetDirective } from './directives/ng-let.directive';
+import { LetDirective } from './directives/let.directive';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    NgLetDirective,
+    LetDirective
+  ],
   imports: [CommonModule],
 })
 export class SharedModule {}
