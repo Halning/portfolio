@@ -2,7 +2,6 @@ import { NgZone } from '@angular/core';
 import {
   MonoTypeOperatorFunction,
   Operator,
-  Subscriber,
   Observable,
   TeardownLogic,
   Observer,
