@@ -20,3 +20,9 @@ export function typedFromEvent<
 ): Observable<EventWith<GlobalEventHandlersEventMap[E], T>> {
   return fromEvent(target, event, options);
 }
+
+// usage
+// typedFromEvent(nativeElement, 'click').subscribe(event => {
+//   // event is MouseEvent, target is HTMLElement
+//   event.currentTarget.focus();
+// });
