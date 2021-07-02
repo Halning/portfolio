@@ -18,7 +18,7 @@ export class ThemeDirective {
 // usage
 
 // import { Component } from '@angular/core';
-//
+//K
 // @Component({
 //   selector: 'my-app',
 //   templateUrl: './app.component.html',
