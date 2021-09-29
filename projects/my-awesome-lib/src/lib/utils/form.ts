@@ -1,5 +1,12 @@
-import { AbstractControl, FormControl, FormGroup } from '@angular/forms';
+import {
+  AbstractControl,
+  AbstractControlDirective,
+  FormControl,
+  FormGroup,
+} from '@angular/forms';
 import { get } from 'lodash-es';
+import { startWith } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 export function markAsTouchedAllControls(formGroup: FormGroup): void {
   Object.keys(formGroup.controls).forEach((field: string) => {
@@ -13,6 +20,21 @@ export function markAsTouchedAllControls(formGroup: FormGroup): void {
   });
 }
 
+export class ReplayControlValueChanges<T> extends Observable<T> {
+  constructor(control: AbstractControl | AbstractControlDirective) {
+    super((subscriber) => {
+      if (!control.valueChanges) {
+        throw new Error('Control does not have valueChanges');
+      }
+
+      control.valueChanges.pipe(startWith(control.value)).subscribe(subscriber);
+    });
+  }
+}
+
+// usage
+// const value$ = new ReplayControlValueChanges(control);
+// value$.subscribe(); // emits control value and the all control valuesChanges
 
 export const hasRequiredField = (abstractControl: AbstractControl): boolean => {
   if (!abstractControl) {

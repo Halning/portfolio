@@ -31,3 +31,6 @@ export class StickyDirective {
       });
   }
 }
+
+// usage
+// https://twitter.com/Waterplea/status/1283385882310062080?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1283385882310062080%7Ctwgr%5E%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Ftype%3Dtext2Fhtmlkey%3Da19fcc184b9711e1b4764040d3dc5c07schema%3Dtwitterurl%3Dhttps3A%2F%2Ftwitter.com%2Fwaterplea%2Fstatus%2F1283385882310062080image%3D
