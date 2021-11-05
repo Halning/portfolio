@@ -22,3 +22,65 @@ body {
   transform: translate3d(0, -100%, 0);
   transition: transform 0.3s 0.5s;
 }
+
+// custom Material
+@mixin mat-table-columns($columns) {
+  .mat-column- {
+    @each $colName, $props in $columns {
+      $width: map-get($props, 'width');
+
+      &#{$colName} {
+        flex: 0 0 $width;
+        width: $width;
+        padding: 0 5px;
+      }
+    }
+  }
+}
+// usage
+//@include mat-table-columns(
+//    (
+//      actions: (
+//        position: absolute,
+//        right: 0,
+//        top: 0,
+//      ),
+//    )
+//);
+
+// Media Queries
+// -----------------------------------------------------------------------------
+@mixin mq($size, $limiter: 'min-width', $max-size: '') {
+  @if ($limiter == 'between') {
+    @media only screen and (min-width: $size) and (max-width: $max-size) {
+      @content;
+    }
+  } @else {
+    @media only screen and ($limiter: $size) {
+      @content;
+    }
+  }
+}
+
+// Displaying and Hiding Content
+@mixin show($state) {
+  @if $state == on {
+    pointer-events: auto;
+    visibility: visible;
+    will-change: auto;
+    opacity: 1;
+  }
+
+  @if $state == off {
+    pointer-events: none;
+    visibility: hidden;
+    will-change: auto;
+    opacity: 0;
+  }
+}
+
+@mixin truncate() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
