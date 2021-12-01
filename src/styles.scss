@@ -30,8 +30,8 @@ body {
       $width: map-get($props, 'width');
 
       &#{$colName} {
-        flex: 0 0 $width;
         width: $width;
+        flex: 0 0 $width;
         padding: 0 5px;
       }
     }
@@ -65,22 +65,22 @@ body {
 // Displaying and Hiding Content
 @mixin show($state) {
   @if $state == on {
+    opacity: 1;
     pointer-events: auto;
     visibility: visible;
     will-change: auto;
-    opacity: 1;
   }
 
   @if $state == off {
+    opacity: 0;
     pointer-events: none;
     visibility: hidden;
     will-change: auto;
-    opacity: 0;
   }
 }
 
 @mixin truncate() {
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
