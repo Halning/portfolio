@@ -26,8 +26,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && npm run typecheck"
-    }
+      "applypatch-msg": "echo \"[Husky] applypatch-msg\""
+  }
   },
   "lint-staged": {
     "*.{js,ts,html,md,scss,json}": [
