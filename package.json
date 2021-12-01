@@ -21,7 +21,8 @@
     "prettier:fix:scss": "prettier --config \".prettierrc.json\" --write \"src/**/*.scss\"",
     "prettier:fix:html": "prettier --config \".prettierrc.json\" --write \"src/**/*.html\"",
     "bundle-report": "ng build --stats-json && webpack-bundle-analyzer dist/portfolio/stats.json",
-    "typecheck": "tsc --noEmit --skipLibCheck"
+    "typecheck": "tsc --noEmit --skipLibCheck",
+    "prepare": "husky install"
   },
   "husky": {
     "hooks": {
