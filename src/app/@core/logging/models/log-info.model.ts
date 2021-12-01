@@ -1,9 +1,9 @@
-import { LogLevel } from '@core/logging/constants/log-levels.enum';
+import { LogLevel } from '../constants/log-levels.enum';
 
 export class LogInfo {
   constructor(
     options: Partial<LogInfo> = {},
-    public level: string = options.level ?? LogLevel.ERROR.toString(),
+    public level: string = options.level ?? LogLevel?.ERROR?.toString(),
   ) {}
 
   // noinspection JSUnusedGlobalSymbols

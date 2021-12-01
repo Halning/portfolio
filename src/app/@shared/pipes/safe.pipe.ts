@@ -30,6 +30,7 @@ export class SafePipe implements PipeTransform {
       case 'resourceUrl':
         return this.sanitizer.bypassSecurityTrustResourceUrl(value);
       default:
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
         throw new Error(`Invalid safe type specified: ${type}`);
     }
   }

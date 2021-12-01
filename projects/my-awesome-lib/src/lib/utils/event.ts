@@ -1,6 +1,8 @@
 // Typing for Event with particular currentTarget
-import { fromEvent, FromEventTarget } from 'rxjs/internal/observable/fromEvent';
+import { fromEvent } from 'rxjs';
 import { Observable } from 'rxjs';
+// eslint-disable-next-line rxjs/no-internal
+import { FromEventTarget } from 'rxjs/internal/observable/fromEvent';
 
 export type EventWith<E extends Event, T extends FromEventTarget<E>> = E & {
   readonly currentTarget: T;

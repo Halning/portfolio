@@ -14,12 +14,12 @@
 export class LogMessage {
   constructor(
     options: Partial<LogMessage> = {},
-    public source: LogMessage.Source = options.source || null,
-    public content: string = options.content || ''
+    public source: LogMessage.Source | null = options.source || null,
+    public content: string = options.content || '',
   ) {}
 }
 
-// tslint:disable-next-line:no-namespace
+// eslint-disable-next-line @typescript-eslint/no-namespace
 export namespace LogMessage {
   export enum Source {
     ADF = 'UI.ADF',

@@ -2,6 +2,7 @@ import { NgIf, NgIfContext } from '@angular/common';
 import { Directive, Input, OnChanges, TemplateRef } from '@angular/core';
 
 @Directive({
+  // eslint-disable-next-line @angular-eslint/directive-selector
   selector: '[ngIf][ngIfOr],[ngIf][ngIfBut]',
 })
 export class NgIfAugmentedDirective<T> implements OnChanges {

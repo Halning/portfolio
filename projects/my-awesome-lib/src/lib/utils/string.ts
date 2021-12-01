@@ -1,4 +1,7 @@
-export function concatStrTemplate(strings: TemplateStringsArray, ...values: any[]): string {
+export function concatStrTemplate(
+  strings: TemplateStringsArray,
+  ...values: any[]
+): string {
   let str = '';
 
   for (let i = 0; i < values.length; i++) {

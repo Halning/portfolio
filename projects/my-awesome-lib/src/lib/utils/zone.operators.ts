@@ -22,4 +22,4 @@ export function zonefull<T>(zone: NgZone): MonoTypeOperatorFunction<T> {
 
 export const zonefree = <T>(zone: NgZone): MonoTypeOperatorFunction<T> => {
   return (source) => source.lift(new ZonefreeOperator(zone));
-}
+};

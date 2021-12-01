@@ -1,6 +1,7 @@
 import { Directive, Input, HostBinding } from '@angular/core';
 
 @Directive({
+  // eslint-disable-next-line @angular-eslint/directive-selector
   selector: '[theme]',
 })
 export class ThemeDirective {

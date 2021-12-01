@@ -4,7 +4,7 @@ import { SafePipe } from './safe.pipe';
 import { MapperPipe } from './mapper.pipe';
 
 @NgModule({
-  declarations: [SafePipe, MapperPipe],
+  declarations: [MapperPipe, SafePipe],
   imports: [CommonModule],
   exports: [SafePipe],
 })

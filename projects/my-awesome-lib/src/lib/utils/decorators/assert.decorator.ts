@@ -1,6 +1,6 @@
 export function assert<T, K extends keyof T>(
   assertion: (input: T[K]) => boolean,
-  messsage: string
+  messsage: string,
 ): PropertyDecorator {
   return (target, key) => {
     Object.defineProperty(target, key, {
@@ -14,9 +14,9 @@ export function assert<T, K extends keyof T>(
           set(this: T, value: T[K]) {
             console.assert(assertion(value), messsage);
             currentValue = value;
-          }
+          },
         });
-      }
+      },
     });
   };
 }

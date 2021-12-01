@@ -52,7 +52,9 @@ export const hasRequiredField = (abstractControl: AbstractControl): boolean => {
 
   if (controls) {
     for (const controlName of controls) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       if (controls[controlName]) {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         if (hasRequiredField(controls[controlName])) {
           return true;
         }

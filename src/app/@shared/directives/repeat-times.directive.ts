@@ -13,6 +13,7 @@ export class RepeatTimesContext {
 }
 
 @Directive({
+  // eslint-disable-next-line @angular-eslint/directive-selector
   selector: '[repeatTimes][repeatTimesOf]',
 })
 export class RepeatTimesDirective {
@@ -56,6 +57,5 @@ export class RepeatTimesDirective {
 //   {{day + 1}}
 // </button>
 // </div>
-
 
 // https://twitter.com/marsibarsi/status/1270282771458555906?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1270282771458555906%7Ctwgr%5E%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Ftype%3Dtext2Fhtmlkey%3Da19fcc184b9711e1b4764040d3dc5c07schema%3Dtwitterurl%3Dhttps3A%2F%2Ftwitter.com%2Fmarsibarsi%2Fstatus%2F1270282771458555906image%3D

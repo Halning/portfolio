@@ -1,6 +1,8 @@
+/* eslint-disable */
+// @ts-nocheck
 const num = Number(window.prompt('Введіть чісло'));
 
-function isEven(num) {
+function isEven(num: number) {
   const isEven = num % 2 === 0;
 
   if (isEven) {
