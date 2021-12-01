@@ -33,7 +33,7 @@
       "prettier --write",
       "git add"
     ],
-    "*.ts": "tslint",
+    "*.ts": "eslint",
     "*.less": "stylelint"
   },
   "private": true,
