@@ -25,18 +25,18 @@ export class AppComponent implements OnInit {
   constructor(@Inject(NgZone) private readonly zone: NgZone) {}
 
   ngOnInit() {
-    const arrayWithFalsyValues = [1, undefined, 0, 2, '', null];
-    this.subscription.sink = from(arrayWithFalsyValues)
-      .pipe(
-        zonefree(this.zone),
-        filter(isDefined),
-        zonefull(this.zone),
-        untilDestroyed(this),
-      )
-      .subscribe((ggg) => {
-        console.log(ggg);
-      });
-
-    const arrayWithoutFalsyValues = arrayWithFalsyValues.filter(isDefined);
+    // const arrayWithFalsyValues = [1, undefined, 0, 2, '', null];
+    // this.subscription.sink = from(arrayWithFalsyValues)
+    //   .pipe(
+    //     zonefree(this.zone),
+    //     filter(isDefined),
+    //     zonefull(this.zone),
+    //     untilDestroyed(this),
+    //   )
+    //   .subscribe((ggg) => {
+    //     console.log(ggg);
+    //   });
+    //
+    // const arrayWithoutFalsyValues = arrayWithFalsyValues.filter(isDefined);
   }
 }
