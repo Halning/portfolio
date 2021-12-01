@@ -34,7 +34,7 @@
       "git add"
     ],
     "*.ts": "eslint",
-    "*.less": "stylelint"
+    "*.scss": "stylelint"
   },
   "private": true,
   "dependencies": {
