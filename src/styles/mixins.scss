@@ -1,0 +1,44 @@
+// Media Queries
+// -----------------------------------------------------------------------------
+@mixin mq($size, $limiter: 'min-width', $max-size: '') {
+  @if ($limiter == 'between') {
+    @media only screen and (min-width: $size) and (max-width: $max-size) {
+      @content;
+    }
+  } @else {
+    @media only screen and ($limiter: $size) {
+      @content;
+    }
+  }
+}
+
+@mixin truncate() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// custom Material
+@mixin mat-table-columns($columns) {
+  .mat-column- {
+    @each $colName, $props in $columns {
+      $width: map-get($props, 'width');
+
+      &#{$colName} {
+        width: $width;
+        flex: 0 0 $width;
+        padding: 0 5px;
+      }
+    }
+  }
+}
+// usage
+//@include mat-table-columns(
+//    (
+//      actions: (
+//        position: absolute,
+//        right: 0,
+//        top: 0,
+//      ),
+//    )
+//);
