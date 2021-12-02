@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ElementRefDirective } from '@port/hal-utils/src/lib/directives/element-ref.directive';
-import { LetDirective } from '@port/hal-utils/src/lib/directives/let.directive';
-import { NgIfAugmentedDirective } from '@port/hal-utils/src/lib/directives/ng-if-augmented.directive';
-import { RepeatTimesDirective } from '@port/hal-utils/src/lib/directives/repeat-times.directive';
-import { StickyDirective } from '@port/hal-utils/src/lib/directives/sticky.directive';
-import { ThemeDirective } from '@port/hal-utils/src/lib/directives/theme.directive';
+import { ElementRefDirective } from './element-ref.directive';
+import { LetDirective } from './let.directive';
+import { NgIfAugmentedDirective } from './ng-if-augmented.directive';
+import { RepeatTimesDirective } from './repeat-times.directive';
+import { StickyDirective } from './sticky.directive';
+import { ThemeDirective } from './theme.directive';
 
 @NgModule({
   declarations: [
