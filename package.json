@@ -23,6 +23,7 @@
     "bundle-report": "ng build --stats-json && webpack-bundle-analyzer dist/portfolio/stats.json",
     "typecheck": "tsc --noEmit --skipLibCheck",
     "prepare": "husky install",
+    "release": "standard-version",
     "postinstall": "husky install"
   },
   "husky": {
@@ -89,6 +90,7 @@
     "prettier": "^2.5.0",
     "prettier-plugin-organize-attributes": "0.0.4",
     "pretty-quick": "^3.1.2",
+    "standard-version": "^9.3.2",
     "stylelint": "^14.1.0",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-recommended-scss": "^5.0.2",
