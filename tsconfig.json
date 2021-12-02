@@ -12,14 +12,8 @@
     "declaration": false,
     "downlevelIteration": true,
     "paths": {
-      "@port/my-awesome-lib/*": [
-        "projects/my-awesome-lib/*",
-        "projects/my-awesome-lib"
-      ],
-      "@port/my-awesome-lib": [
-        "dist/my-awesome-lib/*",
-        "dist/my-awesome-lib"
-      ]
+      "@port/hal-utils/*": ["projects/hal-utils/*", "projects/hal-utils"],
+      "@port/hal-utils": ["dist/hal-utils/*", "dist/hal-utils"]
     },
     "experimentalDecorators": true,
     "moduleResolution": "node",

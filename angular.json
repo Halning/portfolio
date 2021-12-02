@@ -31,14 +31,9 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "stylePreprocessorOptions": {
-              "includePaths": [
-                "node_modules"
-              ]
+              "includePaths": ["node_modules"]
             },
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
@@ -99,10 +94,7 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "src/**/*.ts",
-              "src/**/*.html"
-            ]
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
           }
         },
         "cypress-run": {
@@ -144,23 +136,23 @@
         }
       }
     },
-    "my-awesome-lib": {
+    "hal-utils": {
       "projectType": "library",
-      "root": "projects/my-awesome-lib",
-      "sourceRoot": "projects/my-awesome-lib/src",
-      "prefix": "lib",
+      "root": "projects/hal-utils",
+      "sourceRoot": "projects/hal-utils/src",
+      "prefix": "hal",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/my-awesome-lib/ng-package.json"
+            "project": "projects/hal-utils/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/my-awesome-lib/tsconfig.lib.prod.json"
+              "tsConfig": "projects/hal-utils/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/my-awesome-lib/tsconfig.lib.json"
+              "tsConfig": "projects/hal-utils/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -169,48 +161,48 @@
           "builder": "@angular-eslint/builder:lint",
           "options": {
             "lintFilePatterns": [
-              "projects/my-awesome-lib/**/*.ts",
-              "projects/my-awesome-lib/**/*.html"
+              "projects/hal-utils/**/*.ts",
+              "projects/hal-utils/**/*.html"
             ]
           }
         },
         "cypress-run": {
           "builder": "@briebug/cypress-schematic:cypress",
           "options": {
-            "devServerTarget": "my-awesome-lib:serve",
-            "configFile": "projects/my-awesome-lib/cypress.json"
+            "devServerTarget": "hal-utils:serve",
+            "configFile": "projects/hal-utils/cypress.json"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "my-awesome-lib:serve:production"
+              "devServerTarget": "hal-utils:serve:production"
             }
           }
         },
         "cypress-open": {
           "builder": "@briebug/cypress-schematic:cypress",
           "options": {
-            "devServerTarget": "my-awesome-lib:serve",
+            "devServerTarget": "hal-utils:serve",
             "watch": true,
             "headless": false,
-            "configFile": "projects/my-awesome-lib/cypress.json"
+            "configFile": "projects/hal-utils/cypress.json"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "my-awesome-lib:serve:production"
+              "devServerTarget": "hal-utils:serve:production"
             }
           }
         },
         "e2e": {
           "builder": "@briebug/cypress-schematic:cypress",
           "options": {
-            "devServerTarget": "my-awesome-lib:serve",
+            "devServerTarget": "hal-utils:serve",
             "watch": true,
             "headless": false,
-            "configFile": "projects/my-awesome-lib/cypress.json"
+            "configFile": "projects/hal-utils/cypress.json"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "my-awesome-lib:serve:production"
+              "devServerTarget": "hal-utils:serve:production"
             }
           }
         }

@@ -19,6 +19,12 @@
         "plugin:prettier/recommended"
       ],
       "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": ["@port/hal-utils/*"]
+          }
+        ],
         "@typescript-eslint/no-unsafe-call": ["off"],
         "@typescript-eslint/no-unsafe-assignment": ["off"],
         "@typescript-eslint/no-unsafe-return": ["off"],
