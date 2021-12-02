@@ -5,6 +5,7 @@ export type Mapper<T, G> = (item: T, ...args: any[]) => G;
 @Pipe({ name: 'mapper' })
 export class MapperPipe<T, G> implements PipeTransform {
   transform(value: T, mapper: Mapper<T, G>, ...args: any[]): G {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     return mapper(value, ...args);
   }
 }

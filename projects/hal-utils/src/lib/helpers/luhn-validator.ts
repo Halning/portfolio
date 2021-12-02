@@ -3,7 +3,9 @@ import { AbstractControl, ValidationErrors } from '@angular/forms';
 export function luhnValidator({
   value,
 }: AbstractControl): ValidationErrors | null {
-  return isCardNumberValid(value) ? null : { luhn: 'Card number invalid' };
+  return isCardNumberValid(value as string)
+    ? null
+    : { luhn: 'Card number invalid' };
 }
 
 export function isCardNumberValid(cardNumber: string): boolean {

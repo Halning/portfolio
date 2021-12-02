@@ -1,12 +1,13 @@
 {
-  "plugins": ["stylelint-scss", "stylelint-order"],
+  "plugins": ["stylelint-prettier"],
   "extends": [
-    "stylelint-config-standard",
     "stylelint-prettier/recommended",
-    "stylelint-config-idiomatic-order"
+    "stylelint-config-recommended-scss"
   ],
+  "files": ["**/*.scss"],
   "rules": {
     "at-rule-no-unknown": null,
-    "scss/at-rule-no-unknown": true
+    "scss/at-rule-no-unknown": true,
+    "scss/no-global-function-names": null
   }
 }

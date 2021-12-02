@@ -212,5 +212,8 @@
   "defaultProject": "portfolio",
   "cli": {
     "defaultCollection": "@ngneat/spectator"
+  },
+  "cache": {
+    "enabled": true
   }
 }
