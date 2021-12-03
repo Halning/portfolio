@@ -24,6 +24,9 @@
     "typecheck": "tsc --noEmit --skipLibCheck",
     "prepare": "husky install",
     "release": "standard-version",
+    "release:patch": "npm run release -- --release-as patch",
+    "release:minor": "npm run release -- --release-as minor",
+    "release:major": "npm run release -- --release-as major",
     "postinstall": "husky install"
   },
   "husky": {

@@ -35,6 +35,6 @@ export class AppComponent implements OnInit {
         console.log(ggg);
       });
 
-    // const arrayWithoutFalsyValues = arrayWithFalsyValues.filter(isDefined);
+    const arrayWithoutFalsyValues = arrayWithFalsyValues.filter(isDefined);
   }
 }
