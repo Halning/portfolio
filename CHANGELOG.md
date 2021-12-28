@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.0](https://github.com/Halning/portfolio/compare/v0.0.2...v0.1.0) (2021-12-28)
+
+### Features
+
+- **infrastructure:** End up with stylelint ([c5bb398](https://github.com/Halning/portfolio/commit/c5bb398c176400f9a8fdb8733774cf85c4de4094))
+
 ### [0.0.2](https://github.com/Halning/portfolio/compare/v0.0.1...v0.0.2) (2021-12-03)
 
 ### Features
