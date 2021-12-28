@@ -19,6 +19,7 @@
 }
 
 // custom Material
+/* stylelint-disable */
 @mixin mat-table-columns($columns) {
   .mat-column- {
     @each $colName, $props in $columns {
@@ -32,13 +33,4 @@
     }
   }
 }
-// usage
-//@include mat-table-columns(
-//    (
-//      actions: (
-//        position: absolute,
-//        right: 0,
-//        top: 0,
-//      ),
-//    )
-//);
+/* stylelint-enable */
