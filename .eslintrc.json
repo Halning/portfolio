@@ -39,13 +39,11 @@
           {
             "default": [
               "decorated-field",
-              "public-field",
-              "protected-field",
-              "private-field",
+              "field",
+              ["get", "set"],
+              "static-initialization",
               "constructor",
-              "public-method",
-              "protected-method",
-              "private-method"
+              "method"
             ]
           }
         ],
