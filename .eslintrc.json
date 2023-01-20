@@ -4,7 +4,7 @@
   "plugins": ["rxjs", "rxjs-angular"],
   "overrides": [
     {
-      "files": ["*.ts"],
+      "files": ["src/**/*.ts"],
       "parserOptions": {
         "project": ["tsconfig.json"],
         "createDefaultProgram": true
@@ -72,7 +72,7 @@
       }
     },
     {
-      "files": ["*.html"],
+      "files": ["src/**/*.html"],
       "extends": ["plugin:@angular-eslint/template/all"],
       "rules": {
         "@angular-eslint/template/i18n": ["off"],
