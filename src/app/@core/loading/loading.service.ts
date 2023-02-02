@@ -11,9 +11,7 @@ interface Loader {
   addRequest(): void;
 }
 
-export function withLoading<T, K extends Loader>(
-  loader: K,
-): MonoTypeOperatorFunction<T> {
+export function withLoading<T, K extends Loader>(loader: K): MonoTypeOperatorFunction<T> {
   loader.show();
   loader.addRequest();
 
@@ -24,25 +22,23 @@ export function withLoading<T, K extends Loader>(
 
 @Injectable()
 export class LoadingService implements Loader {
-  private _loading = new BehaviorSubject<boolean>(false);
-  // eslint-disable-next-line no-invalid-this
-  readonly loading$ = this._loading.asObservable();
-
   totalRequests = 0;
   completedRequests = 0;
 
-  show() {
+  private _loading = new BehaviorSubject<boolean>(false);
+  // eslint-disable-next-line no-invalid-this,@typescript-eslint/member-ordering
+  readonly loading$ = this._loading.asObservable();
+
+  show(): void {
     this._loading.next(true);
   }
 
-  hide() {
+  hide(): void {
     this._loading.next(false);
   }
 
   calculateRequests(): void {
     this.completedRequests++;
-
-    console.log(this.completedRequests, this.totalRequests);
 
     if (this.completedRequests === this.totalRequests) {
       this.hide();
