@@ -209,9 +209,8 @@
       }
     }
   },
-  "defaultProject": "portfolio",
   "cli": {
-    "defaultCollection": "@ngneat/spectator"
+    "schematicCollections": ["@ngneat/spectator"]
   },
   "cache": {
     "enabled": true

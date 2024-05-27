@@ -1,20 +1,20 @@
 import {
   AbstractControl,
   AbstractControlDirective,
-  FormControl,
-  FormGroup,
+  UntypedFormControl,
+  UntypedFormGroup,
 } from '@angular/forms';
 import { get } from 'lodash-es';
 import { startWith } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
-export function markAsTouchedAllControls(formGroup: FormGroup): void {
+export function markAsTouchedAllControls(formGroup: UntypedFormGroup): void {
   Object.keys(formGroup.controls).forEach((field: string) => {
     const control = formGroup.get(field);
-    if (control instanceof FormControl) {
+    if (control instanceof UntypedFormControl) {
       control.markAsTouched();
       control.updateValueAndValidity();
-    } else if (control instanceof FormGroup) {
+    } else if (control instanceof UntypedFormGroup) {
       markAsTouchedAllControls(control);
     }
   });
