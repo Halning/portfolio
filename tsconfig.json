@@ -12,15 +12,27 @@
     "declaration": false,
     "downlevelIteration": true,
     "paths": {
-      "@port/hal-utils/*": ["projects/hal-utils/*", "projects/hal-utils"],
-      "@port/hal-utils": ["dist/hal-utils/*", "dist/hal-utils"]
+      "@port/hal-utils/*": [
+        "projects/hal-utils/*",
+        "projects/hal-utils"
+      ],
+      "@port/hal-utils": [
+        "dist/hal-utils/*",
+        "dist/hal-utils"
+      ]
     },
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "es2020",
+    "target": "ES2022",
     "module": "es2020",
-    "lib": ["es2018", "es2019", "es2020", "dom"]
+    "lib": [
+      "es2018",
+      "es2019",
+      "es2020",
+      "dom"
+    ],
+    "useDefineForClassFields": false
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
