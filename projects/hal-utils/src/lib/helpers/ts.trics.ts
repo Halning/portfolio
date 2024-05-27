@@ -7,13 +7,13 @@ function parasha(source: typeof ggg) {
 
 // 2
 
-type status = "active" | "pending" | "complete"; // It will not goes to bundle
+type status = 'active' | 'pending' | 'complete'; // It will not goes to bundle
 // instead of
 
 enum Status {
-  Active = "active",
-  Pending = "pending",
-  Complete = "complete"
+  Active = 'active',
+  Pending = 'pending',
+  Complete = 'complete',
 }
 
 // 3
@@ -22,8 +22,7 @@ function getValue<T, U extends keyof T>(source: T, property: U) {
   return source[property];
 }
 
-getValue(ggg, "min");
-
+getValue(ggg, 'min');
 
 // 4 index types
 
@@ -36,44 +35,43 @@ interface Contact {
   address: Address;
 }
 
-type Awesome = Contact["address"]["state"];
+type Awesome = Contact['address']['state'];
 
 interface ContactEvent {
   contactId: Awesome; // tie "id" type to contactId or "state" from address
 }
 
-
 // 5 map types
 
 interface Parasha2<Tprop> {
-  id: number,
+  id: number;
   login: string;
   handle: (val: Tprop) => void;
 }
 
 interface Parasha {
-  id: string,
+  id: string;
   name: string;
   code: number;
 }
 
 type Parasha1 = {
   [Tprop in keyof Parasha]?: Parasha2<Parasha[Tprop]>;
-}
+};
 
 const parashaGGG: Parasha1 = {
   code: {
     id: 1,
     login: 'US',
-    handle: (val) => {} // code from Parasha and val is number
-  }
-}
+    handle: (val) => {}, // code from Parasha and val is number
+  },
+};
 
 // 6 удовлетворяеит тип но не меняет тип созданого нами обьекта и сужает тип
 
 type Sets = {
   id: string | number;
-}
+};
 
 const parasha = {
   id: '1',
@@ -81,5 +79,3 @@ const parasha = {
 
 // знает что это строка а не число
 parasha.id.toLowerCase();
-
-

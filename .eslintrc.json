@@ -5,7 +5,7 @@
     {
       "files": ["src/**/*.ts"],
       "parserOptions": {
-        "project": ["tsconfig.eslint.json"],
+        "project": ["tsconfig.json"],
         "createDefaultProgram": true
       },
       "extends": [
@@ -19,19 +19,76 @@
         "prettier",
         "plugin:prettier/recommended"
       ],
-      "plugins": ["spellcheck", "rxjs-angular", "sonar"],
+      "plugins": ["rxjs-angular", "sonar"],
       "rules": {
-
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": ["@port/hal-utils/*"]
+          }
+        ],
+        "@typescript-eslint/no-unsafe-call": ["off"],
+        "@typescript-eslint/no-unsafe-assignment": ["off"],
+        "@typescript-eslint/no-unsafe-return": ["off"],
+        "@typescript-eslint/no-empty-function": [
+          "error",
+          {
+            "allow": ["constructors"]
+          }
+        ],
+        "@typescript-eslint/member-ordering": [
+          "error",
+          {
+            "default": [
+              "decorated-field",
+              "field",
+              ["get", "set"],
+              "static-initialization",
+              "constructor",
+              "method"
+            ]
+          }
+        ],
+        "rxjs-angular/prefer-takeuntil": [
+          "error",
+          {
+            "alias": ["untilDestroyed"]
+          }
+        ],
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "port",
+            "style": "camelCase"
+          }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "port",
+            "style": "kebab-case"
+          }
+        ],
+        "require-jsdoc": "off"
       }
     },
     {
       "files": ["src/**/*.html"],
-      "extends": ["plugin:@angular-eslint/template/all", "plugin:prettier/recommended"],
+      "extends": [
+        "plugin:@angular-eslint/template/all",
+        "plugin:prettier/recommended"
+      ],
       "parser": "@angular-eslint/template-parser",
       "rules": {
         "@angular-eslint/template/i18n": ["off"],
         "@angular-eslint/template/click-events-have-key-events": ["off"]
       }
+    },
+    {
+      "files": ["*.spec.ts", "*.mock.ts", "*.mock.*.ts", "src/app/mocks/*.ts"],
+      "rules": {}
     }
   ]
 }
