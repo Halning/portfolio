@@ -65,6 +65,21 @@ const parashaGGG: Parasha1 = {
   code: {
     id: 1,
     login: 'US',
-    handle: (val: number) => {} // code from Parasha and val is number
+    handle: (val) => {} // code from Parasha and val is number
   }
 }
+
+// 6 удовлетворяеит тип но не меняет тип созданого нами обьекта и сужает тип
+
+type Sets = {
+  id: string | number;
+}
+
+const parasha = {
+  id: '1',
+} satisfies Sets;
+
+// знает что это строка а не число
+parasha.id.toLowerCase();
+
+
