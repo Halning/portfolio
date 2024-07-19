@@ -10,13 +10,14 @@ import { filter } from 'rxjs/operators';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { isDefined, zonefree, zonefull } from '@port/shared/helpers';
 import { MainLayoutComponent } from './@core/layout/main-layout/main-layout.component';
+import {RouterOutlet} from "@angular/router";
 
 @Component({
   selector: 'port-root',
   templateUrl: './app.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [MainLayoutComponent],
+  imports: [MainLayoutComponent, RouterOutlet],
 })
 @UntilDestroy()
 export class AppComponent implements OnInit {

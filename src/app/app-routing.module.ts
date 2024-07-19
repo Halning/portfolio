@@ -1,16 +1,26 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { AppComponent } from './app.component';
+import { RouterModule, Routes } from '@angular/router';
+import { NotFoundComponent } from './@core/layout/not-found/not-found.component';
+import { MainLayoutComponent } from './@core/layout/main-layout/main-layout.component';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'home',
+    redirectTo: () => {
+      if (false) {
+        return 'home';
+      }
+      return 'not-found';
+    },
   },
   {
     path: 'home',
-    component: AppComponent,
+    component: MainLayoutComponent,
+  },
+  {
+    path: 'not-found',
+    component: NotFoundComponent,
   },
   {
     path: '**',
