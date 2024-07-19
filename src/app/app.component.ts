@@ -8,8 +8,7 @@ import {
 import { from } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
-import { zonefree, zonefull } from '@port/hal-utils';
-import { isDefined } from '@port/hal-utils';
+import { isDefined, zonefree, zonefull } from '@port/shared/helpers';
 
 @Component({
   selector: 'port-root',

@@ -1,4 +1,3 @@
-export * from './event';
 export * from './form';
 export * from './mapping-model';
 export * from './sorting';

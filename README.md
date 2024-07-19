@@ -70,6 +70,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ### Test cases
  1. Create a test file, open file which should be tested than inn the test brief describe and
  2. ```Test cases will be:``` Provide the first and than Copilot suggest next
+ 3. highlite the function and ask Copilot chat write a unit test
 
 ### The Given-When-Then Approach
 ```ts
