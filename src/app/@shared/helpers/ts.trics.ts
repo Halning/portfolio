@@ -72,10 +72,3 @@ const parashaGGG: Parasha1 = {
 type Sets = {
   id: string | number;
 };
-
-const parasha = {
-  id: '1',
-} satisfies Sets;
-
-// знает что это строка а не число
-parasha.id.toLowerCase();

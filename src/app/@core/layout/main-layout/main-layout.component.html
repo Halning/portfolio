@@ -1,7 +1,12 @@
 <div>
-  <router-outlet></router-outlet>
+  <mat-button-toggle-group name="fontStyle" aria-label="Font Style" [(ngModel)]="switcher">
+    @for (user of users; track i; let i = $index) {
+      <mat-button-toggle [value]="user.id">{{ user?.name }}</mat-button-toggle>
+    }
+  </mat-button-toggle-group>
 
-  <!--  <div class="push" *ngIf="showFooter"></div>-->
+  <port-user-details [(parasha)]="switcher"></port-user-details>
+  @if (switcherView()) {
+    <p>{{ switcherView()?.name }}</p>
+  }
 </div>
-
-<!--<ha-footer *ngIf="showFooter"></ha-footer>-->

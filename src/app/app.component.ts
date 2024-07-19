@@ -9,11 +9,14 @@ import { from } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { isDefined, zonefree, zonefull } from '@port/shared/helpers';
+import { MainLayoutComponent } from './@core/layout/main-layout/main-layout.component';
 
 @Component({
   selector: 'port-root',
   templateUrl: './app.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [MainLayoutComponent],
 })
 @UntilDestroy()
 export class AppComponent implements OnInit {
