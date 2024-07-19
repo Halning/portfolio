@@ -43,7 +43,7 @@ export const hasRequiredField = (abstractControl: AbstractControl): boolean => {
 
   if (abstractControl.validator) {
     const validator = abstractControl.validator({} as AbstractControl);
-    if (validator && validator.required) {
+    if (validator && validator['require']) {
       return true;
     }
   }

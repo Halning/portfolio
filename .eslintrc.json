@@ -24,7 +24,7 @@
         "no-restricted-imports": [
           "error",
           {
-            "patterns": ["@port/hal-utils/*"]
+            "patterns": ["@port/shared/*", "@port/core/*"]
           }
         ],
         "@typescript-eslint/no-unsafe-call": ["off"],

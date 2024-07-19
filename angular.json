@@ -98,84 +98,9 @@
           }
         }
       }
-    },
-    "hal-utils": {
-      "projectType": "library",
-      "root": "projects/hal-utils",
-      "sourceRoot": "projects/hal-utils/src",
-      "prefix": "hal",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "projects/hal-utils/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/hal-utils/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "projects/hal-utils/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "lint": {
-          "builder": "@angular-eslint/builder:lint",
-          "options": {
-            "lintFilePatterns": [
-              "projects/hal-utils/**/*.ts",
-              "projects/hal-utils/**/*.html"
-            ]
-          }
-        },
-        "cypress-run": {
-          "builder": "@briebug/cypress-schematic:cypress",
-          "options": {
-            "devServerTarget": "hal-utils:serve",
-            "configFile": "projects/hal-utils/cypress.json"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "hal-utils:serve:production"
-            }
-          }
-        },
-        "cypress-open": {
-          "builder": "@briebug/cypress-schematic:cypress",
-          "options": {
-            "devServerTarget": "hal-utils:serve",
-            "watch": true,
-            "headless": false,
-            "configFile": "projects/hal-utils/cypress.json"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "hal-utils:serve:production"
-            }
-          }
-        },
-        "e2e": {
-          "builder": "@briebug/cypress-schematic:cypress",
-          "options": {
-            "devServerTarget": "hal-utils:serve",
-            "watch": true,
-            "headless": false,
-            "configFile": "projects/hal-utils/cypress.json"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "hal-utils:serve:production"
-            }
-          }
-        }
-      }
     }
   },
   "cli": {
     "schematicCollections": ["@ngneat/spectator"]
-  },
-  "cache": {
-    "enabled": true
   }
 }
