@@ -29,8 +29,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 # GitHub Copilot tips
 ## Common tips
-1. Open files in the tab, copilot can see it
-2. Use comment for explaine copilot what you want
+1. Open files in the tab, copilot can see the context
+2. Use comment for explain copilot what you want
 3. Make name of the file and class, methods clear
 4. Use Q&A to ask questions
    ```ts
@@ -48,7 +48,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 //The historical data is analyzed, and each currency's average exchange rate for the last month is calculated.
 ```
 
-## Optimoze code:
+## Optimize code:
 ```ts
 //I need the findDuplicates method to have a better performance, especially for large arrays
   //What can I do to improve the performance of this method?
@@ -68,13 +68,13 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Testing
 ### Test cases
- 1. Create a test file, open file which should be tested than inn the test brief describe and
- 2. ```Test cases will be:``` Provide the first and than Copilot suggest next
- 3. highlite the function and ask Copilot chat write a unit test
+ 1. Create a test file, open file which should be tested than in the test brief describe and
+ 2. ```Test cases will be:``` Provide the first and then Copilot suggest next
+ 3. highlight the function and ask Copilot chat to write a unit test
 
 ### The Given-When-Then Approach
 ```ts
 //given I want RPN Calculator to calculate the expression in RPN supporting basic operators
-//when The expression is 1 2 +
+//when The expression is 1 + 3
 //then The result should be 3
 ```
